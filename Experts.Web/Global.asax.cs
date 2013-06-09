@@ -1,8 +1,9 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Experts.Core.Logging;
+using Experts.Core.Logging.Log4NetLog;
 using Experts.Core.Repositories;
 using Experts.Web.Binders;
 using Experts.Web.Controllers;
@@ -14,6 +15,8 @@ namespace Experts.Web
 {
     public class MvcApplication : HttpApplication
     {
+        private ILog _log = Log4NetLogFactory.CreateNew(typeof(MvcApplication));
+
         private static bool IsPreLaunchModeEnabled
         {
             get { return bool.Parse(ConfigurationManager.AppSettings["PreLaunchMode"]); }
@@ -46,6 +49,10 @@ namespace Experts.Web
 
         protected void Application_Start()
         {
+            Log4NetLogFactory.Initialize();
+
+            _log.Debug("Application_Start Executed").Proceed();
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
@@ -69,6 +76,8 @@ namespace Experts.Web
         
         protected void Application_EndRequest()
         {
+            _log.Debug("Application_EndRequest Executed").Proceed(); ;
+
             var factory = HttpContext.Current.Items["RepositoryFactory"] as RepositoryFactory;
             
 
