@@ -40,9 +40,9 @@ namespace T4MVC
                 public readonly string _Pager = "_Pager";
                 public readonly string _TopMenu = "_TopMenu";
                 public readonly string ActionLinkWithConfirmation = "ActionLinkWithConfirmation";
+                public readonly string Error404 = "Error404";
                 public readonly string Error500 = "Error500";
                 public readonly string FlashMessage = "FlashMessage";
-                public readonly string NotFound = "NotFound";
                 public readonly string Opinions = "Opinions";
             }
             public readonly string _GoogleAnalytics = "~/Views/Shared/_GoogleAnalytics.cshtml";
@@ -50,9 +50,9 @@ namespace T4MVC
             public readonly string _Pager = "~/Views/Shared/_Pager.cshtml";
             public readonly string _TopMenu = "~/Views/Shared/_TopMenu.cshtml";
             public readonly string ActionLinkWithConfirmation = "~/Views/Shared/ActionLinkWithConfirmation.cshtml";
+            public readonly string Error404 = "~/Views/Shared/Error404.cshtml";
             public readonly string Error500 = "~/Views/Shared/Error500.cshtml";
             public readonly string FlashMessage = "~/Views/Shared/FlashMessage.cshtml";
-            public readonly string NotFound = "~/Views/Shared/NotFound.cshtml";
             public readonly string Opinions = "~/Views/Shared/Opinions.cshtml";
             static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
             public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }

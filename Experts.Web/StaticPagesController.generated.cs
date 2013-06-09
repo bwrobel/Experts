@@ -72,7 +72,6 @@ namespace Experts.Web.Controllers
             public readonly string MeetAsknuts = "MeetAsknuts";
             public readonly string PolicyPrivate = "PolicyPrivate";
             public readonly string PolicyWeb = "PolicyWeb";
-            public readonly string PageNotFound = "PageNotFound";
             public readonly string CategoryDescription = "CategoryDescription";
             public readonly string About = "About";
             public readonly string _HelpQuestionStandard = "_HelpQuestionStandard";
@@ -87,7 +86,6 @@ namespace Experts.Web.Controllers
             public const string MeetAsknuts = "MeetAsknuts";
             public const string PolicyPrivate = "PolicyPrivate";
             public const string PolicyWeb = "PolicyWeb";
-            public const string PageNotFound = "PageNotFound";
             public const string CategoryDescription = "CategoryDescription";
             public const string About = "About";
             public const string _HelpQuestionStandard = "_HelpQuestionStandard";
@@ -190,12 +188,6 @@ namespace Experts.Web.Controllers
         public override System.Web.Mvc.ActionResult PolicyWeb()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PolicyWeb);
-            return callInfo;
-        }
-
-        public override System.Web.Mvc.ActionResult PageNotFound()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PageNotFound);
             return callInfo;
         }
 

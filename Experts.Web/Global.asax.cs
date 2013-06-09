@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -25,7 +26,6 @@ namespace Experts.Web
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -40,7 +40,7 @@ namespace Experts.Web
             routes.MapRoute(
                 "Catch-all",
                 "{*catchall}",
-                 MVC.StaticPages.PageNotFound() 
+                 MVC.Error.Error404() 
             );
         }
 
@@ -66,14 +66,15 @@ namespace Experts.Web
         {
             Scheduler.GetScheduler().Shutdown();
         }
-
+        
         protected void Application_EndRequest()
         {
             var factory = HttpContext.Current.Items["RepositoryFactory"] as RepositoryFactory;
+            
 
             if (factory != null)
                 factory.Dispose();
-        }
+        }   
 
         void Application_Error()
         {
@@ -81,10 +82,24 @@ namespace Experts.Web
                 return;
 
             var exception = Server.GetLastError();
-            var eventId = ErrorsHelper.LogApplicationException(exception);
+            ErrorsHelper.LogApplicationException(exception);
 
+            RewritePathToHttp500();
+        }
+
+        void RewritePathToHttp500()
+        {
+            Server.ClearError();
             Response.Clear();
-            Response.Redirect("~/blad-aplikacji/" + eventId);
+            Response.TrySkipIisCustomErrors = true;
+
+            var routeData = new RouteData();
+            routeData.Values["controller"] = "Error";
+            routeData.Values["action"] = "Error500";
+            var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+            
+            IController errorsController = new ErrorController();
+            errorsController.Execute(rc);
         }
     }
 }

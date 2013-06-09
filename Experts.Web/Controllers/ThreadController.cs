@@ -26,6 +26,7 @@ namespace Experts.Web.Controllers
 {
     public partial class ThreadController : BaseController
     {
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult CategoryAttributes([Bind(Prefix = "ThreadForm")] ThreadForm form, int? brokerId)
         {
@@ -84,6 +85,7 @@ namespace Experts.Web.Controllers
             return PartialView(MVC.Thread.Views._CategoryAttributes, model);
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult Options([Bind(Prefix = "ThreadForm")] ThreadForm model)
         {
@@ -93,6 +95,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult Options()
         {
             var model = ThreadMemoryHelper.PopRememberedThread();
@@ -103,6 +106,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult CategoryAttributes()
         {
             var model = ThreadMemoryHelper.PopRememberedThread();
@@ -126,6 +130,7 @@ namespace Experts.Web.Controllers
             return Json(model.Verbosity.ToString());
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult Save(ThreadForm form)
         {
@@ -179,6 +184,7 @@ namespace Experts.Web.Controllers
             return View(MVC.Payment.Views.PaymentRedirect, model);
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Expert)]
         public virtual ActionResult AvailableQuestionList(int? categoryId = null, [QueryParameter]string sortColumn = null, [QueryParameter]int? page = null)
         {
@@ -257,6 +263,7 @@ namespace Experts.Web.Controllers
         //    return View(GetCategoryQuestionListModel(categoryId, sortOptions, page, ThreadSanitizationStatus.Sanitized));
         //}
 
+        [AssignMetadata]
         public virtual ActionResult CatalogQuestionList(int? page = null)
         {
             var threads = Repository.Thread.Find(PagerHelper.PageSize, page ?? 1, t => t.BySanitizationStatus(ThreadSanitizationStatus.Sanitized)).ToList();
@@ -267,6 +274,7 @@ namespace Experts.Web.Controllers
             return View(threads);
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Moderator)]
         public virtual ActionResult SanitizationQuestionList(ThreadSanitizationStatus? sanitizationStatus = null, [QueryParameter]GridSortOptions sortOptions = null, [QueryParameter]int? page = null)
         {
@@ -276,6 +284,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Moderator)]
         public virtual ActionResult ModeratorQuestionList(int? categoryId = null, [QueryParameter]GridSortOptions sortOptions = null, [QueryParameter]int? page = null)
         {
@@ -347,6 +356,7 @@ namespace Experts.Web.Controllers
             model.Value = Math.Round(baseValue*priceModifier, 0);
         }
 
+        [AssignMetadata]
         [Authorize]
         public virtual ActionResult ThreadDetails(int threadId, PostForm postForm = null)
         {
@@ -411,6 +421,7 @@ namespace Experts.Web.Controllers
             return View(view, model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult CatalogThreadDetails(int threadId, string title)
         {
             var thread = Repository.Thread.Get(threadId);
@@ -455,6 +466,7 @@ namespace Experts.Web.Controllers
             return Content(post.LastModificationDate.ToTimeSinceFormat());
         }
 
+
         [ChildActionOnly]
         [DefaultRouting]
         public virtual ActionResult ShowPost(Post post, bool isCatalogMode = false, bool isSanitizationMode = false)
@@ -472,6 +484,7 @@ namespace Experts.Web.Controllers
             return PartialView(post.Type == PostType.Attachment ? MVC.Thread.Views._AttachmentPost : MVC.Thread.Views._Post, new PostViewModel {Post = post, IsCatalogMode = isCatalogMode});
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Moderator)]
         public virtual ActionResult Sanitization(int threadId)
         {
@@ -484,6 +497,7 @@ namespace Experts.Web.Controllers
             return View(MVC.Thread.Views.ThreadDetailsForSanitization, model);
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Moderator)]
         [DefaultRouting]
         [HttpPost]
@@ -503,6 +517,7 @@ namespace Experts.Web.Controllers
 
             return View(MVC.Thread.Views.ThreadDetailsForSanitization, modelError);
         }
+
 
         [AuthorizeRoles(Role.Moderator)]
         [DefaultRouting]

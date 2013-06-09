@@ -1032,8 +1032,6 @@
         public const string StaticPages_Home_Title = "StaticPages_Home_Title";
         public const string StaticPages_MeetAsknuts_Description = "StaticPages_MeetAsknuts_Description";
         public const string StaticPages_MeetAsknuts_Title = "StaticPages_MeetAsknuts_Title";
-        public const string StaticPages_PageNotFound_Description = "StaticPages_PageNotFound_Description";
-        public const string StaticPages_PageNotFound_Title = "StaticPages_PageNotFound_Title";
         public const string Thread_AdditionalServiceInformation_Title = "Thread_AdditionalServiceInformation_Title";
         public const string Thread_AvailableQuestionList_Title = "Thread_AvailableQuestionList_Title";
         public const string Thread_CatalogQuestionList_Description = "Thread_CatalogQuestionList_Description";
@@ -1071,6 +1069,8 @@
         public const string Administration_EditCategoryAttribute_Title = "Administration_EditCategoryAttribute_Title";
         public const string Administration_CreateChildCategoryAttribute_Title = "Administration_CreateChildCategoryAttribute_Title";
         public const string Administration_DeleteCategoryAttribute_Title = "Administration_DeleteCategoryAttribute_Title";
+        public const string Error_Error404_Description = "Error_Error404_Description";
+        public const string Error_Error404_Title = "Error_Error404_Title";
     }
 
 	public struct PartnerConstants
@@ -1175,7 +1175,6 @@
         public const string Profile_FeedbackList = "Profile_FeedbackList";
         public const string Profile_UploadImage = "Profile_UploadImage";
         public const string Profile_OpinionSingle = "Profile_OpinionSingle";
-        public const string StaticPages_PageNotFound = "StaticPages_PageNotFound";
         public const string Thread_CatalogQuestionList = "Thread_CatalogQuestionList";
         public const string Thread_CreatePost = "Thread_CreatePost";
         public const string Thread_GiveUp = "Thread_GiveUp";
@@ -1242,6 +1241,8 @@
         public const string Administration_EditCategoryAttribute = "Administration_EditCategoryAttribute";
         public const string Administration_CreateChildCategoryAttribute = "Administration_CreateChildCategoryAttribute";
         public const string Administration_DeleteCategoryAttribute = "Administration_DeleteCategoryAttribute";
+        public const string StaticPages_Home = "StaticPages_Home";
+        public const string Error_Error404 = "Error_Error404";
     }
 
 	public struct StaticPagesConstants

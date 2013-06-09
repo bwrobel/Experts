@@ -726,7 +726,7 @@
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Administration\_CategoryAttributeOptionsEditor.cshtml" />
     <Content Include="Views\Administration\_CategoryAttributeOptionsList.cshtml" />
-    <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\expert_verified_64_64.png" />

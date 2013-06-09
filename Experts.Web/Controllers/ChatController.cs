@@ -24,6 +24,7 @@ namespace Experts.Web.Controllers
             public const string ChatOpen = "chat-open";
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Moderator)]
         public virtual ActionResult ChatsOverview([QueryParameter]int? page = null, ChatsOverviewFilter? filter = null)
         {
@@ -39,6 +40,7 @@ namespace Experts.Web.Controllers
 
             return View(new ChatsOverviewModel { Filter = filter.Value, Page = page.Value });
         }
+
 
         [AuthorizeRoles(Role.Moderator)]
         [DefaultRouting]
@@ -76,6 +78,7 @@ namespace Experts.Web.Controllers
             return PartialView(model);
         }
 
+        [AssignMetadata]
         [Authorize]
         public virtual ActionResult Support([QueryParameter] int? page)
         {

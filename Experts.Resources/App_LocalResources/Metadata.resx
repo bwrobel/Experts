@@ -378,12 +378,6 @@
   <data name="StaticPages_MeetAsknuts_Title" xml:space="preserve">
     <value>Poznaj &lt;span&gt;AskNuts!&lt;/span&gt;</value>
   </data>
-  <data name="StaticPages_PageNotFound_Description" xml:space="preserve">
-    <value />
-  </data>
-  <data name="StaticPages_PageNotFound_Title" xml:space="preserve">
-    <value />
-  </data>
   <data name="Thread_AdditionalServiceInformation_Title" xml:space="preserve">
     <value>Dodatkowe usługi</value>
   </data>
@@ -494,5 +488,11 @@
   </data>
   <data name="Administration_DeleteCategoryAttribute_Title" xml:space="preserve">
     <value>Usuń atrybut</value>
+  </data>
+  <data name="Error_Error404_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Error_Error404_Title" xml:space="preserve">
+    <value>Nie znaleziono strony</value>
   </data>
 </root>

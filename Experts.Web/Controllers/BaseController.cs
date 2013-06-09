@@ -11,7 +11,6 @@ using Experts.Web.Filters;
 
 namespace Experts.Web.Controllers
 {
-    [AssignMetadata]
     [HandleError]
     [SessionState(SessionStateBehavior.Required)]
     public partial class BaseController : Controller

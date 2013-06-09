@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Experts.Core.Entities.Events;
+using Experts.Web.Filters;
 using Experts.Web.Helpers;
 using Experts.Web.Models.Forms;
 
@@ -7,7 +9,8 @@ namespace Experts.Web.Controllers
 {
     public partial class ErrorController : BaseController
     {
-        public virtual ActionResult Error500(int eventId)
+        [AssignMetadata]
+        public virtual ActionResult Error500(int eventId = 0)
         {
             var model = new ApplicationErrorForm {EventId = eventId};
             return View(model);
@@ -28,6 +31,13 @@ namespace Experts.Web.Controllers
 
             Flash.Info(Resources.Global.ErrorFormConfirmation);
             return RedirectToAction(MVC.StaticPages.Home());
+        }
+
+        [AssignMetadata]
+        public virtual ActionResult Error404()
+        {
+            ViewBag.RequestedUrl = Request.Url.OriginalString.Split(new[] { ';' }).Last();
+            return View();
         }
     }
 }

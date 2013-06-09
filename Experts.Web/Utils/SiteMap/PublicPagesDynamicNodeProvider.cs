@@ -14,7 +14,7 @@ namespace Experts.Web.Utils.SiteMap
         private static readonly List<Tuple<string, string>> BlackList = new List<Tuple<string, string>>
                                                                             {
                                                                                 new Tuple<string, string>(MVC.StaticPages.Name, MVC.StaticPages.ActionNames.Home),
-                                                                                new Tuple<string, string>(MVC.StaticPages.Name, MVC.StaticPages.ActionNames.PageNotFound),
+                                                                                new Tuple<string, string>(MVC.StaticPages.Name, MVC.Error.ActionNames.Error404),
                                                                                 new Tuple<string, string>(MVC.Thread.Name, MVC.Thread.ActionNames.Options),
                                                                                 new Tuple<string, string>(MVC.Thread.Name, MVC.Thread.ActionNames.CategoryAttributes),
                                                                                 new Tuple<string, string>(MVC.Catalog.Name, MVC.Catalog.ActionNames.SiteMapXml),

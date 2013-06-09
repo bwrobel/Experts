@@ -44,12 +44,6 @@ namespace Experts.Web.Controllers
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult Error500()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error500);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ErrorController Actions { get { return MVC.Error; } }
@@ -67,12 +61,14 @@ namespace Experts.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Error500 = "Error500";
+            public readonly string Error404 = "Error404";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Error500 = "Error500";
+            public const string Error404 = "Error404";
         }
 
 
@@ -115,6 +111,12 @@ namespace Experts.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error500);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "form", form);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Error404()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error404);
             return callInfo;
         }
 

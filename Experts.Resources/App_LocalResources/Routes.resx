@@ -183,9 +183,6 @@
   <data name="Profile_OpinionSingle" xml:space="preserve">
     <value>opinia</value>
   </data>
-  <data name="StaticPages_PageNotFound" xml:space="preserve">
-    <value>blad-404</value>
-  </data>
   <data name="Thread_CatalogQuestionList" xml:space="preserve">
     <value>katalog-pytan</value>
   </data>
@@ -386,5 +383,8 @@
   </data>
   <data name="StaticPages_Home" xml:space="preserve">
     <value />
+  </data>
+  <data name="Error_Error404" xml:space="preserve">
+    <value>not-found</value>
   </data>
 </root>

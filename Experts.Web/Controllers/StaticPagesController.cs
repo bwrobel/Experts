@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Experts.Web.Filters;
 using Experts.Web.Helpers;
 using Experts.Web.Models.StaticPages;
@@ -7,11 +8,13 @@ namespace Experts.Web.Controllers
 {
     public partial class StaticPagesController : BaseController
     {
+        [AssignMetadata]
         public virtual ActionResult Home()
         {
             return View(new HomeModel(Repository.Category.All()));
         }
 
+        [AssignMetadata]
         public virtual ActionResult AdCampaignHome(string code)
         {
             var landingPage = Repository.AdCampaignLandingPage.Get(code);
@@ -28,6 +31,7 @@ namespace Experts.Web.Controllers
             return PartialView(MVC.Shared.Views._TopMenu);
         }
 
+        [AssignMetadata]
         public virtual ActionResult MeetAsknuts(string anhor = null)
         {
             var anhorName = string.Empty;
@@ -47,6 +51,7 @@ namespace Experts.Web.Controllers
             return View((object)anhorName);
         }
 
+
         [DefaultRouting]
         public virtual ActionResult PolicyPrivate()
         {
@@ -57,11 +62,6 @@ namespace Experts.Web.Controllers
         public virtual ActionResult PolicyWeb()
         {
             return PartialView();
-        }
-
-        public virtual ActionResult PageNotFound()
-        {
-            return HttpNotFound();
         }
 
         [DefaultRouting]

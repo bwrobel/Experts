@@ -1,15 +1,18 @@
 ﻿using System.Web.Mvc;
 using Experts.Core.Entities;
+using Experts.Web.Filters;
 
 namespace Experts.Web.Controllers
 {
     public partial class LaunchController : BaseController
     {
+        [AssignMetadata]
         public virtual ActionResult Welcome()
         {
             return View();
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult UserSubscribe(string email)
         {
@@ -19,6 +22,7 @@ namespace Experts.Web.Controllers
             return View();
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult ExpertSubscribe(string contact)
         {

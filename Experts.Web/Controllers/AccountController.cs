@@ -20,6 +20,7 @@ namespace Experts.Web.Controllers
 {
     public partial class AccountController : BaseController
     {
+        [AssignMetadata]
         public virtual ActionResult SignUp()
         {
             if (AuthenticationHelper.IsNoSignUpUser)
@@ -34,6 +35,7 @@ namespace Experts.Web.Controllers
             return View();
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult SignUp(ProfileForm model)
         {
@@ -89,11 +91,13 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult SignIn()
         {
             return View();
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult SignIn(SignInForm model, string returnUrl)
         {
@@ -230,6 +234,7 @@ namespace Experts.Web.Controllers
             return Content(categoryAttributeNames);
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Expert)]
         public virtual ActionResult ExpertCategoryAttributes(int? categoryId = null)
         {
@@ -332,6 +337,7 @@ namespace Experts.Web.Controllers
             return PartialView(MVC.Account.Views._ExpertCategoryAttributes, model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult ExpertSignUp(string recommendationKey = null)
         {
             if (AuthenticationHelper.IsAuthenticated)
@@ -383,6 +389,7 @@ namespace Experts.Web.Controllers
             return View(new ExpertSignUpModel(Repository.Category.All()));
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult ExpertSignUp(ExpertSignUpModel model)
         {
@@ -454,6 +461,7 @@ namespace Experts.Web.Controllers
             return View(new ExpertSignUpModel(Repository.Category.All()){ UserProfileForm = model.UserProfileForm,ExpertProfileForm = model.ExpertProfileForm});
         }
 
+        [AssignMetadata]
         [AuthorizeSignedUpUser]
         public virtual ActionResult BecomeExpert()
         {
@@ -529,11 +537,13 @@ namespace Experts.Web.Controllers
             return RedirectToAction(MVC.Account.SignIn());
         }
 
+        [AssignMetadata]
         public virtual ActionResult PasswordForgotten()
         {
             return View();
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult PasswordForgotten(EmailNotUniqueForm model)
         {
@@ -560,11 +570,13 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult ResendActivationEmail()
         {
             return View();
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult ResendActivationEmail(EmailNotUniqueForm model)
         {
@@ -588,6 +600,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult ResetPassword(string resetKey)
         {
             try
@@ -602,6 +615,7 @@ namespace Experts.Web.Controllers
             }
         }
 
+        [AssignMetadata]
         [HttpPost]
         public virtual ActionResult ResetPassword(string resetKey, PasswordForm model)
         {

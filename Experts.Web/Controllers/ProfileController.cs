@@ -60,6 +60,7 @@ namespace Experts.Web.Controllers
             return RedirectToAction(MVC.Profile.Edit());
         }
 
+        [AssignMetadata]
         [AuthorizeSignedUpUser]
         [HttpPost]
         public virtual ActionResult EditPassword([Bind(Prefix = "PasswordForm")] PasswordForm model)
@@ -295,6 +296,7 @@ namespace Experts.Web.Controllers
             return RedirectToAction(MVC.Profile.Edit());
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Expert)]
         public virtual ActionResult FeedbackList(int userId)
         {
@@ -333,6 +335,7 @@ namespace Experts.Web.Controllers
             return RedirectToAction(MVC.Profile.FeedbackList(AuthenticationHelper.CurrentUser.Expert.Id));
         }
 
+        [AssignMetadata]
         public virtual ActionResult ExpertOverview(int expertId, int? categoryId = null)
         {
             var expert = Repository.Expert.Get(expertId);
@@ -351,6 +354,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         public virtual ActionResult ExpertStatistics(int expertId)
         {
             var model = Repository.Expert.GetExpertViewModel(expertId);
@@ -360,6 +364,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         [Authorize]
         public virtual ActionResult PartnerStatistics()
         {
@@ -421,6 +426,7 @@ namespace Experts.Web.Controllers
             return PartialView(model);
         }
 
+        [AssignMetadata]
         [AuthorizeSignedUpUser]
         public virtual ActionResult Balance([QueryParameter]GridSortOptions sortOptions = null, [QueryParameter]int? page = null)
         {
@@ -492,6 +498,7 @@ namespace Experts.Web.Controllers
             return null;
         }
 
+        [AssignMetadata]
         [Authorize]
         public virtual ActionResult PartnerProgram()
         {
@@ -636,6 +643,7 @@ namespace Experts.Web.Controllers
             }
         }
 
+        [AssignMetadata]
         [Authorize]
         public virtual ActionResult MyQuestions(int? page = null)
         {
@@ -656,6 +664,7 @@ namespace Experts.Web.Controllers
             return View(model);
         }
 
+        [AssignMetadata]
         [AuthorizeRoles(Role.Expert)]
         public virtual ActionResult MyAnswers(int? page = null)
         {
