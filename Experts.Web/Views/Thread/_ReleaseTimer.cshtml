@@ -1,0 +1,17 @@
+﻿@model DateTime
+@{
+    var timeInMiliseconds = (long)Model.ToUniversalTime().Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds;
+}
+
+@Resources.Thread.ReleaseTimerTitle:
+<strong id="defaultCountdown_@(timeInMiliseconds)"></strong>
+
+<script type="text/javascript">
+    $('#defaultCountdown_@(timeInMiliseconds)').countdown({ until: new Date( @timeInMiliseconds ), format: 'MS', compact: true, onTick: watch });
+
+    function watch(periods) {
+        if (periods[5] < 1) {
+            $('#defaultCountdown_@(timeInMiliseconds)').text('@Resources.Thread.LessThanOneMinute');
+        }
+    }
+</script>

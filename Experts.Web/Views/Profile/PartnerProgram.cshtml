@@ -1,0 +1,48 @@
+﻿@using Experts.Web.Helpers
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial(MVC.Profile.Views._ProfileNavtabs, Resources.PartnerConstants.PartnerProgram)
+
+@if (AuthenticationHelper.IsExpert)
+{
+    <div class="row">
+        <div class="span16">
+            <h3>@Resources.Partner.ExpertWidgetHeader</h3>
+            <p>@Resources.Partner.ExpertWidgetDescription</p>
+            <pre class="well">@Html.Raw(Html.Encode("<iframe id='iframe-source' src='" + Url.ActionAbsolute(MVC.Profile.ExpertWidget(AuthenticationHelper.CurrentUser.Expert.Id)) + "' frameborder='0' style='height: 360px;'></iframe>"))</pre>
+            <div id="iframe-target"></div>
+        </div>
+        <aside class="span8 pull-right">
+            <iframe id="iframe-source" src="@Url.ActionAbsolute(MVC.Profile.ExpertWidget(AuthenticationHelper.CurrentUser.Expert.Id))" frameborder="0" style="height: 360px;"></iframe>
+        </aside>
+    </div>
+}
+
+@if (AuthenticationHelper.IsPartner)
+{
+    <div class="row">
+        <div class="span16">
+            <h3>@Resources.Partner.PartnerWidgetHeader</h3>
+            <p>@Resources.Partner.PartnerWidgetDescription</p>
+            <pre class="well">@Html.Encode(Html.Partial(MVC.Profile.Views.PartnerWidget))</pre>
+        </div>
+        <aside class="span8 pull-right">
+            <iframe src="@Url.Action(MVC.Profile.PartnerWidgetPreview())" frameborder="0" style="height: 300px;"></iframe>
+        </aside>
+    </div>
+}
+else
+{
+    if (AuthenticationHelper.IsPartnerRequestPending)
+    {
+        <h3>@Resources.Partner.PartnerRequestPendingHeader</h3>
+        <p>@Resources.Partner.PartnerRequestPendingDescription</p>    
+    }
+    else
+    {
+        <h3>@Resources.Partner.SendPartnerRequestHeader</h3>
+        <p>@Html.Raw(Resources.Partner.SendPartnerRequestDescription)
+            @Html.ActionLink(Resources.Partner.SendPartnerRequestLink, MVC.Account.BecomePartner(), new { @class = "underline" })
+        </p>
+    }
+}

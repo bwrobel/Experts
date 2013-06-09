@@ -1,0 +1,23 @@
+﻿@model Experts.Web.Models.Forms.KeywordProcessFormModel
+
+<div class="row">
+    <div class="span15">
+        <h3>@ViewBag.PageTitle</h3>
+        <section id="attributes-form">
+            @using (Html.BeginForm(MVC.Catalog.StoreKeyword()))
+            {
+                <fieldset class="well">
+                    @Html.HiddenFor(m => m.KeywordProcessForm.CategoryId)
+                    @Html.HiddenFor(m => m.KeywordProcessForm.SeoKeywordId)
+                    @Html.HiddenFor(m => m.KeywordProcessForm.SeoKeywordType)
+                    @Html.HiddenFor(m => m.KeywordProcessForm.SeoKeywordPhrase)
+
+                    @Html.Partial(MVC.Catalog.Views._KeywordCategoryAttributes, Model)
+
+                    <br/>
+                    <input type="submit" class="btn btn-primary" value="@Resources.Catalog.Save" />
+                </fieldset>
+            }
+        </section> 
+    </div>
+</div>

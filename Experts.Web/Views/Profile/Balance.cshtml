@@ -1,0 +1,52 @@
+﻿@using Experts.Web.Helpers
+@using MvcContrib.UI.Grid
+@model Experts.Web.Models.Balance.BalanceListModel
+
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial(MVC.Profile.Views._ProfileNavtabs, Resources.ThreadConstants.YourPayments)
+
+<div>
+    <div class="row">
+            <div class="span10">
+                <table class="table-custom table">
+                    <tbody>
+                        @if (Model.TotalBalance != Model.AvailableBalance)
+                        {
+                            <tr>
+                                <td>@Resources.Payment.CurrentSaldo</td>
+                                <td><b>@Model.TotalBalance @Resources.Global.CurrencyPLN</b></td>
+                                <td/>
+                            </tr>
+                        }
+                        <tr>
+                            <td>@Resources.Payment.AvailableMoney</td>
+                            <td><b>@Model.AvailableBalance @Resources.Global.CurrencyPLN</b>
+                                @if ((AuthenticationHelper.IsExpert || AuthenticationHelper.IsPartner) && Model.AvailableBalance > decimal.Zero)
+                                {
+                                    <td><a id="payoff-button" data-toggle="modal" href="#payoffModal">@Resources.Account.PayoffOrder</a>
+                                        @Html.Action(MVC.Profile.PayoffForm())</td>
+                                }
+                            </td>
+                        </tr>
+                        @if (Model.TotalBalance != Model.AvailableBalance)
+                        {
+                        <tr>
+                            <td>@Resources.Account.PendingQuestionsValue</td>
+                            <td><b>@(Model.TotalBalance - Model.AvailableBalance) @Resources.Global.CurrencyPLN</b></td>
+                            <td/>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+
+<div class="table table-striped">
+    @Html.BalanceGrid(Model.GridModel)
+</div>
+
+@Html.Partial(MVC.Shared.Views._Pager, Model.GridModel.Pagination)
+
+

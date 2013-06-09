@@ -1,0 +1,19 @@
+﻿<h2>@Resources.StaticPages.PageDoesNotExist</h2>
+
+<p>
+    @Resources.StaticPages.PageNotFound:
+    <div class="error-404-link">
+        <i class="icon-warning-sign"></i> @ViewBag.RequestedUrl
+    </div>
+</p>
+
+<div class="error-404-options">
+    @Resources.StaticPages.PageNotFoundInstructions
+    <ul>
+        <li><i class="icon-home"></i> @Html.ActionLink(Resources.StaticPages.PageNotFound_GoBackToHome, MVC.StaticPages.Home())</li>
+        <li><i class="icon-comment-alt"></i> @Html.ActionLink(Resources.StaticPages.PageNotFound_AskExpertQuestion, MVC.StaticPages.Home())</li>
+        <li><i class="icon-question-sign"></i> @Html.ActionLink(Resources.StaticPages.PageNotFound_AskNutsFAQ, MVC.StaticPages.MeetAsknuts())</li>
+    </ul>
+</div>
+
+@(new string(' ', 512))

@@ -1,0 +1,22 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Models.Payments.Providers
+@model Experts.Web.Models.Payments.PaymentRedirectModel
+          
+
+<input type="hidden" name="id" value="@(((KIPPaymentProvider)Model.Provider).SellerId)" />
+<input type="hidden" name="kwota" value="@Model.Amount" />
+<input type="hidden" name="opis" value="@Resources.Payment.Title" />
+<input type="hidden" name="crc" value="@Model.PaymentId" />
+<input type="hidden" name="kanal" value="@Model.PaymentForm.SelectedChannel" />
+<input type="hidden" name="zablokuj" value="0"/>
+<input type="hidden" name="akceptuje_regulamin" value="1"/>
+
+
+<input type="hidden" name="pow_url" value="@Url.ActionAbsolute(MVC.Payment.PaymentConfirmation(Model.PaymentId, PaymentStatus.Success))" />
+<input type="hidden" name="pow_url_blad" value="@Url.ActionAbsolute(MVC.Payment.PaymentConfirmation(Model.PaymentId, PaymentStatus.Failed))" />
+<input type="hidden" name="wyn_url" value="@Url.ActionAbsolute(MVC.Payment.ProcessPayment())" />
+
+<input type="hidden" name="email" value="@Model.PaymentForm.PersonalData.Email" />
+<input type="hidden" name="nazwisko" value="@Model.PaymentForm.PersonalData.LastName" />
+<input type="hidden" name="imie" value="@Model.PaymentForm.PersonalData.FirstName" />
+<input type="hidden" name="kraj" value="POL" />

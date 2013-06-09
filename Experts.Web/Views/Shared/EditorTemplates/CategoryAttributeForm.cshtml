@@ -1,0 +1,36 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Forms.CategoryAttributeForm
+
+@Html.HiddenFor(m => m.AttributeId)
+@Html.HiddenFor(m => m.ParentAttributeId)
+@Html.HiddenFor(m => m.CategoryId)
+
+@Html.EditorFor(m => m.Name)
+@Html.EditorFor(m => m.Importance)
+@Html.EditorForEnum(m => m.Type, Resources.Administration.ResourceManager)
+
+@if (Model.ParentAttributeId.HasValue)
+{
+    var listIndex = 0;
+    <div class="form-horizontal control-group">
+        <label class="control-label new-line">Opcje nadrzędne</label>
+        @foreach (var option in Model.AvailableParentOptions.OrderBy(o => o.Value))
+        {
+            var prefix = "SelectedParentOptions[" + listIndex + "].";
+        
+            <div class="unbreakable">
+                @Html.Hidden(prefix + "Id", option.Id)
+                @Html.CheckBox(prefix + "IsSelected", Model.SelectedParentOptions.Where(o => o.IsSelected).Any(o => o.Id == option.Id))
+                <label>@option.Value</label>
+            </div>
+
+            listIndex++;
+        }
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        administration.initCategoryAttributeEditor();
+    });
+</script>

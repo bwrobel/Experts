@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Experts.Core.ViewModels.PaymentStatistic>
+
+<link rel="stylesheet" href="@Url.Content(Links.Scripts.jqPlot.jquery_jqplot_css)" type="text/css" />
+
+<script src="@Url.Content(Links.Scripts.jqPlot.jquery_jqplot_min_js)" type="text/javascript"></script>
+<script src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_barRenderer_min_js)" type="text/javascript"></script>
+<script src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_categoryAxisRenderer_min_js)" type="text/javascript" ></script>
+<script src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_pointLabels_min_js)" type="text/javascript"></script>
+
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_highlighter_min_js)"></script>
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_cursor_min_js)"></script>
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_dateAxisRenderer_min_js)"></script>
+
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_pieRenderer_min_js)"></script>
+
+<h2>@Resources.Account.PartnerStatistics</h2>
+
+@Html.Partial(MVC.Profile.Views._Income, Model)

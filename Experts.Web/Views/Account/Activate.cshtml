@@ -1,0 +1,8 @@
+﻿@model string
+
+<h2>@ViewBag.PageTitle</h2>
+
+<section>
+    <p>@Model</p>
+    <p>@Html.ActionLink(Resources.Account.GoToSignIn, MVC.Account.SignIn())</p>
+</section>

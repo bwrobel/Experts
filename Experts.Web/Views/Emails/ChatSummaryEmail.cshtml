@@ -1,0 +1,11 @@
+﻿@model Experts.Core.Entities.ChatSummaryEmail
+
+@Resources.Email.Head
+
+@Resources.Email.ChatSummaryContent
+           
+@foreach(var message in Model.Chat.Messages)
+{
+    @(message.Author != null && message.Author.IsModerator ? Resources.Email.ChatSummaryEmailModerator : Resources.Email.ChatSummaryEmailYou) @(message.Text)
+    <br/>
+}

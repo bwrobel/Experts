@@ -1,0 +1,11 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Models.Administration
+@model Experts.Web.Models.Shared.SortableGridModel<Experts.Core.Entities.User>
+
+<h2>@Resources.Administration.UserList</h2>
+
+<div class="table table-striped">
+    @Html.UserGrid(Model)
+</div>
+
+@Html.Partial(MVC.Shared.Views._Pager, Model.Pagination)

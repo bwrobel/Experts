@@ -1,0 +1,68 @@
+﻿@using Experts.Web.Helpers
+@model IEnumerable<Experts.Core.ViewModels.PaymentStatistic>
+
+<div class="span24">
+        <div id="chartdiv">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var income = @Json.Encode(MonthNamesHelper.ResortDecimal(Model.Select(ps=> ps.Value)));
+                    var ticks = @Html.Raw(Json.Encode(MonthNamesHelper.GetPolishMonthNamesArray()));
+
+                    var plot1 = $.jqplot('chartdiv', [income],
+                    {
+                        title: '@Resources.Account.ChartIncome',
+
+                        seriesDefaults:
+                        {
+                            shadow: false,
+                            renderer: $.jqplot.BarRenderer,
+                            pointLabels: { show:true, hideZeros:true },
+                            rendererOptions:
+                            {
+                                fillToZero: true,
+                                barMargin: 15
+                            },
+                            markerOptions:
+                            {
+                                shadow: false
+                            }
+                        },
+                        
+                        series:
+                        [
+                            { label: '@Resources.Account.ChartIncome', color: '#c57192'},
+                        ],
+
+                        axes:
+                        {
+                            xaxis:
+                            {
+                                renderer: $.jqplot.CategoryAxisRenderer,
+                                ticks: ticks
+                            },
+                            yaxis:
+                            {
+                                padMin:0,
+                                tickOptions:{
+                                    formatString:'%.0f zł'
+                                }
+                            }
+                        },
+
+                        legend:
+                        {
+                            show: false
+                        },
+
+                        grid:
+                        {
+                            drawGridLines: true,
+                            shadow: false,
+                            borderWidth: 0.0,
+                            borderColor: 'White'
+                        }
+                    });
+                })
+            </script>
+        </div>
+    </div>

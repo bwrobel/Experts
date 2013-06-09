@@ -1,0 +1,8 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.MonthlyAskEncouragementEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+         
+@Resources.Email.MonthlyAskEncouragementContent
+@NoContextUrl.ActionAbsolute(MVC.StaticPages.Home())

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="KeyPhraseBanned" xml:space="preserve">
+    <value>Fraza '{0}' została zablokowana</value>
+  </data>
+  <data name="Keyword_Category" xml:space="preserve">
+    <value>Kategoria</value>
+  </data>
+  <data name="Keyword_HitCount" xml:space="preserve">
+    <value>Popularność</value>
+  </data>
+  <data name="Keyword_Phrase" xml:space="preserve">
+    <value>Fraza</value>
+  </data>
+  <data name="Keyword_Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="SEOKeywordTypeExpert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="SEOKeywordPhrase" xml:space="preserve">
+    <value>Fraza kluczowa</value>
+  </data>
+  <data name="SEOKeywordTypeQuestion" xml:space="preserve">
+    <value>Pytanie</value>
+  </data>
+  <data name="SimiliarAnswersList" xml:space="preserve">
+    <value>Odpowiedzi na podobne pytania</value>
+  </data>
+  <data name="SimiliarQuestionsList" xml:space="preserve">
+    <value>Zadane podobne pytania</value>
+  </data>
+  <data name="UnravelQuestion" xml:space="preserve">
+    <value>Poznaj odpowiedź</value>
+  </data>
+  <data name="LandingPageCreated" xml:space="preserve">
+    <value>Landing page dla frazy '{0}' został utworzony</value>
+  </data>
+  <data name="NoNewKeywords" xml:space="preserve">
+    <value>Brak nowych słów kluczowych do moderacji</value>
+  </data>
+  <data name="SeoKeywordCategory" xml:space="preserve">
+    <value>Kategoria słowa kluczowego</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Dalej</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="SEOKeywordType" xml:space="preserve">
+    <value>Typ słowa kluczowego</value>
+  </data>
+  <data name="KeyPhraseSetAsUndefined" xml:space="preserve">
+    <value>Fraza '{0}' została pozostawiona do późniejszego doprecyzowania</value>
+  </data>
+  <data name="KeywordsLeftNumber" xml:space="preserve">
+    <value>Pozostało {0} słów kluczowych</value>
+  </data>
+  <data name="KeyPhraseMustBeUnique" xml:space="preserve">
+    <value>Słowo kluczowe istnieje już w bazie</value>
+  </data>
+  <data name="KeyPhraseRequired" xml:space="preserve">
+    <value>Słowo kluczowe jest wymagane</value>
+  </data>
+  <data name="SEOKeywordTypePhrase" xml:space="preserve">
+    <value>Fraza kluczowa</value>
+  </data>
+  <data name="LackOfSimiliarAnswers" xml:space="preserve">
+    <value>Brak podobnych odpowiedzi, ale zawsze możesz dodać swoje pytanie!</value>
+  </data>
+  <data name="AddNewKeyword" xml:space="preserve">
+    <value>Dodaj nowe słowo kluczowe</value>
+  </data>
+  <data name="TypeNewKeyword" xml:space="preserve">
+    <value>Wpisz nowe słowo kluczowe</value>
+  </data>
+  <data name="YourAnswerFromCategory" xml:space="preserve">
+    <value>Twoja wyszukiwana odpowiedź z kategorii</value>
+  </data>
+  <data name="YourExpertFromCategory" xml:space="preserve">
+    <value>Twoja wyszukiwana nazwa eksperta z kategorii</value>
+  </data>
+  <data name="YourKeywordFromCategory" xml:space="preserve">
+    <value>Twój wyszukiwany zwrot z kategorii</value>
+  </data>
+  <data name="LackOfSimiliarExperts" xml:space="preserve">
+    <value>Brak podobnych ekspertów</value>
+  </data>
+  <data name="LackOfSimiliarPhrases" xml:space="preserve">
+    <value>Brak podobnych zwrotów, ale zawsze możesz dodać swoje pytanie!</value>
+  </data>
+  <data name="LackOfSimiliarQuestions" xml:space="preserve">
+    <value>Brak podobnych tematów, ale zawsze możesz dodać swoje pytanie!</value>
+  </data>
+  <data name="KeywordFromCategory" xml:space="preserve">
+    <value>Wyszukiwany zwrot z kategorii</value>
+  </data>
+  <data name="KeywordEncouregment" xml:space="preserve">
+    <value>Wpisz swoje pytanie w pole poniżej. Gwarantujemy Ci anonimowość i 100% satysfakcji!</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Dowiedz się więcej...</value>
+  </data>
+  <data name="PhraseDescription" xml:space="preserve">
+    <value>Wyszukana przez Ciebie fraza związana jest z jedną z dziedzin w której specjalizują się nasi eksperci. Z chęcią odpowiedzą oni na zadane przez Ciebie pytanie.</value>
+  </data>
+  <data name="PopularQuestionDescription" xml:space="preserve">
+    <value>Wyszukany przez Ciebie temat związany jest z jedną z dziedzin w której specjalizują się nasi eksperci. Z chęcią odpowiedzą oni na zadane przez Ciebie pytanie.</value>
+  </data>
+</root>

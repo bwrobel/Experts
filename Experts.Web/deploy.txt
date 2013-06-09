@@ -1,0 +1,15 @@
+﻿0. Wyłączyć Watchdoga (jak deploy na produkcję a nie deva)
+1. Zmiana w Web.configu <compilation debug="true"...> na <compilation debug="false"...>
+2. Odpalenie aplikacji bez Debuga (w celu wygenerowanie zminimalizowanych plików css i js)
+3. P-klik na projekt Experts.Web -> Publish... (File System)
+4. Skasowanie zawartości folderu C:\inetpub\AskNuts na serwerze, z pominięciem folderów: ProfileImages i Attachments (nie kasować całego folderu, bo ma ustawione odpowiednie uprawnienia)
+5. Wgranie zawartości folderu z publishniętym projektem do C:\inetpub\AskNuts
+6. Zmiany w Web.configu na serwerze:
+ - podmiana connectionStringa tak, aby wskazywał na bazę produkcyjną (IP: 192.168.75.13)
+ - podmiana wartości BaseUrl, aby wskazywała adres strony zamiast localhosta
+ - zmiana działania SMTP z folderu na rzeczywiste konto
+7. [opcjonalnie] Migracja bazy danych
+ - podmiana lokalnego connectionStringa tak, aby wskazywał na bazę produkcyjną (IP: 178.16.97.126)
+ - wykonanie migracji w zwyczajny sposób
+ - przywrócenie poprzedniego connectionStringa
+0. Włączyć Watchdoga (jak się wcześniej wyłączyło)

@@ -1,0 +1,88 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Post
+
+@if (Model.Type != PostType.Hidden)
+{
+    <div class="sanitization-post-frame well @if (!Model.IsPubliclyVisible)
+                     {
+                         @Html.Raw("hidden-post")
+                     }">
+        <div class="span5">
+            @Html.ProfileAvatar(Model.Author)
+            <div class="sanitization-author-mail"><b>@Model.Author.Email</b></div>
+            <div>@Model.CreationDate.ToTimeSinceFormat()</div>
+        </div>
+        <div class="post post-sanitization">
+            <div class="span11 help-block">
+                <ul class="nav nav-tabs">
+                    <li class="active public">
+                        <a href="javascript:void(0)" onclick="javascript:thread.sanitizationShowPublicOriginal(this, false)">@Resources.Thread.PostSanitizationPublic</a>
+                    </li>
+                    <li class="original">
+                        <a href="javascript:void(0)" onclick="javascript:thread.sanitizationShowPublicOriginal(this, true)">@Resources.Thread.PostSanitizationOriginal</a>
+                    </li>
+                </ul>
+            </div>
+            @if (Model.Type != PostType.Attachment)
+            {
+                <div class="span11 public-content">
+                    <div class="post-text row-fluid enters" ondblclick="javascript:thread.postEditShowEditor(this)">
+                        @(Model.PublicContent ?? Model.Content)
+                    </div>
+                    <div class="post-editor row-fluid" style="display: none;">
+                        <textarea class="span11 enters">@(Model.PublicContent ?? Model.Content)</textarea>
+                        <a class="btn btn-mini btn-info" onclick="javascript:thread.postEditSave(this, thread.sanitizationUpdatePost, @Model.Id)">@Resources.Thread.PostEditSave</a>
+                        <a class="btn btn-mini btn-info" onclick="javascript:thread.postEditCancel(this)">@Resources.Thread.PostEditCancel</a>
+                    </div>
+                </div>
+                <div class="span11 original-content enters" style="display: none;">
+                    @Model.Content
+                </div>
+            }
+            else
+            {
+                <div class="span-11 enters">
+                    @Model.Content
+                    @foreach (var attachment in Model.Attachments)
+                    {
+                        if (attachment.Type == AttachmentType.Image)
+                        {
+                            <ul class="thumbnails">
+                                <li class="span3">
+                                    <a href="@Url.Action(MVC.Thread.GetAttachment(attachment.Id))" class="thumbnail" rel="popover" title="@Resources.Attachments.EnlargeAttachment">
+                                        <img src="@Url.Action(MVC.Thread.GetAttachment(attachment.Id))" alt="@attachment.AttachmentName">
+                                    </a>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <div><a href="@Url.Action(MVC.Thread.GetAttachment(attachment.Id))" rel="popover" title="@Resources.Attachments.DownloadAttachment">@attachment.AttachmentName</a></div>
+                        }
+                    }
+                </div>
+            }
+            <div class="pull-right public-content" style="height: 40px;">
+                @if (Model.Type != PostType.Attachment)
+                {
+                    <a href="javascript:void(0);" class="edit-button" onclick="javascript:thread.postEditShowEditor(this)">@Resources.Thread.PostEdit</a>
+                }
+                @if (!Model.IsFirstInThread())
+                {
+                    <br />
+                    <a href="javascript:void(0);" class="edit-button public-content toggole-visibility" onclick="  javascript:thread.sanitizationToggleVisibility(this, @Model.Id)">
+                        @if (Model.IsPubliclyVisible)
+                        {
+                            @Resources.Thread.PostHide
+                        }
+                        else
+                        {
+                            @Resources.Thread.PostShow
+                        }
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+}

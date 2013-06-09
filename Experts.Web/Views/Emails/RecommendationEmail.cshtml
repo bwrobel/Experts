@@ -1,0 +1,14 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.RecommendationEmail
+
+@Resources.Email.Head
+
+@Model.RelatedRecommendation.RecommendedExpertComment
+<br/>
+
+@string.Format(Resources.Email.RecommendationContent,
+    Model.RelatedRecommendation.RecommendedCategory.Name,
+    NoContextUrl.ActionAbsolute(MVC.Profile.CheckExpertRegistration(Model.RelatedRecommendation.RecommendationKey)),
+    Model.RelatedRecommendation.RecommenderName,
+        Model.RelatedRecommendation.RecommenderSurname))

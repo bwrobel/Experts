@@ -1,0 +1,34 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.ThreadDetailsSeo
+          
+<h2 class="with-hint">@Model.SeoDetails.Phrase</h2>
+<p class="hint">@Resources.Thread.QuestionFromCategory <span id="category-description" data-original-title="@Model.SeoDetails.Category.Name" data-content="@Model.SeoDetails.Category.Description">@Html.CategoryIconTiny(Model.SeoDetails.Category)</span> @Model.SeoDetails.Category.Name</p>
+
+<hr/>
+
+<div class="span16 zero-margin">
+    <div>
+        @Resources.Catalog.PopularQuestionDescription @Html.ActionLink(Resources.Catalog.LearnMore, MVC.StaticPages.MeetAsknuts(), new { @class = "underline" }) <br /><br />
+        @Resources.Catalog.KeywordEncouregment 
+        <hr class="top-hr"/>
+    </div>
+    @Html.Partial(MVC.Thread.Views._FormTiny, Model)
+</div>
+
+<div class="well with-inners expert-box">
+    @Html.Action(MVC.Thread.MultiExpertBox(false, Model.SeoDetails.Category.Id))
+</div>
+
+<hr/>
+
+@if (Model.Threads.Count() > 0)
+{
+    <h3>@Resources.Thread.SimiliarQuestions</h3>
+    <ul class="question-list">
+        @Html.Partial(MVC.Thread.Views._QuestionsListItems, Model.Threads)
+    </ul>
+}
+
+<script type="text/javascript">
+    $("#category-description").popover();
+</script>

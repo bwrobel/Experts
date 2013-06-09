@@ -1,0 +1,104 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.ThreadFormModel
+
+<script type="text/javascript">
+    $(function () {
+        thread.initCategoryExpertsOnlineInfo();
+        thread.initCategoryChangeEvent();
+        thread.initCategorySelect();
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        thread.initFormValidation();
+    });
+</script>
+
+<div id="question_form">
+    @using (Html.BeginForm(MVC.Thread.CategoryAttributes()))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+           @* <div>
+                @Html.DropDownListFor(model => model.ThreadForm.CategoryId, Model.AvailableCategories)
+                @Html.ValidationMessageFor(model => model.ThreadForm.CategoryId)
+            </div>*@
+            @Html.HiddenFor(model => model.ThreadForm.CategoryId)
+
+            <div class="categories">
+                @{ var isFirst = true; }
+                @foreach(var category in Model.MainCategories)
+                {
+                    <a class="btn btn-inverse @(isFirst ? "main-category" : string.Empty)" data-categoryId="@category.Id" onclick="_gaq.push(['_trackPageview', '/uzytkownik-kliknal-kategorie/@category.Id']);">
+                        @Html.CategoryIconBig(category)
+                        <span>@category.Name</span>
+                    </a>
+
+                    isFirst = false;
+                }
+                <a id="more-categories" class="btn btn-inverse" onclick="_gaq.push(['_trackPageview', '/uzytkownik-kliknal-wiecej-kategorii']);"><img src="@Links.Content.images.categories.more_png" alt="@Resources.Thread.QuestionCategories" /><span>@Resources.Thread.MoreCategories</span></a>
+            </div>
+            
+            <div class="categories more popup">
+                @foreach(var category in Model.MoreCategories)
+                {
+                    <a class="btn btn-inverse" data-categoryId="@category.Id">
+                        @Html.CategoryIconBig(category)
+                        <span>@category.Name</span>
+                    </a>
+                }
+            </div>
+
+            <div class="content">
+                <div class="errors">
+                    <div class="error-message no-category">@Resources.Thread.TinyFormCategoryRequiredError @Resources.Thread.TinyFormChooseCategory</div>
+                    <div class="error-message no-text">@Resources.Thread.TinyFormContentRequiredError</div>
+                    <div class="error-message wrong-attachment">@Resources.Attachments.AttachmentSizeError</div>
+                </div>
+
+                @Html.TextAreaFor(model => model.ThreadForm.Content, new { placeholder = Resources.Thread.EnterYourQuestion, autofocus = "autofocus" })
+
+                <div id="attachment-tiny-list" class="main-form-attachments"></div>
+
+                <div class="main-form-attachment-clip">
+                    <i class="icon-paper-clip"></i> @Resources.Thread.TinyFormAttachFile
+                    <input id="fileupload" type="file" name="files[]" multiple>
+                </div>
+
+            </div>
+        </fieldset>
+        
+        <div>
+            <strong id="category-experts-online-info"></strong>
+            <div class="button-border">
+                <a class="btn btn-inverse btn-large">@Html.Raw(Resources.Thread.GetAnswerBold)</a>
+                <img src="@Links.Content.images.warranty_png" alt="Gwarancja zadowolenia"/>
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.ThreadForm.DirectQuestionExpertId)
+        @Html.HiddenFor(model => model.ThreadForm.SeoKeywordId)
+        @Html.HiddenFor(model => model.ThreadForm.TemporaryAttachmentFolder)
+
+    }
+</div>
+
+<script type="text/javascript">
+    $('#fileupload').fileupload({
+        url: '/Thread/PrecedingUpload',
+        sequentialUploads: true,
+        formData: { temporaryAttachmentFolder: '@Model.ThreadForm.TemporaryAttachmentFolder' },
+        fail: function () {
+            $(".wrong-attachment").show();
+            $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+        },
+        done:function () {
+            thread.GetAttachmentsTiles('@Model.ThreadForm.TemporaryAttachmentFolder', false);
+            $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+        },
+        submit:function () {
+            $('.icon-paper-clip').removeClass().addClass('icon-spinner icon-spin');
+        }
+    });
+</script>

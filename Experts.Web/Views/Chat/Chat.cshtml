@@ -1,0 +1,77 @@
+﻿@using System.Globalization
+@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Experts.Web.Models.Chat.ChatModel
+
+@{var dateTimeFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern + " " + CultureInfo.CurrentCulture.DateTimeFormat.ShortTimePattern; }
+
+<div class="chat-close-buttons">
+    <a href="javascript:void()" id="close-chat" class="btn btn-small">@Resources.Chat.CloseChat</a>
+    <a href="javascript:void()" id="close-chat-without-confirmation" class="btn btn-small">@Resources.Chat.CloseChatWithoutConfirmation</a>
+</div>
+
+<div id="chat" class="chat-size">
+    @switch(ActiveUsersHelper.GetChatModeratorStatus())
+    {
+        case ChatModeratorStatus.Active:
+            <div>@Resources.Chat.ModeratorsActive</div>
+            break;
+
+        case ChatModeratorStatus.Away:
+            <div>@Resources.Chat.ModeratorsAway</div>
+            break;
+
+        case ChatModeratorStatus.Offline:
+            <div>@Resources.Chat.ModeratorsOffline</div>
+            break;
+    }
+    <div class="history">
+        <div class="message-template">
+            <h5></h5>
+            <i></i>
+            <p></p>
+        </div>       
+        
+        @if(Model.Messages != null)
+        {
+            foreach (var message in Model.Messages)
+            {
+                <div class="message">
+                    <h5>@message.AuthorName</h5>
+                    <i>@message.CreationDate</i>
+                    <p @(!Model.IsOwner || message.IsRead ? string.Empty : "class=unread")>@message.Text</p>
+                </div>
+            }
+        }
+        
+        <div class="finish-message">
+            @Resources.Chat.ChatFinished
+        </div>
+    </div>
+        
+    <div class="new-message">
+        <textarea></textarea>
+        <div class="standard-chat-buttons">
+            <a href="javascript:void()" id="send-message" class="btn btn-small btn-primary"><i class="icon-pencil"></i>@Resources.Chat.SendMessage</a>
+            <a href="javascript:void()" id="finish-chat" class="btn btn-small btn-inverse"><i class="icon-signout"></i>@Resources.Chat.FinishChat</a>
+        </div>
+    </div>
+</div>
+
+<div class="current-chat-buttons">
+    <a href="javascript:void()" id="start-new" class="btn btn-small btn-inverse"><i class="icon-signin"></i>@Resources.Chat.StartNew</a>
+    <a href="javascript:void()" id="open-current" class="btn btn-small btn-primary"> @Resources.Chat.OpenCurrent</a>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        chat.initChat('@Resources.Chat.Me',
+                '@(dateTimeFormat.Replace('y', 'Y'))',
+                @(Model.Messages != null ? Model.Messages.Last().Timestamp : 0),
+                @(Model.IsModerator ? "true" : "false"),
+                @(Model.IsViewOnly ? "true" : "false"),
+                '@Resources.Chat.CloseChatMessage',
+                @(Model.IsOwner ? "true" : "false"),
+                @(AuthenticationHelper.HasActiveChats() ? "true" : "false"));
+    });
+</script>

@@ -1,0 +1,27 @@
+﻿@model Experts.Web.Models.Shared.ActionLinkWithConfirmationModel
+
+@{
+    var icon = string.IsNullOrEmpty(Model.Icon) ? null : string.Format("<i class=\"{0}\"></i>", Model.Icon);
+    var buttonClass = Model.ButtonLook ? "btn btn-small btn-inverse" : string.Empty;
+}
+
+<a data-toggle="modal" class="@buttonClass" href="#@Model.ModalId" title="@Model.Tooltip">@Html.Raw(icon)@Model.LinkText @Model.Tooltip</a>
+
+<div class="modal fade" id="@Model.ModalId">
+    <div class="modal-body">
+            
+        <h3 class="pull-left">@Model.ConfirmationText</h3>
+    </div>
+    <div class="modal-footer">
+        @Html.ActionLink(Resources.Forms.Yes, Model.ActionResult, new { @class = "btn btn-primary" })
+        <a class="btn" data-dismiss="modal">@Resources.Forms.No</a>
+    </div> 
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('@Model.ModalId').modal({
+            show: false
+        });
+    });
+</script>

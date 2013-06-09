@@ -1,0 +1,30 @@
+﻿@model Experts.Web.Models.Forms.CategoryAttributeForm
+           
+
+<div id="CategoryAttributeOptions">
+    <label class="control-label">@Resources.Administration.CategoryAttributeAvailableOptions</label>
+
+    <div class="div-table">
+        <div class="div-row no-padding-top">
+            @using (Html.BeginForm(MVC.Administration.AddCategoryAttributeOption()))
+            {
+                <input name="Value" placeholder="@Resources.Administration.CategoryAttributeOptionName"/>
+                <input name="PriceModifier" placeholder="@Resources.Administration.CategoryAttributeOptionPriceModifier"/>
+                <input type="hidden" name="CategoryAttributeId" value="@Model.AttributeId"/>
+                <input type="submit" class="btn btn-inverse" value="@Resources.Administration.AddNewOption" />
+                <div class="ajax-loader-small"></div>
+            }
+        </div>
+    </div>
+    
+    <div id="CategoryAttributeOptionsList">
+        @Html.Partial(MVC.Administration.Views._CategoryAttributeOptionsList, Model)
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        administration.initCategoryAttributeOptionsEditor();
+    });
+</script>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnsweringQuestionList" xml:space="preserve">
+    <value>Odpowiadam</value>
+  </data>
+  <data name="AskingQuestionList" xml:space="preserve">
+    <value>Pytam</value>
+  </data>
+  <data name="BackToHome" xml:space="preserve">
+    <value>Powrót do strony głównej</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Bilans</value>
+  </data>
+  <data name="BecomeExpert" xml:space="preserve">
+    <value>Zostań ekspertem</value>
+  </data>
+  <data name="CommentsList" xml:space="preserve">
+    <value>Opinie</value>
+  </data>
+  <data name="CopyrightNote" xml:space="preserve">
+    <value>Copyright (c) 2012 by Gorrion, Massachusetts</value>
+  </data>
+  <data name="CurrencyPLN" xml:space="preserve">
+    <value>zł</value>
+  </data>
+  <data name="DateDaysAgo" xml:space="preserve">
+    <value>dni temu</value>
+  </data>
+  <data name="DateFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="DateHoursAgo" xml:space="preserve">
+    <value>godz temu</value>
+  </data>
+  <data name="DateMinutesAgo" xml:space="preserve">
+    <value>min temu</value>
+  </data>
+  <data name="DateOneSecondAgo" xml:space="preserve">
+    <value>s temu</value>
+  </data>
+  <data name="DateSecondsAgo" xml:space="preserve">
+    <value>s temu</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="ExpertPublicProfile" xml:space="preserve">
+    <value>Publiczny profil</value>
+  </data>
+  <data name="GridEmptyText" xml:space="preserve">
+    <value>Brak pytań</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="KeywordListAnswers" xml:space="preserve">
+    <value>Katalog odpowiedzi</value>
+  </data>
+  <data name="KeywordListExperts" xml:space="preserve">
+    <value>Popularni eksperci</value>
+  </data>
+  <data name="KeywordListPhrases" xml:space="preserve">
+    <value>Popularne frazy</value>
+  </data>
+  <data name="KeywordListQuestions" xml:space="preserve">
+    <value>Popularne tematy pytań</value>
+  </data>
+  <data name="KeywordsModeration" xml:space="preserve">
+    <value>Słowa kluczowe</value>
+  </data>
+  <data name="ModerationSection" xml:space="preserve">
+    <value>Moderacja</value>
+  </data>
+  <data name="MyQuestionsSection" xml:space="preserve">
+    <value>Moje pytania</value>
+  </data>
+  <data name="NewQuestion" xml:space="preserve">
+    <value>Zadaj nowe pytanie</value>
+  </data>
+  <data name="NoSignUpUserWelcome" xml:space="preserve">
+    <value>Korzystasz z konta anonimowego</value>
+  </data>
+  <data name="ProfileEdit" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="ProfileSection" xml:space="preserve">
+    <value>Mój profil</value>
+  </data>
+  <data name="PublicQuestionList" xml:space="preserve">
+    <value>Pytania użytkowników</value>
+  </data>
+  <data name="QuestionsCatalog" xml:space="preserve">
+    <value>Katalog pytań</value>
+  </data>
+  <data name="QuestionsModeration" xml:space="preserve">
+    <value>Pytania</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Logowanie</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Wyloguj się</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="SorryForError" xml:space="preserve">
+    <value>Przepraszamy, wystąpił błąd.</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statystyki</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Witaj {0}!</value>
+  </data>
+  <data name="ExpertIsVerifiedInfo" xml:space="preserve">
+    <value>Zostałeś zweryfikowany jako ekspert.</value>
+  </data>
+  <data name="ExpertIsNotVerifiedInfo" xml:space="preserve">
+    <value>Nie zostałeś jeszcze zweryfikowany jako ekspert. Skontaktujemy się z Tobą w najbliższym czasie, aby dokonać weryfikacji.</value>
+  </data>
+  <data name="EventsList" xml:space="preserve">
+    <value>Dziennik zdarzeń</value>
+  </data>
+  <data name="PagerFirst" xml:space="preserve">
+    <value>pierwszy</value>
+  </data>
+  <data name="PagerLast" xml:space="preserve">
+    <value>ostatni </value>
+  </data>
+  <data name="PagerNext" xml:space="preserve">
+    <value>następny »</value>
+  </data>
+  <data name="PagerPrevious" xml:space="preserve">
+    <value>« poprzedni</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>O nas</value>
+  </data>
+  <data name="ExpertFAQ" xml:space="preserve">
+    <value>Ekspert FAQ</value>
+  </data>
+  <data name="ExpertHelp" xml:space="preserve">
+    <value>Dla ekspertów</value>
+  </data>
+  <data name="PartnerProgram" xml:space="preserve">
+    <value>Współpraca</value>
+  </data>
+  <data name="ExpertSearch" xml:space="preserve">
+    <value>Poszukujemy ekspertów</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informacje</value>
+  </data>
+  <data name="LatestNews" xml:space="preserve">
+    <value>Najnowsze informacje z bloga</value>
+  </data>
+  <data name="ContactMail" xml:space="preserve">
+    <value>kontakt@asknuts.com</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Biuro Obsługi Klienta</value>
+  </data>
+  <data name="ChatsOverview" xml:space="preserve">
+    <value>Wiadomości klientów</value>
+  </data>
+  <data name="UsersModeration" xml:space="preserve">
+    <value>Użytkownicy</value>
+  </data>
+  <data name="QuestionsSanitization" xml:space="preserve">
+    <value>Pytania do oczyszczenia</value>
+  </data>
+  <data name="RecommendExpert" xml:space="preserve">
+    <value>Poleć eksperta</value>
+  </data>
+  <data name="ErrorFormConfirmation" xml:space="preserve">
+    <value>Dziękujemy za informację o problemie. Postaramy się go naprawić tak szybko, jak to tylko możliwe.</value>
+  </data>
+  <data name="ErrorFormDescription" xml:space="preserve">
+    <value>Nasz serwis jest wciąż testowany i udoskonalany, stąd zapewne cała heca. Możesz nam jednak pomóc wypełniając informację o okolicznościach wystąpienia tego błędu. Postaramy się poinformować Cię gdy zostanie on naprawiony. Za utrudnienia przepraszamy i dziękujemy za wszelką pomoc!</value>
+  </data>
+  <data name="ErrorFormDescriptionLabel" xml:space="preserve">
+    <value>Okoliczności wystąpienia błędu</value>
+  </data>
+  <data name="ErrorFormEmailLabel" xml:space="preserve">
+    <value>Twój adres e-mail</value>
+  </data>
+  <data name="ErrorFormMessageTemplate" xml:space="preserve">
+    <value>Zgłoszenie użytkownika: {0}
+E-mail użytkownika: {1}
+
+</value>
+  </data>
+  <data name="ErrorFormSubmit" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="ErrorFormTitle" xml:space="preserve">
+    <value>Przepraszamy, wystąpił błąd aplikacji</value>
+  </data>
+  <data name="AskNutsCom" xml:space="preserve">
+    <value>AskNuts.com</value>
+  </data>
+  <data name="Experts" xml:space="preserve">
+    <value>Eksperci</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>Jak to działa?</value>
+  </data>
+  <data name="KnowledgeBase" xml:space="preserve">
+    <value>Baza wiedzy</value>
+  </data>
+  <data name="MeetAsknuts" xml:space="preserve">
+    <value>Poznaj AskNuts!</value>
+  </data>
+  <data name="PolicyPrivate" xml:space="preserve">
+    <value>Polityka prywatności</value>
+  </data>
+  <data name="PolicyWeb" xml:space="preserve">
+    <value>Regulamin</value>
+  </data>
+  <data name="MeetAsknutsHint" xml:space="preserve">
+    <value>Zadaj pytanie zaufanym ekspertom i uzyskaj najlepszą odpowiedź. Gwarancja 100% satysfakcji.</value>
+  </data>
+  <data name="MeetAsknutsHintMoreButton" xml:space="preserve">
+    <value>Dowiedz się więcej...</value>
+  </data>
+  <data name="CreateThread" xml:space="preserve">
+    <value>Zadaj pytanie</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Moje konto</value>
+  </data>
+  <data name="UsersThreads" xml:space="preserve">
+    <value>Pytania użytkowników</value>
+  </data>
+  <data name="ChatEmptyGrid" xml:space="preserve">
+    <value>Brak rozpoczętych czatów</value>
+  </data>
+  <data name="ConfirmationMessage" xml:space="preserve">
+    <value>Czy na pewno?</value>
+  </data>
+  <data name="Consultant" xml:space="preserve">
+    <value>Konsultant</value>
+  </data>
+</root>

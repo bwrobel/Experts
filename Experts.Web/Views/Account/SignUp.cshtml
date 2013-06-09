@@ -1,0 +1,17 @@
+﻿@model Experts.Web.Models.Forms.ProfileForm
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr/>
+
+<section>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            @Html.EditorForModel()
+
+            <input type="submit" class="btn btn-primary" value="@Resources.Account.SignUp"/>
+        </fieldset>
+    }
+</section>

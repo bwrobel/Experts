@@ -1,0 +1,51 @@
+﻿@model Experts.Web.Models.Forms.UserDefinedPriceForm
+
+<div class="modal fade" id="userDefinedPriceModal" style="display: none;">
+    @using (Html.BeginForm(MVC.Thread.UserDefinedPrice(), FormMethod.Post, new { id = "userDefinedPriceForm" }))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal" id="closeUserDefinedPrice">×</a>
+            <h3>Zaproponuj cenę</h3>
+        </div>
+        <div class="modal-body">
+
+            @Html.EditorFor(m => m.UserDefinedPrice)
+
+        </div>
+        
+        <div class="modal-footer">
+            <a class="btn" id="cancelUserDefinedPrice" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="submitUserDefinedPrice" data-dismiss="modal">@Resources.Global.Send</a>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#userDefinedPriceModal').modal({
+            show: false
+        });
+
+        $('#submitUserDefinedPrice').click(function () {
+            $.post('/Thread/UserDefinedPrice', $('#userDefinedPriceForm').serialize(), function (result) {
+                if (!result) {
+                    allowValueChange = false;
+
+                    var userDefinedPrice = $("#UserDefinedPrice").val();
+                    $("#Value").val(userDefinedPrice);
+                    $("#CustomValue").val(userDefinedPrice);
+                    $("#thread_value").text(userDefinedPrice);
+                    $("#lockIcon").removeClass();
+                    $("#lockIcon").addClass("icon-lock");
+
+                    thread.checkFunds(userDefinedPrice);
+                } else {
+                    $('#userDefinedPriceModal').replaceWith(result);
+                    $('#userDefinedPriceModal').modal({ show: true });
+                }
+            });
+        });
+    });
+</script>
+
+

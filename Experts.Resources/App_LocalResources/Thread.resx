@@ -1,0 +1,1173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CategoryNotSelected" xml:space="preserve">
+    <value>Wybierz kategorię</value>
+  </data>
+  <data name="ContentRequired" xml:space="preserve">
+    <value>Wpisz treść pytania</value>
+  </data>
+  <data name="EnterQuestion" xml:space="preserve">
+    <value>Zadaj pytanie</value>
+  </data>
+  <data name="EnterYourQuestion" xml:space="preserve">
+    <value>Wpisz swoje pytanie...</value>
+  </data>
+  <data name="GetAnswerBold" xml:space="preserve">
+    <value>Zadaj pytanie &lt;strong&gt;ekspertowi!&lt;/strong&gt;</value>
+  </data>
+  <data name="PostContentRequired" xml:space="preserve">
+    <value>Wpisz treść</value>
+  </data>
+  <data name="PostCreateButton" xml:space="preserve">
+    <value>Napisz</value>
+  </data>
+  <data name="PostEnterText" xml:space="preserve">
+    <value>Wprowadź treść</value>
+  </data>
+  <data name="PostFrom" xml:space="preserve">
+    <value>Od</value>
+  </data>
+  <data name="PostSelectType" xml:space="preserve">
+    <value>-- wybierz typ --</value>
+  </data>
+  <data name="PostType" xml:space="preserve">
+    <value>Typ posta</value>
+  </data>
+  <data name="PostTypeAnswer" xml:space="preserve">
+    <value>Odpowiedź</value>
+  </data>
+  <data name="PostTypeDetailsRequest" xml:space="preserve">
+    <value>Poproszę o więcej szczegółów</value>
+  </data>
+  <data name="PostTypeNotSelected" xml:space="preserve">
+    <value>Wybierz rodzaj posta</value>
+  </data>
+  <data name="QuestionStateAccepted" xml:space="preserve">
+    <value>Zaakceptowane</value>
+  </data>
+  <data name="QuestionStateOccupied" xml:space="preserve">
+    <value>Zajęte</value>
+  </data>
+  <data name="QuestionStateUnoccupied" xml:space="preserve">
+    <value>Wolne</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>-- wybierz kategorię --</value>
+  </data>
+  <data name="ThreadAcceptAnswerButton" xml:space="preserve">
+    <value>Zaakceptuj odpowiedź</value>
+  </data>
+  <data name="ThreadAnswerButton" xml:space="preserve">
+    <value>Odpowiedz</value>
+  </data>
+  <data name="ThreadAnswers" xml:space="preserve">
+    <value>Odpowiedzi</value>
+  </data>
+  <data name="ThreadAskedBy" xml:space="preserve">
+    <value>Zadane przez</value>
+  </data>
+  <data name="ThreadAuthor" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="ThreadAuthorOverview" xml:space="preserve">
+    <value>Szczegóły pytającego</value>
+  </data>
+  <data name="ThreadCategory" xml:space="preserve">
+    <value>Kategoria</value>
+  </data>
+  <data name="ThreadContent" xml:space="preserve">
+    <value>Pytanie</value>
+  </data>
+  <data name="ThreadCreateDate" xml:space="preserve">
+    <value>Zadano</value>
+  </data>
+  <data name="ThreadCreatePostTopic" xml:space="preserve">
+    <value>Napisz odpowiedź</value>
+  </data>
+  <data name="ThreadDetailsForAuthorTitle" xml:space="preserve">
+    <value>Pytanie do eksperta</value>
+  </data>
+  <data name="ThreadDetailsRequestButton" xml:space="preserve">
+    <value>Poproś o doprecyzowanie</value>
+  </data>
+  <data name="ThreadExpertValue" xml:space="preserve">
+    <value>Wartość</value>
+  </data>
+  <data name="ThreadHowToAnswerTitle" xml:space="preserve">
+    <value>Jak odpowiedzieć na pytanie?</value>
+  </data>
+  <data name="ThreadHowToAskTitle" xml:space="preserve">
+    <value>Co teraz? Dalsze kroki</value>
+  </data>
+  <data name="ThreadNoAnswersYet" xml:space="preserve">
+    <value>Pytanie oczekuje na odpowiedź eksperta</value>
+  </data>
+  <data name="ThreadNumberOfReplies" xml:space="preserve">
+    <value>Liczba odpowiedzi</value>
+  </data>
+  <data name="ThreadPotentialRespondents" xml:space="preserve">
+    <value>Eksperci, którzy analizują pytanie</value>
+  </data>
+  <data name="ThreadPriority" xml:space="preserve">
+    <value>Priotytet</value>
+  </data>
+  <data name="ThreadPriorityHigh" xml:space="preserve">
+    <value>Wysoki</value>
+  </data>
+  <data name="ThreadPriorityLow" xml:space="preserve">
+    <value>Niski</value>
+  </data>
+  <data name="ThreadPriorityMedium" xml:space="preserve">
+    <value>Średni</value>
+  </data>
+  <data name="ThreadState" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ThreadStateAccepted" xml:space="preserve">
+    <value>Zaakceptowane</value>
+  </data>
+  <data name="ThreadStateOccupied" xml:space="preserve">
+    <value>Przejęte</value>
+  </data>
+  <data name="ThreadStateUnoccupied" xml:space="preserve">
+    <value>Wolne</value>
+  </data>
+  <data name="ThreadValue" xml:space="preserve">
+    <value>Wartość</value>
+  </data>
+  <data name="ThreadVerbosity" xml:space="preserve">
+    <value>Szczegółowość</value>
+  </data>
+  <data name="ThreadVerbosityHigh" xml:space="preserve">
+    <value>Dogłębna analiza</value>
+  </data>
+  <data name="ThreadVerbosityLow" xml:space="preserve">
+    <value>Podstawowe informacje</value>
+  </data>
+  <data name="ThreadVerbosityMedium" xml:space="preserve">
+    <value>Wyczerpująca odpowiedź</value>
+  </data>
+  <data name="FeedbackContent" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="FeedbackCreateButton" xml:space="preserve">
+    <value>Oceń i zaakceptuj</value>
+  </data>
+  <data name="FeedbackEnterText" xml:space="preserve">
+    <value>Opisz co sądzisz o ekspercie...</value>
+  </data>
+  <data name="FeedbackMark" xml:space="preserve">
+    <value>Jak ocenisz jakość odpowiedzi?</value>
+  </data>
+  <data name="FeedbackMarkNegative" xml:space="preserve">
+    <value>Negatywnie</value>
+  </data>
+  <data name="FeedbackMarkNeutral" xml:space="preserve">
+    <value>Neutralnie</value>
+  </data>
+  <data name="FeedbackMarkPositive" xml:space="preserve">
+    <value>Pozytywnie</value>
+  </data>
+  <data name="ThreadAcceptanceConclusionTitle" xml:space="preserve">
+    <value>Dziękujemy za zaakceptowanie odpowiedzi</value>
+  </data>
+  <data name="OccupyButton" xml:space="preserve">
+    <value>Przejmij pytanie</value>
+  </data>
+  <data name="ReleaseTimerTitle" xml:space="preserve">
+    <value>Czas do odblokowania pytania</value>
+  </data>
+  <data name="AllCategories" xml:space="preserve">
+    <value>-- wszystkie kategorie --</value>
+  </data>
+  <data name="ThreadReportIssueButton" xml:space="preserve">
+    <value>zgłoś problem</value>
+  </data>
+  <data name="ThreadReportIssueTitle" xml:space="preserve">
+    <value>Zgłoś problem</value>
+  </data>
+  <data name="ThreadReportIssueSaveButton" xml:space="preserve">
+    <value>Zgłoś</value>
+  </data>
+  <data name="ThreadIssueTypeDuplicate" xml:space="preserve">
+    <value>Duplikat</value>
+  </data>
+  <data name="ThreadIssueTypeInvalidCategory" xml:space="preserve">
+    <value>Niepoprawna kategoria</value>
+  </data>
+  <data name="ThreadIssueTypeOther" xml:space="preserve">
+    <value>Inny</value>
+  </data>
+  <data name="ThreadReportIssueComment" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="ThreadReportIssueCommentRequired" xml:space="preserve">
+    <value>Podaj krótki opis problemu</value>
+  </data>
+  <data name="ThreadReportIssueType" xml:space="preserve">
+    <value>Typ problemu</value>
+  </data>
+  <data name="CategoryExpertsOnlineInfoPlural" xml:space="preserve">
+    <value>{0} ekspertów jest dostępnych Online w tej kategorii</value>
+  </data>
+  <data name="CategoryExpertsOnlineInfoSingular" xml:space="preserve">
+    <value>{0} ekspert jest dostępny Online w tej kategorii</value>
+  </data>
+  <data name="ExpertsReadyToAnswer" xml:space="preserve">
+    <value>Eksperci z tej kategorii</value>
+  </data>
+  <data name="CustomerFeedback" xml:space="preserve">
+    <value>Opinie użytkowników</value>
+  </data>
+  <data name="FeedbacksNegative" xml:space="preserve">
+    <value>Negatywne</value>
+  </data>
+  <data name="FeedbacksNeutral" xml:space="preserve">
+    <value>Neutralne</value>
+  </data>
+  <data name="FeedbacksPositive" xml:space="preserve">
+    <value>Pozytywne</value>
+  </data>
+  <data name="FeedbackMarkPercentage" xml:space="preserve">
+    <value>Procent pozytywnych odpowiedzi</value>
+  </data>
+  <data name="ThreadFeedbackMarkStatistics" xml:space="preserve">
+    <value>Oceny eksperta</value>
+  </data>
+  <data name="ThreadFeedbacks" xml:space="preserve">
+    <value>Komentarze odpowiedzi eksperta</value>
+  </data>
+  <data name="ThreadFeedbackComment" xml:space="preserve">
+    <value>Komentarz</value>
+  </data>
+  <data name="ThreadFeedbackCommentRequired" xml:space="preserve">
+    <value>Podaj komentarz do oceny twojej odpowiedzi</value>
+  </data>
+  <data name="ThreadFeedbackCommentTitle" xml:space="preserve">
+    <value>Odpowiedź na ocenę</value>
+  </data>
+  <data name="ThreadFeedbackExpertComment" xml:space="preserve">
+    <value>Komentarz eksperta</value>
+  </data>
+  <data name="ThreadAcceptedAnswers" xml:space="preserve">
+    <value>Zaakceptowane odpowiedzi</value>
+  </data>
+  <data name="ThreadQuestionsAnswered" xml:space="preserve">
+    <value>Pytania, na które {0} udzielił odpowiedzi</value>
+  </data>
+  <data name="ExpertVerified" xml:space="preserve">
+    <value>ZWERYFIKOWANY</value>
+  </data>
+  <data name="GiveUpPostContent" xml:space="preserve">
+    <value>Ekspert zrezygnował z odpowiedzi na pytanie z powodu: {0}</value>
+  </data>
+  <data name="PriceProposalComment" xml:space="preserve">
+    <value>Komentarz</value>
+  </data>
+  <data name="PriceProposalCommentRequired" xml:space="preserve">
+    <value>Podaj powód zmiany ceny</value>
+  </data>
+  <data name="PriceProposalValue" xml:space="preserve">
+    <value>Proponowana cena</value>
+  </data>
+  <data name="PriceProposalValueRequired" xml:space="preserve">
+    <value>Podaj cenę</value>
+  </data>
+  <data name="ThreadGiveUpButton" xml:space="preserve">
+    <value>Wycofaj się z pytania</value>
+  </data>
+  <data name="ThreadPriceProposalButton" xml:space="preserve">
+    <value>Zaproponuj cenę</value>
+  </data>
+  <data name="PriceProposalSaveButton" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="PriceProposalTitle" xml:space="preserve">
+    <value>Zaproponuj cenę</value>
+  </data>
+  <data name="PriceProposalValueInvalid" xml:space="preserve">
+    <value>Nieprawidłowa wartość</value>
+  </data>
+  <data name="ThreadCreationDate" xml:space="preserve">
+    <value>Data utworzenia</value>
+  </data>
+  <data name="ThreadListAnswer" xml:space="preserve">
+    <value>Odpowiedź </value>
+  </data>
+  <data name="ThreadListAnswer2" xml:space="preserve">
+    <value> na komentarz</value>
+  </data>
+  <data name="ThreadMark" xml:space="preserve">
+    <value>Ocena</value>
+  </data>
+  <data name="ThreadsExpertStatistics" xml:space="preserve">
+    <value>Statystyki Eksperta</value>
+  </data>
+  <data name="AcceptProposedPrice" xml:space="preserve">
+    <value>Zaakceptuj</value>
+  </data>
+  <data name="ExpertsProposingHigherPrice" xml:space="preserve">
+    <value>Eksperci proponujący wyższą cenę</value>
+  </data>
+  <data name="ProposedPrice" xml:space="preserve">
+    <value>Proponowana cena:</value>
+  </data>
+  <data name="AnswerAccepted" xml:space="preserve">
+    <value>Odpowiedź została zaakceptowana. Możesz teraz dodać swoją opinię.</value>
+  </data>
+  <data name="FeedbackAdded" xml:space="preserve">
+    <value>Twoja opinia została dodana.</value>
+  </data>
+  <data name="IssueReported" xml:space="preserve">
+    <value>Problem został zgłoszony.</value>
+  </data>
+  <data name="PostCreated" xml:space="preserve">
+    <value>Post został dodany</value>
+  </data>
+  <data name="PriceProposalAccepted" xml:space="preserve">
+    <value>Zaakceptowałeś propozycję innej ceny.</value>
+  </data>
+  <data name="ThreadGivenUp" xml:space="preserve">
+    <value>Zrezygnowałeś z odpowiedzi na to pytanie.</value>
+  </data>
+  <data name="ThreadOccupied" xml:space="preserve">
+    <value>Wątek został przez Ciebie przejęty.</value>
+  </data>
+  <data name="ThreadValueEUR" xml:space="preserve">
+    <value>EUR</value>
+  </data>
+  <data name="ThreadValuePLN" xml:space="preserve">
+    <value>PLN</value>
+  </data>
+  <data name="ThreadValueGBP" xml:space="preserve">
+    <value>GBP</value>
+  </data>
+  <data name="ThreadValueUSD" xml:space="preserve">
+    <value>USD</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Pytanie</value>
+  </data>
+  <data name="QuestionDate" xml:space="preserve">
+    <value>Data pytania</value>
+  </data>
+  <data name="ExpertCharts" xml:space="preserve">
+    <value>Wykresy eksperta</value>
+  </data>
+  <data name="ThreadSanitizationStatus" xml:space="preserve">
+    <value>Upublicznienie</value>
+  </data>
+  <data name="ThreadSanitizationStatusNotForPublic" xml:space="preserve">
+    <value>Niepublikowalny</value>
+  </data>
+  <data name="ThreadSanitizationStatusNotSanitized" xml:space="preserve">
+    <value>Nieoczyszczony</value>
+  </data>
+  <data name="ThreadSanitizationStatusSanitized" xml:space="preserve">
+    <value>Upubliczniony</value>
+  </data>
+  <data name="AuthenticationTypeSelect" xml:space="preserve">
+    <value>Wybierz jedną z dostępnych opcji</value>
+  </data>
+  <data name="ThreadAttachFile" xml:space="preserve">
+    <value>Dodaj załącznik</value>
+  </data>
+  <data name="ThreadAttachment" xml:space="preserve">
+    <value>Użytkownik dodał plik do pytania.</value>
+  </data>
+  <data name="ThreadAcceptTimerTitle" xml:space="preserve">
+    <value>Czas do całkowitej akceptacji odpowiedzi</value>
+  </data>
+  <data name="ThreadStateWaitForAcceptance" xml:space="preserve">
+    <value>Zaakceptowane</value>
+  </data>
+  <data name="ThreadWaitForAcceptance" xml:space="preserve">
+    <value>Odpowiedź została zaakceptowana. Możesz ją jeszcze doprecyzować do: </value>
+  </data>
+  <data name="ThreadToHour" xml:space="preserve">
+    <value>do godziny: </value>
+  </data>
+  <data name="PostEdit" xml:space="preserve">
+    <value>edytuj</value>
+  </data>
+  <data name="PostEditCancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="PostEditSave" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="PostSanitizationOriginal" xml:space="preserve">
+    <value>Oryginalny</value>
+  </data>
+  <data name="PostSanitizationPublic" xml:space="preserve">
+    <value>Publiczny</value>
+  </data>
+  <data name="DeleteButton" xml:space="preserve">
+    <value>Usuń pytanie</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć to pytanie?</value>
+  </data>
+  <data name="PayButton" xml:space="preserve">
+    <value>Zapłać za pytanie</value>
+  </data>
+  <data name="PostModified" xml:space="preserve">
+    <value>Zmodyfikowano</value>
+  </data>
+  <data name="PostHide" xml:space="preserve">
+    <value>ukryj</value>
+  </data>
+  <data name="PostShow" xml:space="preserve">
+    <value>pokaż</value>
+  </data>
+  <data name="ThreadStateClosed" xml:space="preserve">
+    <value>Zamknięte</value>
+  </data>
+  <data name="ThreadOccupyFailed" xml:space="preserve">
+    <value>Pytanie jest aktualnie przejęte przez innego eksperta.</value>
+  </data>
+  <data name="ThreadReleaseReservedQuestionButton" xml:space="preserve">
+    <value>Zrezygnuj z odpowiedzi tego eksperta</value>
+  </data>
+  <data name="ThreadReleasedReservedQuestionPost" xml:space="preserve">
+    <value>Pytający zrezygnował z odpowiedzi eksperta.</value>
+  </data>
+  <data name="ThreadReservedQuestionPost" xml:space="preserve">
+    <value>{0} został zapytany bezpośrednio.</value>
+  </data>
+  <data name="ThreadStateReserved" xml:space="preserve">
+    <value>Zarezerwowane</value>
+  </data>
+  <data name="ThreadDirectQuestionAsked" xml:space="preserve">
+    <value>Zapytałeś bezpośrednio eksperta.</value>
+  </data>
+  <data name="ThreadDirectQuestionReleased" xml:space="preserve">
+    <value>Zrezygnowano z odpowiedzi eksperta.</value>
+  </data>
+  <data name="ThreadAskDirectQuestion" xml:space="preserve">
+    <value>Zadaj mi pytanie</value>
+  </data>
+  <data name="AnsweringQuestionList" xml:space="preserve">
+    <value>Odpowiadam</value>
+  </data>
+  <data name="PriceProposalMustBeHigher" xml:space="preserve">
+    <value>Proponowana cena musi być wyższa od pierwotnej</value>
+  </data>
+  <data name="GenericUsername" xml:space="preserve">
+    <value>pytający</value>
+  </data>
+  <data name="PriceProposalSent" xml:space="preserve">
+    <value>Propozycja nowej ceny została wysłana</value>
+  </data>
+  <data name="ThreadMenuAnswerer" xml:space="preserve">
+    <value>Menu odpowiadającego</value>
+  </data>
+  <data name="ThreadMenuQuestion" xml:space="preserve">
+    <value>Menu pytania</value>
+  </data>
+  <data name="ThreadMenuQuestioner" xml:space="preserve">
+    <value>Menu pytającego</value>
+  </data>
+  <data name="AskQuestion" xml:space="preserve">
+    <value>Zadaj pytanie</value>
+  </data>
+  <data name="GiveUpConfirmation" xml:space="preserve">
+    <value>Czy na pewno chcesz zrezygnować z odpowiedzi na pytanie?</value>
+  </data>
+  <data name="AnalyzingPostContent" xml:space="preserve">
+    <value>Ekspert {0} analizuje w tej chwili Twoje pytanie i przygotowuje odpowiedź</value>
+  </data>
+  <data name="AnsweredPostContent" xml:space="preserve">
+    <value>Ekspert {0} udzielił odpowiedzi na Twoje pytanie, zapoznaj się z jej treścią i w razie potrzeby udziel dodatkowych informacji ekspertowi</value>
+  </data>
+  <data name="PostDeleteConfirmation" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć tą wiadomość?</value>
+  </data>
+  <data name="PostDeleteTooltip" xml:space="preserve">
+    <value>Usuń wiadomość</value>
+  </data>
+  <data name="PostEditTooltip" xml:space="preserve">
+    <value>Edytuj wiadomość</value>
+  </data>
+  <data name="ThreadFeedbackRequired" xml:space="preserve">
+    <value>Prosimy o wybranie oceny oraz krótkie wypełnienie opinii na temat eksperta</value>
+  </data>
+  <data name="ThreadFeedbackTooShort" xml:space="preserve">
+    <value>Komentarz musi mieć przynajmniej 2 znaki i nie może przekroczyć 250 znaków.</value>
+  </data>
+  <data name="ThreadGiveUpComment" xml:space="preserve">
+    <value>Komentarz</value>
+  </data>
+  <data name="ThreadGiveUpCommentRequired" xml:space="preserve">
+    <value>Uzasadnij rezygnację z pytania</value>
+  </data>
+  <data name="ThreadGiveUpTitle" xml:space="preserve">
+    <value>Uzasadnij rezygnację z pytania</value>
+  </data>
+  <data name="AskExpert" xml:space="preserve">
+    <value>Zapytaj eksperta</value>
+  </data>
+  <data name="AskExpertMe" xml:space="preserve">
+    <value>Zapytaj mnie</value>
+  </data>
+  <data name="AskQuestionToExpertsWithinCategory" xml:space="preserve">
+    <value>Zadaj pytanie ekspertom z tej kategorii</value>
+  </data>
+  <data name="ExpertPicture" xml:space="preserve">
+    <value>Zdjęcie eksperta</value>
+  </data>
+  <data name="ExpertPublicName" xml:space="preserve">
+    <value>Publiczna nazwa eksperta</value>
+  </data>
+  <data name="ExpertsWithinCategory" xml:space="preserve">
+    <value>Eksperci z tej kategorii</value>
+  </data>
+  <data name="KeywordList" xml:space="preserve">
+    <value>Słowa kluczowe</value>
+  </data>
+  <data name="SimiliarAnswersWithinCategory" xml:space="preserve">
+    <value>Podobne odpowiedzi z kategorii</value>
+  </data>
+  <data name="SimiliarTopicsWithinCategory" xml:space="preserve">
+    <value>Podobne tematy z kategorii</value>
+  </data>
+  <data name="ThreadAcceptedAnswersWithinCategory" xml:space="preserve">
+    <value>Lista zaakceptowanych odpowiedzi</value>
+  </data>
+  <data name="YourQuestionFromCategory" xml:space="preserve">
+    <value>Twoje pytanie z kategorii</value>
+  </data>
+  <data name="ThreadAttachFiles" xml:space="preserve">
+    <value>Wybierz plik(i)</value>
+  </data>
+  <data name="ThreadAskingDirectQuestion" xml:space="preserve">
+    <value>Zadajesz pytanie ekspertowi</value>
+  </data>
+  <data name="NewPriceProposal" xml:space="preserve">
+    <value>Zaproponowałeś nową cenę:</value>
+  </data>
+  <data name="ExtendThreadLockTime" xml:space="preserve">
+    <value>Przedłuż czas przejęcia</value>
+  </data>
+  <data name="ExtendThreadLockTimeFailure" xml:space="preserve">
+    <value>Czas przejęcia pytania upłynął, ponownie przejmij pytanie</value>
+  </data>
+  <data name="ShowExpertComment" xml:space="preserve">
+    <value>Pokaż komentarz eksperta</value>
+  </data>
+  <data name="ReportIssueCommentCategoryObligatory" xml:space="preserve">
+    <value>Podaj sugerowaną kategorię</value>
+  </data>
+  <data name="ReportIssueCommentDuplicatedObligatory" xml:space="preserve">
+    <value>Podaj nazwę pytania, które zostało zduplikowane</value>
+  </data>
+  <data name="ReportIssueCommentOtherIssueObligatory" xml:space="preserve">
+    <value>Podaj szczegóły problemu</value>
+  </data>
+  <data name="ThreadMatch" xml:space="preserve">
+    <value>Dopasowanie pytania</value>
+  </data>
+  <data name="SkipCategoryAttributes" xml:space="preserve">
+    <value>Pomiń ten krok</value>
+  </data>
+  <data name="ThreadDetailsForExpertTitle" xml:space="preserve">
+    <value>Pytanie dla eksperta</value>
+  </data>
+  <data name="UserDefinedPriceMustBeHigher" xml:space="preserve">
+    <value>Minimalna wartość pytania wynosi 5 zł</value>
+  </data>
+  <data name="UserDefinedPrice" xml:space="preserve">
+    <value>Zaproponuj własną cenę</value>
+  </data>
+  <data name="ThreadStateGivenUp" xml:space="preserve">
+    <value>Odrzucone</value>
+  </data>
+  <data name="AcceptAdditionalService" xml:space="preserve">
+    <value>Dodatkowa usługa: </value>
+  </data>
+  <data name="AdditionalService" xml:space="preserve">
+    <value>Dodatkowa usługa</value>
+  </data>
+  <data name="AdditionalServiceAccept" xml:space="preserve">
+    <value>Zaakceptuj</value>
+  </data>
+  <data name="AdditionalServiceAccepted" xml:space="preserve">
+    <value>Zaakceptowałeś dodatkową usługę</value>
+  </data>
+  <data name="AdditionalServiceDecline" xml:space="preserve">
+    <value>Odrzuć</value>
+  </data>
+  <data name="AdditionalServiceDeclined" xml:space="preserve">
+    <value>Odrzuciłeś dodatkową usługę</value>
+  </data>
+  <data name="AdditionalServices" xml:space="preserve">
+    <value>Dodatkowe usługi</value>
+  </data>
+  <data name="AdditionalServicesDate" xml:space="preserve">
+    <value>Data utworzenia:</value>
+  </data>
+  <data name="AdditionalServicesInThisThread" xml:space="preserve">
+    <value>Inne dodatkowe usługi w tym pytaniu</value>
+  </data>
+  <data name="AdditionalServicesState" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="AdditionalServicesStateAccepted" xml:space="preserve">
+    <value>Zaakceptowane</value>
+  </data>
+  <data name="AdditionalServicesStateAwaitingUser" xml:space="preserve">
+    <value>Oczekiwanie na twoją decyzję</value>
+  </data>
+  <data name="AdditionalServicesStateNotAccepted" xml:space="preserve">
+    <value>Odrzucone</value>
+  </data>
+  <data name="AdditionalServiceSuccess" xml:space="preserve">
+    <value>Zaproponowałeś dodatkową usługę</value>
+  </data>
+  <data name="AdditionalServicesValue" xml:space="preserve">
+    <value>Wartość:</value>
+  </data>
+  <data name="ProposeAdditionalService" xml:space="preserve">
+    <value>Zaproponuj dodatkową usługę</value>
+  </data>
+  <data name="ProposeAdditionalServiceComment" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="ProposeAdditionalServiceCommentRequired" xml:space="preserve">
+    <value>Podaj opis dodatkowej usługi</value>
+  </data>
+  <data name="ProposeAdditionalServiceTitle" xml:space="preserve">
+    <value>Tytuł</value>
+  </data>
+  <data name="ProposeAdditionalServiceTitleRequired" xml:space="preserve">
+    <value>Podaj tytuł dodatkowej usługi</value>
+  </data>
+  <data name="ProposeAdditionalServiceValue" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="ProposeAdditionalServiceValueRequired" xml:space="preserve">
+    <value>Podaj wartość dodatkowej usługi</value>
+  </data>
+  <data name="ReturnToThread" xml:space="preserve">
+    <value>Powrót do pytania</value>
+  </data>
+  <data name="AdditionalServiceProposal" xml:space="preserve">
+    <value>zaproponował Ci dodatkową usługę:</value>
+  </data>
+  <data name="AdditionalServiceStates" xml:space="preserve">
+    <value>Status dodatkowej usługi:</value>
+  </data>
+  <data name="AdditionalServiceAcceptedByUser" xml:space="preserve">
+    <value>Pytający zaakceptował dodatkową usługę: {0}</value>
+  </data>
+  <data name="AdditionalServiceHidden" xml:space="preserve">
+    <value>Treść dodatkowej usługi jest ukryta. Zaakceptuj aby ją zobaczyć.</value>
+  </data>
+  <data name="AdditionalServiceCommentPlaceholder" xml:space="preserve">
+    <value>Krótko opisz co będzie zawierać dodatkowa usługa...</value>
+  </data>
+  <data name="AdditionalServiceTitlePlaceholder" xml:space="preserve">
+    <value>Tytuł dodatkowej usługi...</value>
+  </data>
+  <data name="AdditionalServiceValuePlaceholder" xml:space="preserve">
+    <value>Wartość dodatkowej usługi...</value>
+  </data>
+  <data name="ProposedBy" xml:space="preserve">
+    <value>Zaproponowane przez:</value>
+  </data>
+  <data name="AdditionalServiceExpertResigned" xml:space="preserve">
+    <value>Ta usługa została zadana przez eksperta, który zrezygnował z odpowiedzi. Akceptacja tej usługi jest obecnie nie możliwa.</value>
+  </data>
+  <data name="AdditionalServiceJustAccepted" xml:space="preserve">
+    <value>Pytający zaakceptował usługę(i):</value>
+  </data>
+  <data name="AdditionalServiceJustDeclined" xml:space="preserve">
+    <value>Pytający odrzucił usługę(i):</value>
+  </data>
+  <data name="NoFeedback" xml:space="preserve">
+    <value>Nie chcę wystawić oceny</value>
+  </data>
+  <data name="HiddenName" xml:space="preserve">
+    <value>pytający</value>
+  </data>
+  <data name="UserAcceptedAdditionalService" xml:space="preserve">
+    <value>Pytający zaakceptował dodatkową usługę. Udziel mu odpowiedzi zgodnie ze wcześniejszym opisem.</value>
+  </data>
+  <data name="UserDeclinedAdditionalService" xml:space="preserve">
+    <value>Pytający zrezygnował z dodatkowej usługi.</value>
+  </data>
+  <data name="AwaitingExpertResponse" xml:space="preserve">
+    <value>Oczekiwanie na odpowiedź na twoje pytanie może się wydłużyć</value>
+  </data>
+  <data name="PreviousPriceProposals" xml:space="preserve">
+    <value>Dotychczasowe propozycje cen:</value>
+  </data>
+  <data name="PriceProposalFor" xml:space="preserve">
+    <value> za</value>
+  </data>
+  <data name="PriceProposalOffered" xml:space="preserve">
+    <value> zaoferował</value>
+  </data>
+  <data name="ExpertValue" xml:space="preserve">
+    <value>Wartość dla eksperta</value>
+  </data>
+  <data name="ThreadModeratorAnswerButton" xml:space="preserve">
+    <value>Napisz odpowiedź</value>
+  </data>
+  <data name="ExpertPMButton" xml:space="preserve">
+    <value>Wyślij PM do eksperta</value>
+  </data>
+  <data name="PostTypeExpertPM" xml:space="preserve">
+    <value>Prywatna wiadomość do eksperta</value>
+  </data>
+  <data name="PostTypeModeratorAnswer" xml:space="preserve">
+    <value>Odpowiedź</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Dziennik zdarzeń</value>
+  </data>
+  <data name="IncreaseExpertValueButton" xml:space="preserve">
+    <value>Zwiększ wartość dla eksperta</value>
+  </data>
+  <data name="IncreaseExpertValueFormTitle" xml:space="preserve">
+    <value>Zwiększ wartość wątku dla eksperta</value>
+  </data>
+  <data name="NewExpertValue" xml:space="preserve">
+    <value>Nowa wartość dla eksperta</value>
+  </data>
+  <data name="ExpertValueMustBeHigher" xml:space="preserve">
+    <value>Podana wartość musi być większa od poprzedniej</value>
+  </data>
+  <data name="NewExpertValueRequired" xml:space="preserve">
+    <value>Podaj wartość</value>
+  </data>
+  <data name="ThreadMenu" xml:space="preserve">
+    <value>Menu konwersacji</value>
+  </data>
+  <data name="ClosedByModeratorPost" xml:space="preserve">
+    <value>Pytanie zostało zamknięte przed moderatora: {0} z następującego powodu: {1}</value>
+  </data>
+  <data name="ChangedCategoryByModeratorPost" xml:space="preserve">
+    <value>Kategoria pytania została zmieniona przez moderatora: {0} z następującego powodu: {1}</value>
+  </data>
+  <data name="ThreadQuestion" xml:space="preserve">
+    <value>Wątek</value>
+  </data>
+  <data name="ThreadSurcharge" xml:space="preserve">
+    <value>Dopłata za wątek</value>
+  </data>
+  <data name="InnerThreadError" xml:space="preserve">
+    <value>Nie jesteś uprawniony do przejęcia tego pytania.</value>
+  </data>
+  <data name="CategoryDescription" xml:space="preserve">
+    <value>Opis kategorii</value>
+  </data>
+  <data name="DirectQuestionInstructions" xml:space="preserve">
+    <value>To pytanie zostało Ci zadane bezpośrednio. Możesz na nie odpowiedzieć lub wycofać się z niego. Lub jeśli uznasz że cena za pytanie jest za niska - zrezygnuj z odpowiedzi i zaproponuj nową cenę.</value>
+  </data>
+  <data name="AcceptAdditionalServiceConfirmationTitle" xml:space="preserve">
+    <value>Zaakceptować usługę?</value>
+  </data>
+  <data name="ThreadHidden" xml:space="preserve">
+    <value>Przepraszamy, ale wątek nie istnieje.</value>
+  </data>
+  <data name="ThreadStateHidden" xml:space="preserve">
+    <value>Ukryte</value>
+  </data>
+  <data name="PriceProposalNotification" xml:space="preserve">
+    <value>Twoja cena została zaakceptowana przez system, a wartość pytania została zwiększona</value>
+  </data>
+  <data name="OccupyTimeout" xml:space="preserve">
+    <value>Upłynął czas przejęcia. Ponownie przejmij pytanie i dodaj odpowiedź.</value>
+  </data>
+  <data name="MoreCategories" xml:space="preserve">
+    <value>Inne kategorie</value>
+  </data>
+  <data name="GetAnswer" xml:space="preserve">
+    <value>Uzyskaj odpowiedź</value>
+  </data>
+  <data name="IsAnsweringYourQuestion" xml:space="preserve">
+    <value>odpowiada na Twoje pytanie</value>
+  </data>
+  <data name="YourQuestion" xml:space="preserve">
+    <value>Twoje pytanie:</value>
+  </data>
+  <data name="ExpertAnswer" xml:space="preserve">
+    <value>Odpowiedź eksperta</value>
+  </data>
+  <data name="MyAnswer" xml:space="preserve">
+    <value>Moja odpowiedź</value>
+  </data>
+  <data name="PostTypeDetails" xml:space="preserve">
+    <value>Sprecyzowana odpowiedź</value>
+  </data>
+  <data name="QuestionerAnswer" xml:space="preserve">
+    <value>Odpowiedź pytającego</value>
+  </data>
+  <data name="AddAnswer" xml:space="preserve">
+    <value>Dodaj odpowiedź</value>
+  </data>
+  <data name="AcceptBigButton" xml:space="preserve">
+    <value>Zaakceptuj i oceń odpowiedź!</value>
+  </data>
+  <data name="SatisfactionAnonymous" xml:space="preserve">
+    <value>Jesteś 100% anonimowy</value>
+  </data>
+  <data name="SatisfactionAssess" xml:space="preserve">
+    <value>Możesz ocenić jakość eksperta</value>
+  </data>
+  <data name="SatisfactionHeader" xml:space="preserve">
+    <value>Wszystko dla Twojej satysfakcji!</value>
+  </data>
+  <data name="SatisfactionVerification" xml:space="preserve">
+    <value>Każdy ekspert podlega weryfikacji</value>
+  </data>
+  <data name="InterestedExpert" xml:space="preserve">
+    <value>Zainteresowany ekspert</value>
+  </data>
+  <data name="SatisfactionAccept" xml:space="preserve">
+    <value>Zaakceptuj odpowiedź jeśli Cię satysfakcjonuje</value>
+  </data>
+  <data name="SatisfactionSecure" xml:space="preserve">
+    <value>Twoje dane osobowe są bezpieczne</value>
+  </data>
+  <data name="InterestedExperts" xml:space="preserve">
+    <value>Zainteresowani eksperci</value>
+  </data>
+  <data name="YouAreAnswering" xml:space="preserve">
+    <value>Odpowiadasz na to pytanie</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sortuj według:</value>
+  </data>
+  <data name="SortByCreationDate" xml:space="preserve">
+    <value>Najnowsze</value>
+  </data>
+  <data name="SortByMatch" xml:space="preserve">
+    <value>Najlepiej dopasowane</value>
+  </data>
+  <data name="SortByValue" xml:space="preserve">
+    <value>Najlepiej płatne</value>
+  </data>
+  <data name="ThreadQuestionListLoading" xml:space="preserve">
+    <value>Czekaj! Trwa ładowanie listy pytań...</value>
+  </data>
+  <data name="AnswerOnQuestion" xml:space="preserve">
+    <value>Odpowiedz na pytanie</value>
+  </data>
+  <data name="CategoryAttributesDescription" xml:space="preserve">
+    <value>Określ kilka szczegółów dotyczących pytania. Informacje te pomogą w dopasowaniu najlepszego eksperta oraz w udzieleniu precyzyjnej i wyczerpującej odpowiedzi na zadane pytanie.</value>
+  </data>
+  <data name="CategoryAttributesHeader" xml:space="preserve">
+    <value>&lt;span&gt;Dopasowanie&lt;/span&gt; najlepszego eksperta</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Kontynuuj</value>
+  </data>
+  <data name="EditContent" xml:space="preserve">
+    <value>Popraw treść</value>
+  </data>
+  <data name="OptionsDescription" xml:space="preserve">
+    <value>Określ swoje oczekiwania związane z odpowiedzią, aby ustalić jej wartość i uzyskać gwarancję satysfakcji</value>
+  </data>
+  <data name="OptionsHeader" xml:space="preserve">
+    <value>Ekspert proponuje &lt;span&gt;wartość odpowiedzi&lt;/span&gt;</value>
+  </data>
+  <data name="ResignConfirmation" xml:space="preserve">
+    <value>Czy napewno chcesz zrezygnować z odpowiedzi eksperta {0}?</value>
+  </data>
+  <data name="ReportIssueInstructions" xml:space="preserve">
+    <value>Jeżeli uważasz że pytanie jest w niewłaściwej kategorii lub zauważyłeś inny błąd,</value>
+  </data>
+  <data name="ThreadAcceptedUserInfo" xml:space="preserve">
+    <value>Zaakceptowałeś odpowiedź. Konwersacja z ekspertem będzie jeszcze możliwa do: </value>
+  </data>
+  <data name="AttachmentsSent" xml:space="preserve">
+    <value>Przesłano załączniki</value>
+  </data>
+  <data name="MyAttachments" xml:space="preserve">
+    <value>Przesyłam załączniki</value>
+  </data>
+  <data name="AnsweredQuestion" xml:space="preserve">
+    <value>odpowiedział na to pytanie</value>
+  </data>
+  <data name="IsAnswering" xml:space="preserve">
+    <value>odpowiada na to pytanie</value>
+  </data>
+  <data name="ExpertAnalyzing" xml:space="preserve">
+    <value>Analiza pytania</value>
+  </data>
+  <data name="ExpertResignation" xml:space="preserve">
+    <value>Rezygnacja z eksperta</value>
+  </data>
+  <data name="ExpertSentAttachments" xml:space="preserve">
+    <value>Ekspert przesyła załączniki</value>
+  </data>
+  <data name="FinalAnswer" xml:space="preserve">
+    <value>Odpowiedź</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informacja</value>
+  </data>
+  <data name="QuestionerSentAttachments" xml:space="preserve">
+    <value>Pytający przesyła załączniki</value>
+  </data>
+  <data name="Reserved" xml:space="preserve">
+    <value>Bezpośrednie pytanie</value>
+  </data>
+  <data name="Resignation" xml:space="preserve">
+    <value>Rezygnacja z udzielenia odpowiedzi</value>
+  </data>
+  <data name="YourPayments" xml:space="preserve">
+    <value>Moje płatności</value>
+  </data>
+  <data name="YourQuestions" xml:space="preserve">
+    <value>Moje pytania</value>
+  </data>
+  <data name="YourAcceptedQuestions" xml:space="preserve">
+    <value>Moje zaakceptowane pytania</value>
+  </data>
+  <data name="YourCurrentQuestions" xml:space="preserve">
+    <value>Moje aktualne pytania</value>
+  </data>
+  <data name="QuestionersOpinions" xml:space="preserve">
+    <value>Opinie pytających</value>
+  </data>
+  <data name="YourAnswers" xml:space="preserve">
+    <value>Moje odpowiedzi</value>
+  </data>
+  <data name="LessThanOneMinute" xml:space="preserve">
+    <value>mniej niż 1 minuta</value>
+  </data>
+  <data name="DefaultPriceProposal" xml:space="preserve">
+    <value>Proponowany koszt</value>
+  </data>
+  <data name="DefaultPriceProposalDescription" xml:space="preserve">
+    <value>satysfakcjonującej odpowiedzi</value>
+  </data>
+  <data name="ProposingHigherPrice" xml:space="preserve">
+    <value>proponuje wyższą cenę</value>
+  </data>
+  <data name="AnswerDetails" xml:space="preserve">
+    <value>Zobacz odpowiedź</value>
+  </data>
+  <data name="SimiliarQuestions" xml:space="preserve">
+    <value>Podobne pytania</value>
+  </data>
+  <data name="ExpertsFromCategory" xml:space="preserve">
+    <value>Eksperci z kategorii</value>
+  </data>
+  <data name="PostDeleteSuccess" xml:space="preserve">
+    <value>Usunięto wiadomość</value>
+  </data>
+  <data name="RecommendedExperts" xml:space="preserve">
+    <value>Rekomendowani eksperci</value>
+  </data>
+  <data name="QuestionFromCategory" xml:space="preserve">
+    <value>Pytanie z kategorii</value>
+  </data>
+  <data name="AnsweringExpert" xml:space="preserve">
+    <value>Odpowiadający ekspert</value>
+  </data>
+  <data name="SatisfactionWarrantyDescription" xml:space="preserve">
+    <value>Pamiętaj, że AskNuts gwarantuje Ci zwrot pieniędzy w przypadku niezadowolenia z uzyskanej odpowiedzi. Wpłacana przez Ciebie kwota jest jedynie depozytem, który zostanie przekazany Ekspertowi tylko w przypadku zaakceptowania przez Ciebie jego odpowiedzi.</value>
+  </data>
+  <data name="SatisfactionWarrantyTitle" xml:space="preserve">
+    <value>Gwarancja satysfakcji!</value>
+  </data>
+  <data name="TinyFormAttachFile" xml:space="preserve">
+    <value>Załącz plik</value>
+  </data>
+  <data name="TinyFormAttachments" xml:space="preserve">
+    <value>Załączniki:</value>
+  </data>
+  <data name="TinyFormCategory" xml:space="preserve">
+    <value>Kategoria:</value>
+  </data>
+  <data name="TinyFormCategoryRequiredError" xml:space="preserve">
+    <value>Kategoria jest wymagana.</value>
+  </data>
+  <data name="TinyFormChangeCategory" xml:space="preserve">
+    <value>Zmień kategorię</value>
+  </data>
+  <data name="TinyFormChooseCategory" xml:space="preserve">
+    <value>Wybierz kategorię.</value>
+  </data>
+  <data name="TinyFormClickToChooseCategory" xml:space="preserve">
+    <value>Kliknij aby wybrać kategorię</value>
+  </data>
+  <data name="TinyFormContentRequiredError" xml:space="preserve">
+    <value>Treść pytania jest wymagana. Wpisz treść pytania.</value>
+  </data>
+  <data name="SimiliarAnswers" xml:space="preserve">
+    <value>Podobne odpowiedzi</value>
+  </data>
+  <data name="ThreadAskDirectQuestionToExpert" xml:space="preserve">
+    <value>Zadaj swoje pytanie ekspertowi</value>
+  </data>
+  <data name="AnswerOpinion" xml:space="preserve">
+    <value>Ocena odpowiedzi:</value>
+  </data>
+  <data name="NoNewPriceProposals" xml:space="preserve">
+    <value>Brak nowych propozycji cen.</value>
+  </data>
+  <data name="ThreadHowToAnswerContent" xml:space="preserve">
+    <value>Zarezerwuj pytanie, aby udzielić na nie odpowiedzi. Odpowiadając na pytanie skup się na oczekiwaniach pytającego, tak, aby twoja odpowiedź była dla niego satysfakcjonująca. Jeżeli jego treść jest nie jasna lub brakuje w niej pewnych danych poproś pytającego o udzielenie dodatkowych informacji.</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="ExpertFeedback" xml:space="preserve">
+    <value>Ocena eksperta</value>
+  </data>
+  <data name="FeedbackSkipButton" xml:space="preserve">
+    <value>Zaakceptuj bez oceny</value>
+  </data>
+  <data name="GoToQuestion" xml:space="preserve">
+    <value>Przejdź do pytania</value>
+  </data>
+  <data name="ExpertProposeAdditionalService" xml:space="preserve">
+    <value> proponuje dodatkową usługę</value>
+  </data>
+  <data name="AdditionalServicesStateAwaitingExpert" xml:space="preserve">
+    <value>Oczekiwanie na decyzję pytającego</value>
+  </data>
+  <data name="ProposingAdditionalService" xml:space="preserve">
+    <value>Proponujesz dodatkową usługę</value>
+  </data>
+  <data name="NoNewCurrentAnswers" xml:space="preserve">
+    <value>Aktualnie nie posiadasz żadnych odpowiedzi</value>
+  </data>
+  <data name="NoNewCurrentQuestions" xml:space="preserve">
+    <value>Aktualnie nie posiadasz żadnych pytań</value>
+  </data>
+  <data name="ExpertSearchFrameDescription1" xml:space="preserve">
+    <value>Nasz system analizuje zadane przez Ciebie pytanie w celu znalezienia ekspertów, których kompetencje pozwalają na udzielenie najlepszej odpowiedzi.</value>
+  </data>
+  <data name="ExpertSearchFrameDescription2" xml:space="preserve">
+    <value>Określ kilka szczegółów dotyczących pytania. Informacje te pomogą w dopasowaniu najlepszego eksperta oraz w udzieleniu precyzyjnej i wyczerpującej odpowiedzi na zadane pytanie.</value>
+  </data>
+  <data name="ExpertSearchFrameTitle" xml:space="preserve">
+    <value>Wybór eksperta</value>
+  </data>
+  <data name="QuestionCategories" xml:space="preserve">
+    <value>Kategorie pytań</value>
+  </data>
+</root>

@@ -1,0 +1,40 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Thread
+
+<link rel="stylesheet" href="@Url.Content(Links.Content.fancybox.jquery_fancybox_1_3_4_css)" type="text/css" media="screen" />
+<script type="text/javascript" src="@Url.Content(Links.Content.fancybox.jquery_fancybox_1_3_4_pack_js)"></script>
+<script type="text/javascript" src="@Url.Content(Links.Content.fancybox.jquery_easing_1_3_pack_js)"></script>
+
+<div class="overflow-hidden">
+    <div class="row">
+        <div class="span16">
+            @{ var posts = Model.Posts.Where(p => !p.IsVisibleOnlyForAuthor() && !p.IsVisibleOnlyForExpert() && p.IsPubliclyVisible).Skip(1);}
+
+            @foreach (var post in posts)
+            {
+                @Html.Action(MVC.Thread.ShowPost(post, true))
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("a.fancy").fancybox({
+            'type': 'image',
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'speedIn': 800,
+            'speedOut': 200,
+            'opacity': true,
+            'overlayShow': true,
+            'overlayOpacity': 0.8,
+            'overlayColor': 'black',
+            'titleShow': false
+        });
+    });
+    
+</script>
+

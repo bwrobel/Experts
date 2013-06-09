@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivationEmailContent" xml:space="preserve">
+    <value>Dziękujemy za rejestrację w serwisie Asknuts.com Aby aktywować swoje konto, kliknij w poniższy link:&lt;br/&gt;</value>
+  </data>
+  <data name="ActivationEmailSubject" xml:space="preserve">
+    <value>aktywacja konta</value>
+  </data>
+  <data name="EmailConfirmationEmailContent" xml:space="preserve">
+    <value>Aby potwierdzić zmianę adresu e-mail przypisanego do Twojego konta w serwisie AskNuts.com kliknij w poniższy link:&lt;br/&gt;</value>
+  </data>
+  <data name="EmailConfirmationEmailSubject" xml:space="preserve">
+    <value>potwierdzenie adresu e-mail</value>
+  </data>
+  <data name="NoSignUpUserConfirmationEmail" xml:space="preserve">
+    <value>Witaj!
+
+Postanowiłeś skorzystać z serwisu AskNuts.com bez rejestracji. Zostało dla Ciebie założone anonimowe konto użytkownika, abyś mógł łatwo przeglądać swoje pytania. By ponownie zalogować się do systemu w przyszłości kliknij w poniższy link:</value>
+  </data>
+  <data name="NoSignUpUserConfirmationEmailSubject" xml:space="preserve">
+    <value>potwierdzenie zadania pytania</value>
+  </data>
+  <data name="PasswordForgottenEmailContent" xml:space="preserve">
+    <value>Otrzymaliśmy prośbę o zresetowanie Twojego hasła w systemie. Jeśli to nie ty wysłałeś te żądanie zignoruj ten e-mail. W przeciwnym wypadku aby zresetować swoje hasło, kliknij w poniższy link:&lt;br/&gt;</value>
+  </data>
+  <data name="PasswordForgottenEmailSubject" xml:space="preserve">
+    <value>zmiana hasła</value>
+  </data>
+  <data name="PriceProposalAcceptedEmailContent" xml:space="preserve">
+    <value>Nowa wycena pytania została zaakceptowana.</value>
+  </data>
+  <data name="PaymentAnswerEmailSubject" xml:space="preserve">
+    <value>płatnośc za pytanie została zaksięgowana</value>
+  </data>
+  <data name="ThreadAnswerAcceptedEmailContent" xml:space="preserve">
+    <value>Użytkownik zaakceptował twoją odpowiedź.</value>
+  </data>
+  <data name="ThreadAnswerAcceptedEmailSubject" xml:space="preserve">
+    <value>odpowiedź została zaakceptowana</value>
+  </data>
+  <data name="ThreadDirectQuestionContent" xml:space="preserve">
+    <value>Użytkownik zadał Ci nowe pytanie.</value>
+  </data>
+  <data name="ThreadGiveUpContent" xml:space="preserve">
+    <value>Ekspert {0} wycofał się z odpowiedzi na twoje pytanie. W związku z tym pytanie zostało ponownie udostępnione innym ekspertom. Ktoś za niedługo zajmie się nim ponownie.</value>
+  </data>
+  <data name="ThreadGiveUpSubject" xml:space="preserve">
+    <value>ekspert zrezygnował z odpowiedzi</value>
+  </data>
+  <data name="ThreadMoreDetailsEmailContent" xml:space="preserve">
+    <value>Ekspert {0} poprosił Ciebie o uszczegółowienie pytania. Udziel odpowiedzi na stronie pytania.</value>
+  </data>
+  <data name="ThreadMoreDetailsEmailSubject" xml:space="preserve">
+    <value>ekspert prosi o uszczegółowienie pytania</value>
+  </data>
+  <data name="ThreadNewPostToExpertEmailContent" xml:space="preserve">
+    <value>Użytkownik dodał nową wiadomość do pytania, na które odpowiadasz.</value>
+  </data>
+  <data name="ThreadNewPostEmailToExpertSubject" xml:space="preserve">
+    <value>nowa wiadomość od użytkownika</value>
+  </data>
+  <data name="ThreadNewPostToUserEmailContent" xml:space="preserve">
+    <value>Ekspert {0} dodał nową odpowiedź do twojego pytania.</value>
+  </data>
+  <data name="ThreadNewPostEmailToUserSubject" xml:space="preserve">
+    <value>nowa odpowiedź od eksperta</value>
+  </data>
+  <data name="ThreadOccupyEmailContent" xml:space="preserve">
+    <value>Twoje pytanie zostało przejęte przez eksperta {0}. W ciągu najbliższych 15 minut powinieneś otrzymać odpowiedź lub zostać poinformowany o postępach w jej udzielaniu.</value>
+  </data>
+  <data name="ThreadOccupyEmailSubject" xml:space="preserve">
+    <value>ekspert przejął pytanie</value>
+  </data>
+  <data name="ThreadPriceProposalContent" xml:space="preserve">
+    <value>Ekspert {0} zaproponował nową cenę dla twojego pytania. Możesz zaakceptować lub odrzucić proponowaną stawkę na stronie pytania.</value>
+  </data>
+  <data name="ThreadPriceProposalSubject" xml:space="preserve">
+    <value>wycena pytania</value>
+  </data>
+  <data name="AdditionalServiceAnswerEmailContent" xml:space="preserve">
+    <value>Użytkownik odpowiedział na przedstawioną przez Ciebie propozycję dodatkowej usługi związanej z pytaniem.</value>
+  </data>
+  <data name="AdditionalServiceEmailContent" xml:space="preserve">
+    <value>Ekspert {0} zaoferował dodatkową usługę dla twojego pytania.</value>
+  </data>
+  <data name="AdditionalServiceEmailSubject" xml:space="preserve">
+    <value>dodatkowa usługa "{0}"</value>
+  </data>
+  <data name="ThreadQuestionSubject" xml:space="preserve">
+    <value>pytanie "{0}"</value>
+  </data>
+  <data name="ChatSummarySubject" xml:space="preserve">
+    <value>podsumowanie rozmowy z konsultantem</value>
+  </data>
+  <data name="NewInterestingThreadSubject" xml:space="preserve">
+    <value>dodano nowe pytanie w twojej kategorii</value>
+  </data>
+  <data name="ThreadPaymentConfirmationContent" xml:space="preserve">
+    <value>Płatność za pytanie została zaakceptowana. Status pytania został zmieniony na opłacone, a samo pytanie zostanie przedstawione ekspertom.</value>
+  </data>
+  <data name="ServicePaymentConfirmationSubject" xml:space="preserve">
+    <value>płatnośc za usługę dodatkową została zaksięgowana</value>
+  </data>
+  <data name="ThreadExpertAddAttachmentEmailContent" xml:space="preserve">
+    <value>Ekspert {0} dodał załącznik do twojego pytania.</value>
+  </data>
+  <data name="ThreadUserAddAttachmentEmailContent" xml:space="preserve">
+    <value>Pytający dodał załącznik do pytania na które odpowiadasz.</value>
+  </data>
+  <data name="NewExpertEmailSubject" xml:space="preserve">
+    <value>witaj w gronie ekspertów</value>
+  </data>
+  <data name="FeedbackCommentEmailSubject" xml:space="preserve">
+    <value>nowy komentarz do twojej opini</value>
+  </data>
+  <data name="AwaitingExpertResponseEmailContent" xml:space="preserve">
+    <value>Eksperci przyglądają się twojemu pytaniu, ale potrzebują nieco więcej czasu aby udzielić na nie odpowiedzi.</value>
+  </data>
+  <data name="AwaitingExpertResponseEmailSubject" xml:space="preserve">
+    <value>oczekiwanie na odpowiedź eksperta</value>
+  </data>
+  <data name="ExpertStatisticsEmailContent" xml:space="preserve">
+    <value>Przesyłamy comiesięczne podsumowanie statystyk za {0}:&lt;br/&gt;
+Udzieliłeś odpowiedzi na {1} pytań.&lt;br/&gt;
+Otrzymałeś {2} pozytywne, {3} neutralne i {4} negatywe opinie.&lt;br/&gt;
+Twój bilans wynosi: {5} zł.&lt;br/&gt;</value>
+  </data>
+  <data name="ExpertStatisticsEmailSubject" xml:space="preserve">
+    <value>podsumowanie statystyk</value>
+  </data>
+  <data name="AcceptAnswerReminderContent" xml:space="preserve">
+    <value>Zauważyliśmy, że pomimo iż ekspert {0} odpowiedział na twoje pytanie, to jego odpowiedź nie została jeszcze zaakceptowana. Jeśli jesteś zadowolony z odpowiedzi eksperta prosimy o zaakceptowanie odpowiedzi na stronie pytania.</value>
+  </data>
+  <data name="AcceptAnswerReminderSubject" xml:space="preserve">
+    <value>akceptacja odpowiedzi</value>
+  </data>
+  <data name="NoExpertResponseContent" xml:space="preserve">
+    <value>Twoje pytanie nie uzyskało odpowiedzi w przeciągu 24 godzin. Może się to wiązać z niską ceną pytania. Poczekaj na propozycje cen ekspertów i wybierz najbardziej odpowiadającą Tobie ofertę.
+{0}</value>
+  </data>
+  <data name="NoExpertResponseSubject" xml:space="preserve">
+    <value>zwiększ zainteresowanie twoim pytaniem</value>
+  </data>
+  <data name="MonthlyAskEncouragementContent" xml:space="preserve">
+    <value>Dawno nie odwiedzałeś serwisu AskNuts.com. Przypominamy, że eksperci serwisu są dla Ciebie dostępni. Sprawdź nasze nowe kategorie i uzyskaj fachową pomoc oraz doradztwo pod adresem:&lt;br/&gt;</value>
+  </data>
+  <data name="MonthlyAskEncouragementSubject" xml:space="preserve">
+    <value>uzyskaj odpowiedź na swoje pytanie</value>
+  </data>
+  <data name="UserPayoffConfirmationContent" xml:space="preserve">
+    <value>Zgłoszone przez Ciebie żądanie wypłaty środków zostało zrealizowane. Zwracana kwota powinna zostać zaksięgowana na twoim koncie w przeciągu najbliższych kilku dni roboczych. </value>
+  </data>
+  <data name="UserPayoffConfirmationSubject" xml:space="preserve">
+    <value>środki zostały wypłacone</value>
+  </data>
+  <data name="PartnerStatisticsEmailContent" xml:space="preserve">
+    <value>Przesyłamy comiesięczne podsumowanie statystyk twojego konta partnera:&lt;br /&gt;
+Aktualny bilans: {0}&lt;br /&gt;
+Przychód w tym miesiącu: {1}&lt;br /&gt;</value>
+  </data>
+  <data name="PartnerStatisticsEmailSubject" xml:space="preserve">
+    <value>miesięczne podsumowanie statystyk</value>
+  </data>
+  <data name="FeedbackCommentEmailContent" xml:space="preserve">
+    <value>Ekspert {0} skomentował opinię dotyczącą odpowiedzi na zadane przez Ciebie pytanie.  Aby obejrzeć szczegółowe dane dotyczące pytania i przeczytać komentarz eksperta, kliknij w poniższy link:</value>
+  </data>
+  <data name="NewInterestingEmailContent" xml:space="preserve">
+    <value>W twojej kategorii pojawiło się nowe pytanie które może Cię zainteresować: &lt;br/&gt;
+"{0}"</value>
+  </data>
+  <data name="NewModeratorPostEmailContent" xml:space="preserve">
+    <value>moderator dodał nową wiadomość w Twoim wątku</value>
+  </data>
+  <data name="NewPMToExpertEmailContent" xml:space="preserve">
+    <value>otrzymałeś prywatną wiadomość od eksperta</value>
+  </data>
+  <data name="EmailFooter" xml:space="preserve">
+    <value>&lt;br/&gt;&lt;br/&gt;Pozdrawiamy,&lt;br/&gt;
+Zespół AskNuts.com&lt;br/&gt;
+kontakt@asknuts.com</value>
+  </data>
+  <data name="NewExpertEmailContent" xml:space="preserve">
+    <value>Z radością witamy Cię w gronie ekspertów serwisu AskNuts.com. Możesz już aktywnie korzystać z serwisu i odpowiadać na pytania naszych użytkowników. Równocześnie przeprowadzona zostanie procedura oceny Twoich kwalifikacji, dzieki której uzyskasz status zweryfikowanego eksperta.</value>
+  </data>
+  <data name="ServicePaymentConfirmationContent" xml:space="preserve">
+    <value>Płatność za usługę dodatkową powiązaną z Twoim pytaniem została zaakceptowana. Informacja o zmianie statusu została przekazana do eksperta.</value>
+  </data>
+  <data name="ChatSummaryEmailModerator" xml:space="preserve">
+    <value>Moderator:</value>
+  </data>
+  <data name="ChatSummaryEmailYou" xml:space="preserve">
+    <value>Ty:</value>
+  </data>
+  <data name="RecommendationContent" xml:space="preserve">
+    <value>Polecana kategoria: {0}&lt;br/&gt;
+Aby się zarejestrować kliknij w ten link: &lt;br/&gt;
+{1}&lt;br/&gt;&lt;br/&gt;
+Pozdrawiam,&lt;br/&gt;
+{2} {3}</value>
+  </data>
+  <data name="RecommendationSubject" xml:space="preserve">
+    <value>zaproszenie do serwisu asknuts</value>
+  </data>
+  <data name="RecommenderContent" xml:space="preserve">
+    <value>Polecony przez ciebie ekspert się zarejestrował. Dostaniesz bonus, gdy tylko uzyska pięć akceptacji pytań.</value>
+  </data>
+  <data name="RecommenderSubject" xml:space="preserve">
+    <value>rejestracja poleconego eksperta</value>
+  </data>
+  <data name="RecommenderNotRegisteredContent" xml:space="preserve">
+    <value>Polecony przez ciebie ekspert się zarejestrował. Dostaniesz bonus, gdy tylko uzyska pięć akceptacji pytań. Pamiętaj że musisz się zarejestrować w naszym serwisie aby odebrać bonus.</value>
+  </data>
+  <data name="RecommenderNotRegisteredSubject" xml:space="preserve">
+    <value>rejestracja poleconego eksperta</value>
+  </data>
+  <data name="Head" xml:space="preserve">
+    <value>Witaj!&lt;br/&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="HeadExpert" xml:space="preserve">
+    <value>Witaj {0}!&lt;br/&gt;</value>
+  </data>
+  <data name="ThreadDetailsLink" xml:space="preserve">
+    <value>Aby obejrzeć szczegółowe dane dotyczące pytania, kliknij w poniższy link:&lt;br/&gt;</value>
+  </data>
+  <data name="ExpertProfileLink" xml:space="preserve">
+    <value>Aby obejrzeć szczegółowe dane dotyczące twojego profilu, kliknij w poniższy link:&lt;br/&gt;</value>
+  </data>
+  <data name="NewExpertLink" xml:space="preserve">
+    <value>Aby zacząć przeglądać dostępne pytania kliknij w poniższy link:&lt;br/&gt;</value>
+  </data>
+  <data name="ThreadAdditionalServiceLink" xml:space="preserve">
+    <value>Aby obejrzeć szczegółowe dane dotyczące tej usługi, kliknij w poniższy link:&lt;/br&gt;</value>
+  </data>
+  <data name="ChatSummaryContent" xml:space="preserve">
+    <value>Poniżej przesyłamy podsumowanie rozmowy z konsultantem AskNuts:&lt;br/&gt;</value>
+  </data>
+  <data name="PartnerAcceptedContent" xml:space="preserve">
+    <value>Twoja prośba o przystąpienie do programu partnerskiego serwisu AskNuts została zaakceptowana.</value>
+  </data>
+  <data name="PartnerAcceptedSubject" xml:space="preserve">
+    <value>akceptacja prośby o uczestnictwo w programie partnerski</value>
+  </data>
+  <data name="PartnerRejectedContent" xml:space="preserve">
+    <value>Twoja prośba o przystąpienie do programu partnerskiego serwisu AskNuts została odrzucona. Może to być spowodowane tymczasowymi ograniczeniami w kwestii rejestracji nowych partnerów. Spróbuj ponownie w przyszłości.</value>
+  </data>
+  <data name="PartnerRejectedSubject" xml:space="preserve">
+    <value>odrzucenie prośby o uczestnictwo w programie partnerskim</value>
+  </data>
+  <data name="ShowPartnerProgramPage" xml:space="preserve">
+    <value>Aby uzyskać więcej informacji, kliknij poniższy link</value>
+  </data>
+</root>

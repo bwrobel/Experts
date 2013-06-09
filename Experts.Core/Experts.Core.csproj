@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E020A1EC-B72D-4688-86CE-A87ADAC2B2B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Experts.Core</RootNamespace>
+    <AssemblyName>Experts.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataFresh">
+      <HintPath>..\packages\DataFresh\DataFresh.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Entities\AdCampaignLandingPage.cs" />
+    <Compile Include="Entities\AdditionalService.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\CategoryAttribute.cs" />
+    <Compile Include="Entities\CategoryAttributeOption.cs" />
+    <Compile Include="Entities\CategoryAttributeValue.cs" />
+    <Compile Include="Entities\Chat.cs" />
+    <Compile Include="Entities\ChatMessage.cs" />
+    <Compile Include="Entities\Consultant.cs" />
+    <Compile Include="Entities\Events\PaymentEvent.cs" />
+    <Compile Include="Entities\Provision.cs" />
+    <Compile Include="Entities\Recommendation.cs" />
+    <Compile Include="Entities\EmailData.cs" />
+    <Compile Include="Entities\Events\AccountEvent.cs" />
+    <Compile Include="Entities\Events\Event.cs" />
+    <Compile Include="Entities\Events\ExceptionEvent.cs" />
+    <Compile Include="Entities\Events\StatisticsEvent.cs" />
+    <Compile Include="Entities\Events\ThreadEvent.cs" />
+    <Compile Include="Entities\Expert.cs" />
+    <Compile Include="Entities\ExpertCategoryAttributeValues.cs" />
+    <Compile Include="Entities\ExpertMicroprofile.cs" />
+    <Compile Include="Entities\Feedback.cs" />
+    <Compile Include="Entities\IAuditableEntity.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\IService.cs" />
+    <Compile Include="Entities\Moderator.cs" />
+    <Compile Include="Entities\QueuedEmail.cs" />
+    <Compile Include="Entities\SEOKeyword.cs" />
+    <Compile Include="Entities\Subscription.cs" />
+    <Compile Include="Entities\Transfer.cs" />
+    <Compile Include="Entities\Partner.cs" />
+    <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Entities\Post.cs" />
+    <Compile Include="Entities\Price.cs" />
+    <Compile Include="Entities\PriceProposal.cs" />
+    <Compile Include="Entities\Thread.cs" />
+    <Compile Include="Entities\ThreadIssue.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Opinion.cs" />
+    <Compile Include="Exceptions\ThreadExceptions.cs" />
+    <Compile Include="Exceptions\UserExceptions.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdLandingPageRepository.cs" />
+    <Compile Include="Repositories\AuditableRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\ChatRepository.cs" />
+    <Compile Include="Repositories\ConsultantRepository.cs" />
+    <Compile Include="Repositories\FeedbackRepository.cs" />
+    <Compile Include="Repositories\ProvisionRepository.cs" />
+    <Compile Include="Repositories\RecommendationRepository.cs" />
+    <Compile Include="Repositories\ModeratorRepository.cs" />
+    <Compile Include="Repositories\SubscriptionRepository.cs" />
+    <Compile Include="Repositories\TransferRepository.cs" />
+    <Compile Include="Repositories\EventRepository.cs" />
+    <Compile Include="Repositories\ExpertRepository.cs" />
+    <Compile Include="Utils\DbRecreator.cs" />
+    <Compile Include="Utils\EmailMetadataHelper.cs" />
+    <Compile Include="Utils\RepositoryHelper.cs" />
+    <Compile Include="Utils\StatisticsHelper.cs" />
+    <Compile Include="ViewModels\ExpertMonthlyStatistics.cs" />
+    <Compile Include="ViewModels\PartnerMonthlyStatistics.cs" />
+    <Compile Include="ViewModels\ThreadWithMatch.cs" />
+    <Content Include="Migrations\Partners.sql" />
+    <Compile Include="Repositories\PartnerRepository.cs" />
+    <Compile Include="Repositories\PaymentRepository.cs" />
+    <Compile Include="Repositories\QueuedEmailRepository.cs" />
+    <Compile Include="Repositories\SEOKeywordRepository.cs" />
+    <Compile Include="Repositories\ThreadRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\OpinionRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Utils\CryptoHelper.cs" />
+    <Compile Include="Utils\TextHelper.cs" />
+    <Compile Include="Utils\ThreadValueHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ChartStatistics.cs" />
+    <Compile Include="ViewModels\ExpertOverviewCharts.cs" />
+    <Compile Include="ViewModels\ExpertOverviewViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Migrations\Constraints.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Experts.Resources\Experts.Resources.csproj">
+      <Project>{220673AF-FD64-421C-A3D5-8ACC393DE23E}</Project>
+      <Name>Experts.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

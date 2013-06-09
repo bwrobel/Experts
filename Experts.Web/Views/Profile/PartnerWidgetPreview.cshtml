@@ -1,0 +1,17 @@
+﻿<!doctype html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+      <script type="text/javascript" src="@Url.Content(Links.Scripts.jquery_1_8_1_min_js)"></script>
+    </head>
+    <body>
+        @Html.Partial(MVC.Profile.Views.PartnerWidget)
+    
+        <script type="text/javascript">
+            $(function() { 
+                $('form').attr('target', '_parent');
+            });
+        </script>
+    </body>
+</html>

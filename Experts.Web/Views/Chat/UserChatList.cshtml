@@ -1,0 +1,7 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Chat.UserChatListModel
+           
+<div class="table table-striped">
+    @Html.ChatsOverviewGrid(Model.UserChats, false, Model.CurrentChatId ?? 0)
+</div>
+@Html.Partial(MVC.Shared.Views._Pager, Model.UserChats.Pagination)

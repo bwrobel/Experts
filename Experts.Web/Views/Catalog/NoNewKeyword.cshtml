@@ -1,0 +1,12 @@
+﻿@model Experts.Web.Models.Forms.KeywordProcessFormModel
+
+<h2>@ViewBag.PageTitle</h2>
+
+<div class="well">
+    <div>
+        @Resources.Catalog.NoNewKeywords
+    </div>
+    <div>
+        @Html.Partial(MVC.Catalog.Views._AddKeywordWindow)
+    </div>
+</div>

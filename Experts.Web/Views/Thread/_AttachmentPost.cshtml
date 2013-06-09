@@ -1,0 +1,74 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.PostViewModel
+
+@{var fancy = "";
+  var lastAttachment = "";}
+
+@if (Model.Post.Type != PostType.Hidden && Model.Post.Attachments.Any(a => a.Type != AttachmentType.Hidden))
+{
+    <div class="post thread-post row">   
+        @if (Model.Post.Author.IsExpert && Model.Post.Author != Model.Post.Thread.Author)
+        {
+            <div class="span2 embedded-image">
+                @Html.ProfileAvatar(Model.Post.Author)
+                <img src="@ImageHelper.UrlToCategoryIconSmall(Model.Post.Thread.Category.Id)" alt="@Model.Post.Thread.Category.Name" class="category-icon-small"/>
+            </div>
+        }
+        else
+        {
+            <div class="span2 user-image">@Html.ProfileAvatar(Model.Post.Author)</div>
+        }
+
+        <div class="thread-post-tite">
+            @if (AuthenticationHelper.CurrentUser == Model.Post.Author)
+            {@Resources.Thread.MyAttachments}
+            else
+            {
+                if (Model.Post.Author == Model.Post.Thread.Author)
+                {@Resources.Thread.QuestionerSentAttachments}
+                else
+                {@Resources.Thread.ExpertSentAttachments}
+            }
+        </div>
+
+        <div class="thread-post-date">@Model.Post.CreationDate.ToTimeSinceFormat()</div>
+
+        <div class="span11 thread-post-content attachment-post">
+            @foreach (var attachment in Model.Post.Attachments)
+            {
+                if (attachment.Type != AttachmentType.Hidden)
+                {
+                    if (attachment.Type == AttachmentType.Image) { fancy = "fancy"; } else{fancy = "";}
+                    if (attachment.IsLastInPost() && attachment.Post.IsLastInThread()) { lastAttachment = "last-attachment"; } else{lastAttachment = "";}
+                    
+                    <div id="@lastAttachment">
+                            <a href="@Url.Action(MVC.Thread.GetAttachment(attachment.Id))" class="@fancy attachments" rel="tooltip" title="@Resources.Attachments.DownloadAttachment">
+                                @attachment.AttachmentName @UploadHelper.RoundBytes(attachment.AttachmentSize, 2)
+                            </a>
+
+                            @if (AuthenticationHelper.IsAuthenticated && Model.Post.IsDeletable())
+                            {
+                                <span class="pull-right"><i class="icon-trash"></i> @Html.ActionLink(Resources.Attachments.DeleteAttachment, MVC.Thread.DeleteAttachment(attachment.Id))</span>
+                            }
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+    
+    <div class="post-buttons">
+        @if (AuthenticationHelper.IsAuthenticated && Model.Post.IsDeletable() && Model.Post.Attachments.Count(a => a.Type != AttachmentType.Hidden) > 1)
+        {
+            <a class="btn btn-small btn-inverse" href="@Url.Action(MVC.Thread.DeletePost(Model.Post.Id))"><i class="icon-trash"></i>@Resources.Attachments.DeleteAttachments</a>
+        }
+    </div>
+    <hr class="top-hr"/>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>

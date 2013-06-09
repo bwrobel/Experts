@@ -1,0 +1,125 @@
+﻿@using Experts.Web.Helpers
+@using SquishIt.Framework
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Asknuts.com - @ViewBag.RawPageTitle</title>
+    <meta name="description" content="@ViewBag.PageDescription" >
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="shortcut icon" href="@Url.Content(Links.Content.images.favicon_ico)"/>
+
+    @(Html.Raw(Bundle.Css()
+                .Add(Url.Content(Links.Content.fonts.DroidSans.stylesheet_css))
+                .Add(Url.Content(Links.Content.bootstrap_min_css))
+                .Add(Url.Content(Links.Content.fonts.FontAwesome.font_awesome_css))
+                .Add(Url.Content(Links.Content.themes.@base.jquery_ui_css))
+                .Add(Url.Content(Links.Content.jquery_selectbox_css))
+                .Add(Url.Content(Links.Content.jquery_ui_custom_css))
+                .Add(Url.Content(Links.Content.bootstrap_min_css))
+                .Add(Url.Content(Links.Content.bootstrap_custom_css))
+                .Add(Url.Content(Links.Content.Site_css))
+                .Render("/Content/application.css")
+        ))
+
+    @(Html.Raw(Bundle.JavaScript()
+                .Add(Url.Content(Links.Scripts.jquery_1_8_1_min_js))
+                .Add(Url.Content(Links.Scripts.jquery_selectbox_0_2_min_js))
+                .Add(Url.Content(Links.Scripts.jquery_textareaAutoResize_js))
+                .Add(Url.Content(Links.Scripts.jquery_countdown_js))
+                .Add(Url.Content(Links.Scripts.jquery_ui_1_8_23_min_js))
+                .Add(Url.Content(Links.Scripts.jquery_cookie_js))
+                .Add(Url.Content(Links.Scripts.jsUploader.vendor.jquery_ui_widget_js))
+                .Add(Url.Content(Links.Scripts.jsUploader.jquery_iframe_transport_js))
+                .Add(Url.Content(Links.Scripts.jsUploader.jquery_fileupload_js))
+                .Add(Url.Content(Links.Scripts.modernizr_2_6_2_js))
+                .Add(Url.Content(Links.Scripts.moment_min_js))
+                .Add(Url.Content(Links.Scripts.bootstrap_min_js))
+                .AddDirectory("/Scripts/App/")
+                .Render("/Scripts/application.js")
+       ))
+       
+    @Html.Partial(MVC.Shared.Views._GoogleAnalytics)
+
+    <script type="text/javascript">
+        $(function () {
+            editors.initCheckboxes();
+            editors.initTextareas();
+            editors.initRadio();
+            global.initLinks('@Resources.Global.ConfirmationMessage');
+        });
+    </script>
+</head>
+    <body>
+        <div class="container">
+            <header>
+                <a href="@Url.Action(MVC.StaticPages.Home())">
+                    <img class="logo" src="@Url.Content(Links.Content.images.logo_png)" alt="asknuts.com" width="240" height="54"/>
+                </a>
+                
+                @Html.Partial(MVC.Shared.Views._TopMenu, string.Empty)
+
+                @Html.Partial(MVC.StaticPages.Views._MeetAskNutsHint)
+
+                @if(AuthenticationHelper.CurrentUser != null && AuthenticationHelper.CurrentUser.IsModerator){@Html.Action(MVC.Administration.ModeratorMenu())}
+            </header>
+        </div>
+        
+        <hr/>
+
+        <div class="container main">
+            @Html.FlashMessage()
+            @RenderBody()
+        </div>
+        
+        <hr/>
+
+        <footer class="container row">
+            <div class="row">
+                <div class="span6">
+                    <h4>@Resources.Global.KnowledgeBase</h4>
+                    <ul>
+                        <li>@Html.ActionLink(Resources.Global.KeywordListAnswers, MVC.Thread.CatalogQuestionList())</li>
+                        <li>@Html.ActionLink(Resources.Global.KeywordListQuestions, MVC.Catalog.KeywordListQuestions())</li>
+                        <li>@Html.ActionLink(Resources.Global.KeywordListPhrases, MVC.Catalog.KeywordListPhrases())</li>
+                        <li>@Html.ActionLink(Resources.Global.KeywordListExperts, MVC.Catalog.KeywordListExperts())</li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <h4>@Resources.Global.AskNutsCom</h4>
+                    <ul>
+                        <li>@Html.ActionLink(Resources.Global.MeetAsknuts, MVC.StaticPages.MeetAsknuts())</li>
+                        <li>@Html.ActionLink(Resources.Global.PolicyWeb, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Terms))</li>
+                        <li>@Html.ActionLink(Resources.Global.PolicyPrivate, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Privacy))</li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <h4>@Resources.Global.Experts</h4>
+                    <ul>
+                        @*                        <li>@Html.ActionLink(Resources.Global.HowItWorks, MVC.StaticPages.ExpertHelp())</li>*@
+                        <li>@Html.ActionLink(Resources.Global.BecomeExpert, MVC.Account.ExpertSignUp())</li>
+                        <li>
+                            @{
+                                int? recommenderId = null;
+                                if (AuthenticationHelper.CurrentUser != null){recommenderId = AuthenticationHelper.CurrentUser.Id;}
+                            }
+                            <a data-toggle="modal" href="#ReferExpertModal">@Resources.Global.RecommendExpert</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span5 copyright">
+                    Copyright &copy; 2013 by <a href="http://gorrion.pl" class="purple">Gorrion</a>
+                    <br/>All rights reserved
+                </div>
+            </div>
+        </footer>
+        
+        @Html.Action(MVC.Profile.RecommendExpert(recommenderId))
+
+        @if (ViewBag.HideChat == null || !ViewBag.HideChat)
+        {
+            Html.RenderAction(MVC.Chat.ChatFrame());
+        }
+    </body>
+</html>

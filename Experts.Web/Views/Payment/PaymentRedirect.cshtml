@@ -1,0 +1,31 @@
+﻿@model Experts.Web.Models.Payments.PaymentRedirectModel
+           
+@{
+    ViewBag.Title = Resources.Payment.PaymentRedirectTitle;
+}
+
+<h2>@Resources.Payment.PaymentRedirectTitle</h2>
+
+@if (Model.ImmediateRedirectActionResult == null)
+{
+    <section>@Resources.Payment.PaymentRedirectParagraph</section>
+    
+    <form action="@Model.Provider.RequestUrl" id="payment-redirect-form" method="POST">
+        @Html.Partial(Model.Provider.ProviderFormPartialView, Model)
+    </form>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#payment-redirect-form').submit();
+        });
+    </script>
+}
+else
+{
+    <script type="text/javascript">
+        $(function () {
+            window.location.replace('@Url.Action(Model.ImmediateRedirectActionResult)');
+        });
+    </script>
+}
+

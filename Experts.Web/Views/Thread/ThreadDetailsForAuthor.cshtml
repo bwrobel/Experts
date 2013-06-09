@@ -1,0 +1,70 @@
+﻿@using Experts.Web.Models.Threads
+@using Experts.Core.Entities
+@model ThreadDetailsModel
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<h2>
+    @if (Model.Thread.Expert != null)
+    {
+        if(Model.Thread.State == ThreadState.Closed)
+        {
+            @Model.Thread.Expert.PublicName
+            <b class="purple">@Resources.Thread.AnsweredQuestion</b>
+        }
+        else
+        {
+            @Model.Thread.Expert.PublicName
+            <b class="purple">@Resources.Thread.IsAnsweringYourQuestion</b>
+        }
+    }
+    else
+    {@Resources.Thread.ThreadNoAnswersYet}
+</h2>
+
+<hr/>
+
+@Html.Action(MVC.Thread.ShowPost(Model.Thread.Posts.First()))
+
+<div class="row">
+    <div class="span16">
+
+        <div id="allposts">
+            @Html.Partial(MVC.Thread.Views._Thread, Model)
+        </div>
+
+        @if (Model.Thread.PriceProposals.Any() && Model.Thread.Expert == null && Model.Thread.CreationDate < DateTime.Now.AddDays(-1))
+        {        
+            @Html.Partial(MVC.Thread.Views._ExpertProposals, Model.Thread)
+        }
+        
+        @if (Model.Thread.AdditionalServices.Any(a => a.IsVerified))
+        {
+            @Html.Action(MVC.Thread.AdditionalServiceInformation(Model.Thread.Id))    
+        }
+        
+        @if (Model.Thread.State != ThreadState.Closed && Model.Thread.Expert != null)
+        {
+            @Html.Partial(MVC.Thread.Views._CreatePostForm, Model.PostFormModel)
+        }
+    </div>
+    <aside class="span8 pull-right">
+        <div id="menu">
+            @Html.Action(MVC.Thread.ShowThreadDetailsMenu(Model.Thread))
+        </div>
+
+        @if (Model.Thread.Expert != null)
+        {@Html.Action(MVC.Thread.ShowExpertInfo(Model.Thread))}
+
+        @Html.Partial(MVC.Thread.Views._SatisfactionTable)
+
+        @Html.Partial(MVC.Thread.Views._ThreadAcceptedNorification, Model.Thread)
+    </aside>
+</div>
+
+<script type="text/javascript">
+    thread.initAllPosts(@Model.Thread.Id, @Model.Thread.LastModificationDate.Ticks, @Model.Thread.IntState, false);
+</script>
+
+

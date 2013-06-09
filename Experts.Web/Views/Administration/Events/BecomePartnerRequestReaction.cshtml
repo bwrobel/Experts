@@ -1,0 +1,13 @@
+﻿@model Experts.Web.Models.Events.BecomePartnerRequestReactionModel
+
+<form action="/Administration/BecomePartnerRequestReaction/">
+    <p>@Model.Event.Message</p>
+    
+    <p>Zaakceptować zgłoszenie?</p>
+    <p>
+        @Html.RadioButtonFor(m => m.Accept, true) Tak, zaakceptuj <br />
+        @Html.RadioButtonFor(m => m.Accept, false) Nie, odrzuć <br />
+    </p>
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

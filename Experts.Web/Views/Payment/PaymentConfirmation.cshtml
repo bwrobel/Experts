@@ -1,0 +1,20 @@
+﻿@model Experts.Web.Models.Payments.PaymentConfirmationModel
+@using Experts.Core.Entities;
+
+@{
+    ViewBag.Title = Model.Status == PaymentStatus.Success ? Resources.Payment.PaymentSuccessTitle : Resources.Payment.PaymentFailureTitle;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<section>
+    <p>
+        @(Model.Status == PaymentStatus.Success ? Resources.Payment.PaymentSuccessConfirmation : Resources.Payment.PaymentFailureConfirmation)
+    </p>
+    @if (Model.RedirectResult != null)
+    {
+        <p>@Html.ActionLink(Resources.Payment.PaymentContinue, Model.RedirectResult)</p>
+    }
+
+    <p>@Html.ActionLink(Resources.Global.BackToHome, MVC.StaticPages.Home())</p>
+</section>

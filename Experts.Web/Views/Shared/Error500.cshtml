@@ -1,0 +1,17 @@
+﻿@model Experts.Web.Models.Forms.ApplicationErrorForm
+
+<h2>@Resources.Global.ErrorFormTitle</h2>
+
+<p>
+    @Resources.Global.ErrorFormDescription
+</p>
+<hr/>
+<div class="row">
+    <div class="well span11 offset5">
+        @using(Html.BeginForm(MVC.Error.Error500()))
+        {
+            @Html.EditorForModel()
+            <input type="submit" class="btn btn-primary " value="@Resources.Global.ErrorFormSubmit"/>
+        }
+    </div>
+</div>

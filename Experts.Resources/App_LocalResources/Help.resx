@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs_Description" xml:space="preserve">
+    <value>{6}Asknuts to serwis w którym możesz szybko uzyskać odpowiedź na pytanie z dowolnej dziedziny. Posiadamy doświadczonych i godnych zaufania ekspertów, którzy są do Twojej dyspozycji 24/7.{7}
+	{0} Jakość ekspertów nieustannie weryfikuje i sprawdza dział jakości asknuts - {2}dowiedz się więcej o procedurach jakości asknuts{3}. Wszystko to po to, aby dać Ci 100% gwarancję satysfakcji z udzielonej odpowiedzi. Codziennie otrzymujemy pytania z różnych dziedzin. Codziennie obsługujemy kolejnych zadowolonych klientów. {1} 
+{4}Więcej o misji asknuts{5}</value>
+  </data>
+  <data name="AboutUs_Title" xml:space="preserve">
+    <value>O nas</value>
+  </data>
+  <data name="ActivationEmailResend_Description" xml:space="preserve">
+    <value>{0}Email rejestracyjny może dojść z lekkim opóźnieniem. Sprawdź czy wiadomość nie trafiła do SPAMU.{1}
+{2}Jeśli w ciągu godziny nie dostałeś maila, skontaktuj się z nami na {3}
+{4}Przyczyną może być zaginięcie wiadomości, Twój filtr antyspamowy, bądź nieprawidłowa nazwa emaila podana przy rejestracji. Nasi konsultanci zweryfikują przyczynę problemu i pomogą w zakończeniu procesu rejestracji.{5}</value>
+  </data>
+  <data name="ActivationEmailResend_Title" xml:space="preserve">
+    <value>Nie dotarł do mnie email rejestracyjny – co robić?</value>
+  </data>
+  <data name="AdditionalQuestionOptions_Description" xml:space="preserve">
+    <value>{0}Dodatkowe informacje które wyświetlają się po zadaniu pytania pozwalają naszym ekspertom lepiej zrozumieć istotę problemu. Wypełniając te informacje zwiększasz szanse na satysfakcjonującą odpowiedź w krótkim czasie.{1}
+{2}Dane w informacjach dodatkowych są opcjonalne – nie musisz wypełniać wszystkich pól. Wystarczy że wypełnisz te których jesteś pewien.{3}
+{4}Jeśli nie masz 100% pewności czy zaznaczyć dane pole – lepiej go nie zaznaczaj. Jeśli przekażesz nieprawidłową informację, może ona zmylić eksperta i wpłynąć na problemy przy odpowiedzi.{5}
+{6}Jeśli nie chcesz wypełniać informacji dodatkowych,  kliknij „Pomiń ten krok”{7}</value>
+  </data>
+  <data name="AdditionalQuestionOptions_Title" xml:space="preserve">
+    <value>Czym są dodatkowe informacje przy pytaniu?</value>
+  </data>
+  <data name="AffiliateProgram_Description" xml:space="preserve">
+    <value>PLACEHOLDER: link: prowadzi do programu partnerskiego</value>
+  </data>
+  <data name="AffiliateProgram_Title" xml:space="preserve">
+    <value>Program partnerski Asknuts</value>
+  </data>
+  <data name="AnswerAcceptanceHow_Description" xml:space="preserve">
+    <value>{0}W czasie odpowiedzi na pytanie ekspert może zadać Ci najpierw szereg pytań uszczegóławiających, dopiero po otrzymaniu stosownych informacji, przystępuje do pracy. Opcja „akceptacji” pojawia się dopiero w momencie, gdy ekspert udzieli Ci odpowiedzi. Opcja ta jest widoczna na prawym pasku w wątku pytania.{1}</value>
+  </data>
+  <data name="AnswerAcceptanceHow_Title" xml:space="preserve">
+    <value>Jak zaakceptować odpowiedź?</value>
+  </data>
+  <data name="AnswerAcceptanceWhen_Description" xml:space="preserve">
+    <value>{0}Pytanie zaakceptuj wtedy, gdy będziesz zadowolony z pracy jaką wykonał dla Ciebie ekspert:{1}
+{2}Udzielił satysfakcjonującej odpowiedzi, lub{3}
+{4}pomimo nie znalezienia odpowiedzi wykonał ciężką pracę i nakierował Cię na dalsze poszukiwania.{5}</value>
+  </data>
+  <data name="AnswerAcceptanceWhen_Title" xml:space="preserve">
+    <value>Kiedy mam zaakceptować pytanie – jakie są tego skutki?</value>
+  </data>
+  <data name="AnswerGuarantee_Description" xml:space="preserve">
+    <value>{0}Asknuts cały czas czuwa nad wysoką jakością swoich ekspertów oraz nad tym, żeby zawsze na Twoje pytanie mógł zareagować specjalista. Staramy się, żeby w każdej kategorii były zawsze osoby dostępne online, które szybko udzielą Ci odpowiedzi. Niezależnie od tego czy ktoś będzie w stanie odpowiedzieć na Twoje pytanie, dajemy Ci 100% gwarancję satysfakcji – dostaniesz od nas satysfakcjonującą odpowiedź albo oddamy Ci pieniądze.{1}
+{2}Więcej o gwarancji asknuts{3}</value>
+  </data>
+  <data name="AnswerGuarantee_Title" xml:space="preserve">
+    <value>Jaką mam gwarancję na odpowiedź?</value>
+  </data>
+  <data name="AnswerWaitingTime_Description" xml:space="preserve">
+    <value>{0}Czasem odpowiedź pojawia się w parę minut, zwykle w parę godzin. Najbardziej złożone pytania doczekują się odpowiedzi w ciągu paru dni.{1}</value>
+  </data>
+  <data name="AnswerWaitingTime_Title" xml:space="preserve">
+    <value>Ile muszę czekać na odpowiedź?</value>
+  </data>
+  <data name="Articles_Description" xml:space="preserve">
+    <value>PLACEHOLDER: lista wycinków artykułów wraz z odnośnikami do oryginałów</value>
+  </data>
+  <data name="Articles_Title" xml:space="preserve">
+    <value>Artykuły</value>
+  </data>
+  <data name="AskingQuestions_Description" xml:space="preserve">
+    <value>{0}Asknuts obsługuje ponad 20 kategorii. O Twoim pytaniu dowiedzą się ci eksperci, których kategorię wybierzesz. Dlatego wybór kategorii jest niezwykle istotny.{1}
+{2}Jeśli Twoje {3}pytanie nie pasuje do żadnej kategorii{4}, napisz do nas, my szybko stworzymy nową kategorię i znajdziemy ekspertów znających odpowiedź na Twoje pytanie.{5}
+{6}Jeśli Twoje {7}pytanie pasuje do wielu kategorii{8}, wybierz tą która jest najistotniejsza z punktu widzenia Twojego problemu. Kieruj się tym, którego eksperta chcesz spytać o zdanie.{9} 
+{10}Jeśli {11}pytanie wymaga opinii kilku ekspertów z kilku dziedzin{12}, zadaj pytanie kilka razy w różnych kategoriach.{13}
+{14}Nie martw się. Jeśli wybierzesz złą kategorię, nasi konsultanci czuwają i przekwalifikują je do najodpowiedniejszej kategorii.{15}</value>
+  </data>
+  <data name="AskingQuestions_Title" xml:space="preserve">
+    <value>Zadawanie pytania</value>
+  </data>
+  <data name="ChoosingExpert_Description" xml:space="preserve">
+    <value>{0}Tak, możesz wybrać eksperta do odpowiedzi na Twoje pytanie. Wystarczy, że wejdziesz na jego wizytówkę i skorzystasz z formularza „Zadaj mi pytanie”.{1}
+{2}W wyniku wyboru eksperta, ma on 24 godziny na reakcję na Twoje pytanie.{3}
+{4}Zachęcamy zatem, żeby zadawać pytania konkretnemu ekspertowi jeżeli jest aktualnie „online” , bądź bardzo niedawno odpowiedział na jakieś pytanie. To daje duże prawdopodobieństwo na to , że ekspert nie jest na dłuższym wyjeździe czy urlopie.{5}
+{6}Jeśli ekseprt nie odpowie na czas, pytanie zostanie przedstawione pozostałym naszym ekspertom z tej kategorii. Szybka odpowiedź na Twoje pytanie jest dla nas priorytetem. Więc nie będziesz musiał czekać do końca urlopu swojego eksperta.{7}
+{8}Jeśli natomiast jest to dla Ciebie bardzo istotne, dodatkowo zawrzyj w pytaniu stosowną adnotację: „Pytanie wyłącznie dla eksperta 'nazwa eksperta' gdyż on zajmuje się od początku moją sprawą.”{9}</value>
+  </data>
+  <data name="ChoosingExpert_Title" xml:space="preserve">
+    <value>Czy mogę wybrać eksperta do odpowiedzi na pytania?</value>
+  </data>
+  <data name="ClosedBrowserAfterAsking_Description" xml:space="preserve">
+    <value>{0}Jeśli jesteś zarejstrowanym użytkownikiem, wszystkie zadane przez Ciebie pytania znajdziesz w zakładce „Moje pytania =&gt; Pytam”.{1}
+{2}Jeśli nie zarejestrowałeś się, znajdź na swojej skrzynce mailowej (mail którego podawałeś przy płatności) email, w którym jest bezpośredni link do Twojego pytania.{3}
+{4}Email powinieneś dostać w ciągu paru minut od złożenia depozytu. Jeśli masz problemy ze znalezieniem, sprawdzć swój SPAM. Jeśli godzinę po płatności wciąż nie dostałeś maila, skontaktuj się z nami na {5}</value>
+  </data>
+  <data name="ClosedBrowserAfterAsking_Title" xml:space="preserve">
+    <value>Zadałem pytanie i zamknąłem przeglądarkę. Jak do niej wrócić?</value>
+  </data>
+  <data name="Community_Description" xml:space="preserve">
+    <value>PLACEHOLDER: linki do naszych społecznościówek</value>
+  </data>
+  <data name="Community_Title" xml:space="preserve">
+    <value>Społeczność</value>
+  </data>
+  <data name="CreatingQuestions_Description" xml:space="preserve">
+    <value>{0}Nie obawiaj się pytać otwarcie o sedno problemu – pytania są całkowicie anonimowe. PLACEHOLDER: link do info o anonimowości{1}
+{2}Uzupełniaj informacje dodatkowe – pozwolą one nam dobrać najodpowiedniejszego eksperta do Twojego pytania.{3}
+{4}Podawaj jak najwięcej szczegółów – im więcej szczegółów podasz, tym lepiej Ekspert zrozumie problem i nie będzie Cie zaprzątał dodatkowymi pytaniami.{5}
+{6}Odpowiadaj na prośby ekspertów – gdy ekspert poprosi Cie o dodatkowe informacje, nie zwlekaj. Im szybciej je podasz, tym szybciej uzyskasz zadowalającą odpowiedź.{7}
+{8}Załączaj zdjęcia, dokumenty, screenshoty – wszystko co jest pomocne w rozwiązaniu pytania. 
+Pamiętaj – ekspert jest także człowiekiem. Traktuj go jak człowieka.{9}
+{10}Gdy długo nie dostajesz odpowiedzi nie przejmuj się, czasem ekspert musi wykonać dodatkowe poszukiwania w celu znalezienia lub zweryfikowania odpowiedzi.{11}
+{12}Czasem może zdarzyć się, że ekspert wycofa się z odpowiedzi – oznacza to, że pytanie po prostu wykracza poza jego kompetencje. W takim przypadku poczekaj na innego eksperta gotowego podjać się odpowiedzi na Twoje pytanie.{13}
+{14}Nie wstydź się dopytywać – jeśli odpowiedź nie jest dla Ciebie jasna – poproś o wytłumaczenie pewnych jej aspektów.{15}
+{16}Nie zapomnij o akceptacji odpowiedzi – tylko wtedy nagrodzisz eksperta za trudy wykonanej pracy.{17}
+{18}Pozytywna opinia jest dla wielu ekspertów najważniejszym dowodem uznania. Wypełniaj ją przy każdej dobrej odpowiedzi a najlepszych ekspertów nagradzaj napiwkiem. Masz wtedy pewność, że na Twoje przyszłe pytania eksperci będą odpowiadać szybciej i z wiekszym zaangażowaniem, gdyż będą wiedzieli że mają przed sobą uczciwą osobę.{19}</value>
+  </data>
+  <data name="CreatingQuestions_Title" xml:space="preserve">
+    <value>Jak tworzyć jasne pytania?</value>
+  </data>
+  <data name="CustomerSupportContact_Description" xml:space="preserve">
+    <value>Jesteśmy dostępni pod adresem {0}</value>
+  </data>
+  <data name="CustomerSupportContact_Title" xml:space="preserve">
+    <value>Potrzebuję pomocy, jak skontaktować się z Customer Supportem?</value>
+  </data>
+  <data name="DoINeedToRegister_Description" xml:space="preserve">
+    <value>Nie, podczas zadawania pytania musisz jedynie podać adres email, na który dostaniesz powiadomienia o odpowiedzi. Rejestracja jest całkowicie dobrowolna.</value>
+  </data>
+  <data name="Register_Title" xml:space="preserve">
+    <value>Co daje mi rejestracja? Czy jest obowiązkowa?</value>
+  </data>
+  <data name="ExpertAnsweredQuestion_Description" xml:space="preserve">
+    <value>{0}W momencie gdy ekspert zajmie się Twoim pytaniem i udzieli na nie odpowiedzi, bądź poprosi o wiecej szczegółów, zostaniesz o tym niezwłocznie poinformowany mailowo (na maila podanego przy płatności, bądź na maila podanego przy rejestracji). Ponadto jeśli masz w przeglądarce odtwarty wątek z pytaniem, odpowiedź pojawi się na nim automatycznie.{1} 
+{2}Jeśli nie będziesz miał jeszcze odpowiedzi, na wątku będzie odpowiednia adnotacja –  „Eksperci analizują właśnie Twoje pytanie. Prosimy o trochę cierpliwości.”{3}</value>
+  </data>
+  <data name="ExpertAnsweredQuestion_Title" xml:space="preserve">
+    <value>Jak dowiem się że ekspert odpowiedział na moje pytanie?</value>
+  </data>
+  <data name="ExpertFAQ_Description" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="ExpertFAQ_Title" xml:space="preserve">
+    <value>FAQ Ekspertów</value>
+  </data>
+  <data name="ExpertNameAndSurname_Description" xml:space="preserve">
+    <value>{0}Asknuts dba o ochronę danych osobowych. Nie ujawniamy żadnych danych osobowych czy teleadresowych użytkowników swojego serwisu.{1}
+{2}Ich kompetencje potwierdza odpowiednia liczba zadowolonych klientów. Prezentowane są także : tytuł i dorobek naukowy, aktualne stanowisko. Wszystkie dane przedstawione w serwisie są zatem całkowicie wystarczające do oceny kwalifikacji poszczególnych ekspertów.{3}
+{4}Z drugiej strony, każde pytanie zadawane przez naszych użytkowników jest całkowicie anonimowe. Twoje dane personalne są bezpiecznie przechowywane na naszych serwerach. Nie mają do nich wglądu eksperci ani żadna firma trzecia.{5}
+{6}W celu dowiedzenia się więcej o naszej polityce prywatności przejdź do {7}Polityka prywatności asknuts{8}</value>
+  </data>
+  <data name="ExpertNameAndSurname_Title" xml:space="preserve">
+    <value>Dlaczego eksperci nie przedstawiają się z imienia i nazwiska?</value>
+  </data>
+  <data name="ExpertStatistics_Description" xml:space="preserve">
+    <value>{0}Gdy widzisz informacje o ekspercie, każdorazowo pojawiają się przy nim różne statystyki i informacje:{1}
+{2}50 zadowolonych klientów – informacja o tym, ilu do tej pory klientom asknuts pomógł ekspert. 50 klientów pozytywnie oceniło jego odpowiedź.{3}
+{4}96,7% pozytywnych odpowiedzi – tyle osób spośród wszystkich klientów tego eksperta oceniło jakość jego odpowiedzi pozytywnie.{5}
+{6}Symbol „Zweryfikowany” – opisany poniżej.{7}</value>
+  </data>
+  <data name="ExpertStatistics_Title" xml:space="preserve">
+    <value>Wszystko o statystykach eksperta</value>
+  </data>
+  <data name="ForgottenPassword_Description" xml:space="preserve">
+    <value>{0}Będziesz je musiał zmienić. Jak to zrobić:{1}
+{2}Przejdź do formularza logowania i kliknij „Zapomniałem hasła”.{3}
+{4}Podaj email wprowadzony podczas rejestracji.{5}
+{6}Na twoją skrzynkę przyjdzie email z linkiem. Kliknij go.{7}
+{8}Zostaniesz przeniesiony do formularza zmiany hasła – wprowadź i potwierdź nowe hasło.{9}
+{10}Zaloguj się za pomocą nowego hasła na swoje konto.{11}</value>
+  </data>
+  <data name="ForgottenPassword_Title" xml:space="preserve">
+    <value>Zapomniałem hasła – co teraz?</value>
+  </data>
+  <data name="Gratuity_Description" xml:space="preserve">
+    <value>{0}Napiwek jest dodatkową dobrowolną zapłatą dla eksperta za dobrze wykonaną pracę. Możesz dać napiwek ekspertowi po zaakceptowaniu jego odpowiedzi.{1}
+{2}Kiedy dawać napiwek? Klienci dają napiwek wtedy, gdy:{3}
+{4}Są bardzo zadowoleni z odpowiedzi.{5}
+{6}Ekspert w poszukiwaniu odpowiedzi na pytanie wykonał ciężką pracę, którą warto dodatkowo wynagrodzić.{7}
+{8}Pytanie okazało się niedowartościowane.{9}
+
+{10}Napiwek jest bardzo istotnym elementem oceny klienta przez ekspertów.{11}
+{12}Przy Twoim anonimowym pytaniu pojawiają się dwie informacje świadczące o wiarygodności klienta: {13}liczba zaakceptowanych odpowiedzi oraz napiwków.{14} Pytania klientów z wysoką liczbą zaakceptowanych odpowiedzi i napików są odbsługiwane szybciej, a eksperci poświęcają im więcej czasu, gdyż mają pewność, że odpowiadają zaufanej osobie.{15}</value>
+  </data>
+  <data name="Gratuity_Title" xml:space="preserve">
+    <value>Czym jest napiwek – kiedy go dawać?</value>
+  </data>
+  <data name="HowDoesItWork_Description" xml:space="preserve">
+    <value>{0}Zadaj pytanie{1} z dowolnej dziedziny:{2}
+Pytanie możesz zadać wszyskim ekspertom bądź konkretnemu, wybranemu przez Ciebie.
+{3}Określ cenę{4} – zwracalny depozyt:{5} 
+Depozyt wpłacasz jako znak dobrej woli. Sam zadecydujesz czy odpowiedź była satysfakcjonującej i pieniądze trafią do eksperta, czy wrócą do Ciebie.
+{6}Ekspert odpowie na Twoje pytanie{7} – dostaniesz mailowo powiadomienie:{8} 
+Odpowiedź dostaniesz czasem w parę minut, zwykle w parę godzin.
+{9}Oceń odpowiedź{10} – eksperta i asknuts:{11}
+Twoja ocena pozwala weryfikować ekspertów i informuje czy jesteś zadowolony z serwisu.
+{12}Gwarantujemy twoją satysfakcję{13}</value>
+  </data>
+  <data name="HowDoesItWork_Title" xml:space="preserve">
+    <value>Jak działa asknuts?</value>
+  </data>
+  <data name="MissionAndValues_Description" xml:space="preserve">
+    <value>{0}Serwisem asknuts kierują 3 wartości:{1}
+{2}Rzetelność{8} – gwarantujemy 100% jakość odpowiedzi albo zwrot pieniędzy!{3}
+Wnikliwa weryfikacja, monitoring jakości pracy naszych ekspertów oraz ciągłą praca nad Twoją satysfakcją z otrzymanej odpowiedzi – wszystko po to, żeby mieć 100% zadowolonych klientów i żeby wspólnie odkrywać odpowiedzi na ciekawe i ważne pytania. 
+{4}Dostępność{9} – jesteśmy dla Ciebie 24 godziny na dobę, 7 dni w tygodniu.{5}
+Nigdy nie mamy zamknięte, zawsze jest ktoś kto czuwa i odpowie na Twoje pytanie w możliwie jak najkrótszym czasie. Wykorzystujemy także najnowsze technologie by zagwarantować Ci najlepszą szybkość działania.
+
+{6}Anonimowość{10} – Twoje pytania są całkowicie anonimowe a Twoje dane w 100% bezpieczne.{7}
+Możesz zadawać pytania na dowolny, nawet bardzo intymy temat. Informacje o Tobie nie są prezentowane publicznie – ani ekspertom, ani moderatorom, ani innym użytkownikom systemu, a wszystkie dane osobiste podawane w pytaniach są usuwane przed upublicznieniem.</value>
+  </data>
+  <data name="MissionAndValues_Title" xml:space="preserve">
+    <value>Misja i wartości</value>
+  </data>
+  <data name="Movies_Description" xml:space="preserve">
+    <value>PLACEHOLDER:  tutaj mogą być bardziej filmy instruktażowe na youtube</value>
+  </data>
+  <data name="Movies_Title" xml:space="preserve">
+    <value>Filmy</value>
+  </data>
+  <data name="NewsletterSignOut_Description" xml:space="preserve">
+    <value>{0}Są dwia sposoby na wyłączenie newslettera:{1}
+{2}Kliknij w emailu z newsletterem link „Wypisz mnie z newslettera”.{3}
+{4}W Mój profil -&gt; Ustawienia  w sekcji konfiguracja emaili wyłącz opcję „newsletter” i naciśnij „Zapisz”.{5}</value>
+  </data>
+  <data name="NewsletterSignOut_Title" xml:space="preserve">
+    <value>Jak wyłączyć newsletter?</value>
+  </data>
+  <data name="News_Section" xml:space="preserve">
+    <value>Aktualności</value>
+  </data>
+  <data name="NoAnswers_Description" xml:space="preserve">
+    <value>{0}Czasem zdarza się, że przez dłuższy (cały dzień) czas nikt nie udzieli klientowi odpowiedzi na jego pytanie. Może to być związane z tym, że:{1}
+{2}Aktualnie nie ma żadnego eksperta online z dziedziny pytania.{3}
+{4}W takim przypadku musisz uzbroić się w cierpliwość. Statystycznie odpowiedź udzielana jest w ciągu paru godzin, ale np. w okresie wakacyjnym czas ten się wydłuża, bo mniej ekspertów ma dostęp do internetu.{5}
+{6}Jest na tyle dużo pytań, że eksperci nie są w stanie szybko odpowiedzieć.{7}
+{8}W takim przypadku wszystko zależy od tego, czy klienci zadający pozostałe pytania szybko zaakceptują odpowiedzi, czy nie. Przez wzgląd na wysoką jakość obsługi klienta, eksperci nie mogą odpowiadać na kilka pytań na raz. Wobec tego zdarza się, że wszyscy eksperci zajęci są odpowiedzią i musisz cierpliwie poczekać, aż skończą.{9}
+{10}Pytanie jest niecodzienne , trudne i eksperci potrzebują więcej czasu na stwierdzenie, że są się w stanie podjąć odpowiedzi.{11}
+{12}Eksperci pomimo swej rozległej wiedzy, nie są encyklopedią. Czasem po prostu muszą się upewnić, że znają odpowiedź na pytanie klienta. Tylko wtedy się nim zajmą, gdyż takie są zasady systemu : „Jeśli nie masz pewności że znasz odpowiedź – upewnij się lub daj odpowiedzieć innym”.{13}
+{14}Pytanie jest znacznie niedowartościowane i czas poświęcony na odpowiedź.{15}
+{16}Ceny pytań są statystyczne – oznacza to, że niektóre pytania mogą być przez swoją złożoność nieco droższe. W takim przypadku pytanie nie znajduje chętnego, który za tę cenę jest w stanie się go podjąć. Po 12 godzinach od zadania pytania, eksperci mogą proponować  cenę, za którą odpowiedzą na pytanie. Oczywiście wyższe koszty zostaną wyjaśnione. Klient będzie mógł zatem wybrać eksperta i dopłacić żądaną kwotę, lub jeszcze poczekać na kogoś kto zgodzi się odpowiedzieć za wartość depozytu.{17}</value>
+  </data>
+  <data name="NoAnswers_Title" xml:space="preserve">
+    <value>Nikt nie odpowiada na moje pytanie? Co robić?</value>
+  </data>
+  <data name="PersonalInformation_Description" xml:space="preserve">
+    <value>{0}Nie przekazywanie swoich danych osobowych jest zabronione regulaminowo. W serwisie podajemy jedynie informacje niezbędne do udzielenia prawidłowej odpowiedzi a dane osobowe i teleadresowe do nich nie należą.{1}
+{2}Każde pytanie jest rozpatrzywane całkowicie w ramach serwisu asknuts i dane teleadresowe nie są potrzebne.{3}</value>
+  </data>
+  <data name="PersonalInformation_Title" xml:space="preserve">
+    <value>Czy mogę podawać dane osobowe, kontaktowe ekspertowi?</value>
+  </data>
+  <data name="PrivacyAndSecurity_Description" xml:space="preserve">
+    <value>PLACEHOLDER: Tutaj regulamin związany z poufnością danych</value>
+  </data>
+  <data name="PrivacyAndSecurity_Title" xml:space="preserve">
+    <value>Prywatność i bezpieczeństwo</value>
+  </data>
+  <data name="QuestionDeposit_Description" xml:space="preserve">
+    <value>{0}Wpłacony depozyt pokazuje ekspertom, jak bardzo zależy Ci na uzyskaniu profesjonalnej odpowiedzi. Pomimo, że eksperci wynagradzani są tylko za satysfakcjonujące odpowiedzi, wpłacony depozyt motywuje ich do działania. Wiedzą, że mają do czynienia z osobą uczciwą, która jest gotowa zapłacić za ich ciężką pracę.{1}</value>
+  </data>
+  <data name="QuestionDeposit_Title" xml:space="preserve">
+    <value>Dlaczego muszę płacić depozyt?</value>
+  </data>
+  <data name="QuestionPriceDependence_Description" xml:space="preserve">
+    <value>{0}Cena za pytanie zależy od paru ważnych czynników:{1}
+{2}Kategorii pytania – cena jaką biorą zwykle nasi eksperci za odpowiedź jest mocno zależna od kategorii pytania.  Ceny regulowane są przez ekspertów, którzy za swoją pracę związaną z poszukiwaniem odpowiedzi i poświęcony czas, chcą otrzymywać satysfakcjonujące wynagrodzenie. 
+Priorytet – zaznaczenie podczas pytania wysokiego priorytetu skutkuje tym, że eksperci starają się szybciej dostarczyć wymaganą odpowiedź, zaniedbując inne, mniej pilne sprawy. Naturalnie wiąże się to dla nich z wyższym wynagrodzeniem. Jeśli obniżysz priorytet – zapłacisz mniej , eksperci odpowiedzą na Twoje pytanie w wolnym czasie, wobec tego odpowiedź uzyskasz nieco później.{3}
+{4}Szczegółowość – określając szczegółowość odpowiedzi , informujesz eksperta na jakim poziomie powinien udzielić swojej porady. Przy dużej szczegółowości eksperci często muszą sięgnąć do źródeł i przedstawić drobne szczegóły dotyczące pytania. Lepsze wynagrodzenie zachęca ich zatem do poświęcenia większej ilości czasu. Mniejsza szczegółowość mówi ekspertom, że będą mogli spędzić nad pytaniem mniej czasu, wobec czego często są skłonni obniżyć stawkę.{5}  
+{6}Sam możesz określić cenę pytania – cena wyświetlana przy zadawaniu pytania jest ceną sugerowaną. Jeśli uważasz, że Twoje pytanie jest znacznie prostsze , bądź o wiele trudniejsze, możesz zmienić stawkę. Musisz się jednak liczyć z tym, że zbyt niska stawka może odstraszyć ekspertów, którzy w pierwszej kolejności będą zajmować się droższymi pytaniami.  Ryzykujesz także brak udzielenia odpowiedzi, lub propozycją podniesienia ceny ze strony eksperta.{7}
+{8}Aby zmienić cenę kliknij w „Zaproponuj cenę” i wpisz cenę jaką jesteś w stanie zapłacić maksymalnie za odpowiedź.{9}</value>
+  </data>
+  <data name="QuestionPriceDependence_Title" xml:space="preserve">
+    <value>Od czego zależy cena pytania?</value>
+  </data>
+  <data name="QuestionPriorityAndDetails_Description" xml:space="preserve">
+    <value>{0}Wybierając priorytet pytania określasz jak bardzo zależy Ci na szybkości odpowiedzi na nie.{1}
+{2}Eksperci w przypadku pytań priorytetowych, odpowiadają na nie w pierwszej kolejności. Muszą też często zorganizować sobie czas tak, żeby szybko znaleźć na nie odpowiedź. W związku z tym priorytet wpływa na cenę pytania.{3}
+{4}Szczegółowość pytania określa jak dużo pracy ekspert będzie musiał włożyć w udzielenie klientowi odpowiedzi. Jeśli szczegółowość jest niska – ekspertowi odpowiedź zajmie niewiele czasu, cena zatem spada. Jeśli klient wymaga więcej szczegółów, czas potrzebny ekspertowi znacznie się wydłuży, stąd wyższa cena za odpowiedź.{5}</value>
+  </data>
+  <data name="QuestionPriorityAndDetails_Title" xml:space="preserve">
+    <value>Czym jest priorytet i szczegółowość pytania? Dlaczego wpływa na cenę?</value>
+  </data>
+  <data name="Questions_Section" xml:space="preserve">
+    <value>Pytania</value>
+  </data>
+  <data name="RegistrationAfterAsking_Description" xml:space="preserve">
+    <value>Tak, po zadaniu pytania bez rejestracji, istnieje możliwość rejestracji.
+Po kliknięciu wystarczy, że podasz hasło dostępu, a automatycznie stajesz się zarejestrowany.</value>
+  </data>
+  <data name="RegistrationAfterAsking_Title" xml:space="preserve">
+    <value>Czy mogę się zarejestrować po zadaniu pytania?</value>
+  </data>
+  <data name="RegistrationBenefits_Description" xml:space="preserve">
+    <value>{0}Dobrowolna rejestracja umożliwi Ci:{1}
+{2}Łatwiejszy dostę do pełnej historii zadanych przez Ciebie pytań.{3}
+{4}Autouzupełnianie formularzy – pozwala Ci szybciej zadawać nowe pytania.{5}
+{6}Podgląd swojego bilansu.{7}
+{8}Konifugrację powiadomień mailowych.{9}</value>
+  </data>
+  <data name="RegistrationBenefits_Title" xml:space="preserve">
+    <value>Co da mi rejestracja?</value>
+  </data>
+  <data name="SystemGuarantee_Description" xml:space="preserve">
+    <value>{0}Jeśli nie będziesz usatysfakcjonowany odpowiedzią – {40}zwrócimy Ci pieniądze.{1} 
+{2}O jakości ekspertów. Można powiedzieć, że trudniej zostać ekspertem Asknuts niż zostać absolwentem Uniwersytetu Jagiellońskiego.{3}
+{4}Przyszły ekspert musi spełnić szereg wymogów i przejść rygorystyczne testy aby móc myśleć o pomocy naszym klientom.{5}
+{6}Eksperci to wybrani i ograniczeni ilościowo specjaliści z wybranych dziedzin. Zadając i precyzując pytanie, zapewniasz sobie kontakt z najodpowiedniejszą osobą w internecie. Jeśli on nie jest sobie w stanie poradzić z pytaniem, to nikt nie może. {7}
+{8}Nasi eksperci słyną z tego, że na pytania trudne odpowiadają w godzinę, na ekstremalnie trudne odpowiadają w 1 dzień, a na niemożliwe musisz poczekać troszkę dłużej.{9}
+{10}Właśnie dzięki jakości usług naszych ekspertów, możemy zagwarantować Ci 100% satysfakcji z otrzymanej usługi albo zwrot kosztów – {11} 
+{12}szczegóły gwarancji{13}
+{14}Każdy ekspert przechodzi rygorystyczną ścieżkę weryfikacji:{15}
+{16}Wyszukujemy tylko najlepszych speców i kontaktujemy się z nimi bezpośrednio.{17}
+{18}Każdy przyszły ekspert może aplikować tylko do wybranych grup, które nie prezentują jakości usług powyżej 90%, lub które nie są w stanie obsłużyć w satysfakcjonującym czasie pytań wszystkich swoich klientów.{19}
+{20}Nowy ekspert przechodzi najlpierw rozmowę telefoniczną gdzie określa swoje doświadczenie ,wykształcenie  i zdobyte certyfikaty pozwalające odpowiadać w wybranej kategorii.{21}
+{22}Musi następnie potwierdzić zadeklarowane informacje.{23}
+{24}Referencje zadowolonych klientów są także cennym argumentem.{25}
+{26}Wybrani eksperci przechodzą testy przygotowane dla każdej specjalizacji.{27}
+{28}Ostatecznie wszystkie dane oraz wykształcenie weryfikowane są przez firmę zewnętrzną potwierdzającą ostatecznie kompetencje eksperta.{29}
+{30}Ale to nie wszystko!{31}
+{32}Nowi eksperci podlegają szczegółowej weryfikacji. Każda odpowiedź podlega akceptacji przez bardziej doświadczonych ekspertów.{33}
+{34}Jeśli poziom zadowolenia klientów będzie utrzymywał się poniżej 90%, ekspert może stracić możliwość odpowiadania na pytania klientów.{35}
+
+{36}Jak widzicie ,łatwiej jest zostać profesorem na UJ niż ekspertem na asknuts.com !{37}
+{38}A wszystko to dla 100% satysfakcji naszych klientów. Właśnie dlatego dajemy Ci 30 dniową gwarancję zwrotu kosztów – bo jesteśmy pewni że będziesz usatysfakcjonowany.{39}</value>
+  </data>
+  <data name="SystemGuarantee_Title" xml:space="preserve">
+    <value>Gwarancja asknuts</value>
+  </data>
+  <data name="TermsOfUse_Description" xml:space="preserve">
+    <value>PLACEHOLDER: link: prowadzi do regulaminu serwisu</value>
+  </data>
+  <data name="TermsOfUse_Title" xml:space="preserve">
+    <value>Zasady korzystania z serwisu</value>
+  </data>
+  <data name="ToTop" xml:space="preserve">
+    <value>do góry</value>
+  </data>
+  <data name="UserPanel_Section" xml:space="preserve">
+    <value>Panel użytkownika</value>
+  </data>
+  <data name="UserSection_Section" xml:space="preserve">
+    <value>Strefa użytkownika</value>
+  </data>
+  <data name="VerifiedSymbol_Description" xml:space="preserve">
+    <value>{0}Symbol „Zweryfikowany” – symbol świadczy o tym, że przeprowadziliśmy szczegółową weryfikację deklarowanego przez eksperta wykształcenia, stanowiska , tytułu naukowego. Sprawdziliśmy czy ekspert rzeczywiście uzyskał certyfikaty, o których wspomniał i czy jego dotychczasowi klienci są z niego zadowoleni. Ponadto symbol ten oznacza, że ekspert przeszedł rygorystyczne testy ze swojej dziedziny, jest zatem w pełni kompetentny. Eksperci przechodzą także testy komunikacji interpersonalnej, co sprawia, że masz pewność jego otwartości i chęci pomocy w zakresie Twojego pytania.{1}
+{2}Po najechaniu na symbol uzyskasz informacje o tym, co w ramach danego eksperta zostało potwierdzone.{3}
+{4}Weryfikację ekspertów zajmuje się profesjonalna firma zewnętrzna, doświadczona w tego typu testach.{5}</value>
+  </data>
+  <data name="VerifiedSymbol_Title" xml:space="preserve">
+    <value>Co oznacza symbol „Zweryfikowany”?</value>
+  </data>
+  <data name="ExpertAnswering_Section" xml:space="preserve">
+    <value>Odpowiadanie na pytania</value>
+  </data>
+  <data name="ExpertGettingStarted_Section" xml:space="preserve">
+    <value>Dla nowych ekspertów</value>
+  </data>
+  <data name="ExpertSection_Section" xml:space="preserve">
+    <value>Strefa eksperta</value>
+  </data>
+  <data name="ExpertSettlement_Section" xml:space="preserve">
+    <value>Rozliczenia</value>
+  </data>
+  <data name="QuestionsMenu_Section" xml:space="preserve">
+    <value>Pytania</value>
+  </data>
+  <data name="AdditionalAdvertisement_Description" xml:space="preserve">
+    <value>Nie ma także żadnych możliwości dodatkowej płatnej promocji  - wszyscy eksperci w systemie są całkowicie równi i na równych zasadach zdobywają klientów. O decyzji klientów decyduje przede wszystkim dotychczasowy dorobek eksperta w postaci pozytywnych opinii pytających.</value>
+  </data>
+  <data name="AdditionalAdvertisement_Title" xml:space="preserve">
+    <value>Czy mogę zapłacić za dodatkową promocję mojej osoby?</value>
+  </data>
+  <data name="AdditionalQuestionService_Description" xml:space="preserve">
+    <value>&lt;to trzeba rozwinąć , ale jescze tej usługi nie ma. Chodzi o proponowanie umieszczenia pytania w innej kategorii w celu pogłębienia wiedzy na jego temat&gt;</value>
+  </data>
+  <data name="AdditionalQuestionService_Title" xml:space="preserve">
+    <value>Dodatkowa usługa w ramach pytania</value>
+  </data>
+  <data name="AdditionalWaysOfEarning_Description" xml:space="preserve">
+    <value>Oprócz zysków z odpowiedzi na pytania, możesz umieszczać na zewnętrznych stronach formularze z pytaniami. Formularze te będą umożliwiały zadawanie pytań przez użytkowników. 
+Za każde zaakceptowane za pośrednictwem tego formularza pytanie dostaniesz 20% prowizji.</value>
+  </data>
+  <data name="AdditionalWaysOfEarning_Title" xml:space="preserve">
+    <value>Czy mam jeszcze inne sposoby na zarabianie pieniędzy?</value>
+  </data>
+  <data name="Advantages_Description" xml:space="preserve">
+    <value>Asknuts preprezentuje jedynie wąska grupa najlepszych ekspertów z każdej dziedziny. Poprzez przystąpienie do asknuts:
+
+
+Potwierdzasz swoje wysokie kwalifikacje [? - Trafiasz do elity ekspertów w Twojej kategorii, każda kategoria ma ograniczenia co do liczby odpowiadających w niej ekspertów. Możesz o tym poczytać tutaj – kieruje do „Od czego zależy maksymalna liczba ekspertów w danej kategorii”]
+Pomagasz ludziom w rozwiązaniu ich najtrudniejszych problemów,
+Możesz zyskać certyfikat eksperta asknuts, będący dowodem Twoich wysokich kwalifikacji,
+Możesz w internecie umieszczać formularze zapytania, które będą pozwalać Twoim klientom łatwiej zadać Ci pytanie i które pozwolą Ci na większy zysk. Czytaj więcej – prowadzi do „Program partnerski dla ekspertów – poszerzaj z nami sieć klientów!”]
+Możesz zarobić [? – zyskujesz prowizję za odpowiedzi zaakceptowane przez klientów a także pozostawione przez nich napiwki. Możesz także zyskać usługach dodatkowych - link]
+Możesz zdobyć wartościowe referencje [? – każdy klient zadowolony z Twojej odpowiedzi może zostawić Ci pozytywne referencje. Referencje te zachęcają nowych użytkowników do zadawania Ci pytań. Pozytywne opinie możesz także zaprezentować na swojej stronie internetowej.</value>
+  </data>
+  <data name="Advantages_Title" xml:space="preserve">
+    <value>Co zyskam na przystąpieniu do asknuts?</value>
+  </data>
+  <data name="Advertisement_Description" xml:space="preserve">
+    <value>Tak, w zakładce „Panel użytkownika -&gt; Marketing” ekspert może znaleźć widgety informujące o jego zadowolonych klientach, które może umieścić na stronie zewnętrznej. 
+Umieszczenie takiej informacji na swojej stronie internetowej wzbudzi jeszcze większe zaufanie klientów. 
+Dzięki temu klienci będą mogli w prosty sposób zadać Ci dedykowane pytanie na serwisie asknuts. Ponadto jeżeli klient, który zaakceptuje Twoją odpowiedź, przyjdzie z Twojej strony, da Ci o 20% większą prowizję! 
+Jeżeli zostaniesz wyróżniony orderem „Polecanego eksperta asknuts”, będziesz mógł ją także zaprezentować gdziekolwiek w internecie.</value>
+  </data>
+  <data name="Advertisement_Title" xml:space="preserve">
+    <value>Czy mogę się promować poza systemem?</value>
+  </data>
+  <data name="AffiliateProgramExpert_Description" xml:space="preserve">
+    <value>Asknuts intensywnie szuka dla Ciebie nowych wyzwań – nowych pytań, nowych klientów. 
+Przystępując so asknuts automatycznie stajesz się naszym partnerem. System partnerski daje Ci możliwość dodatkowej promocji oraz poszukiwania klientów na własną rękę i dodatkowo Cię za to wynagradzamy.  
+[Tutaj zdjęcia: strona z widgetem „Zapytaj mnie”] 
+Możesz umieścić widget z formularzem zapytania na swojej stronie internetowej – udostępnisz swoim klientom usługę  odpowiedzi na pytanie i zyskasz wyższą prowizję – ptrz „Prowizje systemu”. 
+
+ [Tutaj zdjęcia: strona z widgetami „certyfikat eksperta” oraz „opinie o ekspercie”] 
+Możesz umieścić na swojej stronie informacje o swoim certyfikacie oraz pozytywnych opiniach użytkowników asknuts. Widgety te będą prowadziły do formularza zapytania, poprzez który klient będzie mógł zadać Ci dedykowane pytanie. 
+
+Zdobywając własnoręcznie klientów otrzymujesz o 20% większą prowizję.</value>
+  </data>
+  <data name="AffiliateProgramExpert_Title" xml:space="preserve">
+    <value>Jeszcze więcej klientów - program partnerski dla ekspertów</value>
+  </data>
+  <data name="AnswerAcceptation_Description" xml:space="preserve">
+    <value>Akceptacja odpowiedzi wynika z gwarancji satysfakcji klienta, która jest misją asknuts. Akceptacja odpowiedzi utożsamiana z satysfakcją klienta z uzyskanej poraty ma wiele pozytywnych efektów: 
+Sprawia, że klienci dażą nas większym zaufaniem,
+Zachęcają ekspertów do prowadzenia uprzejmych i profesjonalnych rozmów z klientami, przez co obie strony zyskują – klient satysfakcję a ekspert uznanie i renomę,
+~ 100% zadowolonych klientów,
+Więcej pytań, więcej odpowiedzi, większy zysk
+Z drugej strony brak akceptacji, musi być poprzedzony zaangażowaniem klienta w chęć uzyskania odpowiedzi. Regulamin systemu nie uprawnia klienta do bezpodstawnego odrzucania prawidłowych i pełnych odpowiedzi ekspertów. Asknuts gwarantuje zatem, że akceptacja zależy tylko od waszej wiedzy, zaangażowania i chęci pomocy użytkownikom.</value>
+  </data>
+  <data name="AnswerAcceptation_Title" xml:space="preserve">
+    <value>Akceptacja odpowiedzi: czym jest i dlaczego jest wymagana?</value>
+  </data>
+  <data name="AnswerAndMoreDetails_Description" xml:space="preserve">
+    <value>Prowadząc rozmowę z klientem ekspert ma 2 podstawowe wiadomości, które może wysłać klientowi: „prośba o szczegóły” i „odpowiedź”. Zgodnie z regulaminem jest niezwykle istotne aby poprawnie wykorzystywać obie wiadomości. Akcja „prośba o szczegóły” wykorzystywana jest gdy ekspert chce: 
+przywitać się z klientem,
+dowiedzieć się czegoś więcej o pytaniu,
+upewnić się w słuszności swojego rozumowania
+potrzebuje niezbędnych zdjęć, dokumentów
+Wiadomość „odpowiedź” wykorzystywana jest tylko w jednym celu. Aby zaprezentować klientowi ostateczną odpowiedź na jego pytanie. Akcja „odpowiedź” została wyróżniona spośród innych ponieważ:
+daje klientowi jasno do zrozumienia, że jest to końcowa odpowiedź,
+aktywuje u klienta opcje „zaakceptuj odpowiedź”,
+wysyła do niego emaila z prośbą o akceptację
+daje znać konsultantom asknuts, że pytanie doczekało się odpowiedzi, przez co wstrzymuje wszelkie dodatkowe procedury poszukiwania alternatywnych sposobów na odpowiedź.
+Ekspert powinien zawsze wykorzystywać akcję „Prośba o szczegóły”, chyba że daje ostateczną odpowiedź. Wtedy powinien użyć akcji „Odpowiedź”.</value>
+  </data>
+  <data name="AnswerAndMoreDetails_Title" xml:space="preserve">
+    <value>Jak odpowiadać na pytania, czym różni się „Prośba o szczegóły” od „Odpowiedzi”</value>
+  </data>
+  <data name="AnsweringEfficiently_Description" xml:space="preserve">
+    <value>Nie obawiaj się pytać prosić o szczegóły, o zdjęcia , dokumenty, screenshoty. Wszystko co ułatwi bądź przyspieszy odpowiedź jest pożyteczne,
+Wybieraj pytania, na które jesteś w stanie odpowiedzieć. Stroń od pytań na które odpowiesz prawdopodobnie, chyba że pytanie dość długo czeka na odpowiedź.
+Nie bój się rezygnować z przejętego pytania. To normalne zachowanie doświadczonych ekspertów, których pytanie przerosło, albo nie mają czasu na odpowiedź. Gdy odpuścisz, pytanie przejmie kolejny ekspert. Klient będzie zadowolony, że jego pytaniem zajmie się ktoś bardziej zaangażowany lub bardziej kompetentny w tym temacie, a Ty będziesz mógł zająć się odpowiedzią na inne pytania – może bardziej z Twojej specjalizacji. 
+Jeśli potrzebujesz dłuższego czasu na analizę , nic nie szkodzi. Pamiętaj tylko, żeby udzielić jak najszybciej przynajmniej częściowej odpowiedzi tak, żeby potrzymać zaangażowanie klienta. Szczegóły podasz mu później. 
+Klienci są także ludźmi. Odpowiadając stawiaj się na ich miejscu a lepiej zrozumiesz czego oczekują. Jeśli dalej nie masz pewności – dopytaj.
+Nie kieruj się tylko zyskiem – pozytywna ocena klientów i punkty doświadczenia poprawią Twoje prowizje w przyszłości,
+Zakładaj raczej, że osoba nie jest doświadczona w temacie i nigdy w życiu nie próbowała zrobić tego co jej tłumaczysz. Tłumacz wszystko jak 6-latkowi, najlepiej dzieląc odpowiedź na kroki.</value>
+  </data>
+  <data name="AnsweringEfficiently_Title" xml:space="preserve">
+    <value>Dobre rady by odpowiadać efektywnie</value>
+  </data>
+  <data name="AnsweringGain_Description" xml:space="preserve">
+    <value>W zależności od poziomu zaawansowania eksperta za zaakceptowane pytanie uzyskujesz od 20 do 50% prowizji 
+1 poziom – 20%
+2 poziom – 30%
+3 poziom – 40%
+4 poziom – 50%</value>
+  </data>
+  <data name="AnsweringGain_Title" xml:space="preserve">
+    <value>Ile zyskuję na odpowiadaniu</value>
+  </data>
+  <data name="AnsweringQuestions_Description" xml:space="preserve">
+    <value>Zaraz po rejestracji masz możliwość przeglądania pytań użytkowników, nie masz natomiast możliwości wykonywania na nim jakiejkolwiek akcji – przejęcia, odpowiedzi itp. Aby w pełni aktywować funkcjonalność systemu, musisz przejść przez proces weryfikacji, opisany tutaj. Czekaj na kontakt telefoniczny bądź mailowy naszego konsultanta.</value>
+  </data>
+  <data name="AnsweringQuestions_Title" xml:space="preserve">
+    <value>Co zrobić aby móc zacząć odpowiadać na pytania?</value>
+  </data>
+  <data name="AnsweringRightQuestions_Description" xml:space="preserve">
+    <value>Kategorie w naszym systemie często są dość ogólne (Zdrowie, Prawo, itp.). Dlatego oprócz kategorii precyzujesz także szczegółowe kwalifikacje w ramach każdej kategorii. 
+Każde pytanie, jakie pojawi się w systemie zostaje procentowo dopasowane do Twojej wiedzi. Pytania powyżej 50% już bardzo ściśle pasują do Twojej kategorii. Zalecamy w pierwszej kolejności przejmować te pytania na które na pewno znasz odpowiedź lub masz gotową poradę.  Kieruj się procentowym dopasowaniem, które pozwoli Ci szybciej wyszukać i ocenić swoje kompetencje do odpowiedzi na dane pytanie.</value>
+  </data>
+  <data name="AnsweringRightQuestions_Title" xml:space="preserve">
+    <value>Na które pytania powinienem odpowiadać, a na które nie?</value>
+  </data>
+  <data name="AnsweringRules_Description" xml:space="preserve">
+    <value>Będąc ekspertem obowiązuje Cie regulamin , który jest jednocześnie kodeksem serwisu. Zgodnie z regulaminem ekspert nie może:
+Zachowywać się niegrzecznie wobec klienta, przeklinać,
+Udawać ekperta w pytaniu, na które nie zna się odpowiedzi,
+Przeciągać odpowiedzi zbyt długo,
+Kilkukrotnie zadawać tego samego pytania,
+Używać opcji „Odpowiedź” przy prośbie o szczegóły,
+Kopiować odpowiedzi z internetu „słowo w słowo”, naruszając tym samym prawa autorskie,
+Podawać swoich danych presonalnych czy teleadresowych, pozwalających na kontakt poza serwisem asknuts.
+Prosić o osobiste dane klienta,
+Odpowiadać nieobiektywnie, kierując się ukrytymi korzyściami od osób trzecich,
+Świadomie wprowadzać klienta w błąd</value>
+  </data>
+  <data name="AnsweringRules_Title" xml:space="preserve">
+    <value>Czego nie można robić podczas odpowiadania</value>
+  </data>
+  <data name="AvatarUpload_Description" xml:space="preserve">
+    <value>&lt;Tutaj trzeba będzie wstawić procedurę uploadu zdjęcia z obrazkami, gdy będzie zakończony system&gt;</value>
+  </data>
+  <data name="AvatarUpload_Title" xml:space="preserve">
+    <value>Mam problem z ustawieniem zdjęcia</value>
+  </data>
+  <data name="Balance_Description" xml:space="preserve">
+    <value>Każdy ekspert może wypłacić pieniądze na wskazane przez siebie konto bankowe. Żądanie może zostać złożone na kwotę nie mniejszą niż 30 zł. 
+W celu wypłaty środków, należy przejść do zakładki „Mój profil -&gt; bilans” i nacisnąć przycisk „Wypłać środki”. W formularzu należy określić kwotę wypłaty oraz numer konta bankowego, na które ma zostać wysłane wynagrodzenie.
+Pieniądze przelewane są na wskazane konto w terminie 5 dni roboczych. 
+O tym, czy pieniądze zostały nadane świadczy data realizacji – jeśli się pojawi, oznacza to, że pieniądze zostały przekazane na konto.</value>
+  </data>
+  <data name="Balance_Title" xml:space="preserve">
+    <value>Bilans - kiedy można wypłacić pieniądze</value>
+  </data>
+  <data name="BecomingExpert_Description" xml:space="preserve">
+    <value>Do asknuts mogą dołączyć tylko najlepsi eksperci z wybranych dziedzin. Każdy ekspert cechuje się bogatym doświadczeniem i certyfikatami świadczącymi o jego kwalifikacjach. 
+Dobór ekspertów następuję spośród specjalistów:
+których odnajdziemy i własnoręcznie potwierdzimy ich kwalifikacje,
+którzy zarejestrują się na asknuts i uzupełnią informacje wymagane do aplikowania na eksperta,
+którzy zostaną nam poleceni przez swoich zadowolonych klientów bądź innych ekspertów
+
+Ekspertem mogą zostać ludzie którzy:
+Mają bogate doświadczenie w swojej dziedzinie
+Są komunikatywni i lubią kontakt z klientem
+Mają stały dostęp do internetu
+Lubią pomagać ludziom
+Podzielają misję systemu
+Każdy ekspert jest szczegółowo weryfikowany przez naszych specjalistów, bądź wykwalifikowaną firmę zewnętrzną.</value>
+  </data>
+  <data name="BecomingExpert_Title" xml:space="preserve">
+    <value>Kto może zostać ekspertem asknuts?</value>
+  </data>
+  <data name="BlockingTime_Description" xml:space="preserve">
+    <value>15 minut. Na 3 minuty przed upływem czasu, pojawia się przycisk „Potrzebuję więcej czasu”, którego kliknięcie wydłuża czas do 15 nowych minut.</value>
+  </data>
+  <data name="BlockingTime_Title" xml:space="preserve">
+    <value>Jak długo blokowane jest pytanie</value>
+  </data>
+  <data name="CategoryQuantity_Description" xml:space="preserve">
+    <value>Ekspertem możesz być w dowolnej liczbie kategorii. W każdej wybranej przez siebie kategorii oraz w każdej podkategorii, którą wybierzesz, musisz wykazać się niezbędną wiedzą. Weryfikacja przebiega zgodnie z opisem w „Jak zostać ekspertem – wymagania i przebieg rekrutacji”. 
+Statystycznie eksperci wybierają 1 kategorię. Zwykle nikt nie przekracza 2-3 kategorii.</value>
+  </data>
+  <data name="CategoryQuantity_Title" xml:space="preserve">
+    <value>W ilu kategoriach mogę być ekspertem?</value>
+  </data>
+  <data name="Certificate_Description" xml:space="preserve">
+    <value>&lt;zdjęcie ikony certyfikatu&gt;
+Certyfikat asknuts uzyskują wybrani eksperci odpowiadający na pytania użytkowników. Certyfikat jest przyznawany na podstawie osiągnięć: 
+Liczby obsłużonych klientów,
+Zebranych punktów doświadczenia,
+Wysokiej oceny klientów,
+Aktywności na portalu
+Certyfikat ma 2 poziomy. Pierwszy poziom przyznawany jest jednorazowo i permanentnie każdemu ekspertowi, który osiągnie wymagane doświadcznie w asknuts.
+Drugi – bardziej prestiżowy i zarezerwowany tylko dla najlepszych przyznawany jest okresowo najbardziej wyróżniającym się ekpspertom w każdej dziedzinie. Certyfikat świadczy o bardzo wysokiej jakości usług w ciągu ostatnich tygodni. 
+Zyskując certyfikat możesz go prezentować nie tylko w asknuts, ale także w dowolnym miejscu w internecie, np na swojej stronie internetowej itp.</value>
+  </data>
+  <data name="Certificate_Title" xml:space="preserve">
+    <value>Czym jest certyfikat asknuts? Jak go zdobyć?</value>
+  </data>
+  <data name="ChangingQuestionValue_Description" xml:space="preserve">
+    <value>Pytania w danej kategorii różnią się od siebie złożonością. W trakcie zadawania pytania nie jesteśmy w stanie zasugerować klientowi ceny będącej dokładnym odzwierciedleniem czasu jaki ekspert będzie musiał poświęcić problemowi. Prezentujemy mu kwoty wynikające ze statystycznego kosztu pytań o podobnej tematyce. Kwota zależna jest także od szczegółowości i priorytetu jaki klient nada zapytaniu. 
+Ekspert ma następujące procedury umożliwiające mu wpłynięcie na zmianę prowizji za pytanie: 
+Zgłoszenie niedowartościowania pytania – ekspert po przeczytaniu pytania, może stwierdzić, że pytanie jest niedowartościowane i zasugerować stawkę za jaką jest w stanie na nie odpowiedzieć,
+Ekspert może zaproponować klientowi rozwinięcie tematu (dodatkową usługę) za dodatkową cenę – tzw. „zaproponuj więcej” ,
+Ekspert może uzyskać napiwek za wkład jaki wniósł w odpowiedź na pytanie</value>
+  </data>
+  <data name="ChangingQuestionValue_Title" xml:space="preserve">
+    <value>Czy mogę zażądać większej kwoty?</value>
+  </data>
+  <data name="Chat_Description" xml:space="preserve">
+    <value>Czat jest narzędziem pozwalającym Ci szybko, efektywnie i wyczerpująco odpowiadać na pytania użytkowników. Czat posiada następujące podstawowe funkcje: 
+Przejmij pytanie – pozwala Ci zablokować pytanie dla siebie
+Poproś o doprecyzowanie  - pozwala Ci dopytać się o klienta o szczegóły
+Odpowiedz – pozwala Ci udzielić odpowiedzi na pytanie 
+Zaproponuj wyższą cenę – pozwala Ci zaproponować wyższą cenę za odpowiedź na pytanie 
+Poszerz temat – możesz zaproponować dodatkową usługę w ramach tego pytania
+Zasugeruj dalsze pytania – możesz zasugerować o co i gdzie klient powinien dopytywać o dalsze wskazówki, które pozwolą mu jeszcze lepiej zgłębić temat.
+Wycofaj się – nie jesteś w stanie odpowiedzieć na pytanie w sposób satysfakcjonujący dla klienta – możesz się wycować, by móc przejmować następne pytania.
+
+Ponad opisane powyżej funkcje, czat posiada kilka innych, mniej ważnych opcji związanych z oceną innych ekspertów, o których przeczytasz w dalszej części FAQ. 
+Czat odświeża się w czasie rzeczywistym. Każdy post jaki napiszesz , automatycznie odświeża się po stronie klienta, jeśli ten ma go otwartego w przeglądarce. 
+Czat obsługuje także różne zdarzenia związane z procesem odpowiedzi na pytanie:
+Po 24 godzinach jeśli żaden ekspert nie udzieli odpowiedzi, czat prezentuje propozycje wyższych cen
+Czat przypomina klientom o konieczności akceptacji w przypadku satysfakcjonującej odpowiedzi
+&lt;generalnie może tutaj być duży screenshot chata z opisem poszczególnych okienek&gt;</value>
+  </data>
+  <data name="Chat_Title" xml:space="preserve">
+    <value>Jak działa czat – wprowadzenie</value>
+  </data>
+  <data name="CopyPasteAnswer_Description" xml:space="preserve">
+    <value>Internet stanowi bogate źródło wiedzy z różnych dziedzin i każdy ekspert prędzej czy później będzie chciał z niego skorzystać. Wykorzystując treści dostępne na stronach internetowych, bierzcie jednak pod uwagę prawa autorskie i majątkowe twórcy treści. Jeśli teksty są objęte prawami autorskimi, doswolnona jest jedynie ich interpretacja. Serwis asknuts zaleca interpretację treści z Internetu i prezentację wniosków własnymi słowami. Jest to bezpieczny i najbardziej profesjonalny sposób na zadowalającą odpowiedź.</value>
+  </data>
+  <data name="CopyPasteAnswer_Title" xml:space="preserve">
+    <value>Czy mogę wkleić odpowiedź z internetu?</value>
+  </data>
+  <data name="Costs_Description" xml:space="preserve">
+    <value>System jest bezpłatny dla ekspertów. Przystąpienie i korzystanie z systemu jest całkowicie bezpłatne.</value>
+  </data>
+  <data name="Costs_Title" xml:space="preserve">
+    <value>Jakie są koszty?</value>
+  </data>
+  <data name="Degree_Description" xml:space="preserve">
+    <value>Tytuł naukowy nie jest obowiązkowy. Jeśli nie masz tytułu inżyniera, magistra, doktora, profesora itp. Wystarczy, że wypełnisz pole z aktualnym stanowiskiem.</value>
+  </data>
+  <data name="Degree_Title" xml:space="preserve">
+    <value>Nie mam tytułu naukowego</value>
+  </data>
+  <data name="EmailConfiguration_Description" xml:space="preserve">
+    <value>Powiadamianie mailowe pozwala Ci na otrzymywanie informacji o pytaniach użytkowników na wybraną przez Ciebie skrzynkę mailową, bez konieczności sprawdzania wszystkiego bezpośrednio na portalu. 
+&lt;tutaj opis jak konfigurować maile ,wraz z obrazkami , wtedy , gdy będą skończone&gt;</value>
+  </data>
+  <data name="EmailConfiguration_Title" xml:space="preserve">
+    <value>Jak ustawić szczegóły powiadamiania mailowego</value>
+  </data>
+  <data name="Evaluation_Description" xml:space="preserve">
+    <value>Każdy użytkownik, który zaakceptuje odpowiedź, jest proszony o ocenę jakości usługi eksperta, który odpowiedział. 
+Określa czy ocena jest pozytywna, negatywna, czy neutralna. Daje również opcjonalny komentarz. Oceny wpływają na statystyki eksperta. Neutralne oceny nie są brane pod uwagę. Na poziom zadowolenia wpływają pozytywne i negatywne odpowiedzi. 
+Liczba zadowolonych klientów to liczba klientów dających pozytywną odpowiedź.</value>
+  </data>
+  <data name="Evaluation_Title" xml:space="preserve">
+    <value>Jak działa ocena eksperta</value>
+  </data>
+  <data name="Experience_Description" xml:space="preserve">
+    <value>Doświadczenie jest kluczowym elementem Twojego opisu, gdyż prezentowane publicznie, mocno wpływa na wybór klientów. Przykładowe opisy:
+Lekarz weterynarii z 10 letnim stażem. Specjalizuje się w psach.
+14 lat doświadczenia w pediatrii, specjalizacja – autyzm
+Licencjonowany radca prawny. Na rynku od ponad 25 lat. Prawo krajowe i zagraniczne.</value>
+  </data>
+  <data name="Experience_Title" xml:space="preserve">
+    <value>Co wpisać w doświadczeniu</value>
+  </data>
+  <data name="ExpertHelp_Section" xml:space="preserve">
+    <value>Pomoc dla ekspertów</value>
+  </data>
+  <data name="FindingQuestions_Description" xml:space="preserve">
+    <value>Pytania, na które możesz udzielić odpowiedzi, pojawiają się dla wszystkich ekspertów z kategorii, w jakiej zostało zadane pytanie. Pytania znajdują się w zakładce „Pytania użytkowników”. Jeśli lista jest pusta oznacza to, że nie ma aktualnie żadnego pytania dostępnego do odpowiedzi w Twojej kategorii. 
+Nie martw się, średnio co parę minut pojawia się nowe zapytanie w serwisie asknuts!</value>
+  </data>
+  <data name="FindingQuestions_Title" xml:space="preserve">
+    <value>Gdzie znaleźć pytania do odpowiedzi</value>
+  </data>
+  <data name="ForgottenPasswordExpert_Description" xml:space="preserve">
+    <value>Na formularzu logowania, obok przycisku „Zaloguj” znajduje się link „zapomniałem hasło”, który musisz kliknąć. Zostaniesz przekierowany do formularza, w którym musisz podać email, wprowadzony przy rejestracji w systemie. 
+Jeśli email będzie poprawny, zostanie na niego wysłana wiadomość z linkiem. Kliknij ten link, aby podać nowe hasło. Zapamiętaj je dobrze, by oszczędzić sobie problemów przy logowaniu. 
+&lt;tutaj zdjęcia kolenych kroków, gdy będzie już grafika&gt;</value>
+  </data>
+  <data name="ForgottenPasswordExpert_Title" xml:space="preserve">
+    <value>Zapomniałem hasła</value>
+  </data>
+  <data name="GratuityExpert_Description" xml:space="preserve">
+    <value>Gdy klient zaakceptuje odpowiedź eksperta, zostanie zapytany o chęć dania Ci napiwku. 
+Jeśli klient oceni, że ilość pracy, jaką ekspert włożył była na tyle duża lub odpowiedź była na tyle użyteczna, że należy mu się dodatkowe wynagrodzenie, może dodatkowo wynagrodzić eksperta kwotą jaką uważa za stosowną. 
+Napiwek nie jest obowiązkowy. Wynika tylko z dobrej woli klienta.</value>
+  </data>
+  <data name="GratuityExpert_Title" xml:space="preserve">
+    <value>Czym jest napiwek</value>
+  </data>
+  <data name="GratuityHow_Description" xml:space="preserve">
+    <value>Przyznanie napiwku po zaakceptowanej odpowiedzi jest następuje tylko i wyłącznie na skutek osobistej decyzji klienta. Postępuj zgodnie z dobrymi radami odpowiadania na pytania &lt;link&gt;, nie podchodź minimalistycznie do każdego pytania, bądź pomocny, uprzejmy i profesjonalny a przede wszyskim dziel się swoją najlepszą wiedzą a zwiększysz szanse na napiwek, który w przypadku niektórych ekspertów stanowi nawet dodatkowe 50% zysku.</value>
+  </data>
+  <data name="GratuityHow_Title" xml:space="preserve">
+    <value>Jak dostać napiwek?</value>
+  </data>
+  <data name="HowDoesItWorkExpert_Description" xml:space="preserve">
+    <value>Przejrzyj pytania z listy pytań użytkowników 
+Lista zawiera wszystkie niezamknięte pytania z Twoich kategorii.
+Przejmij pytanie wybrane spośród wolnych pytań na liście  
+Przejęcie pytania następuje poprzez rozpoczęcie rozmowy z klientem. Liczba pytań które możesz przejąć równocześnie zależy od Twojego doświadczenia.
+Udziel odpowiedzi na przejęte pytanie 
+Gdy już będziesz miał wszystkie szczegóły i niezbędną wiedzą, udziel odpowiedzi klientowi.
+Otrzymaj wynagrodzenie za odpowiedź
+Prowizja za odpowiedź zależy od Twojego stażu, napiwek zależy od satysfakcji klienta. Oprócz wynagrodzenia zyskasz też pozytywną opinię, punkty doświadczenia i renomę.</value>
+  </data>
+  <data name="HowDoesItWorkExpert_Title" xml:space="preserve">
+    <value>Jak działa asknuts?</value>
+  </data>
+  <data name="LackOfCategory_Description" xml:space="preserve">
+    <value>Chociaż świadczymy usługi w ponad 20 kategoriach, może zdarzyć się, że Twojej specjalizacji nie da się dopasować do już istniejącej kategorii. W takim przypadku prosimy niezwłocznie o email na adres kontakt@asknuts.com, w którym zasugerujesz nową kategorię. Jeśli uznamy, że kategoria kwalifikuje się do dodania, uczynimy to niezwłocznie i będziesz pierwszą odpowiadającą w niej osobą.</value>
+  </data>
+  <data name="LackOfCategory_Title" xml:space="preserve">
+    <value>Nie mogę znaleźć swojej kategorii</value>
+  </data>
+  <data name="LatestEvents_Description" xml:space="preserve">
+    <value>W tym dziale znajdą się następujące newsy:
+Informacje o zmianach w systemie
+Informacje o nowych funkcjonalnościach
+Informacje o zmianach w regulaminie 
+Informacje w pracie na nasz temat
+Filmy instruktażowe
+Wydarzenia z życia firmy
+Wydarzenia związane z ekspertami
+Informacje o ciekawych szkoleniach
+Informacje o poprawkach
+Możliwość sugerowania przez ekspertów zmian w funkcjonalności portalu
+Najnowsze artykuły eksperckie asknuts</value>
+  </data>
+  <data name="LatestEvents_Title" xml:space="preserve">
+    <value>Najnowsze wydarzenia – Expert’s Blog -&gt; prowadzi do przygotowanego przez nas bloga</value>
+  </data>
+  <data name="LosingVerificationStatus_Description" xml:space="preserve">
+    <value>Gdy ekspert zostanie zweryfikowany, podlega. Co wpływa na ponowną weryfikację eksperta: 
+Każda zmiana pulicznych danych eksperta,
+Rozszerzenie listy kategorii w których ekspert odpowiada,
+Spadek zadowolenia klientów z odpowiedzi udzielanych przez eksperta,
+Zgłoszone przypadki nieprawidłowych bądź niechlujnych odpowiedzi,
+Naruszenie regulaminu serwisu.
+Każdy z przypadków rozpatrywany jest indywidualnie i może skutkować stratą statusu, bądź nawet wykluczeniem z systemu. Zmiana statusu eksperta jest jednak niezwykle żadkim i ostatecznym posunięciem. Zwykle przypadki takie kończą się upomnieniem bądź prośbą o modyfikacje danych.</value>
+  </data>
+  <data name="LosingVerificationStatus_Title" xml:space="preserve">
+    <value>Czy mogę stracić status „Zweryfikowany ekspert”?</value>
+  </data>
+  <data name="MaximumExpertsByCategory_Description" xml:space="preserve">
+    <value>Asknuts dba zarówno o jakość i szybkość odpowiedzi dla klientów jak i o komfort pracy wybranych ekspertów. Liczba ekspertów w danej kategorii zależy od
+Popularności danej kategorii
+Średniej szybkości odpowiedzi na pytania
+Poziomu ekspertów
+Dzięki licznym analizom staramy się pogodzić szybkość i jakość odpowiedzi z staysfakcją ekspertów mogących jak najczęściej odpowiadać na pytania i tym samym zarabiać.</value>
+  </data>
+  <data name="MaximumExpertsByCategory_Title" xml:space="preserve">
+    <value>Od czego zależy maksymalna liczba ekspertów w danej kategorii</value>
+  </data>
+  <data name="MoreFAQ_Description" xml:space="preserve">
+    <value>Jesteśmy dostępni pod adresem kontakt@asknuts.com</value>
+  </data>
+  <data name="MoreFAQ_Title" xml:space="preserve">
+    <value>Nie znalazłem odpowiedzi na moje pytanie – jak skontaktować się z konsultantem asknuts?</value>
+  </data>
+  <data name="OccupyExpertLimit_Description" xml:space="preserve">
+    <value>Podejście to wywodzi się z zaufania do naszych ekspertów i dbałości o ich czas i komfort.  Wychodzimy z założenia, że ekspert przejmuje pytanie dopiero wtedy gdy jest przekonany, że mu podoła. Ekspert dostaje zatem kredyt zaufania i przejmuje pełną odpowiedzialność za zadowolenie autora pytania.
+Zalety takiego rozwiązania dla ekspertów: 
+Pewność, że praca jaką wykonał na rzecz pytania nie pójdzie na marne (nie konkuruje o pytanie z innym ekspertem)
+Ekspert który nie przejmie pytania, może zająć się następnymi pytaniami, co wpływa na ogólne tempo odpowiadania na pytania. 
+Znacznie krótszy średni czas za który ekspert jest wynagradzany. 
+Eksperci nie podważają swoich kompetencji. Wszelkie spory rozstrzygane są wewnątrz systemu, co jest kluczowe w profesjonalnych rozwiązaniach</value>
+  </data>
+  <data name="OccupyExpertLimit_Title" xml:space="preserve">
+    <value>Czemu tylko jeden ekspert może przejąć pytanie</value>
+  </data>
+  <data name="OccupyingAndBlocking_Description" xml:space="preserve">
+    <value>Blokada jest pierwszym etapem przejęcia pytania. Różni się od przejęcia tym, że jeśli w ciągu 15 minut nie rozpoczniejsz rozmowy na czacie, pytanie automatycznie zostanie odblokowane dla wszystkich ekspertów. 
+Przejęcie pytania jest nieograniczone czasowo – przejmując pytanie stajesz się wyłącznym ekspertem udzielającym na nie odpowiedzi. Przejęcie następuje w wyniku napisania pierwszego posta na czacie. 
+Zarówno blokada jak i właściwe przejęcie pytania uniemożliwiają Ci przejmowanie równolegle następnych pytań.</value>
+  </data>
+  <data name="OccupyingAndBlocking_Title" xml:space="preserve">
+    <value>Czym różni się blokada od przejęcia?</value>
+  </data>
+  <data name="OccupyLimit_Description" xml:space="preserve">
+    <value>Na początku współpracy z asknuts, możesz mieć przejęte w danej chwili maksymalnie jedno pytanie. 
+Zasada ta wpływa na wyrównanie szans wszystkich ekspertów serwisu na zdobycie klienta i eliminuje niuczciwe przejmowanie dużej liczby pytań na raz. 
+Wprowadzenie tej zasady skutkuje:
+Szybszą odpowiedzią na pytanie 
+Dokładniejszą odpowiedzią
+Większym zaangażowaniem eksperta
+Zasada ta jest zatem zgodna z naszą misją. Wraz z zakazem przejmowania większej liczby pytań, asknuts wprowadza także udogodnienia dla ekspertów:
+ekspert ma przejęte pytanie na wyłączność,
+nie ma limitu pytań na które może odpowiedzieć (dzinnego , miesięcznego itp), zatem wystarczy gdy jego klienci szybko będą akceptować odpowiedzi na pytania.</value>
+  </data>
+  <data name="OccupyLimit_Title" xml:space="preserve">
+    <value>Dlaczego nie mogę przejąć większej liczby pytań na raz?</value>
+  </data>
+  <data name="Payments_Description" xml:space="preserve">
+    <value>Współpracujemy z systemem Transferuj.pl i akceptujemy:
+wszystkie płatności przelewów bankowych dostępnych na transferuj.pl
+płatności kartami kredytowymi VISA,MC,AMEX
+płatności Paypal
+płatności MoneyBookers</value>
+  </data>
+  <data name="Payments_Title" xml:space="preserve">
+    <value>Jakie typy płatności akceptujemy</value>
+  </data>
+  <data name="PersonalInformationExpert_Description" xml:space="preserve">
+    <value>Przekazywanie wszelkich danych osobowych ,bądź teleadresowych klientowi jest niezgodne z regulaminem serwisu. Narzędzia dostarczane przez asknuts pozwalają na efektywne odpowiadanie na pytania bez konieczności innej formy kontaktu. Asknuts nie jest serwisem, w którym bezpośrednio możesz zdobywać nowych klientów. Każdego klienta obsługiwany jest za pośrednictwem asknuts.</value>
+  </data>
+  <data name="PersonalInformationExpert_Title" xml:space="preserve">
+    <value>Czy mogę przekazywać klientom swoje dane osobowe?</value>
+  </data>
+  <data name="PrivacyAndSecurityExpert_Description" xml:space="preserve">
+    <value>Nie udostępniamy nikomu, w tym klientom, żadnych Twoich danych osobowych. Informacje te są w pełni zabezpieczone na naszych sewerach. Twoja prywatność chronona jest poprzez: 
+Możliwość nadania sobie psełdonimu zamiast prezentacji imienia i nazwiska [? – Prezentacja imienia i nazwiska jest niezgodna z regulaminem. Zachęcamy do nadawania imion, bądź psełdonimów świadczących o Twojej specjalizacji]
+Możliwość wyboru dowolnego zdjęcia profilowego – [? – dobrze, gdy zdjęcie prezentuje Twoją osobę, jednakże tylko do Ciebie należy decyzja czy pokazywać tam swój profil, czy inne zdjęcie symbolizujące Twoją dziedzinę wiedzy]
+Ukrywanie szczegółów Twojego wykształcenia, bądź zatrudnienia. [? - Prezentujemy jedynie Twój ogólny dorobek naukowy – liczbę lat doświadczenia, tytuł naukowy, specjalizację. ]
+Pozostałe informacje (wiek , imię, nazwisko, dane kontaktowe) nie są prezentowane</value>
+  </data>
+  <data name="PrivacyAndSecurityExpert_Title" xml:space="preserve">
+    <value>A co z moją prywatnością? Czy moje dane osobowe są bezpieczne?</value>
+  </data>
+  <data name="QuestionBlocking_Description" xml:space="preserve">
+    <value>Blokując pytanie, uniemożliwiasz odpowiedzienie na nie innym ekspertom. Blokada jest czasowym zabezpieczeniem, że ciężka praca przy analizie pytania będzie wykonywana tylko przez jednego eksperta, a nie przez wielu równocześnie. 
+Dzięki temu żadna Twoja odpowiedź nie pójdzie na marne. 
+Pamiętaj, że blokada nie jest jeszcze przejęciem pytania. Przejęcie nastąpi dopiero w momencie napisania pierwszego posta w wątku. 
+Gdy w trakcie trwania blokady uznasz, że nie chcesz się jednak zajmować tym pytaniem, możesz je zwolnić szybciej, klikając „Odblokuj pytanie”. 
+Ważne: Można zablokować/przejąć tylko jedno pytanie równocześnie. Zabezpiecza to przed lawinowymi blokadami pytań przez pojedyńczych ekspertów. Pozwala natomiast lepiej skupić się na przejętym pytaniu. W miarę zdobywania punktów doświadczenia, możliwe staje się przejmowanie większej liczby pytań na raz (maksymalnie trzech).</value>
+  </data>
+  <data name="QuestionBlocking_Title" xml:space="preserve">
+    <value>Czym jest blokowanie pytania</value>
+  </data>
+  <data name="QuestionInWrongCategory_Description" xml:space="preserve">
+    <value>&lt;funkcjonalność nie jest jeszcze zaimplementowana, trzeba się zastanowić  &gt;</value>
+  </data>
+  <data name="QuestionInWrongCategory_Title" xml:space="preserve">
+    <value>Co zrobić gdy pytanie będzie w złej kategorii?</value>
+  </data>
+  <data name="QuestionRebate_Description" xml:space="preserve">
+    <value>Eksperci poziomu 2+ mają upusty na zadawanie pytań.
+2 poziom – 20%
+3 poziom – 30%
+4 poziom – 40%</value>
+  </data>
+  <data name="QuestionRebate_Title" xml:space="preserve">
+    <value>Czy jako ekspert mam rabat na zadawanie pytań?</value>
+  </data>
+  <data name="Requirements_Description" xml:space="preserve">
+    <value>Każdy ekspert musi
+Podać szczegóły swojego doświadczenia w swojej kategorii [? – Twoje doświadczenie może być poparte wykształceniem, zawodem jaki wykonujesz, referencjami ludzi, którym pomagasz. Każda aplikacja jest weryfikowana indywidualnie, więc opisz to co uważasz za Twoje mocne strony. Pamiętaj – weryfikujemy Twoje kompetencje]
+
+Przesłać skan dokumentu ze zdjęciem potwierdzającego jego tożsamość [? – dokument ze zdjęciem (dowód osobisty, prawo jazdy, paszport) służy nam wyłącznie do potwierdzenia, że nikt nie podszywa się pod Twoją osobę. Dbanie o dobre imie i opinię naszych specjalistów jest dla nas najwyższym priorytetem. Dane te są przetwarzane jedynie na potrzeby asknuts i są w pełni chronione przed osobami nieuprawnionymi]
+
+Uzupełnić swoje dane profilowe: zdjęcie ,  stanowisko, wykształcenie, psełdonim [? – dane profilowe można ustawić w Panel użytkownika-&gt;Ustawienia. Są to dane widoczne przed klientów, świadczące o Twoich kompetencjach. To na ich podstawie klienci wybierają odpowiadającego na swoje pytanie]
+
+
+Przejść telefonicznie rozmowę kwalifikacyjną [? – rozmowa kwalifikacyjna jest niezbędna do akceptacji podania na eksperta. W trakcie rozmowy zostaniesz poproszony o odpowiedź na parę pytań ze swojej dziedziny, musisz potwierdzić swoje kwalifikacje. Konsultanci sprawdzą także Twoje zdolności interpersonalne. Twoim zadaniem będzie przekonanie nas co do swoich kwalifikacji i chęci pomocy naszym użytkownikom. 
+
+Na prośbę konsultantów dostarczyć w formie elektronicznej wybrane dyplomy, certyfikaty, referencje [? – w wyniku rozmowy kwalifikacyjnej możesz zostać poproszony o przesłanie skanów wybranych certyfikatów w celu potwierdzenia swoich kwalifikacji]
+
+
+Przejść krótki kurs obsługi serwisu [? – kurs pozwoli Ci szybko poznać wszystkie najważniejsze możliwości systemu, które mogą ułatwić Ci korzystanie z niego a także pozwolą na zdobycie większej liczby klientów. Asknuts oferuje ekspertom liczne narzędzia pozwalające zagwarantować 100% satysfakcji naszym klientom, a także zyskać dodatkowe przychody].</value>
+  </data>
+  <data name="Requirements_Title" xml:space="preserve">
+    <value>Jak zostać ekspertem – wymagania i przebieg rekrutacji</value>
+  </data>
+  <data name="SuggestMore_Description" xml:space="preserve">
+    <value>Zdarzają się sytuacje, gdy ekspert chciałby wykonać jeszcze dodatkową pracę na rzecz rozwinięcia odpowiedzi, ale jest to czasochłonne i nie wymagane w pytaniu podstawowym. Asknuts udostępnia opcję „Zaproponuj więcej”, która podnosi poziom satysfakcji Klienta. Ekspert może wtedy zasugerować klientowi dodatkową usługę. Opcja ta pojawia się zaraz po przejęciu pytania. 
+&lt;tutaj obrazek&gt;
+Określa przy tym tytuł czynności, jej zakres oraz kwotę czynności. 
+Klient otrzymuje natychmiast informację o ofercie w postaci wyskakującego okienka. Może wtedy zaakceptować usługę i dopłacić, lub też odrzucić propozycję. W wyniku akcpetacji, kwota pytania rośnie a Ty dostajesz informacje o tym, że klient zaakceptował Twoją ofertę.
+Pamiętaj, że każda propozycja jest weryfikowana przez naszych konsultantów
+Dobrym sposobem  na użycie tej funkcji jest uprzednie rozpoznanie szczegółowych potrzeb klienta. Sugerowanie dodatkowych usług na początku odnosi mierny skutek.</value>
+  </data>
+  <data name="SuggestMore_Title" xml:space="preserve">
+    <value>Jak działa „Zaproponuj więcej”?</value>
+  </data>
+  <data name="UndervaluedQuestion_Description" xml:space="preserve">
+    <value>Pytanie, które Twoim zdaniem nie może zostać przez Ciebie przejęte ze względu na zbyt dużą ilość pracy, możesz oznaczyć jako niedowartościowane.
+&lt;tutaj zdjęcie przycisku i formularza&gt; 
+Nie przejmujesz wtedy pytania, a jedynie informujesz o cenie za jaką jesteś gotów odpowiedzieć. Wraz z ceną podajesz szczegółową przyczynę, dla której uważasz, że to pytanie jest zbyt nisko wycenione. 
+Jeżeli nikt nie przejmie pytania w ciągu 24 godzin od jego pojawienia się na liście, klient otrzymuje listę ofert za wyższą kwotę , wraz z opisem przyczyny. Może wtedy dopłacić za pytanie i wybrać Twoją ofertę. Wybór ten blokuje automatycznie pytanie dla Ciebie na 24 godziny. W tym czasie jesteś już zobowiązany do rozpoczęcia czatu z klientem.</value>
+  </data>
+  <data name="UndervaluedQuestion_Title" xml:space="preserve">
+    <value>Pytanie niedowartościowane – co wtedy?</value>
+  </data>
+  <data name="UserWontAcceptAnswer_Description" xml:space="preserve">
+    <value>Jednym z zadań serwisu asknuts jest ochrona eksperta przed nieuczciwymi klientami. Odbywa się to m.in. poprzez depozyt na poczet pytania oraz poprzez odpowiednią procedurę udzielania odpowiedzi, przestrzegającą zasad szacunku i profesjonalizmu wobec klienta. 
+Wszystkie te zasady, które obowiązują także klientów, dążą do maksymalizacji liczby akceptowanych odpowiedzi.
+W przypadku, gdy brak akceptacji wynika ze złej woli klienta, ekspert może zgłosić ten przypadek do obsługi serwisu na email kontakt@asknuts.com . W przypadku pozytywne go rozpatrzenia decyzji, w uzasadnionych przypadkach ekspert odzyska utracone punkty doświadczenia , a także zyska częściowy zwrot straconej prowizji. Nad rzpatrzaniem tego typu problemów czuwają specjalnie do tego celu powołani eksperci, którzy dokonują oceny zasadności.</value>
+  </data>
+  <data name="UserWontAcceptAnswer_Title" xml:space="preserve">
+    <value>Użytkownik nie chce zaakceptować mojej odpowiedzi – co teraz?</value>
+  </data>
+  <data name="Verification_Description" xml:space="preserve">
+    <value>Weryfikacja eksperta polega na opisana jest w  „Jak zostać ekspertem – wymagania i przebieg rekrutacji”. Na skutek pomyślnej weryfikacji , ekspert otrzymuje odznakę „Zweryfikowany ekspert”, która umożliwia mu odpowiadanie na pytania i dołącza go do ekspertów prezentowanych publicznie w systemie.</value>
+  </data>
+  <data name="Verification_Title" xml:space="preserve">
+    <value>Na czym polega weryfikacja eksperta</value>
+  </data>
+  <data name="MeetAskNuts" xml:space="preserve">
+    <value>Poznaj AskNuts!</value>
+  </data>
+</root>

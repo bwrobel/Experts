@@ -1,0 +1,29 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Experts.Core.Entities.Feedback
+
+@{
+    var color = "";
+    switch(Model.Mark)
+    {
+        case FeedbackMark.Positive:
+        {
+            color = "#7DB61F";
+            break;
+        }
+        case FeedbackMark.Neutral:
+        {
+            color = "#93918d";
+            break; 
+        }
+        case FeedbackMark.Negative:
+        {
+            color = "#444444";
+            break; 
+        }
+    }
+}
+
+<div class="opinion enters">@Model.Content</div>
+
+<div class="opinion-mark"><hr/><span>@Resources.Thread.AnswerOpinion</span><span class="mark" style="color:@color">@Html.FeedbackMarkIcon(Model.Mark) @Model.Mark.Describe(Resources.Thread.ResourceManager)</span></div>

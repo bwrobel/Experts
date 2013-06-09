@@ -1,0 +1,31 @@
+﻿@model Experts.Web.Models.Feedback.OpinionListModel
+
+<div id="opinions" class="carousel slide">
+    <div class="inner">
+        <h3>@Resources.StaticPages.HomeUserOpinions</h3>
+        
+        <span class="pager">
+            <a href="#opinions" data-slide="prev">&lt;</a>
+            <a href="#opinions" data-slide="next">&gt;</a>
+        </span>
+    </div>
+
+    <hr/>
+    
+    <div>
+        <div class="carousel-inner">
+            <div class="item active">
+                @if (Model.Opinions.Any())
+                {
+                    @Html.Action(MVC.Profile.OpinionSingle(Model.Opinions.First()))
+                }
+            </div>
+            @foreach(var opinion in Model.Opinions.Skip(1))
+            {
+                <div class="item">
+                    @Html.Action(MVC.Profile.OpinionSingle(opinion))
+                </div>
+            }
+        </div>
+    </div>
+</div>

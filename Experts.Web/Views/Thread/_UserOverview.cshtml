@@ -1,0 +1,33 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Core.Entities.User
+
+<div class="well with-inners">
+    <div class="inner">
+        <h4 class="expert-header">@Resources.Thread.ThreadAuthorOverview</h4>
+    </div>
+    
+    <hr/>
+
+    <div class="inner user-overview">
+        <div class="pull-left">
+            @Html.ProfileAvatar(Model)
+        </div>
+        <div class="span4">
+            <div>
+                <h5>@Resources.Thread.GenericUsername</h5>
+            </div>
+
+            <hr/>
+
+            @if (AuthenticationHelper.CurrentUser.IsModerator)
+            {
+                <div><b>@Model.Email</b></div>
+            }
+
+            <div>
+                @Resources.Account.UserAcceptedQuestions:
+                <b>@Model.AcceptedQuestions / @Model.AskedQuestions</b>
+            </div>
+        </div>
+    </div>
+</div>

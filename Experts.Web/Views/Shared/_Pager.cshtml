@@ -1,0 +1,45 @@
+﻿@model Experts.Web.Models.Shared.Pagination
+@using Experts.Web.Helpers
+
+@{
+    var routeData = new RouteValueDictionary(Request.RequestContext.RouteData.Values);
+}
+
+@if(Model.TotalPages > 1)
+{
+    <div class="pagination pagination-centered">
+      <ul>
+        @if (Model.CurrentPageNumber != 1)
+        {
+            <li>@Html.RouteLink(Resources.Global.PagerFirst, routeData.Append(Request.QueryString).Append("page", "1"))</li>
+            <li>@Html.RouteLink(Resources.Global.PagerPrevious, routeData.Append(Request.QueryString).Append("page", Model.CurrentPageNumber - 1))</li>
+        }
+
+        @for (int i = -2; i < 3; i++)
+        {
+            {
+                var j = Model.CurrentPageNumber + i;
+
+                if (j > 0 && j <= Model.TotalPages)
+                {
+                    if (i != 0)
+                    {
+                        <li>@Html.RouteLink(j.ToString(), routeData.Append(Request.QueryString).Append("page", j))</li>
+                    }
+                    else
+                    {
+                        <li class="active"><a>@j</a></li>
+                    }
+                }
+            }
+        }
+
+        @if (Model.CurrentPageNumber != Model.TotalPages)
+        {
+            <li>@Html.RouteLink(Resources.Global.PagerNext, routeData.Append(Request.QueryString).Append("page", Model.CurrentPageNumber + 1))</li>
+            <li>@Html.RouteLink(Resources.Global.PagerLast + "(" + Model.TotalPages.ToString() + ")", routeData.Append(Request.QueryString).Append("page", Model.TotalPages))</li>
+        }
+    
+      </ul>
+    </div>
+}

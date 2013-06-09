@@ -1,0 +1,20 @@
+﻿@using Experts.Core.Utils
+@model Experts.Web.Models.Events.NewAdditionalServiceReactionModel
+
+<form action="/Administration/NewAdditionalServiceReaction/">
+    <p><strong>@string.Format(Resources.Administration.ExpertProposedAdditionalService, Model.AdditionalService.Expert.PublicName, Model.AdditionalService.Thread.Id)</strong></p>
+ 
+    <p>@Resources.Thread.ProposeAdditionalServiceTitle: @Model.AdditionalService.Title</p>
+    <p>@Resources.Administration.AdditionalServiceUserValue: @Model.AdditionalService.Value</p>
+    <p>@Resources.Administration.AdditionalServiceExpertValue: @ThreadValueHelper.CalculateValueBasedOnExpertLevel(Model.AdditionalService.Value, Model.AdditionalService.Expert) </p>
+    <p>@Resources.Thread.ProposeAdditionalServiceComment: @Model.AdditionalService.Comment</p>
+
+    <p>Zaakceptować usługę?</p>
+    <p>
+        @Html.RadioButtonFor(m => m.IsVerified, true) @Resources.Administration.Yes <br />
+        @Html.RadioButtonFor(m => m.IsVerified, false) @Resources.Administration.No <br />
+    </p>
+
+    @Html.HiddenFor(model => model.AdditionalService.Id)
+    @Html.HiddenFor(model => model.EventId)
+</form>

@@ -1,0 +1,8 @@
+﻿@model Experts.Web.Models.StaticPages.HelpQuestionModel
+<div class="alert alert-info">
+    <a href="javascript:void(0);" onclick="showFAQAnswer(this);">@Model.Title</a></div>
+<div class="hidden help-question-content description-text-justify">
+    <hr />
+    <strong>@Model.Title</strong><br />
+    <br />@Html.Raw(Model.Description)<hr />
+</div>

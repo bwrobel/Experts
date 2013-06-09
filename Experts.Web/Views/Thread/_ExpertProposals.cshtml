@@ -1,0 +1,37 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@using Experts.Web.Utils.Payments
+@model Thread
+
+@foreach (var priceProposal in Model.PriceProposals.OrderBy(pp=> pp.SurchargeValue))
+{
+    if (priceProposal.VerificationStatus == PriceProposalVerificationStatus.Verified)
+    {
+        <div class="post thread-post row">
+
+            <div class="span2 embedded-image">
+                @Html.ProfileAvatar(priceProposal.Expert.User)
+                <img src="@ImageHelper.UrlToCategoryIconSmall(priceProposal.Expert.Categories.First().Id)" class="category-icon-small"/>
+            </div>
+
+            <div class="thread-post-tite">@priceProposal.Expert.PublicName @Resources.Thread.ProposingHigherPrice</div>
+
+            <div class="thread-post-date">@priceProposal.CreationDate.ToTimeSinceFormat()</div>
+
+            <div class="span11 thread-post-content enters">@priceProposal.Comment
+                @Resources.Thread.ProposedPrice <strong>@(priceProposal.Thread.Value + priceProposal.SurchargeValue) @Resources.Global.CurrencyPLN</strong>
+            </div>
+
+        </div>
+    
+        if (Model.Author == AuthenticationHelper.CurrentUser)
+        {
+            <div class="post-buttons">
+                <a class="btn btn-small btn-primary" data-toggle="modal" href="#paymentModal" data-surchargeId="@priceProposal.Id" data-value="@priceProposal.SurchargeValue"><i class="icon-ok"></i>@Resources.Thread.AcceptProposedPrice</a>
+            </div>
+        }
+        <hr class="top-hr"/>
+    }    
+}
+
+@Html.Action(MVC.Payment.PaymentModal(ThreadSurchargeStrategy.StrategyId, Model.Id))

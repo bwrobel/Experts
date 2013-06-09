@@ -1,0 +1,77 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Core.ViewModels.ExpertOverviewViewModel
+
+<div class="span24">
+    <h3>@Resources.Thread.ThreadFeedbacks</h3>
+    <table id="threadFeedbackTable" class="table table-striped">
+        <thead>
+            <tr><td width="60%"><b>@Resources.Thread.ThreadFeedbackComment</b></td>
+            <td width="20%"><b>@Resources.Thread.ThreadMark</b></td>
+            <td width="20%"><b>@Resources.Thread.ThreadCreationDate</b></td>
+        </thead>
+        <tbody>
+            @{var feedbacks = Model.Feedbacks.Take(PagerHelper.ExpertOverviewFeedbackLimit).ToList();}
+            @foreach (var feedback in feedbacks)
+            {
+                <tr>
+                    <td><i>@feedback.Content</i> @if (Model.IsCommentEnabled && feedback.Comment == null)
+                                                 {<a class="btn btn-mini" data-toggle="modal" href="#feedbackCommentModal" onclick="updatePopupFeedbackId(@feedback.Id)">@Resources.Account.Comment</a>}
+                    
+                        @if (feedback.Comment != null)
+                        {
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#@feedback.Id">
+                                    <p style="font-size: smaller"><i class="icon-comment"></i> @Resources.Thread.ShowExpertComment</p>
+                                </a>
+                            </div>
+
+                            <div id="@feedback.Id" class="accordion-body in collapse" style="height: auto; ">
+                                <div class="accordion-inner">
+                                    <blockquote>
+                                        <p style="font-size: smaller">@feedback.Comment</p>
+                                        <small style="font-size: x-small">@Model.PublicName, @DateHelper.ToTimeSinceFormat(feedback.CreationDate)</small>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        }
+
+                    </td>
+                        @if (feedback.Mark.ToString() == "Positive")
+                        {
+                            <td><span class="label label-success">@EnumHelper.Describe(feedback.Mark, Resources.Thread.ResourceManager) </span></td>
+                        }
+                        @if (feedback.Mark.ToString() == "Negative")
+                        {
+                            <td><span class="label label-important">@EnumHelper.Describe(feedback.Mark, Resources.Thread.ResourceManager)</span></td>
+                        }
+                        @if (feedback.Mark.ToString() == "Neutral")
+                        {
+                            <td><span class="label">@EnumHelper.Describe(feedback.Mark, Resources.Thread.ResourceManager)</span></td>
+                        }
+                    <td>@DateHelper.ToTimeSinceFormat(feedback.CreationDate)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div id="threadFeedbaackTablePager"></div><hr/>
+
+    @if (Model.IsCommentEnabled)
+    {
+        @Html.Action(MVC.Profile.FeedbackComment())
+    }
+</div>
+
+<script type="text/javascript">
+    function updatePopupFeedbackId(id) {
+        $("#FeedbackId").val(id);
+    }
+</script>
+
+<script type="text/javascript">
+    $(".collapse").collapse();
+
+    var pager2 = new Pager('threadFeedbackTable', @PagerHelper.FeedbackPageSize, '@Resources.Global.PagerPrevious', '@Resources.Global.PagerNext');
+    pager2.init();
+    pager2.showPageNav('pager2', 'threadFeedbaackTablePager');
+    pager2.showPage(1);
+</script>

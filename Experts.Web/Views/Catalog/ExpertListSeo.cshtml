@@ -1,0 +1,40 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.ThreadDetailsSeo
+          
+<h2 class="with-hint">@Model.SeoDetails.Phrase</h2>
+<p class="hint">@Resources.Thread.ExpertsFromCategory <span id="category-description" data-original-title="@Model.SeoDetails.Category.Name" data-content="@Model.SeoDetails.Category.Description">@Html.CategoryIconTiny(Model.SeoDetails.Category)</span> @Model.SeoDetails.Category.Name</p>
+
+<hr/>
+
+<div class="span16 zero-margin">
+    <div>
+        @Resources.Catalog.PhraseDescription @Html.ActionLink(Resources.Catalog.LearnMore, MVC.StaticPages.MeetAsknuts(), new { @class = "underline" }) <br /><br />
+        @Resources.Catalog.KeywordEncouregment 
+        <hr class="top-hr"/>
+    </div>
+    @Html.Partial(MVC.Thread.Views._FormTiny, Model)
+</div>
+
+<div class="well with-inners expert-box">
+    @Html.Action(MVC.Thread.MultiExpertBox(false, Model.SeoDetails.Category.Id))
+</div>
+
+<hr/>
+
+@if (Model.Experts.Count() > 0)
+{
+    <h3>@Resources.Thread.RecommendedExperts</h3>
+    foreach (var expert in Model.Experts)
+    {
+        <div class="recommended-expert">
+            @Html.Action(MVC.Thread.SingleExpertBox(expert.Id, isEmbedded:true))
+            <a class="btn btn-small btn-primary" href="@Url.Action(MVC.Profile.ExpertOverview(expert.Id, Model.SeoDetails.Category.Id))#ThreadForm_Content">@Resources.Thread.AskExpertMe</a>
+            @*<a class="btn btn-small btn-primary" href="@Url.Action(MVC.Thread.DirectQuestionThreadModel(expert.Id, Model.SeoDetails.Category.Id, Model.SeoDetails.Phrase))">@Resources.Thread.AskExpertMe</a>*@
+        </div>
+    }
+}
+
+<script type="text/javascript">
+    $("#category-description").popover();
+</script>
+

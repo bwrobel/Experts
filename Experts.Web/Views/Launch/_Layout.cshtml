@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <title>@ViewBag.RawPageTitle</title>
+    <meta name="description" content="@ViewBag.PageDescription" >
+    <link rel="stylesheet" href="@Url.Content(Links.Content.Launch_css)" />
+    <link rel="shortcut icon" href="@Url.Content(Links.Content.images.favicon_ico)"/>
+    @Html.Partial(MVC.Shared.Views._GoogleAnalytics)
+</head>
+<body>
+	<div class="container">
+        <header>
+            <a href="@Url.Action(MVC.Launch.Welcome())">
+                <img src="@Url.Content(Links.Content.images.logo_png)" alt="AskNuts.com logo" width="490" height="111" />
+            </a>
+        </header>
+
+        @RenderBody()
+
+		<footer>
+			<a href="http://gorrion.pl" target="_blank">
+				<img src="@Url.Content(Links.Content.images.gorrion_png)" alt="gorrion logo" width="164" height="50"/>
+			</a>
+		</footer>
+	</div>
+</body>
+</html>

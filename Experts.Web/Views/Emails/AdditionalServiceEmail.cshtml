@@ -1,0 +1,11 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.ThreadAdditionalServiceEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+           
+@Model.Message
+<br/>
+
+@Resources.Email.ThreadAdditionalServiceLink
+@NoContextUrl.ActionAbsolute(MVC.Thread.AdditionalServiceInformation(Model.RelatedAdditionalService.Id))

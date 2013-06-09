@@ -1,0 +1,37 @@
+﻿@model string
+@using Experts.Web.Helpers
+
+<aside id="top-menu">
+    <div class="top-purple-line"></div>
+    
+    @if (AuthenticationHelper.IsAuthenticated)
+    {
+        <div class="user-menu @(AuthenticationHelper.IsExpert ? "expert" : string.Empty)">
+        
+            @if (AuthenticationHelper.IsExpert)
+            {
+                <span><i class="icon-list"></i> @Html.ActionLink(Resources.Global.UsersThreads, MVC.Thread.AvailableQuestionList())</span>
+            }
+            else
+            {
+                <span><i class="icon-pencil"></i> @Html.ActionLink(Resources.Global.CreateThread, MVC.StaticPages.Home())</span>
+            }
+            |
+            <span><i class="icon-user"></i> @Html.ActionLink(Resources.Global.MyAccount, AuthenticationHelper.IsExpert ? MVC.Profile.MyAnswers() : MVC.Profile.MyQuestions())</span> |
+            <span><i class="icon-signout"></i> @Html.ActionLink(Resources.Global.SignOut, MVC.Account.SignOut())</span>
+        </div>
+    }
+    else
+    {
+        @Html.Action(MVC.Account.QuickSignIn())    
+    }
+</aside>
+
+@if (!string.IsNullOrEmpty(Model))
+{
+    <script type="text/javascript">
+        $(function() {
+            window.location.replace('@Model');
+        });
+    </script>
+}

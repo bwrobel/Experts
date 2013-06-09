@@ -1,0 +1,7 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.RecommenderEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+
+@Resources.Email.RecommenderContent

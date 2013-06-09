@@ -1,0 +1,99 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Payments.PaymentFormModel
+
+<div class="row">
+    <div class="span13">
+        @if (!AuthenticationHelper.IsAuthenticated)
+        {
+            <p>
+                <i class="icon-user space-left"></i>&nbsp;
+                @Resources.Account.AlreadyHaveUserAccount
+                @Html.ActionLink(Resources.Account.SignInLowerCase, MVC.Account.SignIn(null, Request.Url.PathAndQuery), new { @class = "underline" })
+            </p>
+            <hr/>
+        }    
+
+        <fieldset id="payment-form" class="not-enough-funds @(Model.HasEnoughFunds ? "hidden" : string.Empty)" @(Model.HasEnoughFunds ? "disabled=\"disabled\"" : string.Empty) data-funds="@PaymentHelper.GetFunds()">
+            @if (Model.Provider.ChannelSelectPartialView != null)
+            {
+                <div class="control-group channel-select">
+                    <label class="control-label">@Resources.Payment.PaymentFormChannel</label>
+                    <div class="controls">
+                        <img id="channel-preview" class="hidden" alt="Channel" width="80px" />
+                        <a id="select-channel" data-toggle="modal" href="#providerChannelModal"><span>@Resources.Payment.PaymentFormSelectPaymentChannel</span> <i class="icon-hand-up"></i></a>
+                        @Html.Partial(MVC.Payment.Views.ProviderChannelModal, Model.Provider)
+                    </div>
+                </div>
+            }
+
+            @Html.EditorFor(m => m.PaymentForm.PersonalData)
+            
+            <hr/>
+            
+            @if (PaymentHelper.HasFunds)
+            {
+                <p class="purple">
+                    @string.Format(Resources.Payment.SomeFundsAvailable, PaymentHelper.GetFunds())
+                </p>
+                <hr/>
+            }
+        </fieldset>
+        
+        @Html.EditorFor(m => m.PaymentForm)
+
+        <p id="enough-funds-info" class="@(Model.HasEnoughFunds ? string.Empty : "hidden")">
+            @Resources.Payment.EnoughFundsInfo
+        </p>
+
+        @if (!AuthenticationHelper.IsAuthenticated)
+        {
+            @Html.CheckBoxFor(m => m.PaymentForm.SignUp)
+            <label for="PaymentForm_SignUp" class="bold">
+                @Resources.Payment.PaymentFormSignUp
+            </label>
+
+            <div id="password-editor"></div>
+        }
+        
+        @*, new { required = "required" }*@
+        @if (!AuthenticationHelper.IsAuthenticated)
+        {
+            @Html.CheckBoxFor(model => model.PaymentForm.Policy, new { required = "required" })
+            <label for="PaymentForm_Policy">
+                @Resources.Account.PolicyAcceptation
+                @Html.ActionLink(Resources.Account.PolicyWebAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Terms), new { @class = "underline", @target="_blank" })
+                @Resources.Account.PolicyAcceptationAnd
+                @Html.ActionLink(Resources.Account.PolicyPrivateAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Privacy), new { @class = "underline", @target = "_blank" }).
+            </label>
+                
+            @Html.ValidationMessageFor(model => model.PaymentForm.Policy)
+
+            <hr/>
+        }
+        
+        @if (Model.Provider.TermsAndConditionsText != null)
+        {
+            <div class="not-enough-funds @(Model.HasEnoughFunds ? "hidden" : string.Empty)">
+                <p>
+                    @Html.Raw(Model.Provider.TermsAndConditionsText)
+                </p>
+            </div>
+        }
+    </div>
+</div>
+
+@if (!AuthenticationHelper.IsAuthenticated)
+{
+    <fieldset disabled="true">
+        <div id="password-editor-template" class="hidden">
+            <hr/>
+            <p>@Resources.Payment.EnterPasswordToSignUp</p>
+            @Html.EditorFor(m => m.PaymentForm.PasswordForm, MVC.Shared.Views.EditorTemplates.SimplePasswordForm)
+            <hr/>
+        </div>
+    </fieldset>
+
+    <script type="text/javascript">
+        payment.initPaymentForm();
+    </script>
+}

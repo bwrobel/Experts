@@ -1,0 +1,16 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.SanitizationQuestionListModel
+
+<script type="text/javascript">
+    thread.initThreadSanitizationStatusDropdown('@Url.ActionAbsolute(MVC.Thread.SanitizationQuestionList())', '@Model.GridModel.SortOptions.Column', '@Model.GridModel.SortOptions.Direction');
+</script>
+
+<h2>@ViewBag.PageTitle</h2>
+<div>
+    @Html.DropDownListFor(model => model.SelectedStatus, Model.AvailableStatuses, new { id = "SelectSanitizationStatus"})
+</div>
+<div class="table table-striped">
+    @Html.BasicThreadGrid(Model.GridModel, t => MVC.Thread.Sanitization(t.Id))
+</div>
+
+@Html.Partial(MVC.Shared.Views._Pager, Model.GridModel.Pagination)

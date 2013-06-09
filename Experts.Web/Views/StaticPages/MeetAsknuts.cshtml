@@ -1,0 +1,136 @@
+﻿@using Experts.Web.Helpers
+@model string
+           
+<h2>@ViewBag.PageTitle</h2>
+
+<p class="meet-asknuts-introduction">
+    Asknuts to serwis w którym możesz szybko uzyskać pomoc i odpowiedzi na pytania z dowolnej dziedziny bez wychodzenia z domu. 
+    Uzyskaj poradę od doświadczonych i godnych zaufania ekspertów, którzy są do Twojej dyspozycji 24/7. 
+    Ich wiarygodność nieustannie weryfikuje i sprawdza dział jakości asknuts. Wszystko po to, aby zapewnić Ci 100% gwarancję satysfakcji z udzielonej odpowiedzi. 
+    Codziennie otrzymujemy pytania z różnych dziedzin. Codziennie obsługujemy kolejnych zadowolonych klientów!
+</p>
+<br/>
+<hr/>
+<div class="row meet-asknuts-icons">
+    <div class="span7">
+        <i style="font-size: 200px; color:#AD5B79; line-height: 230px; position:relative; left: 10px; bottom: 20px;" class="icon-comment-alt"></i>
+        <h3>Zadaj pytanie</h3>
+        <p>Zadaj pytanie z dowolnej dziedziny korzystając z formularza na stronie głównej lub na stronie wybranego przez Ciebie eksperta. 
+        Uzgodnij wartość pytania i wpłać zwracalny depozyt. Pamiętaj, że zapłacisz tylko za odpowiedź tylko w przypadku pełnej satysfakcji!</p>  
+    </div>
+    <div class="span2" >
+        <i style="position:relative; top:90px; font-size: 3em" class="icon-arrow-right"></i>
+    </div>
+    <div class="span6">
+        <i style="font-size: 210px; color:#AD5B79; line-height: 230px; position:relative; left: 20px;" class="icon-user-md"></i>
+        <h3>Uzyskaj odpowiedź</h3>
+        <p>Nasz ekspert przyjrzy się zadanemu pytaniu i udzieli odpowiedzi najszybciej jak to tylko możliwe. 
+        Jeżeli będzie miał wątpliwości poprosi cię o dodatkowe informacje. O każdym z tych zdarzeń zostaniesz poinformowany mailem.</p>
+    </div>
+    <div class="span2" >
+        <i style="position:relative; top:90px;  font-size: 3em" class="icon-arrow-right"></i>
+    </div>
+    <div class="span7"> 
+        <i style="font-size: 180px;  color:#AD5B79; line-height: 230px; position:relative; left: 40px;" class="icon-thumbs-up"></i>
+        <h3>Oceń eksperta</h3>
+        <p>Oceń jakość otrzymanej odpowiedzi. Napisz opinię o ekspercie, która pomoże zweryfikować jego pracę. Gdy zaakceptujesz odpowiedź przekażemy mu jego wynagrodzenie. Jeśli z jakichś przyczyn nie będziesz zadowolony zwrócimy Ci twój depozyt.</p>
+    </div>
+</div>
+
+
+<br/><hr/>
+
+<h2>Gwarancja <span>anonimowości!</span></h2>
+
+
+<p class="meet-asknuts-introduction">
+    Możesz zadawać pytania na dowolny, nawet bardzo intymy temat. Informacje o Tobie nie są prezentowane publicznie.
+    Zapewniamy pełną anonimowość - jedyną informacją jaką otrzymują eksperci jest twoje pytanie. Pytaj śmiało!
+</p>
+
+<br/>
+<hr />
+
+
+<div class="pull-right meet-asknuts-expert-photo">
+        @Html.Image(Links.Content.images.meet_asknuts_jpg)
+    </div>
+<h2>Przede wszystkim <span>zaufani eksperci!</span></h2>
+<br />
+<div class="row">
+    <div class="span13">
+        <h4>Najlepsi specjaliści</h4>
+        <br />
+        <p>
+            Eksperci AskNuts to najlepsi specjaliści z wybranych dziedzin, wyszukani przez nasz dział jakości i zaproszeni do współpracy. Kompetentni, ambitni i pomocni!  Zadając pytanie w serwisie AskNuts masz pewność, że odpowiedzi na nie udzieli najbardziej odpowiednia osoba jaką możesz znaleźć w sieci. 
+        </p>
+        <h4>Wieloetapowa weryfikacja</h4>
+        <br />
+        <p>
+            Kompetencje każdego z ekspertów zostały potwierdzone w rygorystycznym procesie weryfikacji. Dział jakości AskNuts bezpośrednio kontaktuje się z każdym z nich, ocenia dostarczone przez niego dokumenty i analizuje pozyskane przez siebie informacje o kandydacie. Cały proces sprawia, że zweryfikowany przez nas ekspert to specjalista któremu możesz zaufać!
+        </p>
+        <h4>Gwarancja satysfakcji</h4>
+        <br />
+        <p>
+            Dzięki temu, że starannie dobieramy wspołpracujących z nami ekspertów jesteśmy w stanie zapewnić 100% zadowolenia. Każdy z nich podlega ocenie przez klientów, których opinie są na bieżąco analizowane. W przypadku braku satysfakcji z świadczonych przez nich usług gwarantujemy pełny zwrot wpłaconych środków.
+        </p>
+    </div>
+   
+</div>
+
+<br /><br />
+
+
+<ul id="meet-asknuts-tabs" class="nav nav-tabs">
+    <li data-tabid="faq" class="active"><a href="javascript:void(0);">Najczęściej zadawane pytania</a></li>
+    <li data-tabid="terms"><a href="javascript:void(0);">Regulamin</a></li>
+    <li data-tabid="privacy"><a href="javascript:void(0);">Polityka prywatności</a></li>
+</ul>
+
+<section id="faq" class="meet-asknuts-tab">
+    @Html.Action(MVC.StaticPages.About())
+</section>
+@*<section id="expertfaq" class="meet-asknuts-tab">
+    @Html.Action(MVC.StaticPages.ExpertFAQ())
+</section>*@
+<section id="terms" class="meet-asknuts-tab">
+    @Html.Action(MVC.StaticPages.PolicyWeb())
+</section>
+<section id="privacy" class="meet-asknuts-tab">
+    @Html.Action(MVC.StaticPages.PolicyPrivate())
+</section>
+
+<script type="text/javascript">
+    $(function () {
+        $("ul.nav-tabs > li").click(function () {
+            clickTab(this);
+        });
+
+        var clickTab = function(el) {
+            var tabid = $(el).data("tabid");
+            $("ul > li.active").removeClass("active");
+            $(el).addClass("active");
+            showTab(tabid);
+        };
+
+        var showTab = function (tabid) {
+            $(".meet-asknuts-tab").hide();
+            $("#" + tabid).show();
+        };
+
+        var initTabId = '@Model';
+
+        if (initTabId.length > 0) {
+            clickTab($("[data-tabid=" + initTabId + "]"));
+            document.getElementById("meet-asknuts-tabs").scrollIntoView(true);
+        }
+        else
+            showTab("faq");
+    });
+
+    var showFAQAnswer = function(el) {
+        $('.help-question-content:visible').hide();
+        $(el).parent().next().show();
+    };
+
+</script>

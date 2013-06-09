@@ -1,0 +1,70 @@
+﻿@model Experts.Web.Models.Forms.RecommendExpertForm
+
+<div class="modal fade" id="ReferExpertModal" style="display: none; text-align:left; color:Black; width:870px; left:40%; overflow:hidden">
+    @using (Html.BeginForm(MVC.Profile.RecommendExpertForm(), FormMethod.Post, new { id = "recommendForm" }))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>@Resources.Global.RecommendExpert</h3>
+        </div>
+        <div class="modal-body recommended-expert-modal-body">
+            <div class="modal-two-column">
+                <div class="recommend">
+                    <h3 class="modal-list-header">@Resources.Account.RecommendExpertData</h3>
+
+                    <label for="RecommendedExpertCategoryId" class="control-label">@Resources.Account.RecommendedExpertCategory</label>
+                    @Html.DropDownListFor(m => m.RecommendedExpertCategoryId, Model.Categories)
+
+                    @Html.EditorFor(m => m.RecommendedExpertEmail)
+                    @Html.EditorFor(m => m.RecommendedExpertName)
+                    @Html.EditorFor(m => m.RecommendedExpertSurname)
+                </div>
+                <div>
+                    <h3 class="modal-list-header">@Resources.Account.RecommendMyData</h3>
+                    @Html.EditorFor(m => m.RecommenderName)
+                    @Html.EditorFor(m => m.RecommenderSurname)
+                    @Html.EditorFor(m => m.RecommenderEmail)
+
+                    <label for="RecommendedExpertComment" class="control-label">@Resources.Account.RecommendationEmailMessage</label>
+                    @Html.TextAreaFor(m => m.RecommendedExpertComment, new {@style="width:400px"})
+
+                    @Html.HiddenFor(m => m.RecommenderId)
+                </div>
+                <span>
+                    @Resources.Account.RecommendInstructions
+                </span>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <input type="submit" class="btn btn-primary" id="submitRecommendExpert" data-dismiss="modal" value="@Resources.Global.Send" />
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#ReferExpertModal').modal({
+            show: false
+        });
+
+        $('#submitRecommendExpert').click(function () {
+            $.post('/Profile/RecommendExpertForm', $('#recommendForm').serialize(), function (result) {
+                if (result && recommendFormBlock == false) {
+                    recommendFormBlock = true;
+                    $('#ReferExpertModal').replaceWith(result);
+                    $('#ReferExpertModal').modal({ show: true });
+                }
+                else if (result && recommendFormBlock == true) {
+                    recommendFormBlock = false;
+                }
+                else {
+                    recommendFormBlock = false;
+                    window.location.reload();
+                }
+            });
+        });
+
+    });
+</script>

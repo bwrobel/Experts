@@ -1,0 +1,32 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Experts.Web.Models.Profile.MyQuestions
+
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial(MVC.Profile.Views._ProfileNavtabs, Resources.ThreadConstants.YourQuestions)
+
+<script type="text/javascript">
+    continousPaging.initialize();
+</script>
+
+@if (Model.CurrentThreads.Count() > 0)
+{
+    <h3 class="question-list-header">@Resources.Thread.YourCurrentQuestions</h3>
+    <ul class="question-list">
+        @Html.Partial(MVC.Thread.Views._ProfileQuestionsItems, Model.CurrentThreads)
+    </ul>
+}
+else
+{
+    <h3 class="question-list-header">@Resources.Thread.NoNewCurrentQuestions</h3>
+}
+
+@if (Model.AcceptedThreads.Count() > 0)
+{
+    <hr/>
+    <h3 class="question-list-header">@Resources.Thread.YourAcceptedQuestions</h3>
+    <ul class="question-list paged-list">
+        @Html.Partial(MVC.Thread.Views._ProfileQuestionsItems, Model.AcceptedThreads)
+    </ul>
+}

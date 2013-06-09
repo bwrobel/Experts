@@ -1,0 +1,220 @@
+﻿@using Experts.Core.Entities
+@using Experts.Core.Utils
+@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.PostViewModel
+           
+@{
+    var firstEditButton = "0px";
+}
+
+@if (Model.Post.Type != PostType.Hidden)
+{
+    if (Model.Post.IsFirstInThread())
+    {
+        <div class="row">
+            <div class="category-icon-big span2">
+                @Html.CategoryIconBig(Model.Post.Thread.Category)
+
+                @if (AuthenticationHelper.CurrentUser == null)
+                {
+                    <span>@Model.Post.Thread.Category.Name</span>
+                }
+                else if (AuthenticationHelper.CurrentUser.IsExpert && Model.Post.Thread.Author != AuthenticationHelper.CurrentUser && Model.Post.Thread.State != ThreadState.Closed)
+                {
+                    <span>@Model.Post.Thread.CalculatePotentialExpertValue(AuthenticationHelper.CurrentUser.Expert) @Resources.Global.CurrencyPLN</span>
+                }
+                else
+                {
+                    <span>@Model.Post.Thread.Category.Name</span>   
+                }
+            </div>
+            <div class="first-post row">
+                @if (AuthenticationHelper.CurrentUser == Model.Post.Author)
+                {
+                    <h4 class="span19">@Resources.Thread.YourQuestion</h4>
+                }
+                else
+                {
+                    <h4 class="span19">@Resources.Thread.Question</h4>
+                }
+
+                <div class="thread-post-date">@Model.Post.CreationDate.ToTimeSinceFormat()</div>
+
+                @if (Model.Post.IsEditable())
+                {
+                    { firstEditButton = "118px"; }
+                    <div class="post">
+                        <p class="post-text enters" ondblclick="javascript:thread.postEditShowEditor(this)">@Model.Post.Content</p>
+                        <div class="post-editor row-fluid" style="display: none;">
+                            <textarea class="enters post-text-editor first-editor-post">@Model.Post.Content</textarea>
+                            <a class="btn btn-small btn-primary" onclick="javascript:thread.postEditSave(this, thread.updatePost, @Model.Post.Id);"><i class="icon-save"></i>@Resources.Thread.PostEditSave</a>
+                            <a class="btn btn-small btn-inverse" onclick="javascript:thread.postEditCancel(this);">@Resources.Thread.PostEditCancel</a>
+                        </div>
+    
+                        <div class="post-buttons">
+                            <a href="javascript:void(0);" class="btn btn-inverse btn-small edit-button first-edit-button" onclick="javascript:thread.postEditShowEditor(this)">
+                                <i class="icon-pencil"></i> @Resources.Thread.EditContent
+                            </a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <br/>
+                    <div class="enters" style="margin-top: 5px">@Model.Post.Thread.Posts.First().Content</div>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="post thread-post row">
+            
+            @if (Model.Post.Author.IsConsultant)
+            {
+                <div class="span2 embedded-image">
+                    @Html.ProfileAvatar(Model.Post.Author)
+                    <img src="/Content/images/consultant.png" alt="@Resources.Global.Consultant" class="category-icon-small"/>
+                </div>
+            }
+            else if (Model.Post.Author.IsExpert && Model.Post.Author != Model.Post.Thread.Author)
+            {
+                <div class="span2 embedded-image">
+                    @Html.ProfileAvatar(Model.Post.Author)
+                    <img src="@ImageHelper.UrlToCategoryIconSmall(Model.Post.Thread.Category.Id)" alt="@Model.Post.Thread.Category.Name" class="category-icon-small"/>
+                </div>
+            }
+            else
+            {
+                <div class="span2 user-image">@Html.ProfileAvatar(Model.Post.Author)</div>
+            }
+
+            <div class="thread-post-tite">
+                @switch (Model.Post.Type)
+                {
+                    case PostType.Answer:
+                        {
+                            if (AuthenticationHelper.CurrentUser == Model.Post.Author)
+                            {@Resources.Thread.MyAnswer}
+                            else if (AuthenticationHelper.CurrentUser != Model.Post.Author)
+                            {
+                                if (Model.Post.Author == Model.Post.Thread.Author)
+                                {@Resources.Thread.QuestionerAnswer}
+                                else
+                                {@Resources.Thread.ExpertAnswer}
+                            }
+                            else
+                            {@Resources.Thread.PostTypeAnswer}
+                            break;
+                        }
+                    case PostType.Details:
+                        {
+                            if (AuthenticationHelper.CurrentUser == Model.Post.Author)
+                            {@Resources.Thread.MyAnswer}
+                            else if (AuthenticationHelper.CurrentUser != Model.Post.Author)
+                            {
+                                if (Model.Post.Author == Model.Post.Thread.Author)
+                                {@Resources.Thread.QuestionerAnswer}
+                                else
+                                {@Resources.Thread.ExpertAnswer}
+                            }
+                            else
+                            {@Resources.Thread.PostTypeAnswer}
+                            break;
+                        }
+                    case PostType.DetailsRequest:
+                        {
+                        @Model.Post.Type.Describe(Resources.Thread.ResourceManager)
+                            break;
+                        }
+                    case PostType.GiveUp:
+                        {
+                        @Resources.Thread.Resignation
+                            break;
+                        }
+                    case PostType.Reserved:
+                        {
+                        @Resources.Thread.Reserved
+                            break;
+                        }
+                    case PostType.Released:
+                        {
+                        @Resources.Thread.ExpertResignation
+                            break;
+                        }
+                    case PostType.Analyzing:
+                        {
+                        @Resources.Thread.ExpertAnalyzing
+                            break;
+                        }
+                    case PostType.Info:
+                        {
+                        @Resources.Thread.Info
+                            break;
+                        }
+                    case PostType.Answered:
+                        {
+                        @Resources.Thread.FinalAnswer
+                            break;
+                        }
+                    default:
+                        {
+                        @Resources.Thread.PostTypeAnswer
+                            break;
+                        }
+                }
+            </div>
+
+            <div class="thread-post-date">@Model.Post.CreationDate.ToTimeSinceFormat()</div>
+
+            @if (!AuthenticationHelper.IsAuthenticated || !Model.Post.IsEditable())
+            {
+                <div class="span11 enters thread-post-content">@Model.Post.Content</div>
+            }
+            else
+            {
+                <div class="span11 post-text enters thread-post-content" ondblclick="javascript:thread.postEditShowEditor(this)">@Model.Post.Content</div>
+                <div class="post-editor" style="display: none;">
+                    <textarea class="enters post-text-editor editor-post thread-post-content">@Model.Post.Content</textarea>
+                    <div class="post-editor-buttons">
+                        <a class="btn btn-small btn-primary" onclick="javascript:thread.postEditSave(this, thread.updatePost, @Model.Post.Id);"><i class="icon-save"></i>@Resources.Thread.PostEditSave</a>
+                        <a class="btn btn-small btn-inverse" onclick="javascript:thread.postEditCancel(this);">@Resources.Thread.PostEditCancel</a>
+                    </div>
+                </div>
+
+                <div class="post-edit-icons post-buttons">
+                    @if (AuthenticationHelper.IsAuthenticated)
+                    {
+                        if (Model.Post.IsEditable())
+                        {
+                            <a href="javascript:void(0);" class="btn btn-small btn-inverse" onclick="javascript:thread.postEditShowEditor(this)"><i class="icon-edit"></i>@Resources.Thread.PostEditTooltip</a>
+                        }
+
+                        if (Model.Post.IsDeletable())
+                        {
+                            <a class="btn btn-small btn-inverse" href="@Url.Action(MVC.Thread.DeletePost(Model.Post.Id))"><i class="icon-trash"></i>@Resources.Thread.PostDeleteTooltip</a>
+                        }
+                    }
+                </div>
+            }
+        
+            <div class="span11 clearfix modify-date-container" @if (Model.Post.LastModificationDate == Model.Post.CreationDate)
+                                                               {
+                                                                   @Html.Raw("style='display:none;'")
+                                                               }>
+                <br />
+                <em>@Resources.Thread.PostModified: <span class="modify-date">@Model.Post.LastModificationDate.ToTimeSinceFormat()</span></em>
+            </div>
+
+        </div>
+    }
+    
+    if (!Model.IsCatalogMode)
+    {    
+        <div class="post-buttons" style="margin-right: @firstEditButton">
+            @Html.Action(MVC.Thread.ShowThreadDetailsMenu(Model.Post.Thread, post: Model.Post))
+        </div>
+    }
+    
+    <hr class="top-hr"/>
+}

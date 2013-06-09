@@ -1,0 +1,30 @@
+﻿@model Experts.Web.Models.Chat.ChatModel
+           
+<script type="text/javascript">
+    $(function() {
+        chat.initChatFrame(@(Model.IsFrameOpen ? "true" : "false"));
+    });
+</script>
+
+<div id="chat-frame">
+    <div class="content">
+        <div>
+            <a class="close">×</a>
+        </div>
+
+        @Html.Action(MVC.Chat.Chat(true, false, false))
+
+        @if (Model.AskForEmail)
+        {
+            @Html.Partial(MVC.Chat.Views._EmailForm)
+        }
+    </div>
+
+    <a href="javascript:void();">
+        <div class="handle">
+            <div>
+                @Resources.Chat.FrameHandle
+            </div>
+        </div>
+    </a>
+</div>

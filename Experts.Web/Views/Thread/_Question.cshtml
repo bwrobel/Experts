@@ -1,0 +1,58 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.Question
+
+<hr />
+<div class="row">
+    <div class="category-icon-big span2">
+        @Html.CategoryIconBig(Model.Category)
+        <span>@Model.Category.Name</span>
+    </div>
+    <div class="row first-post">
+        <h4 class="span19">@Resources.Thread.YourQuestion</h4>
+
+        <div class="post">
+            <p class="post-text enters" ondblclick="javascript:thread.postEditShowEditor(this)">@Model.ThreadForm.Content</p>
+            <div class="post-editor row-fluid" style="display: none;">
+                <textarea class="enters post-text-editor first-editor-post">@Model.ThreadForm.Content</textarea>
+                <a class="btn btn-primary btn-small" onclick=" javascript:thread.postEditSave(this, thread.updateQuestion);">@Resources.Thread.PostEditSave</a>
+                <a class="btn btn-small" onclick="javascript:thread.postEditCancel(this);">@Resources.Thread.PostEditCancel</a>
+            </div>
+
+            <div id="attachment-tiny-list" class="attachment-tiles">
+                @Html.Action(MVC.Thread.AttachmentTiles(Model.ThreadForm.TemporaryAttachmentFolder, false, true))
+            </div>
+
+            <div class="pull-right post-buttons">
+                <a class="btn btn-inverse btn-small edit-button" onclick="javascript:thread.postEditShowEditor(this)">
+                    <i class="icon-pencil"></i> @Resources.Thread.EditContent
+                </a>
+
+                <a class="thread-attachment-button btn btn-small btn-primary">
+                    <i class="icon-paper-clip"></i> @Resources.Thread.ThreadAttachFile
+                    <input id="fileupload" type="file" name="files[]" multiple>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="top-hr"/>
+
+<script type="text/javascript">
+    $('#fileupload').fileupload({
+        url: '/Thread/PrecedingUpload',
+        sequentialUploads: true,
+        formData: { temporaryAttachmentFolder: '@Model.ThreadForm.TemporaryAttachmentFolder' },
+        fail: function () {
+            $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+            alert('@Resources.Attachments.AttachmentSizeError');
+        },
+        done: function () {
+            thread.GetAttachmentsTiles('@Model.ThreadForm.TemporaryAttachmentFolder', false);
+            $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+        },
+        submit: function () {
+            $('.icon-paper-clip').removeClass().addClass('icon-spinner icon-spin');
+        }
+    });
+</script>

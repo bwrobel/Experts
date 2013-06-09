@@ -1,0 +1,16 @@
+﻿@model Experts.Web.Models.Threads.QuestionListModel<Experts.Core.Entities.Thread>
+@using Experts.Web.Helpers
+
+<script type="text/javascript">
+    thread.initThreadCategoryDropdown('@Url.ActionAbsolute(MVC.Thread.ModeratorQuestionList())', '@Model.GridModel.SortOptions.Column', '@Model.GridModel.SortOptions.Direction');
+</script>
+
+<h2>@ViewBag.PageTitle</h2>
+<div>
+    @Html.DropDownListFor(model => model.SelectedCategory.Id, Model.AvailableCategories, new { id = "SelectedCategoryId" })
+</div>
+<div class="table table-striped">
+    @Html.BasicThreadGrid(Model.GridModel, t => MVC.Thread.ThreadDetails(t.Id))
+</div>
+
+@Html.Partial(MVC.Shared.Views._Pager, Model.GridModel.Pagination)

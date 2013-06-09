@@ -1,0 +1,23 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Experts.Core.Entities.Thread
+
+@if (Model.State == ThreadState.Accepted)
+{
+    <div class="alert alert-menu">
+        @if (AuthenticationHelper.CurrentUser == Model.Author)
+        {
+            @Resources.Thread.ThreadAcceptedUserInfo
+        }
+        else
+        {
+            @Resources.Thread.ThreadWaitForAcceptance   
+        }
+        <div>
+            @{var closeDate = Model.ThreadCloseDate.Value;}
+            <strong>@MonthNamesHelper.PolishDayOfTheWeekGenitives(closeDate.DayOfWeek.ToString())
+                @closeDate.ToString("dd.MM")</strong>,
+            @Resources.Thread.ThreadToHour <strong>@closeDate.ToString("HH:MM")</strong>
+        </div>
+    </div>
+}

@@ -1,0 +1,52 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model IEnumerable<Category>
+
+<h2>@ViewBag.PageTitle</h2>
+
+@foreach (var category in Model)
+{
+    <h4>
+       @Html.CategoryIconTiny(category) @category.Name
+    </h4>
+    
+    <strong>@Resources.Administration.CategoryAttributes</strong>
+        
+    <span class="pull-right">
+        @Html.ActionLink(Resources.Administration.AddNewAttribute, MVC.Administration.CreateCategoryAttribute(category.Id), new { @class = "btn btn-inverse" })
+    </span>
+    
+    <ul class="category-list">
+        @foreach (var attribute in category.Attributes)
+        {
+            <li>
+                @attribute.Name
+
+                <span class="pull-right">
+                    <a href="@Url.Action(MVC.Administration.EditCategoryAttribute(attribute.Id))"><i class="icon-pencil"></i>@Resources.Administration.AttributeEdit</a> |
+                    @if (attribute.Type == CategoryAttributeType.SingleSelect || attribute.Type == CategoryAttributeType.MultiSelect)
+                    {
+                        <a href="@Url.Action(MVC.Administration.CreateChildCategoryAttribute(attribute.Id))"><i class="icon-plus"></i>@Resources.Administration.AddChildAttribute</a><span> |</span>
+                    }
+                    <a href="@Url.Action(MVC.Administration.DeleteCategoryAttribute(attribute.Id))" class="confirmable"><i class="icon-trash"></i>@Resources.Administration.AttributeDelete</a>
+                </span>
+
+            </li>
+            
+            <ul>
+            @foreach (var childAttribute in attribute.ChildAttributes)
+            {
+                <li>
+                    @childAttribute.Name
+
+                    <span class="pull-right">
+                        <a href="@Url.Action(MVC.Administration.EditCategoryAttribute(childAttribute.Id, attribute.Id))"><i class="icon-pencil"></i>@Resources.Administration.AttributeEdit</a> |
+                        <a href="@Url.Action(MVC.Administration.DeleteCategoryAttribute(childAttribute.Id))" class="confirmable"><i class="icon-trash"></i>@Resources.Administration.AttributeDelete</a>
+                    </span>
+                </li>
+            }
+            </ul>
+        }
+    </ul>
+    <hr class="top-hr" />
+}

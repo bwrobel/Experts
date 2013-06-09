@@ -1,0 +1,41 @@
+﻿@using Experts.Web.Helpers
+@model FlashMessage
+
+@{
+    var iconClass = "icon-";
+    var messageClass = "alert alert-block ";
+    switch (Model.Type)
+    {
+        case FlashMessageType.Success:
+            messageClass += "alert-success";
+            iconClass += "info-sign";
+            break;
+        case FlashMessageType.Error:
+            messageClass += "alert-error";
+            iconClass += "remove-sign";
+            break;
+        case FlashMessageType.Info:
+            messageClass += "alert-info";
+            iconClass += "info-sign";
+            break;
+        case FlashMessageType.Warning:
+            iconClass += "warning-sign";
+            break;
+    }
+}
+
+<aside class="@messageClass">
+    <i class="@iconClass"></i>
+
+    <span>@Model.Content
+
+    @if(Model.Link)
+    {               
+        <a data-toggle="modal" href="#ReferExpertModal">@Resources.Account.RecommendNextExpert</a>
+        @Html.Action(MVC.Profile.RecommendExpert(Model.Data))
+    }
+    
+    </span>
+    
+    <a class="close" data-dismiss="alert">&times;</a>
+</aside>

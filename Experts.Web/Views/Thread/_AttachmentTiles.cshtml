@@ -1,0 +1,32 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.AttachmentTiles
+           
+@{int i = 1;
+  var last = "";}
+
+@if (Model.IsTiny)
+{
+    foreach (var file in Model.FileNames)
+    {
+        <div class="tiny-attachment" id="@i">
+            <i class="icon-file"></i> 
+            <span>@file.CutString(20)</span> 
+            <a onclick="thread.RemoveAttachmentTile(@i,'@Model.TemporaryAttachmentFolder', '@file')">×</a>
+        </div>
+    
+        { i++; }
+    }
+}
+else
+{
+    foreach (var file in Model.FileNames)
+    {
+        if (file == Model.FileNames.Last())
+        {
+            last = "last-attachment";
+        }
+        <div id="@i" class="attachment @last"><a onclick="thread.RemoveAttachmentTile(@i,'@Model.TemporaryAttachmentFolder', '@file')">×</a> @file.CutString(70)</div>
+    
+        {i++;}
+    }
+}

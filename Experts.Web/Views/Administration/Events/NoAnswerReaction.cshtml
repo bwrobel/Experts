@@ -1,0 +1,10 @@
+﻿@model Experts.Web.Models.Events.NoAnswerReactionModel
+
+<form action="/Administration/NoAnswerReaction/">
+
+    <p>Brak chętnych na pytanie @Model.Event.RelatedThread.Name</p>
+    <p>Stworzony: @Model.Event.RelatedThread.CreationDate</p>
+    @*do some stuff*@
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

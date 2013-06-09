@@ -1,0 +1,45 @@
+﻿@model Experts.Web.Models.Forms.QuickSignInForm
+
+<aside id="quick-sign-in">
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBoxFor(m => m.Form.Login, new { placeholder = Resources.Account.QuickSignInLoginPlaceholder, type = "email", required = "required" })
+            @Html.PasswordFor(m => m.Form.Password, new { placeholder = Resources.Account.QuickSignInPasswordPlaceholder, required = "required" })
+
+            <input type="submit" class="btn btn-small btn-inverse" value="@Resources.Account.QuickSignIn" />
+            <div class="ajax-loader-small"></div>
+            
+            if (Model.ErrorMessage == null)
+            {
+                <div class="info">@Resources.Account.QuickSignInSignIn @Resources.Account.QuickSignInOr @Html.ActionLink(Resources.Account.QuickSignUp, MVC.Account.SignUp(), new { @class = "underline" }) @Resources.Account.QuickSignInInAskNuts</div>
+            }
+            else
+            {
+                <div class="error-message field-validation-error">
+                    @Model.ErrorMessage
+                    
+                    @if (Model.ShowSignUpOrResetPasswordMessage)
+                    {
+                        <span>
+                            @Resources.Account.QuickSignInEnterCorrectData 
+                            @Html.ActionLink(@Resources.Account.QuickSignInRecoverPassword, MVC.Account.PasswordForgotten(), new { @class = "underline" }) 
+                            @Resources.Account.QuickSignInOr 
+                            @Html.ActionLink(@Resources.Account.QuickSignUp, MVC.Account.SignUp(), new { @class = "underline" }).
+                        </span>
+                    }
+                    
+                    @if (Model.ShowResendActivationMailInfo)
+                    {
+                        @Html.ActionLink(@Resources.Account.ActivationResend, MVC.Account.ResendActivationEmail(), new { @class = "underline" })
+                    }
+                </div>
+            }
+        }
+    
+    </div>
+</aside>
+
+<script type="text/javascript">
+    account.initQuickSignIn();
+</script>

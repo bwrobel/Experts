@@ -1,0 +1,51 @@
+﻿@using Experts.Core.Entities
+@model Experts.Web.Models.Forms.KeywordProcessFormModel
+
+@foreach (var attribute in Model.CategoryAttributes)
+{
+    var hasChildren = attribute.ChildAttributes.Any();
+    var propertyPrefix = string.Format("KeywordProcessForm.AttributeValues[{0}].", attribute.Id);
+    var changeScript = hasChildren ? string.Format("javascript:catalog.refreshSubAttributes(this, {0})", attribute.Id) : string.Empty;
+    var changeAttributes = new {onchange = changeScript};
+
+    var attributeValue = Model.CategoryAttributeValues == null ? null : Model.CategoryAttributeValues.SingleOrDefault(av => av.AttributeId == attribute.Id);
+
+
+    @Html.Hidden("KeywordProcessForm.AttributeValues.Index", attribute.Id)
+    @Html.Hidden(propertyPrefix + "AttributeId", attribute.Id)
+
+    <div>
+        @Html.Label(attribute.Name)
+    </div>
+    <div>
+        
+        @switch (attribute.Type)
+        {
+            case CategoryAttributeType.SingleSelect:
+                var selectListItems = attribute.Options.Select(o => new SelectListItem { Text = o.Value, Value = o.Id.ToString(), Selected = attributeValue != null && attributeValue.Value == o.Id.ToString() }).ToList();
+                selectListItems.Insert(0, new SelectListItem {Text = "-", Value = "-1"});
+                @Html.DropDownList(propertyPrefix + "Value", selectListItems, changeAttributes)
+                break;
+            case CategoryAttributeType.MultiSelect:
+                var listIndex = 0;
+                foreach (var option in attribute.Options)
+                {
+                    @Html.CheckBox(propertyPrefix + "Values[" + listIndex + "]", attributeValue != null && bool.Parse(attributeValue.Values[listIndex]), changeAttributes)
+                    @option.Value
+
+                    listIndex++;
+                }
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    
+        @if (hasChildren)
+        {
+            <div class="sub-attributes" data-attribute-id="@attribute.Id">
+                    @Html.Action(MVC.Catalog.ChildCategoryAttributes(Model.CategoryAttributeValues, attribute.Id))
+            </div>
+        }
+    </div>
+
+}

@@ -1,0 +1,16 @@
+﻿<div id="email-form" class="chat-size">
+    <h3>@Resources.Chat.EmailFormHeader</h3>
+    <p>@Resources.Chat.EmailFormDescription</p>
+    <input id="email" placeholder="@Resources.Chat.EmailFormEnterEmailPlaceholder"/>
+    <a id="start-chat" class="btn btn-primary">@Resources.Chat.EmailFormStartChat</a>
+    
+    <p>
+        @Html.ActionLink(@Resources.Chat.EmailFormSignIn, MVC.Account.SignIn(), new { id = "sign-in", @class = "underline" }) @Resources.Chat.EmailFormSignInSentence
+    </p>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        chat.initEmailForm();
+    });
+</script>

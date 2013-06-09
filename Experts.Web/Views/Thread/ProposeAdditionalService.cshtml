@@ -1,0 +1,46 @@
+﻿@model Experts.Web.Models.Forms.AdditionalServiceForm
+
+<div class="modal fade" id="ProposeAdditionalServiceModal" style="display: none;">
+    @using (Html.BeginForm(MVC.Thread.ProposeAdditionalService(), FormMethod.Post, new { id = "additionalServiceForm" }))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>@Resources.Thread.AdditionalService</h3>
+        </div>
+        <div class="modal-body">
+
+            @Html.EditorFor(m => m.Title)
+
+            @Html.EditorFor(m => m.Value)
+             
+            <label for="Comment" class="control-label">@Resources.Thread.ProposeAdditionalServiceComment</label>
+            @Html.TextAreaFor(m => m.Comment, new {placeholder = @Resources.Thread.AdditionalServiceCommentPlaceholder, @class = "span8"})
+
+            @Html.HiddenFor(m => m.ThreadId)
+        </div>
+        
+        <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="submitAdditionalService" data-dismiss="modal">@Resources.Global.Send</a>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#ProposeAdditionalServiceModal').modal({
+            show: false
+        });
+
+        $('#submitAdditionalService').click(function () {
+            $.post('/Thread/ProposeAdditionalService', $('#additionalServiceForm').serialize(), function (result) {
+                if (!result) {
+                    window.location.reload();
+                } else {
+                    $('#ProposeAdditionalServiceModal').replaceWith(result);
+                    $('#ProposeAdditionalServiceModal').modal({ show: true });
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,38 @@
+﻿<a data-toggle="modal" href="#addKeywordModal">@Resources.Catalog.AddNewKeyword</a>
+
+<div class="modal fade" id="addKeywordModal">
+    <div class="modal-body">
+        <h3>@Resources.Catalog.TypeNewKeyword</h3>
+        <div>
+            @using(Html.BeginForm(MVC.Catalog.AddKeyword(), FormMethod.Post, new { id = "addKeywordForm" }))
+            {
+                <input type="text" name="keywordPhrase"></input>
+                <div class="uniqueError hidden validation-summary-errors">
+                    @Resources.Catalog.KeyPhraseMustBeUnique
+                </div>
+            }
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-primary" id="addKeywordModalSave">@Resources.Forms.SaveChanges</a>
+        <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+    </div> 
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#addKeywordModal').modal({
+            show: false
+        });
+
+        $('#addKeywordModalSave').click(function () {
+            $.post("/Catalog/IsKeywordUnique", { keywordPhrase: $('#addKeywordForm input').val() }, function (result) {
+                if (result == "True") {
+                    $("#addKeywordForm").submit();
+                } else {
+                    $(".uniqueError").removeClass("hidden");
+                }
+            });
+        });
+    });
+</script>

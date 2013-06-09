@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CategoryAttributeValue>
+@using Experts.Core.Entities
+
+@foreach (var attributeValue in Model)
+{
+    <tr>
+        <td>@attributeValue.Attribute.Name</td>
+        <td><b>
+        @switch(attributeValue.Attribute.Type)
+        {
+            case CategoryAttributeType.MultiLineText:
+            case CategoryAttributeType.SingleLineText:
+                 @attributeValue.Value
+                 break;
+            case CategoryAttributeType.SingleSelect:
+                @(attributeValue.SelectedOptions.Any() ? attributeValue.SelectedOptions.Single().Value : "-")
+                break;
+            case CategoryAttributeType.MultiSelect:
+                foreach (var option in attributeValue.SelectedOptions)
+                {
+                    @option.Value
+                    if(option != attributeValue.SelectedOptions.Last())
+                    {
+                        <br />
+                    }
+                }
+                 break;
+            default:
+                   throw new ArgumentOutOfRangeException();
+        }
+        </b></td>
+    </tr>
+}

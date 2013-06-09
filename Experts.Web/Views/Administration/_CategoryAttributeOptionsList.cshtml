@@ -1,0 +1,41 @@
+﻿@model Experts.Web.Models.Forms.CategoryAttributeForm
+
+<div class="div-table">
+    @if (Model.Options.Any())
+    {
+        foreach (var option in Model.Options)
+        {
+            <div class="div-row" data-id="@option.Id">
+                <div class="option-data">
+                    <span>@option.Value</span>
+                    <span>@option.PriceModifier</span>
+                    <span class="small">
+                        <a href="javascript:void();" class="edit-option">@Resources.Administration.AttributeEdit</a> | 
+                        <a href="javascript:void();" class="delete-option">@Resources.Administration.AttributeDelete</a>
+                        <div class="ajax-loader-small no-margin"></div>
+                    </span>
+                </div>
+                @using (Html.BeginForm(MVC.Administration.UpdateCategoryAttributeOption(), FormMethod.Post, new {@class = "option-form hidden"}))
+                {
+                    <input name="Value" value="@option.Value"/>
+                    <input name="PriceModifier" value="@option.PriceModifier"/>
+                    <input type="hidden" name="CategoryAttributeId" value="@Model.AttributeId"/>
+                    <input type="hidden" name="Id" value="@option.Id"/>
+                    <input type="submit" class="btn" value="@Resources.Administration.UpdateCategoryAttributeOption" />
+                    <div class="ajax-loader-small"></div>
+                }
+            </div>
+        }
+    }
+    else
+    {
+        <div class="div-row">@Resources.Administration.NoCategoryAttributeOptions</div>
+    }
+
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        administration.initCategoryAttributeOptionsList('@Resources.Administration.CategoryAttributeOptionDeleteConfirmation');
+    });
+</script>

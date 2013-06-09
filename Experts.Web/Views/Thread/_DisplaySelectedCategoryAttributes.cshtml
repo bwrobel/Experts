@@ -1,0 +1,2 @@
+﻿@model IDictionary<string,string>       
+@Html.Raw(string.Join(" / ", Model.Select(m => string.Format("<strong>{0}:</strong> {1}", m.Key, m.Value))))

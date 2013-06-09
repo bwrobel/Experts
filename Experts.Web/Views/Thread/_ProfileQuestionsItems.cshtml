@@ -1,0 +1,40 @@
+﻿@using Experts.Web.Helpers
+@model IEnumerable<Experts.Core.Entities.Thread>
+
+@foreach (var thread in Model)
+{
+    <li>
+        <a href="@Url.Action(MVC.Thread.ThreadDetails(thread.Id))">        
+            <div class="category-icon-big span2 category-icon-big-margin">
+                @Html.CategoryIconBig(thread.Category)
+                <span>
+                    @thread.Category.Name
+                </span>
+            </div>
+        </a>
+
+        <div class="question-info">
+            <strong>@Html.ActionLink(thread.Name, MVC.Thread.ThreadDetails(thread.Id))</strong>
+
+            <div class="question-date">
+                @thread.CreationDate.ToTimeSinceFormat()
+            </div>
+        </div>
+
+        <div class="question-summary">
+                @Html.ActionLink(thread.GetSummary(450), MVC.Thread.ThreadDetails(thread.Id))
+        </div>
+
+        <div class="question-details">
+            @Html.Action(MVC.Thread.DisplaySelectedCategoryAttributes(thread.Id))
+            <a href="@Url.Action(MVC.Thread.ThreadDetails(thread.Id))" class="btn btn-small btn-inverse"><i class="icon-pencil"></i>@Resources.Thread.GoToQuestion</a>  
+        </div>
+    </li>   
+}
+
+@if (Model.Count() == PagerHelper.PageSize)
+{
+    <li class="loader">
+        <div><i class="icon-spin icon-refresh"></i> @Resources.Thread.ThreadQuestionListLoading</div>
+    </li>
+}

@@ -1,0 +1,41 @@
+﻿@model Experts.Web.Models.Forms.PayoffForm
+
+<div class="modal fade" id="payoffModal">
+    @using (Html.BeginForm(MVC.Thread.PriceProposal(), FormMethod.Post, new { id = "payoffForm"}))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>Zlecenie wypłaty środków</h3>
+        </div>
+        <div class="modal-body">
+            @Html.EditorForModel()
+        </div>
+        <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="submitPayoff" data-dismiss="modal">Zleć wypłatę środków</a>
+        </div> 
+    }
+    
+    <script type="text/javascript">
+        $(function () {
+            $('#payoffModal').modal({
+                show: false
+            });
+
+            $('#submitPayoff').click(function () {
+                $.post('/Profile/Payoff', $('#payoffForm').serialize(), function (result) {
+                    if (result) {
+                        $('#payoffModal').replaceWith(result);
+                        $('#payoffModal').modal({ show: true });
+                    }
+                    else {
+                        location.reload(true);
+                    }
+
+                });
+            });
+        });
+    </script>
+</div>
+
+

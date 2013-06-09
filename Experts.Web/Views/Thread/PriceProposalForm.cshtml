@@ -1,0 +1,41 @@
+﻿@model Experts.Web.Models.Forms.PriceProposalForm
+
+<div class="modal fade" style="text-align: left" id="priceProposalModal">
+    @using (Html.BeginForm(MVC.Thread.PriceProposal(), FormMethod.Post, new { id = "priceProposalForm"}))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>@Resources.Thread.PriceProposalTitle</h3>
+        </div>
+        <div class="modal-body">
+            @Html.EditorForModel()
+        </div>
+        <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="submitPriceProposal" data-dismiss="modal">@Resources.Thread.PriceProposalSaveButton</a>
+        </div> 
+    }
+    
+    <script type="text/javascript">
+        $(function () {
+            $('#priceProposalModal').modal({
+                show: false
+            });
+
+            $('#submitPriceProposal').click(function () {
+                $.post('/Thread/PriceProposal', $('#priceProposalForm').serialize(), function (result) {
+                    if (!result) {
+                        window.location.reload();
+                        $('#price-proposal-button').hide();
+
+                    } else {
+                        $('#priceProposalModal').replaceWith(result);
+                        $('#priceProposalModal').modal({ show: true });
+                    }
+                });
+            });
+        });
+    </script>
+</div>
+
+

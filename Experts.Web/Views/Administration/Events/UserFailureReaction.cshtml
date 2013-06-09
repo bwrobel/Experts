@@ -1,0 +1,8 @@
+﻿@model Experts.Web.Models.Events.UserFailureReactionModel
+
+
+<form action="/Administration/UserFailureReaction/">
+    <pre>@Model.Event.Data</pre>
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

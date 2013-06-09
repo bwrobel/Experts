@@ -1,0 +1,17 @@
+﻿@model Experts.Web.Models.Forms.CategoryAttributeForm
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr/>
+
+<section>
+    @using (Html.BeginForm(MVC.Administration.CreateCategoryAttribute()))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            @Html.EditorForModel()
+
+            <input type="submit" class="btn btn-primary" value="@Resources.Administration.CreateCategoryAttribute"/>
+        </fieldset>
+    }
+</section>

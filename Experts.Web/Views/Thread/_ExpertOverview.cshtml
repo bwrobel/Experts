@@ -1,0 +1,41 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Core.ViewModels.ExpertOverviewViewModel
+
+<div>
+    @if (Model.BoxTitle == Resources.Thread.InterestedExpert)
+    {
+        <div class="pull-left embedded-image">
+            @Html.ProfileAvatar(Model.User)
+            <img src="@ImageHelper.UrlToCategoryIconSmall(Model.ThreadCategoryId)" class="category-icon-small"/>
+        </div>
+    }
+    else
+    {
+        @Html.ProfileAvatar(Model.User)
+    }
+        
+    <div class="expert-attributes">
+        <div class="name">
+            <h5>@Html.ActionLink(Model.PublicName, MVC.Profile.ExpertOverview(Model.Id))
+                @if (Model.IsVerified && Model.ShowVerificationDetails)
+                {
+                    <a class="expert-verification-details" data-original-title="@Resources.Account.VerifiedExpertCapital" data-content="@Model.VerificationDetails"><i class="icon-ok-sign"></i></a>
+                }
+            </h5>
+            <em>@Model.Position</em>
+        </div>
+        <hr/>
+        @Resources.Account.ExpertPositiveFeedback: <span class="green">@(Math.Round(Model.PositivePercentage, 0, MidpointRounding.AwayFromZero) + "%")</span>
+        <hr/>
+        @Resources.Account.ExpertAcceptedAnswers: @Model.PositiveCount
+    </div>
+        
+    <p class="expert-description">
+        @Model.Description
+    </p>
+</div>
+
+<script type="text/javascript">
+    $(".expert-verification-details").popover({ placement: 'top' });
+</script>
+

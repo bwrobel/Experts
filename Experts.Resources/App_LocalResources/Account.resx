@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountCreated" xml:space="preserve">
+    <value>Twoje konto Asknuts zostało utworzone poprawnie. Na podany adres e-mail został wysłany link aktywacyjny. Aby rozpocząć korzystanie z serwisu, aktywuj swoje konto przy pomocy otrzymanego linka.</value>
+  </data>
+  <data name="AccountNotActivated" xml:space="preserve">
+    <value>Konto nie zostało aktywowane.</value>
+  </data>
+  <data name="ActivationResend" xml:space="preserve">
+    <value>Wyślij ponownie e-mail aktywacyjny</value>
+  </data>
+  <data name="ActivationSuccessful" xml:space="preserve">
+    <value>Twoje konto zostało aktywowane. Zaloguj się, aby korzystać z serwisu.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Nie można znaleźć użytkownika. Upewnij się, że użyty link jest poprawny.</value>
+  </data>
+  <data name="AlreadyActivated" xml:space="preserve">
+    <value>Konto zostało już wcześniej aktywowane.</value>
+  </data>
+  <data name="AuthenticationFailed" xml:space="preserve">
+    <value>Niepoprawny e-mail lub hasło.</value>
+  </data>
+  <data name="ContactEmailFrom" xml:space="preserve">
+    <value>Asknuts - kontakt</value>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>Adres e-mail został już użyty. Podaj inny adres.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Adres e-mail</value>
+  </data>
+  <data name="EmailIncorrect" xml:space="preserve">
+    <value>Niepoprawny adres e-mail</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Wpisz adres e-mail</value>
+  </data>
+  <data name="GoToSignIn" xml:space="preserve">
+    <value>Przejdź do strony logowania</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Adres e-mail</value>
+  </data>
+  <data name="LoginRequired" xml:space="preserve">
+    <value>Wpisz nazwę użytkownika lub adres e-mail</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Stare hasło</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Powtórz hasło</value>
+  </data>
+  <data name="PasswordForgotten" xml:space="preserve">
+    <value>Przypomnij mi hasło</value>
+  </data>
+  <data name="PasswordForgottenInstructions" xml:space="preserve">
+    <value>E-mail z linkiem do resetu hasła został wysłany na podany adres.</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Hasła muszą się zgadzać</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Wpisz hasło</value>
+  </data>
+  <data name="PasswordResetInstructions" xml:space="preserve">
+    <value>Hasło zostało zresetowane pomyślnie. Zapisz podane niżej nowe hasło. Możesz je zmienić w panelu konfiguracyjnym konta.</value>
+  </data>
+  <data name="PasswordResetTitle" xml:space="preserve">
+    <value>Potwierdzenie zresetowania hasła.</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>Hasło musi mieć minimum {2} znaków</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Zarejestruj się</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>Wystąpił błąd. Spróbuj wprowadzić dane ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z działem obsługi klienta.</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="PasswordIncorrect" xml:space="preserve">
+    <value>Niepoprawne hasło</value>
+  </data>
+  <data name="BackToProfile" xml:space="preserve">
+    <value>Powrót do edycji profilu</value>
+  </data>
+  <data name="EmailConfirmationSuccessful" xml:space="preserve">
+    <value>Adres został zmieniony poprawnie.</value>
+  </data>
+  <data name="EmailConfirmationUserNotFound" xml:space="preserve">
+    <value>Nie można znaleźć użytkownika. Upewnij się, że użyty link jest poprawny.</value>
+  </data>
+  <data name="ExpertConfirmation" xml:space="preserve">
+    <value>Gratulujemy! Zostałeś Ekspertem.</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Podaj imię</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Podaj nazwisko</value>
+  </data>
+  <data name="ResetUserNotFound" xml:space="preserve">
+    <value>Nie można znaleźć użytkownika.</value>
+  </data>
+  <data name="ResetUserNotFoundInstructions" xml:space="preserve">
+    <value>Upewnij się, że użyty link do zresetowania hasła jest poprawny</value>
+  </data>
+  <data name="BecomeExpert" xml:space="preserve">
+    <value>Zostań ekspertem</value>
+  </data>
+  <data name="AlreadyExpert" xml:space="preserve">
+    <value>Zostałeś już zarejestrowany jako ekspert.</value>
+  </data>
+  <data name="AlreadyHaveUserAccount" xml:space="preserve">
+    <value>Jeżeli posiadasz już konto użytkownika w serwisie Asknuts</value>
+  </data>
+  <data name="SelectedCategories" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>Wybierz przynajmniej jedną kategorię</value>
+  </data>
+  <data name="PolicyPrivateAcceptation" xml:space="preserve">
+    <value>Zapoznałem się i akceptuję </value>
+  </data>
+  <data name="PolicyPrivateTitle" xml:space="preserve">
+    <value>Polityka prywatności:</value>
+  </data>
+  <data name="PolicyWebAcceptation" xml:space="preserve">
+    <value>Zapoznałem się i akceptuję </value>
+  </data>
+  <data name="PolicyWebTitle" xml:space="preserve">
+    <value>Regulamin strony:</value>
+  </data>
+  <data name="PolicyPrivateUnchecked" xml:space="preserve">
+    <value>Musisz zaakceptować politykę prywatności.</value>
+  </data>
+  <data name="PolicyWebUnchecked" xml:space="preserve">
+    <value>Musisz zaakceptować regulamin strony.</value>
+  </data>
+  <data name="PolicyPrivateAcceptationClickHere" xml:space="preserve">
+    <value>politykę prywatności</value>
+  </data>
+  <data name="PolicyWebAcceptationClickHere" xml:space="preserve">
+    <value>regulamin strony</value>
+  </data>
+  <data name="CheckBoxUnchecked" xml:space="preserve">
+    <value>Musisz zaznaczyć to pole.</value>
+  </data>
+  <data name="PolicyAcceptation" xml:space="preserve">
+    <value>zapoznałem się i akceptuję </value>
+  </data>
+  <data name="PolicyAcceptationAnd" xml:space="preserve">
+    <value> oraz </value>
+  </data>
+  <data name="PolicyUnchecked" xml:space="preserve">
+    <value>Musisz zaakceptować regulamin strony oraz politykę prywatności.</value>
+  </data>
+  <data name="PublicName" xml:space="preserve">
+    <value>Publiczna nazwa użytkownika</value>
+  </data>
+  <data name="PublicNameRequired" xml:space="preserve">
+    <value>Wybierz swoją publiczną nazwę użytkownika</value>
+  </data>
+  <data name="ExpertProfileTitle" xml:space="preserve">
+    <value>Profil eksperta</value>
+  </data>
+  <data name="ProfileImage" xml:space="preserve">
+    <value>Zdjęcie użytkownika</value>
+  </data>
+  <data name="MicroprofileDescription" xml:space="preserve">
+    <value>Twój opis profilu</value>
+  </data>
+  <data name="MicroprofilePosition" xml:space="preserve">
+    <value>Obecne stanowisko</value>
+  </data>
+  <data name="ExpertAcceptedAnswers" xml:space="preserve">
+    <value>Zadowolonych klientów</value>
+  </data>
+  <data name="ExpertIsVerified" xml:space="preserve">
+    <value>Zweryfikowany expert</value>
+  </data>
+  <data name="ExpertPositiveFeedback" xml:space="preserve">
+    <value>Pozytywne opinie</value>
+  </data>
+  <data name="UserAcceptedQuestions" xml:space="preserve">
+    <value>Zaakceptowanych pytań</value>
+  </data>
+  <data name="UserAskedQuestions" xml:space="preserve">
+    <value>Zadanych pytań</value>
+  </data>
+  <data name="MicroprofileTitle" xml:space="preserve">
+    <value>Tytuł naukowy</value>
+  </data>
+  <data name="ProfileImageUploadError" xml:space="preserve">
+    <value>Niewłaściwy format obrazu.</value>
+  </data>
+  <data name="ProfileImageInstructions" xml:space="preserve">
+    <value>Przenieś i upuść zdjęcie na wyznaczonym polu!</value>
+  </data>
+  <data name="PublicNameTooLong" xml:space="preserve">
+    <value>Publiczna nazwa użytkownika musi mieć conajmniej 2 znaki i conajwyżej 25 znaków.</value>
+  </data>
+  <data name="TitleMr" xml:space="preserve">
+    <value>Pan</value>
+  </data>
+  <data name="TitleMaster" xml:space="preserve">
+    <value>Mgr</value>
+  </data>
+  <data name="TitleProfessor" xml:space="preserve">
+    <value>Prof</value>
+  </data>
+  <data name="TitleDoctor" xml:space="preserve">
+    <value>Dr</value>
+  </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusOffline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="StatusOnline" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Nie masz jeszcze konta użytkownika?</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Skomentuj</value>
+  </data>
+  <data name="OpinionAddress" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="OpinionContent" xml:space="preserve">
+    <value>Krótki opis</value>
+  </data>
+  <data name="OpinionMark" xml:space="preserve">
+    <value>Ocena serwisu</value>
+  </data>
+  <data name="OpinionMarkNegative" xml:space="preserve">
+    <value>Negatywnie</value>
+  </data>
+  <data name="OpinionMarkPositive" xml:space="preserve">
+    <value>Pozytywnie</value>
+  </data>
+  <data name="OpinionTitle" xml:space="preserve">
+    <value>Twoja opinia serwisu</value>
+  </data>
+  <data name="AddressCityEnterText" xml:space="preserve">
+    <value>Miasto...</value>
+  </data>
+  <data name="OpinionContentEnterText" xml:space="preserve">
+    <value>Opisz w paru zdaniach co sądzisz o serwisie Asknuts</value>
+  </data>
+  <data name="OpinionCreationDate" xml:space="preserve">
+    <value>Data utworzenia</value>
+  </data>
+  <data name="ExpertVerification" xml:space="preserve">
+    <value>Weryfikacja eksperta:</value>
+  </data>
+  <data name="ActivationEmailResent" xml:space="preserve">
+    <value>Link aktywacyjny został ponownie wysłany na podany adres.</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Hasło zostało zmienione.</value>
+  </data>
+  <data name="EmailChanged" xml:space="preserve">
+    <value>Link z potwierdzeniem został wysłany na podany adres. Twój adres e-mail zostanie zmieniony dopiero po kliknięciu linka znajdującego się w otrzymanej wiadomości.</value>
+  </data>
+  <data name="CategoriesUpdated" xml:space="preserve">
+    <value>Kategorie zostały zaktualizowane.</value>
+  </data>
+  <data name="MicroprofileUpdated" xml:space="preserve">
+    <value>Profil został zaktualizowany.</value>
+  </data>
+  <data name="PublicNameChanged" xml:space="preserve">
+    <value>Publiczna nazwa użytkownika została zmieniona.</value>
+  </data>
+  <data name="NewCategoryLink" xml:space="preserve">
+    <value>Napisz do nas ze swoją propozycją!</value>
+  </data>
+  <data name="NewCategoryProposal" xml:space="preserve">
+    <value>Brak kategorii w której jesteś ekspertem?</value>
+  </data>
+  <data name="NewCategoryMail" xml:space="preserve">
+    <value>kontakt@asknuts.com</value>
+  </data>
+  <data name="DescriptionTooLong" xml:space="preserve">
+    <value>Liczba znaków w opisie nie może przekroczyć 230.</value>
+  </data>
+  <data name="BalanceAvailableValue" xml:space="preserve">
+    <value>Środki dostępne</value>
+  </data>
+  <data name="BalanceOrderDateColumn" xml:space="preserve">
+    <value>Data zlecenia</value>
+  </data>
+  <data name="BalanceTitleColumn" xml:space="preserve">
+    <value>Tytuł transakcji</value>
+  </data>
+  <data name="BalanceTotalValue" xml:space="preserve">
+    <value>Aktulne saldo</value>
+  </data>
+  <data name="BalanceTransferDateColumn" xml:space="preserve">
+    <value>Data realizacji</value>
+  </data>
+  <data name="BalanceValueColumn" xml:space="preserve">
+    <value>Wartość</value>
+  </data>
+  <data name="BankAccountNumber" xml:space="preserve">
+    <value>Numer konta bankowego do wpłaty</value>
+  </data>
+  <data name="BankAccountNumberRequired" xml:space="preserve">
+    <value>Podaj numer konta bankowego na które mają zostać wpłacone pieniądze</value>
+  </data>
+  <data name="PayoffOrder" xml:space="preserve">
+    <value>Wypłać środki</value>
+  </data>
+  <data name="PayoffValueToHigh" xml:space="preserve">
+    <value>Wartość nie może przekroczyć {0} zł</value>
+    <comment>0 - form payoff value</comment>
+  </data>
+  <data name="PendingQuestionsValue" xml:space="preserve">
+    <value>Wartość analizowanych Pytań</value>
+  </data>
+  <data name="TransferValue" xml:space="preserve">
+    <value>Wartość</value>
+  </data>
+  <data name="TransferValueRequired" xml:space="preserve">
+    <value>Podaj wartość przelewu</value>
+  </data>
+  <data name="SelectedMails" xml:space="preserve">
+    <value>Konfiguracja wiadomości pocztowych</value>
+  </data>
+  <data name="ChooseAvatar" xml:space="preserve">
+    <value>Wybierz zdjęcie</value>
+  </data>
+  <data name="MailContact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="MailFromAnswerer" xml:space="preserve">
+    <value>Od odpowiadającego</value>
+  </data>
+  <data name="MailFromQuestioner" xml:space="preserve">
+    <value>Od pytającego</value>
+  </data>
+  <data name="ExpertCategoryAttributesForCategory" xml:space="preserve">
+    <value>Sprecyzuj swoje kompetencje w kategorii</value>
+  </data>
+  <data name="SaveDetails" xml:space="preserve">
+    <value>Zapisz szczegóły</value>
+  </data>
+  <data name="NewCategoryAttributeLabel" xml:space="preserve">
+    <value>Brak Twojej specjalizacji?</value>
+  </data>
+  <data name="NewCategoryAttributeLink" xml:space="preserve">
+    <value>Zaproponuj nową</value>
+  </data>
+  <data name="NewCategoryAttributeMail" xml:space="preserve">
+    <value>kontakt@asknuts.com</value>
+  </data>
+  <data name="NewCategoryAttributeMailSubject" xml:space="preserve">
+    <value>Zaproponuj specjalizację</value>
+  </data>
+  <data name="AvatarUploadInfo" xml:space="preserve">
+    <value>To wizualna reprezentacja twojego użytkownika w serwisie. Serwis akceptuje pliki w formatach: jpg, bmp oraz png. Obraz nie może przekroczyć rozmiaru 2MB i po przesłaniu zostanie przeskalowany do rozmiaru 300 na 300 pikseli.</value>
+  </data>
+  <data name="DuplicatePublicName" xml:space="preserve">
+    <value>Podana publiczna nazwa użytkownika jest już zajęta.</value>
+  </data>
+  <data name="AnonymousUsername" xml:space="preserve">
+    <value>anonimowy</value>
+  </data>
+  <data name="MailCfgUpdated" xml:space="preserve">
+    <value>Konfiguracja wiadomości pocztowych została zauktualizowana</value>
+  </data>
+  <data name="AccountCreatedFromPayment" xml:space="preserve">
+    <value>Twoje konto Asknuts zostało utworzone poprawnie. Na podany adres e-mail został wysłany link aktywacyjny. Przed ponownym zalogowaniem do serwisu w przyszłości, aktywuj swoje konto przy pomocy otrzymanego linka.</value>
+  </data>
+  <data name="AnonymousAccountCreated" xml:space="preserve">
+    <value>Aby ułatwić korzystanie z serwisu, zostało dla Ciebie założone anonimowe konto użytkownika. Umożliwia ono przeglądanie historii pytań i odpowiedzi. Aby zalogować się do konta w przyszłości, skorzystaj z linka wysłanego na podany adres e-mail.</value>
+  </data>
+  <data name="SignInLowerCase" xml:space="preserve">
+    <value>zaloguj się</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Numer telefonu</value>
+  </data>
+  <data name="PhoneNumberChanged" xml:space="preserve">
+    <value>Numer telefonu został zmieniony</value>
+  </data>
+  <data name="PhoneNumberIncorrect" xml:space="preserve">
+    <value>Nieprawidłowy numer telefonu</value>
+  </data>
+  <data name="PhoneNumberRequired" xml:space="preserve">
+    <value>Podaj numer telefonu</value>
+  </data>
+  <data name="Verifications" xml:space="preserve">
+    <value>Zweryfikowano następujące kompetencje eksperta:</value>
+  </data>
+  <data name="ExpertNotVerified" xml:space="preserve">
+    <value>Niezweryfikowany ekspert</value>
+  </data>
+  <data name="ExpertNotVerifiedInstructions" xml:space="preserve">
+    <value>Ekspert nie został zweryfikowany przez serwis.</value>
+  </data>
+  <data name="ExpertReasonPlaceholder" xml:space="preserve">
+    <value>Opisz swoje doświadczenie w tej dziedzinie</value>
+  </data>
+  <data name="ExpertReasonTitle" xml:space="preserve">
+    <value>Twoje kompetencje</value>
+  </data>
+  <data name="ExpertReasonTooLong" xml:space="preserve">
+    <value>Liczba znaków w opisie nie może przekroczyć 200.</value>
+  </data>
+  <data name="NewCategory" xml:space="preserve">
+    <value>Propozycja nowej kategorii</value>
+  </data>
+  <data name="ChatMessageText" xml:space="preserve">
+    <value>Wiadomość</value>
+  </data>
+  <data name="ChatMessageTextRequired" xml:space="preserve">
+    <value>Wprowadź treść wiadomości</value>
+  </data>
+  <data name="ChartAnswers" xml:space="preserve">
+    <value>Pytania</value>
+  </data>
+  <data name="ChartFeedbacks" xml:space="preserve">
+    <value>Oceny</value>
+  </data>
+  <data name="ChartIncome" xml:space="preserve">
+    <value>Przychód</value>
+  </data>
+  <data name="PublicNameWrongFormat" xml:space="preserve">
+    <value>Zły format nazwy publicznej, sprawdź czy nazwa nie zawiera niewspieranych znaków.</value>
+  </data>
+  <data name="PartnerStatistics" xml:space="preserve">
+    <value>Statystyki partnera</value>
+  </data>
+  <data name="ShowExpertStatistics" xml:space="preserve">
+    <value>Zobacz szczegółowe statystyki</value>
+  </data>
+  <data name="CategoryRequired" xml:space="preserve">
+    <value>Podaj kategorię, w której specjalizuję się ekspert</value>
+  </data>
+  <data name="CommentRequired" xml:space="preserve">
+    <value>Podaj komentarz </value>
+  </data>
+  <data name="RecommendedExpertCategory" xml:space="preserve">
+    <value>Kategoria eksperta</value>
+  </data>
+  <data name="RecommendedExpertComment" xml:space="preserve">
+    <value>Twój komentarz odnoszący się do kwalifikacji polecanego eksperta...</value>
+  </data>
+  <data name="RecommendedExpertEmail" xml:space="preserve">
+    <value>Email eksperta</value>
+  </data>
+  <data name="RecommendedExpertName" xml:space="preserve">
+    <value>Imię eksperta</value>
+  </data>
+  <data name="RecommendedExpertSurname" xml:space="preserve">
+    <value>Nazwisko eksperta</value>
+  </data>
+  <data name="RecommenderEmail" xml:space="preserve">
+    <value>Twój email</value>
+  </data>
+  <data name="RecommenderName" xml:space="preserve">
+    <value>Twoje imię</value>
+  </data>
+  <data name="RecommenderSurname" xml:space="preserve">
+    <value>Twoje nazwisko</value>
+  </data>
+  <data name="RecommendationFlash" xml:space="preserve">
+    <value>Dziękujemy za polecenie ekspertów. Gdy tylko zostanie Ci naliczony bonus, otrzymasz od nas email.</value>
+  </data>
+  <data name="RecommendNextExpert" xml:space="preserve">
+    <value>Poleć kolejnego eksperta</value>
+  </data>
+  <data name="RecommendationAlreadyUsed" xml:space="preserve">
+    <value>Link polecenia został już wcześniej użyty.</value>
+  </data>
+  <data name="RecommendationChecked" xml:space="preserve">
+    <value>Pomyślnie sprawdzono link polecenia, możesz się teraz zarejestrować jako ekspert</value>
+  </data>
+  <data name="RecommendationNotFound" xml:space="preserve">
+    <value>Nie znaleziono linku polecenia. Upewnij się, że użyty link jest poprawny.</value>
+  </data>
+  <data name="RecommendationEmailMessage" xml:space="preserve">
+    <value>Wiadomość do poleconego eksperta</value>
+  </data>
+  <data name="RecommendationEmailMessageTemplate" xml:space="preserve">
+    <value>Chciałbym Cię zaprosić do systemu Asknuts jako eksperta.</value>
+  </data>
+  <data name="RecommendExpertData" xml:space="preserve">
+    <value>Dane polecanego eksperta</value>
+  </data>
+  <data name="RecommendMyData" xml:space="preserve">
+    <value>Twoje dane</value>
+  </data>
+  <data name="CategoriesUpdatedForVerified" xml:space="preserve">
+    <value>Kategorie zostały zaktualizowane. Ponieważ wybrana została nowa kategoria, proces weryfikacji zostanie przeprowadzony ponownie.</value>
+  </data>
+  <data name="MicroprofileUpdatedForVerified" xml:space="preserve">
+    <value>Profil został zaktualizowany. Wkrótce zostanie on zweryfikowany przez naszego konsultanta.</value>
+  </data>
+  <data name="PublicNameChangedForVerified" xml:space="preserve">
+    <value>Publiczna nazwa użytkownika została zmieniona. Wkrótce zostanie ona zweryfikowana przez naszego konsultanta.</value>
+  </data>
+  <data name="GotTemporaryAccount" xml:space="preserve">
+    <value>Masz anonimowe konto?</value>
+  </data>
+  <data name="TransformTemporaryAccount" xml:space="preserve">
+    <value>Przekształć je w pełne konto</value>
+  </data>
+  <data name="QuickSignIn" xml:space="preserve">
+    <value>Loguj!</value>
+  </data>
+  <data name="QuickSignInLoginPlaceholder" xml:space="preserve">
+    <value>Adres e-mail</value>
+  </data>
+  <data name="QuickSignInPasswordPlaceholder" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="QuickSignUp" xml:space="preserve">
+    <value>załóż konto</value>
+  </data>
+  <data name="PositionTooLong" xml:space="preserve">
+    <value>Liczba znaków w tytule nie może przekroczyć 25.</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Edytuj profil</value>
+  </data>
+  <data name="AboutMe" xml:space="preserve">
+    <value>O mnie</value>
+  </data>
+  <data name="AskMeAQuestion" xml:space="preserve">
+    <value>Zadaj mi swoje pytanie</value>
+  </data>
+  <data name="IAmExpertIn" xml:space="preserve">
+    <value>Jestem ekspertem z dziedziny</value>
+  </data>
+  <data name="Negative" xml:space="preserve">
+    <value>negatywnych</value>
+  </data>
+  <data name="Neutral" xml:space="preserve">
+    <value>neutralnych</value>
+  </data>
+  <data name="OfPositiveComments" xml:space="preserve">
+    <value>pozytywnych opinii</value>
+  </data>
+  <data name="Positive" xml:space="preserve">
+    <value>pozytywnych</value>
+  </data>
+  <data name="VerifiedExpert" xml:space="preserve">
+    <value>zweryfikowany ekspert</value>
+  </data>
+  <data name="FeedbacksToMyAnswers" xml:space="preserve">
+    <value>Oceny moich odpowiedzi</value>
+  </data>
+  <data name="QuickSignInEnterCorrectData" xml:space="preserve">
+    <value>Wpisz poprawne dane,</value>
+  </data>
+  <data name="QuickSignInInAskNuts" xml:space="preserve">
+    <value>w serwisie.</value>
+  </data>
+  <data name="QuickSignInOr" xml:space="preserve">
+    <value>lub</value>
+  </data>
+  <data name="QuickSignInRecoverPassword" xml:space="preserve">
+    <value>odzyskaj hasło</value>
+  </data>
+  <data name="QuickSignInSignIn" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="VerficiationInstructions" xml:space="preserve">
+    <value>Twoje konto eksperta nie jest jeszcze zweryfikowane. Jego weryfikacja nastąpi w ciągu 24 godzin.</value>
+  </data>
+  <data name="VerificationNeeded" xml:space="preserve">
+    <value>Twoje konto jest niezweryfikowane</value>
+  </data>
+  <data name="EditExpertCategoryAttributes" xml:space="preserve">
+    <value>edytuj kompetencje</value>
+  </data>
+  <data name="StatusExpert" xml:space="preserve">
+    <value>Ekspert jest:</value>
+  </data>
+  <data name="AlreadyPartner" xml:space="preserve">
+    <value>Zostałeś już zarejestrowany jako partner.</value>
+  </data>
+  <data name="PartnerConfirmation" xml:space="preserve">
+    <value>Zostałeś zgłoszony do uczestnictwa w programie partnerskim. Kiedy zgłoszenie zostanie zaakceptowane, poinformujemy Cię o tym poprzez wiadomość e-mail.</value>
+  </data>
+  <data name="RecommendInstructions" xml:space="preserve">
+    <value>Znasz kogoś kto mógłby zostać ekspertem w naszym systemie? Możesz go zaprosić wypełniając powyższe pola. Wystarczy, że kompetencje tej osoby zostaną przez nas zweryfikowane i odpowie ona na pięć pytań użytkowników, a uzyskasz bonus pieniężny w wysokości 20zł.</value>
+  </data>
+  <data name="ExpertCategoryAttributesChanged" xml:space="preserve">
+    <value>Atrybuty eksperta w kategorii {0} zostały zmienione</value>
+  </data>
+  <data name="PhoneNumberChangedToVerify" xml:space="preserve">
+    <value>Numer telefonu został zmieniony. Wkrótce zostanie on zweryfikowany przez naszego konsultanta.</value>
+  </data>
+  <data name="ProfileImageChanged" xml:space="preserve">
+    <value>Zdjęcie użytkownika zostało zmienione</value>
+  </data>
+  <data name="VerifiedExpertCapital" xml:space="preserve">
+    <value>Zweryfikowany ekspert</value>
+  </data>
+</root>

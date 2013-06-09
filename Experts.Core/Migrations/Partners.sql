@@ -1,0 +1,1 @@
+﻿insert into Partners(Id,Code, Url, BankAccount, CompanyName, VatNumber, Address,Provision) values(1,'karma-dla-tesciowej', 'www.fermaswin.pl', '574523562523234', 'Ferma Świn i Kogutow', '070072772', 'Wieprzowo-Zdrój',30.0)

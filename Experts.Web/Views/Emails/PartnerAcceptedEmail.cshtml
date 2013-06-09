@@ -1,0 +1,11 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.PartnerAcceptedEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+           
+@Resources.Email.PartnerAcceptedContent
+<br/>
+
+@Resources.Email.ShowPartnerProgramPage
+@NoContextUrl.ActionAbsolute(MVC.Profile.PartnerProgram())

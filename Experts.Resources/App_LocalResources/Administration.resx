@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChatClosedInfo" xml:space="preserve">
+    <value>Czat nr {0} został zamknięty</value>
+  </data>
+  <data name="ChatClosedSummarySentInfo" xml:space="preserve">
+    <value>Czat nr {0} został zamknięty. Do użytkownika zostało wysłane podsumowanie rozmowy</value>
+  </data>
+  <data name="ChatCreationDateColumn" xml:space="preserve">
+    <value>Utworzono</value>
+  </data>
+  <data name="ChatDetailsAuthorColumn" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="ChatDetailsCreationDateColumn" xml:space="preserve">
+    <value>Utworzono</value>
+  </data>
+  <data name="ChatDetailsReturnToChatOverview" xml:space="preserve">
+    <value>Wróć do wszystkich wiadomości</value>
+  </data>
+  <data name="ChatDetailsTextColumn" xml:space="preserve">
+    <value>Wiadomość</value>
+  </data>
+  <data name="ChatDetailsWriteMessage" xml:space="preserve">
+    <value>Napisz wiadomość</value>
+  </data>
+  <data name="ChatIdColumn" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ChatLastModificationDateColumn" xml:space="preserve">
+    <value>Ostatnia wypowiedź</value>
+  </data>
+  <data name="ChatModeratorColumn" xml:space="preserve">
+    <value>Moderator prowadzący</value>
+  </data>
+  <data name="ChatNoOfMassegesColumn" xml:space="preserve">
+    <value>Wiadomości</value>
+  </data>
+  <data name="ChatOverviewClosedTitle" xml:space="preserve">
+    <value>Pytania historyczne</value>
+  </data>
+  <data name="ChatOverviewWaitingForResponseTitle" xml:space="preserve">
+    <value>Pytania oczekujące Twojej odpowiedzi</value>
+  </data>
+  <data name="ChatsOwnerColumn" xml:space="preserve">
+    <value>Pytający</value>
+  </data>
+  <data name="EventMessage" xml:space="preserve">
+    <value>Wiadomość</value>
+  </data>
+  <data name="EventName" xml:space="preserve">
+    <value>Zdarzenie</value>
+  </data>
+  <data name="EventOccurenceDate" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="ExpertRegisteredEventMessage" xml:space="preserve">
+    <value>Ekspert o nazwie {0} i adresie {1} zarejestrował się z id = {2}</value>
+  </data>
+  <data name="ExpertRegisteredEventName" xml:space="preserve">
+    <value>Rejestracja eksperta</value>
+  </data>
+  <data name="SystemFailureEventName" xml:space="preserve">
+    <value>Błąd systemu</value>
+  </data>
+  <data name="ThereIsNoEvents" xml:space="preserve">
+    <value>Brak zdarzeń</value>
+  </data>
+  <data name="UserAccountActivatedEventMessage" xml:space="preserve">
+    <value>Użytkownik o adresie {0} i id = {1} aktywował konto</value>
+  </data>
+  <data name="UserAccountActivatedEventName" xml:space="preserve">
+    <value>Aktywacja użytkownika</value>
+  </data>
+  <data name="UserRegisteredEventMessage" xml:space="preserve">
+    <value>Użytkownik o adresie {0} zarejestrował się z id = {1}</value>
+  </data>
+  <data name="UserRegisteredEventName" xml:space="preserve">
+    <value>Rejestracja użytkownika</value>
+  </data>
+  <data name="ThreadIssueReportEventName" xml:space="preserve">
+    <value>Problem z pytaniem</value>
+  </data>
+  <data name="ThreadIssueReportEventMessage" xml:space="preserve">
+    <value>Uwaga do wątku o id {0}: {1}</value>
+  </data>
+  <data name="NewThreadForExpertEventMessage" xml:space="preserve">
+    <value>Zadano nowe pytanie ekspertowi {0}</value>
+  </data>
+  <data name="NewThreadForExpertEventName" xml:space="preserve">
+    <value>Nowe pytanie do eksperta</value>
+  </data>
+  <data name="ThreadOccupiedEventMessage" xml:space="preserve">
+    <value>Wątek "{0}" został przejęty przez eksperta {1}</value>
+  </data>
+  <data name="ThreadOccupiedEventName" xml:space="preserve">
+    <value>Wątek przejęty</value>
+  </data>
+  <data name="ThreadReleasedEventMessage" xml:space="preserve">
+    <value>Wątek "{0}" został zwolniony przez eksperta {1}</value>
+  </data>
+  <data name="ThreadReleasedEventName" xml:space="preserve">
+    <value>Wątek zwolniony</value>
+  </data>
+  <data name="UserCreationDate" xml:space="preserve">
+    <value>Data rejestracji</value>
+  </data>
+  <data name="UserEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="UserGridEmptyText" xml:space="preserve">
+    <value>Brak użytkowników</value>
+  </data>
+  <data name="UserList" xml:space="preserve">
+    <value>Lista użytkowników</value>
+  </data>
+  <data name="UserPayoff" xml:space="preserve">
+    <value>wypłata środków</value>
+  </data>
+  <data name="UserPayoffAmount" xml:space="preserve">
+    <value>Wypłacona kwota</value>
+  </data>
+  <data name="UserPayoffAmountRequired" xml:space="preserve">
+    <value>Podaj kwotę</value>
+  </data>
+  <data name="UserPayoffComment" xml:space="preserve">
+    <value>Komentarz</value>
+  </data>
+  <data name="UserPayoffSaveButton" xml:space="preserve">
+    <value>Zgłoś wypłatę</value>
+  </data>
+  <data name="UserPayoffSuccessful" xml:space="preserve">
+    <value>Wypłata środków została zgłoszona</value>
+  </data>
+  <data name="UserPayoffTitle" xml:space="preserve">
+    <value>Wypłata środków użytkownika</value>
+  </data>
+  <data name="SystemBreakdownEvent" xml:space="preserve">
+    <value>Krytyczny problem</value>
+  </data>
+  <data name="ExpertQualificationsChangedEventName" xml:space="preserve">
+    <value>Zmiana kwalifikacji eksperta</value>
+  </data>
+  <data name="ExpertQualificationsChangedEventMessage" xml:space="preserve">
+    <value>Ekspert o nazwie {0} wymaga zweryfikowania jego kwalifikacji. Zmiany</value>
+  </data>
+  <data name="CashPaymentEventName" xml:space="preserve">
+    <value>Wypłata środków dla eksperta</value>
+  </data>
+  <data name="CashPaymentMessage" xml:space="preserve">
+    <value>Użytkownik o id  {0} zlecił wypłatę środków</value>
+  </data>
+  <data name="NoAnswerEventMessage" xml:space="preserve">
+    <value>Nikt nie udzielił odpowiedzi na pytanie wątku o id {0} w przeciągu 24h</value>
+  </data>
+  <data name="NoAnswerEventName" xml:space="preserve">
+    <value>Brak odpowiedzi</value>
+  </data>
+  <data name="PartnerCashPaymentEventName" xml:space="preserve">
+    <value>Wypłata środków dla partnera</value>
+  </data>
+  <data name="PartnerCashPaymentMessage" xml:space="preserve">
+    <value>Partner o id {0} zlecił wypłatę środków</value>
+  </data>
+  <data name="AuthorAcceptedAnswerMessage" xml:space="preserve">
+    <value>Autor pytania o id {0} zaakceptował odpowiedź eksperta {1}</value>
+  </data>
+  <data name="AuthorAcceptedAnswerName" xml:space="preserve">
+    <value>Akceptacja odpowiedzi</value>
+  </data>
+  <data name="AuthorAddedPostMessage" xml:space="preserve">
+    <value>Autor pytania o id {0} dodał nową wiadomość</value>
+  </data>
+  <data name="AuthorAddedPostName" xml:space="preserve">
+    <value>Odpowiedź autora</value>
+  </data>
+  <data name="AuthorCreatedFeedbackMessage" xml:space="preserve">
+    <value>Autor pytania o id {0} ocenił wypowiedź eksperta {1}</value>
+  </data>
+  <data name="AuthorCreatedFeedbackName" xml:space="preserve">
+    <value>Dodanie oceny</value>
+  </data>
+  <data name="DetailsRequestEventMessage" xml:space="preserve">
+    <value>Ekspert {0} poprosił o szczegóły autora pytania o id {1}</value>
+  </data>
+  <data name="DetailsRequestEventName" xml:space="preserve">
+    <value>Prośba o szczegóły</value>
+  </data>
+  <data name="ExpertCommentedFeedbackEventMessage" xml:space="preserve">
+    <value>Ekspert {0} skomentował ocene użytkownika na odpowiedź pytania o id {1}</value>
+  </data>
+  <data name="ExpertCommentedFeedbackEventName" xml:space="preserve">
+    <value>Komentarz oceny eksperta</value>
+  </data>
+  <data name="GiveUpEventMessage" xml:space="preserve">
+    <value>Ekspert {0} zrezygnował z odpowiedzi na pytanie o id {1}</value>
+  </data>
+  <data name="GiveUpEventName" xml:space="preserve">
+    <value>Rezygnacja z pytania</value>
+  </data>
+  <data name="QuestionAnsweredEventMessage" xml:space="preserve">
+    <value>Ekspert {0} udzielił odpowiedzi na pytanie o id {1}</value>
+  </data>
+  <data name="QuestionAnsweredEventName" xml:space="preserve">
+    <value>Odpowiedź na pytanie</value>
+  </data>
+  <data name="AwaitingExpertResponseMessage" xml:space="preserve">
+    <value>Eksperci analizują wątek o id {0}</value>
+  </data>
+  <data name="AwaitingExpertResponseName" xml:space="preserve">
+    <value>Analizowanie pytania</value>
+  </data>
+  <data name="AcceptAnswerReminderEventMessage" xml:space="preserve">
+    <value>Użytkownik dostał przypomnienie o zaakceptowaniu lub pytaniu dalej w wątku o id {0}</value>
+  </data>
+  <data name="AcceptAnswerReminderEventName" xml:space="preserve">
+    <value>Przypomnienie zaakceptowania pytania</value>
+  </data>
+  <data name="AdditionalServicePayedMessage" xml:space="preserve">
+    <value>Użytkownik opłacił dodatkową usługę {0} w pytaniu o id {1}</value>
+  </data>
+  <data name="AdditionalServicePayedName" xml:space="preserve">
+    <value>Opłacona dodatkowa usługa</value>
+  </data>
+  <data name="ExpertThreadNotifiedEventMessage" xml:space="preserve">
+    <value>Powiadomiono {0} ekspertów o wątku o id {1} </value>
+  </data>
+  <data name="ExpertThreadNotifiedEventName" xml:space="preserve">
+    <value>Powiadomiono ekspertów</value>
+  </data>
+  <data name="NewAdditionalServiceEventMessage" xml:space="preserve">
+    <value>Użytkownik dostał propozycję dodatkowej usługi od eksperta {0} w pytaniu o id {1}</value>
+  </data>
+  <data name="NewAdditionalServiceEventName" xml:space="preserve">
+    <value>Nowa dodatkowa usługa</value>
+  </data>
+  <data name="NewThreadEventMessage" xml:space="preserve">
+    <value>Wątek o id {0} został stworzony. Wartości prowizji: {1}</value>
+  </data>
+  <data name="NewThreadEventName" xml:space="preserve">
+    <value>Nowy wątek</value>
+  </data>
+  <data name="PaymentFailedEventMessage" xml:space="preserve">
+    <value>Płatność za {0} w wątku o id {1} się nie powiodła</value>
+  </data>
+  <data name="PaymentFailedEventName" xml:space="preserve">
+    <value>Płatność się nie powiodła</value>
+  </data>
+  <data name="PriceProposalAcceptedEventMessage" xml:space="preserve">
+    <value>Użytkownik zaakceptował propozycję nowej ceny dla wątku {0} od eksperta {1} </value>
+  </data>
+  <data name="PriceProposalAcceptedEventName" xml:space="preserve">
+    <value>Akceptacja wyższej ceny</value>
+  </data>
+  <data name="ThreadClosedEventMessage" xml:space="preserve">
+    <value>Wątek o id {0} został zamknięty</value>
+  </data>
+  <data name="ThreadClosedEventName" xml:space="preserve">
+    <value>Wątek zamknięty</value>
+  </data>
+  <data name="ThreadPayedEventMessage" xml:space="preserve">
+    <value>Wątek o id {0} został opłacony</value>
+  </data>
+  <data name="ThreadPayedEventName" xml:space="preserve">
+    <value>Opłacono wątek</value>
+  </data>
+  <data name="UserChangedEmailEventMessage" xml:space="preserve">
+    <value>Użytkownik o id {0} zmienił swój adres email na {1}</value>
+  </data>
+  <data name="UserChangedEmailEventName" xml:space="preserve">
+    <value>Zmiana adresu email</value>
+  </data>
+  <data name="UserChangedPasswordEventMessage" xml:space="preserve">
+    <value>Użytkownik o id {0} zmienił swoje hasło</value>
+  </data>
+  <data name="UserChangedPasswordEventName" xml:space="preserve">
+    <value>Zmiana hasła</value>
+  </data>
+  <data name="ExtraServiceProposalEventName" xml:space="preserve">
+    <value>Propozycja usługi</value>
+  </data>
+  <data name="ExtraServiceProposalEventMessage" xml:space="preserve">
+    <value>Propozycja usługi dodatkowej w wątku {0}</value>
+  </data>
+  <data name="ActiveExpertsStatisticsEventMessage" xml:space="preserve">
+    <value>Liczba ekspertów on-line: {0}</value>
+  </data>
+  <data name="ActiveExpertsStatisticsEventName" xml:space="preserve">
+    <value>Eksperci on-line</value>
+  </data>
+  <data name="ActiveUsersStatisticsEventMessage" xml:space="preserve">
+    <value>Liczba użytkowników on-line: {0}</value>
+  </data>
+  <data name="ActiveUsersStatisticsEventName" xml:space="preserve">
+    <value>Użytkownicy on-line</value>
+  </data>
+  <data name="LastDayThreadsStatisticsEventMessage" xml:space="preserve">
+    <value>Dnia {0} zadano {1} pytań</value>
+  </data>
+  <data name="LastDayThreadsStatisticsEventName" xml:space="preserve">
+    <value>Liczba zadanych pytań</value>
+  </data>
+  <data name="NewSeoKeywordsStatisticsEventMessage" xml:space="preserve">
+    <value>Liczba słów kluczowych oczekujących na weryfikację: {0}</value>
+  </data>
+  <data name="NewSeoKeywordsStatisticsEventName" xml:space="preserve">
+    <value>Słowa kluczowe do weryfikacji</value>
+  </data>
+  <data name="PartnerStatisticsEmailSentEventMessage" xml:space="preserve">
+    <value>Wiadomość z bilansem została wysłana do partnera o id: {0}</value>
+  </data>
+  <data name="PartnerStatisticsEmailSentEventName" xml:space="preserve">
+    <value>Wysłano bilans partnera</value>
+  </data>
+  <data name="ExpertWidgetGeneratedEventMessage" xml:space="preserve">
+    <value>Widget został wygenerowany przez eksperta {0}</value>
+  </data>
+  <data name="ExpertWidgetGeneratedEventName" xml:space="preserve">
+    <value>Wygenerowano widget eksperta</value>
+  </data>
+  <data name="UserPayoffAmountTooHigh" xml:space="preserve">
+    <value>Kwota przekracza wartość konta użytkownika</value>
+  </data>
+  <data name="NewChatEventMessage" xml:space="preserve">
+    <value>Użytkownik o id {0} rozpoczął rozmowę chat</value>
+  </data>
+  <data name="NewChatEventName" xml:space="preserve">
+    <value>Nowa wiadomość chat</value>
+  </data>
+  <data name="UserDefinedPriceEventMessage" xml:space="preserve">
+    <value>Użytkownik stworzył pytanie z niestandardową ceną w wątku o id {0}</value>
+  </data>
+  <data name="UserDefinedPriceEventName" xml:space="preserve">
+    <value>Niestandardowa cena dla wątku</value>
+  </data>
+  <data name="ExpertPriceProposalMessage" xml:space="preserve">
+    <value>Ekspert {0} zaproponował cenę dla wątku o id {1}</value>
+  </data>
+  <data name="ExpertPriceProposalName" xml:space="preserve">
+    <value>Propozycja ceny</value>
+  </data>
+  <data name="ExpertPublicDataChangedMessage" xml:space="preserve">
+    <value>Ekspert {0} zmienił dane publiczne</value>
+  </data>
+  <data name="ExpertPublicDataChangedName" xml:space="preserve">
+    <value>Zmiana danych publicznych</value>
+  </data>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Numer konta:</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="Partner" xml:space="preserve">
+    <value>Partner</value>
+  </data>
+  <data name="TransferData" xml:space="preserve">
+    <value>Dane transferu:</value>
+  </data>
+  <data name="TransferDate" xml:space="preserve">
+    <value>Data zlecenia:</value>
+  </data>
+  <data name="TransferOrdered" xml:space="preserve">
+    <value>Zlecił:</value>
+  </data>
+  <data name="TransferTitle" xml:space="preserve">
+    <value>Tytuł:</value>
+  </data>
+  <data name="TransferValue" xml:space="preserve">
+    <value>Wartość zlecenia:</value>
+  </data>
+  <data name="UserRequestedPayoff" xml:space="preserve">
+    <value>Użytkownik zarządał wypłaty środków</value>
+  </data>
+  <data name="AdditionalServiceExpertValue" xml:space="preserve">
+    <value>Wartość usługi dla eksperta</value>
+  </data>
+  <data name="AdditionalServiceUserValue" xml:space="preserve">
+    <value>Cena usługi dla klienta</value>
+  </data>
+  <data name="ExpertProposedAdditionalService" xml:space="preserve">
+    <value>Ekspert {0} zaproponował dodatkową usługę dla wątku o id {1}</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="SanitizationStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ClientMessages" xml:space="preserve">
+    <value>Wiadomości klientów</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Zdarzenia</value>
+  </data>
+  <data name="KeywordModeration" xml:space="preserve">
+    <value>Moderuj słowo kluczowe</value>
+  </data>
+  <data name="QuestionModeration" xml:space="preserve">
+    <value>Moderacja pytań</value>
+  </data>
+  <data name="SanitizationListModeration" xml:space="preserve">
+    <value>Czyszczenie pytań</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>Zarządzaj użytkownikami</value>
+  </data>
+  <data name="CatalogSanitizedThreadTitleTooLong" xml:space="preserve">
+    <value>Długość tytułu pytania w katalogu nie może przekroczyć 60 znaków</value>
+  </data>
+  <data name="CatalogThreadTitle" xml:space="preserve">
+    <value>Tytuł pytania w katalogu</value>
+  </data>
+  <data name="BecomePartnerRequestEventMessage" xml:space="preserve">
+    <value>Użytkownik o adresie {0} zgłosił chęć przystąpienia do programu partnerskiego.</value>
+  </data>
+  <data name="BecomePartnerRequestEventName" xml:space="preserve">
+    <value>Zgłoszenie do programu partnerskiego</value>
+  </data>
+  <data name="CreateCategoryAttribute" xml:space="preserve">
+    <value>Dodaj atrybut</value>
+  </data>
+  <data name="CategoryAttributeCreated" xml:space="preserve">
+    <value>Atrybut został dodany poprawnie.</value>
+  </data>
+  <data name="CategoryAttributeImportance" xml:space="preserve">
+    <value>Waga przy dopasowaniu</value>
+  </data>
+  <data name="CategoryAttributeImportanceRequired" xml:space="preserve">
+    <value>Podaj wagę atrybutu</value>
+  </data>
+  <data name="CategoryAttributeName" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="CategoryAttributeNameRequired" xml:space="preserve">
+    <value>Nazwa atrybutu jest wymagana</value>
+  </data>
+  <data name="CategoryAttributeOptions" xml:space="preserve">
+    <value>Dostępne opcje</value>
+  </data>
+  <data name="CategoryAttributeType" xml:space="preserve">
+    <value>Typ atrybutu</value>
+  </data>
+  <data name="CategoryAttributeTypeMultiLineText" xml:space="preserve">
+    <value>Długi tekst</value>
+  </data>
+  <data name="CategoryAttributeTypeMultiSelect" xml:space="preserve">
+    <value>Wielokrotny wybór</value>
+  </data>
+  <data name="CategoryAttributeTypeSingleLineText" xml:space="preserve">
+    <value>Krótki tekst</value>
+  </data>
+  <data name="CategoryAttributeTypeSingleSelect" xml:space="preserve">
+    <value>Pojedynczy wybór</value>
+  </data>
+  <data name="CategoryList" xml:space="preserve">
+    <value>Lista kategorii</value>
+  </data>
+  <data name="AddNewAttribute" xml:space="preserve">
+    <value>Dodaj nowy atrybut</value>
+  </data>
+  <data name="AttributeDelete" xml:space="preserve">
+    <value>usuń</value>
+  </data>
+  <data name="AttributeEdit" xml:space="preserve">
+    <value>edytuj</value>
+  </data>
+  <data name="CategoryAttributes" xml:space="preserve">
+    <value>Atrybuty kategorii:</value>
+  </data>
+  <data name="EmptyExpertCompetence" xml:space="preserve">
+    <value>Brak sprecyzowanych kompetencji</value>
+  </data>
+  <data name="ExpertCompetence" xml:space="preserve">
+    <value>Kompetecje eksperta:</value>
+  </data>
+  <data name="AddNewOption" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="CategoryAttributeUpdated" xml:space="preserve">
+    <value>Atrybut został zaktualizowany.</value>
+  </data>
+  <data name="UpdateCategoryAttribute" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="CategoryAttributeAvailableOptions" xml:space="preserve">
+    <value>Dostępne opcje</value>
+  </data>
+  <data name="NoCategoryAttributeOptions" xml:space="preserve">
+    <value>Brak opcji</value>
+  </data>
+  <data name="UpdateCategoryAttributeOption" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="CategoryAttributeOptionName" xml:space="preserve">
+    <value>nazwa</value>
+  </data>
+  <data name="CategoryAttributeOptionPriceModifier" xml:space="preserve">
+    <value>modyfikator ceny</value>
+  </data>
+  <data name="AddChildAttribute" xml:space="preserve">
+    <value>dodaj podatrybut</value>
+  </data>
+  <data name="CategoryAttributeDeleted" xml:space="preserve">
+    <value>Atrybut został usunięty</value>
+  </data>
+  <data name="AttributeDeleteConfirmation" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć ten atrybut?</value>
+  </data>
+  <data name="CategoryAttributeOptionDeleteConfirmation" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć tą opcję?</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+</root>

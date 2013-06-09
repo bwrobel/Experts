@@ -1,0 +1,27 @@
+﻿@model Experts.Web.Models.Events.ExpertPriceProposalReactionModel
+@using Experts.Core.Entities
+@using Experts.Core.Utils
+
+<form action="/Administration/ExpertPriceProposalReaction/">
+    <p><strong>Ekspert @Model.PriceProposal.Expert.PublicName zaproponował wyższą cenę dla wątku</strong></p>
+
+    <p>Cena wątku dla eksperta 
+    @ThreadValueHelper.CalculatePotentialExpertValue(Model.PriceProposal.Thread, Model.PriceProposal.Expert) PLN</p>
+    <p>Cena wątku zaproponowana przez eksperta 
+    @ThreadValueHelper.CalculateValueBasedOnExpertLevel(Model.PriceProposal.SurchargeValue, Model.PriceProposal.Expert) PLN</p>
+
+    <p>Komentarz eksperta uzasadniający wyższą cenę:</p>
+    <p>
+        <i>@Model.PriceProposal.Comment</i>
+    </p>
+
+    <p>Zaakceptować propozycję ceny eksperta?</p>
+    <p>
+        @Html.RadioButtonFor(m => m.VerificationStatus, PriceProposalVerificationStatus.Verified, new { @checked = true }) Tak, zaakceptuj <br />
+        @Html.RadioButtonFor(m => m.VerificationStatus, PriceProposalVerificationStatus.Changed, new {@checked = false }) Tak, ale zmniejsz prowizję systemu <br />
+        @Html.RadioButtonFor(m => m.VerificationStatus, PriceProposalVerificationStatus.Declined, new { @checked = false }) Nie <br />
+    </p>
+
+    @Html.HiddenFor(m => m.EventId)
+
+</form>

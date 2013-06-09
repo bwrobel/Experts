@@ -1,0 +1,37 @@
+﻿@model Experts.Web.Models.Payments.Providers.KIPPaymentProvider
+
+<div id="channels">
+</div>
+
+<script type="text/javascript" src="https://secure.transferuj.pl/channels-@(Model.SellerId)0.js"></script>
+<script type="text/javascript">
+
+    var selectChannel = function (linkEl) {
+        $("#channels .thumbnail").removeClass('selected');
+        $(linkEl).find("img").addClass('selected');
+        linkEl.blur();
+
+        var channel = tr_channels[$(linkEl).data("channel")];
+        payment.channelSelected(channel[0], channel[1], channel[3]);
+    };
+
+    $(function () {
+        var table = $('#channels');
+        var selectedChannelId = $('input[name="PaymentForm.SelectedChannel"]').val();
+        for (var i = 0; i < tr_channels.length; i++) {
+            if (tr_channels[i][1] == 'PayPal') {
+                tr_channels[i][1] = '@Resources.Payment.CreditCard';
+            }
+
+            table.append('<a data-channel="' + i + '" href="javascript:void(0);" onclick="javascript:selectChannel(this);"><img class="thumbnail" src="' + tr_channels[i][3] + '" style="width:100px; display:inline; margin: 0 5px 5px 0;"></img></a>');
+            var link = $("a[data-channel=" + i + "]");
+
+            link.popover({ title: tr_channels[i][1] }).on("hover", function () {
+                $('.popover').addClass("payment-popover");
+            });
+            
+            if (tr_channels[i][0] == selectedChannelId)
+                selectChannel(link);
+        }
+    });
+</script>

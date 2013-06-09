@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChatModeratorStatusActive" xml:space="preserve">
+    <value>Dostępny</value>
+  </data>
+  <data name="ChatModeratorStatusAway" xml:space="preserve">
+    <value>Zaraz wracam</value>
+  </data>
+  <data name="ChatModeratorStatusOffline" xml:space="preserve">
+    <value>Niedostępny</value>
+  </data>
+  <data name="ChatFinished" xml:space="preserve">
+    <value>Rozmowa została zakończona. Wyślij wiadomość, aby rozpocząć nową.</value>
+  </data>
+  <data name="FinishChat" xml:space="preserve">
+    <value>Zakończ rozmowę</value>
+  </data>
+  <data name="FrameHandle" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Wyślij wiadomość</value>
+  </data>
+  <data name="CloseChat" xml:space="preserve">
+    <value>Zamknij czat</value>
+  </data>
+  <data name="CloseChatWithoutConfirmation" xml:space="preserve">
+    <value>Zamknij bez wysyłania potwierdzenia</value>
+  </data>
+  <data name="CloseChatMessage" xml:space="preserve">
+    <value>Rozmowa została zakończona przez konsultanta.</value>
+  </data>
+  <data name="FinishChatMessage" xml:space="preserve">
+    <value>Użytkownik zakończył rozmowę.</value>
+  </data>
+  <data name="OpenCurrent" xml:space="preserve">
+    <value>Przejdź do aktualnej</value>
+  </data>
+  <data name="QuestionsClosed" xml:space="preserve">
+    <value>Pytania historyczne</value>
+  </data>
+  <data name="QuestionsOpen" xml:space="preserve">
+    <value>Pytania otwarte</value>
+  </data>
+  <data name="QuestionsWaitingForResponse" xml:space="preserve">
+    <value>Pytania czekające na odpowiedź</value>
+  </data>
+  <data name="StartNew" xml:space="preserve">
+    <value>Rozpocznij nową rozmowę</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Biuro Obsługi Klienta</value>
+  </data>
+  <data name="UserChats" xml:space="preserve">
+    <value>Rozmowy</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="ModeratorsActive" xml:space="preserve">
+    <value>Nasi konsultanci są dostępni</value>
+  </data>
+  <data name="ModeratorsAway" xml:space="preserve">
+    <value>Nasz konsultant będzie dostępny lada chwila</value>
+  </data>
+  <data name="ModeratorsOffline" xml:space="preserve">
+    <value>Nasi konsultanci są chwilowo niedostępni</value>
+  </data>
+  <data name="ContextTemplate" xml:space="preserve">
+    <value>Url: {0}</value>
+  </data>
+  <data name="NoModerator" xml:space="preserve">
+    <value>- brak -</value>
+  </data>
+  <data name="ChatBox" xml:space="preserve">
+    <value>Szczegóły rozmowy</value>
+  </data>
+  <data name="EmailFormDescription" xml:space="preserve">
+    <value>Jeżeli chcesz otrzymać podsumowanie niniejszej rozmowy, podaj swój adres e-mail</value>
+  </data>
+  <data name="EmailFormEnterEmailPlaceholder" xml:space="preserve">
+    <value>Twój adres e-mail</value>
+  </data>
+  <data name="EmailFormHeader" xml:space="preserve">
+    <value>Jesteś niezalogowany</value>
+  </data>
+  <data name="EmailFormSignIn" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="EmailFormSignInSentence" xml:space="preserve">
+    <value>, aby móc przeglądać historię swoich rozmów z konsultantami.</value>
+  </data>
+  <data name="EmailFormStartChat" xml:space="preserve">
+    <value>Przejdź do rozmowy</value>
+  </data>
+  <data name="Anonymous" xml:space="preserve">
+    <value>anonimowy</value>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Celem Biura obsługi klienta jest jak najszybsze reagowanie na wszelkie wątpliwości i problemy użytkowników portalu AskNuts.com.
+    Kliknij przycisk "Rozpocznij nową rozmowę" aby skorzystać z pomocy naszych konsultantów.</value>
+  </data>
+</root>

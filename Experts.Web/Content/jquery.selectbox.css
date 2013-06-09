@@ -1,0 +1,104 @@
+.sbHolder{
+	position: relative;
+      height: 30px;
+      margin-bottom: 30px;
+      display: inline-block;
+}
+
+.sbHolder:focus .sbSelector{
+	
+}
+
+.sbSelector{
+	display: block;
+	height: 30px;
+	left: 0;
+	line-height: 30px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	border-bottom: solid 3px white;
+	width: 100%;
+}
+
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	outline: none;
+	text-decoration: none;
+}
+
+.sbToggle {
+	display: block;
+	height: 30px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-bottom: solid 3px white;
+}
+
+
+.sbToggleOpen+.sbSelector {
+    border-color: white;
+    -webkit-transition: border-color .2s;
+    -moz-transition: border-color .2s;
+    -o-transition: border-color .2s;
+    transition: border-color .2; 
+}
+
+
+.sbSelector {
+    border-bottom: solid 1px #e4e4e4;
+}
+
+.sbToggle {
+    padding-top: 8px;
+}
+
+.sbOptions{
+	list-style: none;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 30px;
+	z-index: 1;
+	overflow-y: auto;
+	width: 100%;
+  margin-top: 3px;
+  border-bottom: solid 1px #e4e4e4;
+}
+
+.sbOptions li{
+	padding: 0 5px;
+	background-color: white;
+}
+
+.sbOptions li:last-child {
+  padding-bottom: 2px;
+}
+
+.sbOptions a{
+	display: block;
+	outline: none;
+	padding: 3px 0 3px 3px;
+}
+
+.sbOptions a:link, .sbOptions a:visited{
+	text-decoration: none;
+}
+
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	background-color: #f6f6f6;
+}
+
+.sbOptions li.last a{
+	border-bottom: none;
+}
+
+.sbOptions .sbSub{
+	padding-left: 17px;
+}

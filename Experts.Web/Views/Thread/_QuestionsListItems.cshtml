@@ -1,0 +1,70 @@
+﻿@using Experts.Core.Entities
+@using Experts.Core.Utils
+@using Experts.Web.Helpers
+@model IEnumerable<Experts.Core.Entities.Thread>
+
+@foreach(var thread in Model)
+{   
+    <li>
+        @if (thread.SanitizationStatus == ThreadSanitizationStatus.Sanitized)
+        {
+            <a href="@Url.Action(MVC.Thread.CatalogThreadDetails(thread.Id, thread.CatalogThreadTitle.ToUrlPart()))">        
+                <div class="category-icon-big span2 category-icon-big-margin">
+                    @Html.CategoryIconBig(thread.Category)
+                    <span>
+                        @thread.Category.Name
+                    </span>
+                </div>
+            </a>
+        }
+        else
+        {
+            <a href="@Url.Action(MVC.Thread.ThreadDetails(thread.Id))">        
+                <div class="category-icon-big span2 category-icon-big-margin">
+                    @Html.CategoryIconBig(thread.Category)
+                    <span>
+                        @thread.CalculatePotentialExpertValue(AuthenticationHelper.CurrentUser.Expert) @Resources.Global.CurrencyPLN
+                    </span>
+                </div>
+            </a>
+        }
+
+        <div class="question-info">
+            @if (thread.SanitizationStatus == ThreadSanitizationStatus.Sanitized)
+            {<strong>@Html.ActionLink(thread.CatalogThreadTitle, MVC.Thread.CatalogThreadDetails(thread.Id, thread.CatalogThreadTitle.ToUrlPart()))</strong>}
+            else
+            {<i class="icon-signal"></i> <strong>@EnumHelper.Describe(thread.Verbosity, Resources.Thread.ResourceManager)</strong>}
+
+            <div class="question-date">
+                @thread.CreationDate.ToTimeSinceFormat()
+            </div>
+        </div>
+
+        <div class="question-summary">
+            @if (thread.SanitizationStatus == ThreadSanitizationStatus.Sanitized)
+            {
+                @Html.ActionLink(thread.GetSummary(450,true), MVC.Thread.CatalogThreadDetails(thread.Id, thread.CatalogThreadTitle.ToUrlPart()))
+            }
+            else
+            {
+                @Html.ActionLink(thread.GetSummary(450), MVC.Thread.ThreadDetails(thread.Id))
+            }
+        </div>
+
+        <div class="question-details">
+
+            @if (thread.SanitizationStatus == ThreadSanitizationStatus.Sanitized)
+            { <a href="@Url.Action(MVC.Thread.CatalogThreadDetails(thread.Id, thread.CatalogThreadTitle.ToUrlPart()))" class="btn btn-small btn-inverse"><i class="icon-share-alt"></i>@Resources.Thread.AnswerDetails</a> }
+            else
+            {@Html.Action(MVC.Thread.DisplaySelectedCategoryAttributes(thread.Id))
+             <a href="@Url.Action(MVC.Thread.ThreadDetails(thread.Id))" class="btn btn-small btn-inverse"><i class="icon-pencil"></i>@Resources.Thread.AnswerOnQuestion</a>}  
+        </div>
+    </li>
+}   
+
+@if (Model.Count() == PagerHelper.PageSize)
+{
+    <li class="loader">
+        <div><i class="icon-spin icon-refresh"></i> @Resources.Thread.ThreadQuestionListLoading</div>
+    </li>
+}

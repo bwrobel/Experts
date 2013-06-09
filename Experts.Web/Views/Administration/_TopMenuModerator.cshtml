@@ -1,0 +1,15 @@
+﻿<div class="alert moderator-menu">
+    <i class="icon-edit"></i> @Html.ActionLink(Resources.Administration.QuestionModeration, MVC.Thread.ModeratorQuestionList())
+    |
+    <i class="icon-wrench"></i> @Html.ActionLink(Resources.Administration.SanitizationListModeration, MVC.Thread.SanitizationQuestionList())
+    |
+    <i class="icon-key"></i> @Html.ActionLink(Resources.Administration.KeywordModeration, MVC.Catalog.ProcessKeyword())
+    |
+    <i class="icon-group"></i> @Html.ActionLink(Resources.Administration.UserManagement, MVC.Administration.UserList())
+    |
+    <i class="icon-exclamation-sign"></i> @Html.ActionLink(Resources.Administration.Events, MVC.Administration.EventsLog())
+    |
+    <i class="icon-envelope"></i> @Html.ActionLink(Resources.Administration.ClientMessages, MVC.Chat.ChatsOverview())
+    |
+    <i class="icon-list-ol"></i> @Html.ActionLink(Resources.Administration.CategoryList, MVC.Administration.CategoryList())
+</div>

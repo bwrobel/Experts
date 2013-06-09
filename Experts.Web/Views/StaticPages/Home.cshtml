@@ -1,0 +1,50 @@
+﻿@model Experts.Web.Models.StaticPages.HomeModel
+
+<section class="row">
+    @Html.Partial(MVC.Thread.Views._Form, Model)
+</section>
+<section id="frames" class="row">
+    <div class="span8">
+        <div class="well with-inners">
+            @Html.Action(MVC.Thread.MultiExpertBox(false))
+        </div>
+    </div>
+    <div class="span8">
+        <div class="opinions well with-inners" data-author-type="User">
+            @Html.Action(MVC.Profile.Opinions())
+        </div>
+    </div>
+    <div class="become-expert span8 last">
+        <div class="well with-inners">
+            <div class="inner">
+                <h3>@Resources.Global.BecomeExpert</h3>
+            </div>
+            <hr/>
+            <div class="inner">
+                <img src="@Links.Content.images.become_expert_frame_user_png" alt="Zgłoś" width="20" height="20"/>
+                <span>Zgłoś swoją kandydaturę</span>
+            </div>
+            <hr/>
+            <div class="inner frame-arrow-down">
+                <img src="@Links.Content.images.become_expert_frame_page_png" alt="Potwierdź" width="20" height="20"/>
+                <span>Udowodnij swoje kompetencje</span>
+            </div>
+            <hr/>
+            <div class="inner frame-arrow-down">
+                <img src="@Links.Content.images.become_expert_frame_tick_png" alt="Zarabiaj" width="20" height="20"/>
+                <span>Zarabiaj i pomagaj innym!</span>
+            </div>
+            <hr/>
+            <div class="inner frame-arrow-down">
+                @Html.ActionLink(Resources.Global.BecomeExpert, MVC.Account.ExpertSignUp(), new { @class = "btn btn-inverse" })
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script type="text/javascript">
+    thread.initOpinions();
+    thread.initCategoryDescription();
+    thread.initQuestionBackground();
+</script>

@@ -1,0 +1,60 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Experts.Web.Models.Forms.FeedbackForm
+           
+<div class="modal fade" id="answerFeedbackModal">
+    @using (Html.BeginForm(MVC.Thread.CreateFeedbackForm(), FormMethod.Post, new {id="answerFeedbackForm"}))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>@Resources.Thread.ExpertFeedback</h3>
+        </div>
+        @Html.HiddenFor(model => model.ThreadId)
+
+        <div class="modal-body">
+            <label for="Mark" class="control-label">@Resources.Thread.FeedbackMark</label>
+            <div class="feedback-modal">
+                @Html.RadioButtonFor(model => model.Mark, FeedbackMark.Positive, Model.Mark == FeedbackMark.Positive) <span>@FeedbackMark.Positive.Describe(Resources.Thread.ResourceManager)</span>
+                @Html.RadioButtonFor(model => model.Mark, FeedbackMark.Neutral, Model.Mark == FeedbackMark.Neutral) <span>@FeedbackMark.Neutral.Describe(Resources.Thread.ResourceManager)</span>
+                @Html.RadioButtonFor(model => model.Mark, FeedbackMark.Negative, Model.Mark == FeedbackMark.Negative) <span>@FeedbackMark.Negative.Describe(Resources.Thread.ResourceManager)</span>
+            </div>
+
+            @Html.ValidationMessageFor(model => model.Content)
+            <label for="Content" class="control-label">@Resources.Thread.FeedbackContent</label>
+            @Html.TextAreaFor(model => model.Content, new { @class = "content span15", rows = 4, placeholder = Resources.Thread.FeedbackEnterText, required = "required" })
+        </div>
+        <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="skipAnswerFeedback" data-dismiss="modal">@Resources.Thread.FeedbackSkipButton</a>
+            <a class="btn btn-primary" id="submitAnswerFeedback" data-dismiss="modal">@Resources.Thread.FeedbackCreateButton</a>
+        </div> 
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#answerFeedbackModal').modal({
+            show: false
+        });
+        
+        $('#skipAnswerFeedback').click(function () {
+            $.post('/Thread/CreateFeedbackForm', {threadId: @Model.ThreadId, skipAnswerFeedback:true}, function () {window.location.reload();});
+        });
+
+        $('#submitAnswerFeedback').click(function () {
+            $.post('/Thread/CreateFeedbackForm', $('#answerFeedbackForm').serialize(), function (result) {
+                if (!result) {
+                    window.location.reload();
+                } else {
+                    $('#answerFeedbackModal').replaceWith(result);
+                    $('#answerFeedbackModal').modal({ show: true });
+                }
+            });
+        });
+    });
+</script>
+
+
+           
+
+

@@ -1,0 +1,32 @@
+﻿@model Experts.Web.Models.Threads.PostFormModel
+
+<h2 id="post-form-header">@Resources.Thread.ThreadCreatePostTopic</h2>
+<div id="post_form">
+    @using (Html.BeginForm(MVC.Thread.CreatePost()))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            @Html.HiddenFor(model => model.PostForm.ThreadId)
+            
+            @if (Model.AvailableTypes.Count() == 1)
+            {
+                @Html.HiddenFor(model => model.PostForm.Type)
+            }
+            else
+            {
+                <div>
+                    @Html.DropDownListFor(model => model.PostForm.Type, Model.AvailableTypes, new { @class = "span8", @id = "post_type", required = "required" })
+                    @Html.ValidationMessageFor(model => model.PostForm.Type)
+                </div>
+            }
+            <div>
+                @Html.TextAreaFor(model => model.PostForm.Content, new { @class = "span16", placeholder = Resources.Thread.PostEnterText, required = "required" })
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.PostForm.Content)
+                <input id="PostForm_SubmitButton" type="submit" class="btn btn-primary" style="float:right;" value="@Resources.Thread.AddAnswer" />
+            </div>
+        </fieldset>
+    }
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model Experts.Web.Models.Account.ExpertSignUpModel
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr/>
+
+<section>
+    <p>
+        @{ var returnUrl = Url.Action(MVC.Account.BecomeExpert()); }
+        @Resources.Account.AlreadyHaveUserAccount
+        @Html.ActionLink(Resources.Account.SignIn.ToLower(), MVC.Account.SignIn().AddRouteValue("returnUrl", returnUrl))
+    </p>
+    
+    <hr/>
+
+    @using(Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            @Html.EditorFor(model => model.UserProfileForm)           
+            @Html.EditorForModel()
+            @Html.EditorForModel(MVC.Shared.Views.EditorTemplates.Categories)
+            @Html.HiddenFor(model => model.ExpertProfileForm.RecommendationId)
+            
+            <input type="submit" value="@Resources.Account.SignUp" class="btn btn-primary"/>
+        </fieldset>
+    }
+</section>

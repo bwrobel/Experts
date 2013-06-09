@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Experts.Core.Entities.Thread>
+
+<script type="text/javascript">
+    continousPaging.initialize();
+</script>
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr />
+<ul class="question-list paged-list">
+    @Html.Partial(MVC.Thread.Views._QuestionsListItems, Model)
+</ul>

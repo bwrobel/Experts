@@ -1,0 +1,186 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.StaticPages.ExpertFAQModel
+
+<div class="well" style="display: none;">
+    <ul class="nav nav-list">
+
+      <li class="nav-header">@Resources.Help.ExpertSection_Section</li>
+      <li>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.HowDoesItWork.Title)">@Model.HowDoesItWork.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.BecomingExpert.Title)">@Model.BecomingExpert.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Requirements.Title)">@Model.Requirements.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Costs.Title)">@Model.Costs.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AdditionalAdvertisement.Title)">@Model.AdditionalAdvertisement.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.PrivacyAndSecurity.Title)">@Model.PrivacyAndSecurity.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Advantages.Title)">@Model.Advantages.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AffiliateProgram.Title)">@Model.AffiliateProgram.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.MaximumExpertsByCategory.Title)">@Model.MaximumExpertsByCategory.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.LatestEvents.Title)">@Model.LatestEvents.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Certificate.Title)">@Model.Certificate.Title</a></div>
+      </li>
+
+      <li class="nav-header">@Resources.Help.ExpertGettingStarted_Section</li>
+      <li>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Verification.Title)">@Model.Verification.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.LosingVerificationStatus.Title)">@Model.LosingVerificationStatus.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.LackOfCategory.Title)">@Model.LackOfCategory.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.CategoryQuantity.Title)">@Model.CategoryQuantity.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AvatarUpload.Title)">@Model.AvatarUpload.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Experience.Title)">@Model.Experience.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Degree.Title)">@Model.Degree.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.EmailConfiguration.Title)">@Model.EmailConfiguration.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.ForgottenPassword.Title)">@Model.ForgottenPassword.Title</a></div>
+      </li>
+
+      <li class="nav-header">@Resources.Help.ExpertAnswering_Section</li>
+      <li>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnsweringQuestions.Title)">@Model.AnsweringQuestions.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.FindingQuestions.Title)">@Model.FindingQuestions.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnsweringRightQuestions.Title)">@Model.AnsweringRightQuestions.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Chat.Title)">@Model.Chat.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.QuestionBlocking.Title)">@Model.QuestionBlocking.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.BlockingTime.Title)">@Model.BlockingTime.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.OccupyExpertLimit.Title)">@Model.OccupyExpertLimit.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnsweringEfficiently.Title)">@Model.AnsweringEfficiently.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnswerAcceptation.Title)">@Model.AnswerAcceptation.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.ChangingQuestionValue.Title)">@Model.ChangingQuestionValue.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.UndervaluedQuestion.Title)">@Model.UndervaluedQuestion.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.SuggestMore.Title)">@Model.SuggestMore.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AdditionalQuestionService.Title)">@Model.AdditionalQuestionService.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Gratuity.Title)">@Model.Gratuity.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Evaluation.Title)">@Model.Evaluation.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnsweringRules.Title)">@Model.AnsweringRules.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.QuestionInWrongCategory.Title)">@Model.QuestionInWrongCategory.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Advertisement.Title)">@Model.Advertisement.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AdditionalWaysOfEarning.Title)">@Model.AdditionalWaysOfEarning.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.OccupyLimit.Title)">@Model.OccupyLimit.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.UserWontAcceptAnswer.Title)">@Model.UserWontAcceptAnswer.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.CopyPasteAnswer.Title)">@Model.CopyPasteAnswer.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnswerAndMoreDetails.Title)">@Model.AnswerAndMoreDetails.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.PersonalInformation.Title)">@Model.PersonalInformation.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.GratuityHow.Title)">@Model.GratuityHow.Title</a></div>
+      </li>
+
+      <li class="nav-header">@Resources.Help.ExpertSettlement_Section</li>
+      <li>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.AnsweringGain.Title)">@Model.AnsweringGain.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Balance.Title)">@Model.Balance.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.Payments.Title)">@Model.Payments.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.QuestionRebate.Title)">@Model.QuestionRebate.Title</a></div>
+        <div><a href="#@HelpHelper.ChangeUrl(Model.MoreFAQ.Title)">@Model.MoreFAQ.Title</a></div>
+      </li>
+
+    </ul>
+</div>
+
+<h3 class="alert alert-info">@Resources.Help.ExpertSection_Section</h3>
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.HowDoesItWork)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.BecomingExpert)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Requirements)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Costs)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AdditionalAdvertisement)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.PrivacyAndSecurity)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Advantages)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AffiliateProgram)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.MaximumExpertsByCategory)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.LatestEvents)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Certificate)
+
+<h3 class="alert alert-info" id="@HelpHelper.ChangeUrl(Resources.Help.ExpertGettingStarted_Section)">@Resources.Help.ExpertGettingStarted_Section</h3>
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Verification)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.LosingVerificationStatus)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.LackOfCategory)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.CategoryQuantity)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AvatarUpload)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Experience)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Degree)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.EmailConfiguration)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.ForgottenPassword)
+
+<h3 class="alert alert-info">@Resources.Help.ExpertAnswering_Section</h3>
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnsweringQuestions)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.FindingQuestions)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnsweringRightQuestions)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Chat)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.QuestionBlocking)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.OccupyingAndBlocking)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.BlockingTime)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.OccupyExpertLimit)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnsweringEfficiently)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnswerAcceptation)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.ChangingQuestionValue)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.UndervaluedQuestion)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.SuggestMore)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AdditionalQuestionService)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Gratuity)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Evaluation)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnsweringRules)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.QuestionInWrongCategory)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Advertisement)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AdditionalWaysOfEarning)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.OccupyLimit)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.UserWontAcceptAnswer)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.CopyPasteAnswer)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnswerAndMoreDetails)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.PersonalInformation)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.GratuityHow)
+
+<h3 class="alert alert-info">@Resources.Help.ExpertSettlement_Section</h3>
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.AnsweringGain)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Balance)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.Payments)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.QuestionRebate)
+
+@Html.Partial(MVC.StaticPages.Views._HelpQuestionStandard, Model.MoreFAQ)
+
+

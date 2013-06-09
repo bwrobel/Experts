@@ -1,0 +1,51 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Account.ExpertProfileFormModel
+
+<div class="control-group">
+    <div>
+        <label class="control-label">@Resources.Account.SelectedCategories</label>
+    </div>
+    <div class="categories-editor">
+        @{
+            var prefix = ViewData.TemplateInfo.HtmlFieldPrefix;
+            if (!string.IsNullOrEmpty(prefix))
+            {
+                prefix += ".";
+            }
+        }
+        @Html.ValidationMessageFor(model => model.ExpertProfileForm.ExpertProfileCategoriesForm)
+        @foreach (var category in Model.AvailableCategories)
+        {
+            var selected = string.Empty;
+            var selectedClass = string.Empty;
+                
+            if (Model != null && Model.ExpertProfileForm != null && Model.ExpertProfileForm.ExpertProfileCategoriesForm != null && Model.ExpertProfileForm.ExpertProfileCategoriesForm.SelectedCategories != null && Model.ExpertProfileForm.ExpertProfileCategoriesForm.SelectedCategories.Contains(category.Id))
+            {    
+                selected = "checked";
+                selectedClass = "selected";
+            }
+            
+            <div class="category-select @selectedClass">
+                <label>
+                    @Html.CategoryIconTiny(category)
+                    <input type="checkbox" class="hidden default-checkbox" name="@(prefix)ExpertProfileForm.ExpertProfileCategoriesForm.SelectedCategories" value="@category.Id" @selected/>
+                    <span>@category.Name</span>
+                </label>
+                
+                @if(AuthenticationHelper.CurrentUser != null && AuthenticationHelper.CurrentUser.IsExpert)
+                {
+                    <a href="@Url.Action(MVC.Account.ExpertCategoryAttributes(category.Id))" title="@Resources.Account.EditExpertCategoryAttributes"><i class="icon-pencil"></i></a>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="new-category-proposal">
+    @Resources.Account.NewCategoryProposal
+    <a href="mailto:@Resources.Account.NewCategoryMail?subject=@Resources.Account.NewCategory" class="underline">@Resources.Account.NewCategoryLink</a>
+</div>
+
+<script type="text/javascript">
+    account.initCategorySelect();
+</script>

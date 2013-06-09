@@ -1,0 +1,40 @@
+﻿@using Experts.Web.Models.Threads
+@model ThreadSanitizationDetailsModel
+           
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<script type="text/javascript">
+    thread.sanitzationInitializeStatusBox(@Model.Thread.Id, "@Model.Thread.SanitizationStatus")
+</script>
+
+<h2>@ViewBag.PageTitle</h2>
+
+<div class="row">
+    <div class="span16">
+        <div class="row">
+
+            <div class="alert status-box span6">
+                @Html.Label("SelectSanitizationStatus", Resources.Administration.SanitizationStatus)
+                @Html.DropDownListFor(model => model.SelectedStatus, Model.AvailableStatuses, new { id = "SelectSanitizationStatus" })
+            </div>
+
+            @using (Html.BeginForm(MVC.Thread.EditPublicSanitizedThreadTitle()))
+            {
+                <fieldset class="well span15">
+                    @Html.HiddenFor(model => model.Thread.Id)
+                    @Html.EditorFor(model => model.Thread.CatalogSanitizedThreadTitle)
+                    <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                </fieldset>
+            }
+
+        </div>
+        
+        <div class="overflow-hidden">
+            @Html.Action(MVC.Thread.ShowPost(Model.Thread.Posts.First(),isSanitizationMode:true))
+        </div>
+
+        @Html.Partial(MVC.Thread.Views._Thread, Model)
+    </div>
+</div>

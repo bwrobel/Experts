@@ -1,0 +1,11 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.NewExpertEmail  
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+
+@string.Format(Resources.Email.NewExpertEmailContent, Model.RelatedUser.Expert.FirstName)
+<br/>
+
+@Resources.Email.NewExpertLink
+@NoContextUrl.ActionAbsolute(MVC.Thread.AvailableQuestionList())

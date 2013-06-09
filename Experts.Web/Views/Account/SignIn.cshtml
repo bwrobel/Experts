@@ -1,0 +1,37 @@
+﻿@model Experts.Web.Models.Forms.SignInForm
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr />
+
+<section>
+    @using(Html.BeginForm())
+    {
+        <fieldset>
+            @Html.EditorForModel()
+            <div class="space-bottom">
+                @Html.ActionLink(Resources.Account.PasswordForgotten, MVC.Account.PasswordForgotten())
+            </div>
+
+            <div>
+                @if (Model != null && Model.ResendActivationMail)
+                {
+                    <p>@Html.ActionLink(Resources.Account.ActivationResend, MVC.Account.ResendActivationEmail())</p>
+                }
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="@Resources.Account.SignIn"/>
+             
+            <hr/>
+
+            <div>
+                @Resources.Account.DontHaveAccount @Html.ActionLink(Resources.Account.SignUp, MVC.Account.SignUp())
+            </div>
+
+            <div>
+                @Resources.Account.GotTemporaryAccount @Html.ActionLink(Resources.Account.TransformTemporaryAccount, MVC.Account.SignUp())
+            </div>
+
+        </fieldset>
+    }
+</section>

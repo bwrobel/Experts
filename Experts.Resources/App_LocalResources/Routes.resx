@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Activate" xml:space="preserve">
+    <value>aktywuj-konto</value>
+  </data>
+  <data name="Account_BecomeExpert" xml:space="preserve">
+    <value>zostan-ekspertem</value>
+  </data>
+  <data name="Account_ExpertSignUp" xml:space="preserve">
+    <value>zarejestruj-sie-jako-ekspert</value>
+  </data>
+  <data name="Account_KeySignIn" xml:space="preserve">
+    <value>zaloguj-sie-przez-email</value>
+  </data>
+  <data name="Account_PasswordForgotten" xml:space="preserve">
+    <value>przypomnij-haslo</value>
+  </data>
+  <data name="Account_ResendActivationEmail" xml:space="preserve">
+    <value>wyslij-ponownie-link-aktywacyjny</value>
+  </data>
+  <data name="Account_ResetPassword" xml:space="preserve">
+    <value>resetuj-haslo</value>
+  </data>
+  <data name="Account_SignIn" xml:space="preserve">
+    <value>zaloguj-sie</value>
+  </data>
+  <data name="Account_SignOut" xml:space="preserve">
+    <value>wyloguj-sie</value>
+  </data>
+  <data name="Account_SignUp" xml:space="preserve">
+    <value>zarejestruj-sie</value>
+  </data>
+  <data name="Payment_PaymentConfirmation" xml:space="preserve">
+    <value>potwierdzenie-platnosci</value>
+  </data>
+  <data name="Payment_ProcessPayment" xml:space="preserve">
+    <value>finalizuj-platnosc</value>
+  </data>
+  <data name="Profile_ConfirmEmail" xml:space="preserve">
+    <value>potwierdz-email</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>edytuj-profil</value>
+  </data>
+  <data name="Profile_EditCategories" xml:space="preserve">
+    <value>edytuj-kategorie</value>
+  </data>
+  <data name="Profile_EditEmail" xml:space="preserve">
+    <value>zmien-email</value>
+  </data>
+  <data name="Profile_EditExpertMicroprofile" xml:space="preserve">
+    <value>edytuj-mikroprofil</value>
+  </data>
+  <data name="Profile_EditPassword" xml:space="preserve">
+    <value>zmien-haslo</value>
+  </data>
+  <data name="Profile_ExpertOverview" xml:space="preserve">
+    <value>wizytowka-eksperta</value>
+  </data>
+  <data name="Profile_FeedbackList" xml:space="preserve">
+    <value>lista-opinii</value>
+  </data>
+  <data name="Profile_UploadImage" xml:space="preserve">
+    <value>wrzuc-zdjecie</value>
+  </data>
+  <data name="Profile_OpinionSingle" xml:space="preserve">
+    <value>opinia</value>
+  </data>
+  <data name="StaticPages_PageNotFound" xml:space="preserve">
+    <value>blad-404</value>
+  </data>
+  <data name="Thread_CatalogQuestionList" xml:space="preserve">
+    <value>katalog-pytan</value>
+  </data>
+  <data name="Thread_CreatePost" xml:space="preserve">
+    <value>odpowiedz</value>
+  </data>
+  <data name="Thread_GiveUp" xml:space="preserve">
+    <value>zrezygnuj-z-pytania</value>
+  </data>
+  <data name="Thread_MultiExpertBox" xml:space="preserve">
+    <value>eksperci-box</value>
+  </data>
+  <data name="Thread_OccupyThread" xml:space="preserve">
+    <value>zarezerwuj-pytanie</value>
+  </data>
+  <data name="Thread_Options" xml:space="preserve">
+    <value>parametry-pytania</value>
+  </data>
+  <data name="Thread_AvailableQuestionList" xml:space="preserve">
+    <value>pytania-uzytkownikow</value>
+  </data>
+  <data name="Thread_ReportIssueForm" xml:space="preserve">
+    <value>formularz-zglaszania-problemu</value>
+  </data>
+  <data name="Thread_SanitizationQuestionList" xml:space="preserve">
+    <value>czyszczenie-pytan</value>
+  </data>
+  <data name="Thread_Save" xml:space="preserve">
+    <value>poznaj-odpowiedz</value>
+  </data>
+  <data name="Thread_ShowExpertInfo" xml:space="preserve">
+    <value>informacje-o-ekspercie</value>
+  </data>
+  <data name="Thread_ShowThreadDetailsMenu" xml:space="preserve">
+    <value>menu-pytania</value>
+  </data>
+  <data name="Thread_ThreadDetails" xml:space="preserve">
+    <value>szczegoly-pytania</value>
+  </data>
+  <data name="Thread_Sanitization" xml:space="preserve">
+    <value>oczyszczanie-watku</value>
+  </data>
+  <data name="Profile_ExpertStatistics" xml:space="preserve">
+    <value>wykresy-eksperta</value>
+  </data>
+  <data name="Thread_DeleteThread" xml:space="preserve">
+    <value>usun-watek</value>
+  </data>
+  <data name="Profile_Balance" xml:space="preserve">
+    <value>bilans</value>
+  </data>
+  <data name="Thread_CategoryAttributes" xml:space="preserve">
+    <value>sprecyzuj-pytanie</value>
+  </data>
+  <data name="Thread_CatalogThreadDetails" xml:space="preserve">
+    <value>pytanie</value>
+  </data>
+  <data name="Thread_GetAttachment" xml:space="preserve">
+    <value>zalacznik</value>
+  </data>
+  <data name="Account_ExpertCategoryAttributes" xml:space="preserve">
+    <value>doprecyzuj-kategorie</value>
+  </data>
+  <data name="Thread_DeleteAttachment" xml:space="preserve">
+    <value>usun-zalacznik</value>
+  </data>
+  <data name="Thread_DeletePost" xml:space="preserve">
+    <value>usun-wiadomosc</value>
+  </data>
+  <data name="Profile_EditExpertPublicName" xml:space="preserve">
+    <value>zmien-publiczna-nazwe-eksperta</value>
+  </data>
+  <data name="Catalog_ExpertListSeo" xml:space="preserve">
+    <value>eksperci</value>
+  </data>
+  <data name="Catalog_QuestionListSeo" xml:space="preserve">
+    <value>lista-pytan</value>
+  </data>
+  <data name="Catalog_ProcessKeyword" xml:space="preserve">
+    <value>moderuj-slowo-kluczowe</value>
+  </data>
+  <data name="Catalog_SetKeywordAttributes" xml:space="preserve">
+    <value>sprecyzuj-slowo-kluczowe</value>
+  </data>
+  <data name="Catalog_StoreKeyword" xml:space="preserve">
+    <value>zapisz-slowo-kluczowe</value>
+  </data>
+  <data name="Profile_EditPhoneNumber" xml:space="preserve">
+    <value>zmien-numer-telefonu</value>
+  </data>
+  <data name="Catalog_KeywordListExperts" xml:space="preserve">
+    <value>popularni-eksperci</value>
+  </data>
+  <data name="Catalog_KeywordListPhrases" xml:space="preserve">
+    <value>wyszukiwane-zwroty</value>
+  </data>
+  <data name="Catalog_KeywordListQuestions" xml:space="preserve">
+    <value>popularne-tematy-pytan</value>
+  </data>
+  <data name="Catalog_PhraseDetails" xml:space="preserve">
+    <value>slowo-kluczowe</value>
+  </data>
+  <data name="Catalog_AddKeyword" xml:space="preserve">
+    <value>dodaj-slowo-kluczowe</value>
+  </data>
+  <data name="Profile_UserOpinion" xml:space="preserve">
+    <value>ocen-serwis</value>
+  </data>
+  <data name="Thread_PriceProposalForm" xml:space="preserve">
+    <value>formularz-propozycji-ceny</value>
+  </data>
+  <data name="Administration_EventsLog" xml:space="preserve">
+    <value>zdarzenia</value>
+  </data>
+  <data name="Profile_PartnerProgram" xml:space="preserve">
+    <value>program-partnerski</value>
+  </data>
+  <data name="Chat_CreateMessage" xml:space="preserve">
+    <value>wyslij-wiadomosc</value>
+  </data>
+  <data name="Chat_Support" xml:space="preserve">
+    <value>panel-obslugi-klienta</value>
+  </data>
+  <data name="Chat_ChatsOverview" xml:space="preserve">
+    <value>wiadomosci-klientow</value>
+  </data>
+  <data name="Thread_AdditionalServiceInformation" xml:space="preserve">
+    <value>dodatkowe-uslugi</value>
+  </data>
+  <data name="Thread_DeclineAdditionalService" xml:space="preserve">
+    <value>odrzucenie-dodatkowej-uslugi</value>
+  </data>
+  <data name="Thread_ProposeAdditionalService" xml:space="preserve">
+    <value>zaproponuj-dodatkowa-usluge</value>
+  </data>
+  <data name="Thread_ReleaseReservedQuestion" xml:space="preserve">
+    <value>zrezygnuj-z-eksperta</value>
+  </data>
+  <data name="Administration_UserList" xml:space="preserve">
+    <value>zarzadzaj-uzytkownikami</value>
+  </data>
+  <data name="Profile_PartnerStatistics" xml:space="preserve">
+    <value>statystyki-partnera</value>
+  </data>
+  <data name="Profile_EditModeratorPublicName" xml:space="preserve">
+    <value>zmien-publiczna-nazwe-moderatora</value>
+  </data>
+  <data name="Thread_ModeratorQuestionList" xml:space="preserve">
+    <value>moderacja-pytan</value>
+  </data>
+  <data name="Catalog_SiteMapXml" xml:space="preserve">
+    <value>sitemap.xml</value>
+  </data>
+  <data name="Launch_ExpertSubscribe" xml:space="preserve">
+    <value>zglos-eksperta</value>
+  </data>
+  <data name="Launch_UserSubscribe" xml:space="preserve">
+    <value>zglos-uzytkownika</value>
+  </data>
+  <data name="Launch_Welcome" xml:space="preserve">
+    <value>witamy</value>
+  </data>
+  <data name="Profile_CheckExpertRegistration" xml:space="preserve">
+    <value>zarejestruj-sie-z-polecenia</value>
+  </data>
+  <data name="Error_Error500" xml:space="preserve">
+    <value>blad-aplikacji</value>
+  </data>
+  <data name="Profile_MyAnswers" xml:space="preserve">
+    <value>moje-odpowiedzi</value>
+  </data>
+  <data name="Profile_MyQuestions" xml:space="preserve">
+    <value>moje-pytania</value>
+  </data>
+  <data name="StaticPages_AdCampaignHome" xml:space="preserve">
+    <value>zadaj-pytanie</value>
+  </data>
+  <data name="StaticPages_MeetAsknuts" xml:space="preserve">
+    <value>poznaj-asknuts</value>
+  </data>
+  <data name="Account_BecomePartner" xml:space="preserve">
+    <value>zostan-partnerem</value>
+  </data>
+  <data name="Administration_CreateCategoryAttribute" xml:space="preserve">
+    <value>dodaj-atrybut</value>
+  </data>
+  <data name="Administration_CategoryList" xml:space="preserve">
+    <value>lista-kategorii</value>
+  </data>
+  <data name="Administration_EditCategoryAttribute" xml:space="preserve">
+    <value>edytuj-atrybut</value>
+  </data>
+  <data name="Administration_CreateChildCategoryAttribute" xml:space="preserve">
+    <value>dodaj-podatrybut</value>
+  </data>
+  <data name="Administration_DeleteCategoryAttribute" xml:space="preserve">
+    <value>usun-atrybut</value>
+  </data>
+  <data name="StaticPages_Home" xml:space="preserve">
+    <value />
+  </data>
+</root>

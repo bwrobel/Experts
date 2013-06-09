@@ -1,0 +1,87 @@
+﻿@using System.Configuration
+@model IEnumerable<Experts.Core.Entities.Category>
+
+<p>Wygenerowany skrypt znajduje się w źródle strony</p>
+
+<script type="text/javascript">
+    function experts_question(params) {
+        var content = '';
+
+        content += '<div class="asknuts-widget">';
+        content += experts_inner.get_form(params);
+        content += '</div>';
+
+        var container = document.getElementById(params.container);
+        container.innerHTML = content;
+    }
+
+    var experts_inner = {
+        experts_domain: '@ConfigurationManager.AppSettings["BaseUrl"]',
+
+        get_form: function(params) {
+            var result = this.get_form_begin();
+            result += this.get_header();
+            result += this.get_hidden('brokerId', params.brokerId);
+            result += this.get_select(this.get_categories(), 'ThreadForm.CategoryId');
+            result += this.get_textarea('ThreadForm.Content');
+            result += this.get_hr();
+            result += this.get_buttons(params);
+            result += this.get_form_end();
+            return result;
+        },
+
+        get_form_begin: function() {
+            var action = this.experts_domain + '@Url.Action(MVC.Thread.CategoryAttributes())';
+            return '<form class="question-form" method="post" action="' + action + '">';
+        },
+
+        get_form_end: function() {
+            return '</form>';
+        },
+
+        get_header: function() {
+            var img_src = this.experts_domain +  '@Links.Content.images.logo_partners_jpg';
+            var result = '<div class="asknuts-logo"><img src="' + img_src + '" width="180" height="41" /></div>';
+            result += '<p><strong>@Resources.Partner.InvitationText</strong></p>';
+            return result;
+        },
+
+        get_hidden: function(name, value) {
+            return '<input type="hidden" name="' + name + '" value="' + value + '" />';
+        },
+
+        get_select: function(array, name) {
+            var result = '<select name="' + name + '">';
+            for (var i in array) {
+                result += '<option value="' + (i == 0 ? '' : i) + '">' + array[i] + '</option>';
+            }
+            result += '</select>';
+            return result;
+        },
+
+        get_textarea: function(name) {
+            return '<textarea name="' + name + '" placeholder="@Resources.Partner.QuestionContentPlaceholder"></textarea>';
+        },
+
+        get_buttons: function() {
+            var result = '<div class="ask">';
+            result += '<input type="submit" value="@Resources.Partner.QuestionSubmit" />';
+            result += '</div>';
+            return result;
+        },
+
+        get_categories: function() {
+            var result = new Array();
+            result[0] = '@Resources.Partner.ChooseCategory';
+            @foreach(var category in Model)
+            {
+                @Html.Raw(string.Format("\tresult[{0}] = '{1}';\n", category.Id, category.Name))
+            }
+            return result;
+        },
+        
+        get_hr: function() {
+            return '<hr/>';
+        }
+    };
+</script>

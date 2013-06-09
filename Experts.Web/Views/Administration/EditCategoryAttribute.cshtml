@@ -1,0 +1,21 @@
+﻿@model Experts.Web.Models.Forms.CategoryAttributeForm
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr/>
+
+<section class="span11">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            @Html.EditorForModel()
+
+            <input type="submit" class="btn btn-primary" value="@Resources.Administration.UpdateCategoryAttribute"/>
+        </fieldset>
+    }
+</section>
+
+<section class="span12">
+    @Html.Partial(MVC.Administration.Views._CategoryAttributeOptionsEditor, Model)
+</section>

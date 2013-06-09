@@ -1,0 +1,8 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.ConfirmationEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+           
+@Resources.Email.EmailConfirmationEmailContent
+@NoContextUrl.ActionAbsolute(MVC.Profile.ConfirmEmail(Model.RelatedUser.ActivationKey))

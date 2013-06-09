@@ -1,0 +1,12 @@
+﻿@model Experts.Web.Models.Events.SystemBreakdownReactionModel
+
+<form action="/Administration/SystemBreakdownReaction/">
+    
+    <p>
+        Błąd systemu pojawiający się bardzo często:
+    </p>
+
+    <pre>@Model.Event.Data</pre>
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

@@ -1,0 +1,22 @@
+﻿@model Experts.Web.Models.Events.CashPaymentReactionModel
+
+<form action="/Administration/CashPaymentReaction/">
+    <p><strong>@Resources.Administration.UserRequestedPayoff</strong></p>
+
+    <p>@Resources.Administration.TransferData</p>
+    <p>@Resources.Administration.TransferTitle @Model.Transfer.Title</p>
+    <p>@Resources.Administration.TransferOrdered @if(Model.Transfer.Owner.IsExpert)
+                {
+                     <strong>@Resources.Administration.Expert </strong> @Model.Transfer.Owner.Expert.PublicName
+                }
+                else
+               {
+                   <strong>@Resources.Administration.Partner </strong> @Model.Transfer.Owner.Email
+               }
+    </p>
+    <p>@Resources.Administration.TransferDate @Model.Transfer.OrderDate</p>
+    <p>@Resources.Administration.TransferValue @Model.Transfer.Value PLN</p>
+    <p>@Resources.Administration.AccountNumber @Model.Transfer.Owner.BankAccountNumber</p>
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

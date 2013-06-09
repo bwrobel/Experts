@@ -1,0 +1,30 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model Thread
+
+<div class="well with-inners">
+    <div class="inner">
+        <h4 class="expert-header">@Resources.Thread.ThreadHowToAnswerTitle</h4>
+    </div>
+    
+    <hr/>
+
+    <div class="inner">
+        @Resources.Thread.ThreadHowToAnswerContent
+
+        @if (Model.State == ThreadState.Reserved)
+        {<br /><div>@Resources.Thread.DirectQuestionInstructions</div>}
+
+        @if (AuthenticationHelper.CurrentUser.IsExpert && AuthenticationHelper.CurrentUser != Model.Author)
+        {
+            <br/><br/>
+            <p>
+                @Resources.Thread.ReportIssueInstructions
+                <a data-toggle="modal" href="#issueModal" class="underline"> @Resources.Thread.ThreadReportIssueButton</a>
+            </p>   
+        }
+    </div>
+</div>
+
+
+                @Html.Action(MVC.Thread.ReportIssueForm(Model.Id))

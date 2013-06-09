@@ -1,0 +1,100 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Models.Payments
+@using Experts.Web.Utils.Payments
+@model Experts.Web.Models.Forms.ThreadForm
+<script type="text/javascript">
+    allowValueChange = true;
+    thread.initThreadValueReceiver();
+</script>
+<div>
+    <h2 class="with-hint">@Html.Raw(Resources.Thread.OptionsHeader)</h2>
+    <p class="hint">@Resources.Thread.OptionsDescription</p>
+
+    @Html.Action(MVC.Thread.Question(Model))
+    <div>
+        <div class="span8 offset1">
+            @{ var expertId = Model.DirectQuestionExpertId.HasValue ? Model.DirectQuestionExpertId.Value : Model.InterestedExpert; }
+            @Html.Action(MVC.Thread.SingleExpertBox(expertId, Resources.Thread.InterestedExpert, Model.CategoryId))
+
+            @Html.Partial(MVC.Thread.Views._WarrantyFrame)
+        </div>
+
+        <section id="options-form">
+            @using (Html.BeginForm(MVC.Thread.Save(), FormMethod.Post, new { @class = "form-horizontal span13 offset1" }))
+            {
+                @Html.ValidationSummary()
+                     
+                @Html.HiddenFor(model => model.Content)
+                @Html.HiddenFor(model => model.CategoryId)
+                @Html.HiddenFor(model => model.Value)
+                @Html.HiddenFor(model => model.CustomValue)
+                @Html.HiddenFor(model => model.DirectQuestionExpertId)
+                @Html.HiddenFor(model => model.TemporaryAttachmentFolder)
+                @Html.HiddenFor(model => model.InterestedExpert)
+                @Html.Hidden("AuthenticationType")
+        
+                <div>
+                    <div class="price-proposal-label">
+                        <div class="big">@Resources.Thread.DefaultPriceProposal</div>
+                        <div class="small">@Resources.Thread.DefaultPriceProposalDescription:</div>
+                    </div>
+
+                    <span class="price-proposal" id="threadValueDiv">
+                        <strong id="thread_value">@Html.DisplayFor(model => model.Value)</strong>
+                        <strong>@Resources.Global.CurrencyPLN</strong>
+                        <i id="lockIcon" class="" onclick="javascript:thread.unlockPrice();" onmouseover="javascript:this.style.cursor='pointer';"></i>
+                    </span>
+                    
+                    <div>
+                        <a class="user-defined-price" data-toggle="modal" href="#userDefinedPriceModal" id="userDefinedPriceProposal"
+                           onclick="javascript:thread.assignUserDefinedPriceProposal();">@Resources.Thread.UserDefinedPrice</a>
+                    </div>
+                </div>
+                
+                <hr/>
+                
+                <fieldset class="slider">
+                    @*@Html.EditorForEnum(model => model.Priority, Resources.Thread.ResourceManager)*@
+                    @Html.EditorForEnum(model => model.Verbosity, Resources.Thread.ResourceManager)
+                    <div class="slider-captions range3">
+                        <div class="first">@Resources.Thread.ThreadVerbosityLow</div><div class="second purple">@Resources.Thread.ThreadVerbosityMedium</div><div class="last">@Resources.Thread.ThreadVerbosityHigh</div>
+                    </div>
+
+                    <hr/>
+                </fieldset>       
+            
+                <fieldset>
+                    @Html.Action(MVC.Payment.PaymentForm(new PaymentModel { StrategyId = ThreadPaymentStrategy.StrategyId, Value = Model.Value }, Model.PaymentForm))
+                </fieldset>
+                      
+                <div class="pull-right">
+                    <input type="submit" class="btn btn-primary" value="@Resources.Thread.GetAnswer" />
+                </div>
+                
+                if (Model.AttributeValues != null)
+                {
+                    for (var i = 0; i < Model.AttributeValues.Count(); i++)
+                    {
+                        @Html.HiddenFor(m => m.AttributeValues[i].AttributeId)
+                        @Html.HiddenFor(m => m.AttributeValues[i].Value)
+
+                        if (Model.AttributeValues[i].Values != null)
+                        {
+                            for (var j = 0; j < Model.AttributeValues[i].Values.Count(); j++)
+                            {
+                                @Html.HiddenFor(m => m.AttributeValues[i].Values[j])
+                            }
+                        }
+                    }
+                }
+            }
+        </section>
+    </div>
+</div>
+@Html.Action(MVC.Thread.UserDefinedPriceForm(Model))
+<script type="text/javascript">
+    $(function () {
+        editors.initSlider('#Verbosity', 1, 3);
+        account.setReloadOnSignIn();
+    });
+</script>

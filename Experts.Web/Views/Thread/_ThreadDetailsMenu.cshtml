@@ -1,0 +1,120 @@
+﻿@using Experts.Core.Entities
+@using Experts.Core.Utils
+@using Experts.Web.Models.Threads
+@using Experts.Web.Helpers
+@using Experts.Web.Utils.Payments
+@model ThreadDetailsMenuModel
+
+@if (Model.Post == null)
+{
+    if(Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.Accept))
+    {
+        <div class="button-frame">
+            <a data-toggle="modal" href="#answerFeedbackModal" class="btn btn-primary accept-big">@Resources.Thread.AcceptBigButton</a> 
+            @Html.Action(MVC.Thread.CreateFeedback(Model.Thread.Id))
+        </div>
+    }
+    
+    if(Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.Occupy))
+    {
+        <div class="button-frame">
+            @Html.ActionLink(Resources.Thread.OccupyButton, MVC.Thread.OccupyThread(Model.Thread.Id), new { @class = "btn btn-primary occupy-big", onclick = "thread.CopyTextFromPostForm();" })
+        </div>
+    }
+    else if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.GiveUp))
+    {
+        <div class="button-frame">
+            <a data-toggle="modal" href="#GiveUpModal" class="btn btn-primary giveup-big">@Resources.Thread.ThreadGiveUpButton</a> 
+            @Html.Action(MVC.Thread.GiveUp(Model.Thread.Id))
+        </div>     
+    }
+}
+else if (Model.Post != null)
+{   
+    @*Attach file | User*@
+    if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.AttachFile)
+        && AuthenticationHelper.CurrentUser == Model.Thread.Author
+        && (Model.Post.Type == PostType.DetailsRequest || Model.Post.IsFirstInThread()))
+    {         
+        <a class="thread-attachment-button btn btn-small btn-primary">
+            <i class="icon-paper-clip"></i> @Resources.Thread.ThreadAttachFile
+            <input class="fileupload" type="file" name="files[]" multiple>
+        </a>
+    }
+    
+    @*Accept | User*@
+    if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.Accept)
+        && Model.Post.Type == PostType.Answer)
+    {
+        <a data-toggle="modal" href="#answerFeedbackModal" class="btn btn-small btn-primary"><i class="icon-ok"></i> @Resources.Thread.ThreadAcceptAnswerButton</a>
+    }
+    
+    @*Answer | Everybody*@
+    if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.Answer)
+       && Model.Post.Author != AuthenticationHelper.CurrentUser && !Model.Post.Author.IsConsultant)
+    {
+        <a href="#post-form-header" onclick="thread.FocusTextArea('@PostType.Answer.Describe(Resources.Thread.ResourceManager)')" id="answer-button" class="btn btn-small btn-inverse"><i class="icon-pencil"></i>@Resources.Thread.ThreadAnswerButton</a>
+    }
+    
+    @*Delete | User*@
+    if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.Delete)
+       && Model.Post.IsFirstInThread())
+    {
+        @Html.ActionLinkWithConfirmation(Resources.Thread.DeleteButton, MVC.Thread.DeleteThread(Model.Thread.Id), Resources.Thread.DeleteConfirmation, icon: "icon-trash")
+    }
+    
+    @*Pay | User*@
+    if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.Pay)
+       && Model.Post.IsFirstInThread())
+    {
+        <a class="btn btn-small btn-primary" data-toggle="modal" href="#paymentModal"><i class="icon-credit-card"></i>@Resources.Thread.PayButton</a>
+        @Html.Action(MVC.Payment.PaymentModal(ThreadPaymentStrategy.StrategyId, Model.Thread.Id, Model.Thread.Value))
+    }
+    
+    @*Release Reserved Question | User*@
+    if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.ReleaseReservedQuestion)
+       && Model.Post.IsFirstInThread())
+    {
+        @Html.ActionLinkWithConfirmation(Resources.Thread.ThreadReleaseReservedQuestionButton, MVC.Thread.ReleaseReservedQuestion(Model.Thread.Id), string.Format(Resources.Thread.ResignConfirmation, Model.Thread.Expert.PublicName), icon: "icon-ban-circle")
+    }
+    
+    @*Expert Buttons*@
+    if (Model.Thread.Expert != null)
+    {
+        @*Attach file*@
+        if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.AttachFile)
+            && AuthenticationHelper.CurrentUser == Model.Thread.Expert.User
+            && Model.Post.Author != AuthenticationHelper.CurrentUser)
+        {   
+            <a class="thread-attachment-button btn btn-small btn-primary">
+                <i class="icon-paper-clip"></i> @Resources.Thread.ThreadAttachFile
+                <input class="fileupload" type="file" name="files[]" multiple>
+            </a>
+        }
+        
+        @*DetailRequest*@
+        if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.DetailsRequest)
+             && Model.Post.IsFirstInThread())
+        {
+            <a class="btn btn-small btn-inverse" href="#post-form-header" id="details-request-button" onclick="thread.FocusTextArea('@PostType.DetailsRequest.Describe(Resources.Thread.ResourceManager)')"><i class="icon-pencil"></i>@Resources.Thread.ThreadDetailsRequestButton</a> 
+        }
+        
+        @*Additional Service Proposal*@
+        if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.ProposeAdditionalService)
+            && Model.Post.IsFirstInThread())
+        {
+            <a class="btn btn-small btn-inverse" data-toggle="modal" href="#ProposeAdditionalServiceModal"><i class="icon-tasks"></i>@Resources.Thread.ProposeAdditionalService</a> 
+            @Html.Action(MVC.Thread.ProposeAdditionalService(Model.Thread.Id))
+        }
+    }
+    else
+    {
+        @*PriceProposal*@
+        if (Model.ActiveButtons.Contains(ThreadDetailsMenuModel.MenuButtons.PriceProposal)
+            && Model.Post.IsFirstInThread())
+        {
+            <a class="btn btn-small btn-inverse" id="price-proposal-button" data-toggle="modal" href="#priceProposalModal"><i class="icon-credit-card"></i>@Resources.Thread.ThreadPriceProposalButton</a>
+            @Html.Action(MVC.Thread.PriceProposalForm(Model.Thread.Id, Model.Thread.CalculatePotentialExpertValue(AuthenticationHelper.CurrentUser.Expert)))
+        }
+    }
+}

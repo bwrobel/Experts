@@ -1,0 +1,6 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Core.Entities.PartnerStatisticsEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+           
+@string.Format(Resources.Email.PartnerStatisticsEmailContent, Model.PartnerMonthlyStatistics.Balance, Model.PartnerMonthlyStatistics.MonthlyIncome))

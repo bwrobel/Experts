@@ -1,0 +1,185 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Core.Entities
+@using Experts.Core.ViewModels
+@model ExpertOverviewViewModel
+           
+<link rel="stylesheet" href="@Url.Content(Links.Scripts.jqPlot.jquery_jqplot_css)" type="text/css" />
+
+<script src="@Url.Content(Links.Scripts.jqPlot.jquery_jqplot_min_js)" type="text/javascript"></script>
+<script src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_barRenderer_min_js)" type="text/javascript"></script>
+<script src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_categoryAxisRenderer_min_js)" type="text/javascript" ></script>
+<script src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_pointLabels_min_js)" type="text/javascript"></script>
+
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_highlighter_min_js)"></script>
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_cursor_min_js)"></script>
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_dateAxisRenderer_min_js)"></script>
+
+<script type="text/javascript" src="@Url.Content(Links.Scripts.jqPlot.plugins.jqplot_pieRenderer_min_js)"></script>
+
+<h2>@ViewBag.PageTitle @Model.PublicName</h2>
+
+<div class="span24">
+    <h3>@Resources.Account.ExpertProfileTitle</h3>
+    <div>
+        <div class="span-3 border left">
+                <div class="well-small">
+                    @Html.ProfileAvatar(Model.User)
+                </div>
+            <div style="margin:0px 20px 0px 0px">
+                <div>@Model.PublicName</div>
+                <div>@Model.Category</div>
+                <div>@Model.Position</div>
+            </div>
+        </div>
+        <div style="word-wrap:break-word; height:250px; overflow:auto">@Model.Description</div>
+    </div>
+</div>
+
+<div class="span24"><h3>@Resources.Thread.ExpertCharts</h3></div>
+
+@if (Model.IsCommentEnabled)
+{
+    @Html.Partial(MVC.Profile.Views._Income, Model.ExpertOverviewCharts.PaymentStatistic)
+}
+    <div class="span24">
+        <div id="chartdiv2">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var positive = @Json.Encode(MonthNamesHelper.Resort(Model.ExpertOverviewCharts.FeedbackStatistic.Where(fs => fs.Mark == FeedbackMark.Positive).Select(fs => fs.Count)));
+                    var negative = @Json.Encode(MonthNamesHelper.Resort(Model.ExpertOverviewCharts.FeedbackStatistic.Where(fs => fs.Mark == FeedbackMark.Negative).Select(fs => fs.Count)));
+                    var neutral = @Json.Encode(MonthNamesHelper.Resort(Model.ExpertOverviewCharts.FeedbackStatistic.Where(fs => fs.Mark == FeedbackMark.Neutral).Select(fs => fs.Count)));
+                    var ticks = @Html.Raw(Json.Encode(MonthNamesHelper.GetPolishMonthNamesArray()));
+
+                    var plot1 = $.jqplot('chartdiv2', [positive, negative, neutral],
+                    {
+                        title: '@Resources.Account.ChartFeedbacks',
+
+                        seriesDefaults:
+                        {
+                            shadow: false,
+                            renderer: $.jqplot.BarRenderer,
+                            pointLabels: { show:true, hideZeros:true },
+                            rendererOptions:
+                            {
+                                fillToZero: true,
+                                barMargin: 15
+                            },
+                            markerOptions:
+                            {
+                                shadow: false
+                            }
+                        },
+                         
+                        series:
+                        [
+                            { label: '@Resources.Thread.FeedbacksPositive', color: '#c57192'},
+                            { label: '@Resources.Thread.FeedbacksNegative', color: '#555'},
+                            { label: '@Resources.Thread.FeedbacksNeutral', color: '#93918d'},
+                        ],
+
+                        axes:
+                        {
+                            xaxis:
+                            {
+                                renderer: $.jqplot.CategoryAxisRenderer,
+                                ticks: ticks
+                            },
+                            yaxis:
+                            {
+                                padMin:0,
+                                autoscale:true,
+                                tickOptions:{
+                                    formatString:'%.0f'
+                                }
+                            }
+                        },
+
+                        legend:
+                        {
+                            show: true,
+                            placement: 'nw'
+                        },
+
+                        grid:
+                        {
+                            drawGridLines: true,
+                            shadow: false,
+                            borderWidth: 0.0,
+                            borderColor: 'White'
+                        }
+                    });
+                })
+            </script>
+        </div>
+    </div>
+
+    <div class="span24">
+        <div id="chartdiv3">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var accepted = @Json.Encode(MonthNamesHelper.Resort(Model.ExpertOverviewCharts.AnswerStatistic.Where(ps => ps.State == AnswerStatistic.AnswerStatisticState.Accepted).Select(ps => ps.Count)));
+                    var givenUp = @Json.Encode(MonthNamesHelper.Resort(Model.ExpertOverviewCharts.AnswerStatistic.Where(ps => ps.State == AnswerStatistic.AnswerStatisticState.GivenUp).Select(ps => ps.Count)));
+                    var occupied = @Json.Encode(MonthNamesHelper.Resort(Model.ExpertOverviewCharts.AnswerStatistic.Where(ps => ps.State == AnswerStatistic.AnswerStatisticState.Occupied).Select(ps => ps.Count)));
+                    var ticks = @Html.Raw(Json.Encode(MonthNamesHelper.GetPolishMonthNamesArray()));
+
+                    var plot1 = $.jqplot('chartdiv3', [accepted, givenUp, occupied],
+                    {
+                        title: '@Resources.Account.ChartAnswers',
+
+                        seriesDefaults:
+                        {
+                            shadow: false,
+                            renderer: $.jqplot.BarRenderer,
+                            pointLabels: { show:true, hideZeros:true },
+                            rendererOptions:
+                            {
+                                fillToZero: true,
+                                barMargin: 15
+                            },
+                            markerOptions:
+                            {
+                                shadow: false
+                            }
+                        },
+
+                        series:
+                        [
+                            { label: '@Resources.Thread.ThreadStateAccepted', color: '#c57192' },
+                            { label: '@Resources.Thread.ThreadStateGivenUp', color: '#413c36' },
+                            { label: '@Resources.Thread.ThreadStateOccupied', color: '#93918d' },
+                        ],
+
+                        axes:
+                        {
+                            xaxis:
+                            {
+                                renderer: $.jqplot.CategoryAxisRenderer,
+                                ticks: ticks
+                            },
+                            yaxis:
+                            {
+                                padMin: 0,
+                                autoscale:true,
+                                tickOptions:{
+                                    formatString:'%.0f'
+                                }
+                            }
+                        },
+
+                        legend: {
+                            show: true,
+                            placement: 'nw'
+                        },
+
+                        grid:
+                        {
+                            drawGridLines: true,
+                            shadow: false,
+                            borderWidth: 0.0,
+                            borderColor: 'White'
+                        }
+                    });
+                })
+            </script>
+        </div>
+    </div>

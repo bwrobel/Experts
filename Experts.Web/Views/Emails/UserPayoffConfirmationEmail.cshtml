@@ -1,0 +1,6 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Core.Entities.UserPayoffConfirmationEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+
+@Resources.Email.UserPayoffConfirmationContent

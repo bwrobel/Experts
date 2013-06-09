@@ -1,0 +1,10 @@
+﻿@using Experts.Web.Models.Payments
+@model Experts.Core.Entities.Payment
+
+@*TODO: wywalic ta strone? *@
+
+<h2>@ViewBag.PageTitle</h2>
+
+<section class="span24">
+    @Html.Action(MVC.Payment.PaymentForm(new PaymentModel {StrategyId = Model.StrategyId}))
+</section>

@@ -1,0 +1,101 @@
+﻿@using Experts.Core.Entities
+@using Experts.Core.Utils
+@using Experts.Web.Helpers
+@using Experts.Web.Utils.Payments
+
+@model Experts.Web.Models.Threads.AdditionalServiceInformation
+
+@helper ShowAdditionalService(AdditionalService additionalService)
+{
+    var isCurrent = Model.Thread.Expert != null && Model.Thread.Expert == additionalService.Expert;
+    var isAuthor = Model.Thread.Author == AuthenticationHelper.CurrentUser;
+    var isProposingExpert = additionalService.Expert.User == AuthenticationHelper.CurrentUser;
+
+    if (!isAuthor && !isProposingExpert)
+    {
+        return;
+    }
+
+    var value = isProposingExpert ? additionalService.CalculateExpertValue() : additionalService.Value;
+    
+    <div class="post thread-post row">
+
+        <div class="span2 embedded-image">
+            @Html.ProfileAvatar(additionalService.Expert.User)
+            <img src="@ImageHelper.UrlToCategoryIconSmall(additionalService.Expert.Categories.First().Id)" class="category-icon-small"/>
+        </div>
+
+        <div class="thread-post-tite">@if(isProposingExpert)
+                                      {
+                                          @Resources.Thread.ProposingAdditionalService
+                                      }
+                                      else
+                                      {
+                                          @additionalService.Expert.PublicName @Resources.Thread.ExpertProposeAdditionalService
+                                      }
+                                      </div>
+
+        <div class="thread-post-date">@additionalService.CreationDate.ToTimeSinceFormat()</div>
+
+        <div class="span11 thread-post-content enters">@additionalService.Comment
+
+            @Resources.Thread.AdditionalServicesValue <strong>@value @Resources.Global.CurrencyPLN</strong>
+            @Resources.Thread.AdditionalServicesState @if (additionalService.IsAccepted == true)
+                                                       {
+                                                            <span><i class="icon-ok"></i> @Resources.Thread.AdditionalServicesStateAccepted</span>
+                                                       }
+                                                       else if (additionalService.IsAccepted == false)
+                                                       {
+                                                            <span><i class="icon-remove"></i> @Resources.Thread.AdditionalServicesStateNotAccepted</span>
+                                                       }
+                                                      else
+                                                      {
+                                                            if(isProposingExpert)
+                                                            {
+                                                                <span><i class="icon-repeat"></i> @Resources.Thread.AdditionalServicesStateAwaitingExpert</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span><i class="icon-repeat"></i> @Resources.Thread.AdditionalServicesStateAwaitingUser</span>   
+                                                            }
+                                                      }
+        </div>
+
+    </div>
+
+    <div class="post-buttons">
+        @if (isAuthor && additionalService.IsAccepted == null)
+        {
+            if (isCurrent)
+            {
+                <a class="btn btn-small btn-inverse" href="@Url.Action(MVC.Thread.DeclineAdditionalService(additionalService.Id))">@Resources.Thread.AdditionalServiceDecline</a>
+                <a class="btn btn-small btn-primary" data-toggle="modal" href="#paymentModal" data-relatedId="@additionalService.Id" data-value="@additionalService.Value"><i class="icon-ok"></i> @Resources.Thread.AdditionalServiceAccept</a>
+            }
+            else
+            {
+                <span class="alert">@Resources.Thread.AdditionalServiceExpertResigned</span>
+            }
+        }
+        
+        @if (isProposingExpert)
+        {
+            if (additionalService.IsAccepted == true)
+            {
+                <span class="alert">@Resources.Thread.UserAcceptedAdditionalService</span>
+            }
+            if (additionalService.IsAccepted == false)
+            {
+                <span class="alert">@Resources.Thread.UserDeclinedAdditionalService</span>
+            }
+        }
+    </div>
+    <hr class="top-hr"/>
+}
+
+
+@foreach (var additionalService in Model.AdditionalServices)
+{
+    @ShowAdditionalService(additionalService)
+}
+
+@Html.Action(MVC.Payment.PaymentModal(AdditionalServicePaymentStrategy.StrategyId, 0))

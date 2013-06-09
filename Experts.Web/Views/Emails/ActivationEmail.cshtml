@@ -1,0 +1,8 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.ActivationEmail
+           
+@RazorHelper.EmailHeader(Model.RecipientUser)
+
+@Resources.Email.ActivationEmailContent
+@NoContextUrl.ActionAbsolute(MVC.Account.Activate(Model.RelatedUser.ActivationKey))

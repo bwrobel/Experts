@@ -1,0 +1,4 @@
+﻿@foreach(var property in ViewData.ModelMetadata.Properties.Where(p => p.ShowForEdit))
+{
+    @Html.Editor(property.PropertyName)
+}

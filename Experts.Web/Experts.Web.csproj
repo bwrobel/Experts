@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C433A5CC-9FC0-42AA-A1D8-4BD1F60443B1}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Experts.Web</RootNamespace>
+    <AssemblyName>Experts.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.48.4489.28432\lib\net20\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=2.1.267.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.2.1.267\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="C5, Version=1.1.0.0, Culture=neutral, PublicKeyToken=06a1b38866503b69, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.0.1\lib\net40\C5.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.2.1.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic">
+      <HintPath>..\packages\Jurassic.2.1.1\lib\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib, Version=3.0.100.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvcContrib.Mvc3-ci.3.0.100.0\lib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.Shp">
+      <HintPath>..\packages\MvcContrib.Shp.1.1.0.0\lib\MvcContrib.Shp.dll</HintPath>
+    </Reference>
+    <Reference Include="NLipsum.Core">
+      <HintPath>..\packages\NLipsum.0.1.3\lib\net40\NLipsum.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NotFoundMvc">
+      <HintPath>..\packages\NotFoundMvc.1.0.0\lib\net40\NotFoundMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider, Version=3.3.3.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvcSiteMapProvider.3.3.3.0\lib\net40\MvcSiteMapProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Postal">
+      <HintPath>..\packages\postal.0.7.3\lib\net40\Postal.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.0.1.100, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartz.2.0.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.0.8\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebugger, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\routedebugger.2.1.4.0\lib\net40\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\packages\SquishIt.0.8.7.2\lib\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Mvc">
+      <HintPath>..\packages\SquishIt.Mvc.0.8.7.2\lib\SquishIt.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\RazorEngine.3.0.8\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="T4MVCExtensions">
+      <HintPath>..\packages\T4MVCExtensions.3.2.0\lib\net40\T4MVCExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Controllers\DevelopmentController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LaunchController.cs" />
+    <Compile Include="DevelopmentController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\CustomMetadataAttribute.cs" />
+    <Compile Include="Filters\AssignMetadataAttribute.cs" />
+    <Compile Include="Filters\EventReactionAttribute.cs" />
+    <Compile Include="Helpers\BrokerHelper.cs" />
+    <Compile Include="Helpers\CustomLabelExtensions.cs" />
+    <Compile Include="Helpers\DisplayName.cs" />
+    <Compile Include="Helpers\LastErrors.cs" />
+    <Compile Include="Helpers\NavigationHelpers.cs" />
+    <Compile Include="Helpers\HelpHelper.cs" />
+    <Compile Include="Helpers\Email.cs" />
+    <Compile Include="Helpers\PagerHelper.cs" />
+    <Compile Include="Helpers\Log.cs" />
+    <Compile Include="Helpers\RazorHelper.cs" />
+    <Compile Include="Jobs\AwaitingExpertResponseEmailJob.cs" />
+    <Compile Include="Jobs\AcceptAnswerReminderEmailJob.cs" />
+    <Compile Include="Jobs\ErrorHandlingJobBuilder.cs" />
+    <Compile Include="Jobs\JobWithErrorHandling.cs" />
+    <Compile Include="Jobs\MonthlyAskEncouragementEmailJob.cs" />
+    <Compile Include="Jobs\NoExpertResponseEmailJob.cs" />
+    <Compile Include="Jobs\ExpertStatisticsEmailJob.cs" />
+    <Compile Include="Jobs\EmailSendingJob.cs" />
+    <Compile Include="Jobs\PartnerStatisticsEmailJob.cs" />
+    <Compile Include="Jobs\StatisticsEventJob.cs" />
+    <Compile Include="Jobs\TemporaryAttachmentFolderJob.cs" />
+    <Compile Include="LaunchController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Administration\ModeratorMenu.cs" />
+    <Compile Include="Models\Administration\UserPayoffModel.cs" />
+    <Compile Include="Models\Catalog\KeywordProcessForm.cs" />
+    <Compile Include="Models\Chat\ChatModel.cs" />
+    <Compile Include="Models\Chat\ChatMessageViewModel.cs" />
+    <Compile Include="Models\Chat\ChatsOverviewModel.cs" />
+    <Compile Include="Models\Chat\ChatDetailsModel.cs" />
+    <Compile Include="Models\Chat\ModeratorChatListModel.cs" />
+    <Compile Include="Models\Chat\SupportModel.cs" />
+    <Compile Include="Models\Chat\UserChatListModel.cs" />
+    <Compile Include="Models\Events\EventReactionModel.cs" />
+    <Compile Include="Models\Forms\ApplicationErrorForm.cs" />
+    <Compile Include="Models\Forms\CategoryAttributeForm.cs" />
+    <Compile Include="Models\Forms\ChatMessageForm.cs" />
+    <Compile Include="Models\Forms\ExpertsRecommendationForm.cs" />
+    <Compile Include="Models\Forms\AdditionalServiceForm.cs" />
+    <Compile Include="Models\Forms\IncreaseExpertValueForm.cs" />
+    <Compile Include="Models\Forms\PhoneNumberForm.cs" />
+    <Compile Include="Models\Forms\KeywordProcessFormModel.cs" />
+    <Compile Include="Filters\AuthorizeRolesAttribute.cs" />
+    <Compile Include="Filters\AuthorizeSignedUpUserAttribute.cs" />
+    <Compile Include="Helpers\CategoryAttributeHelper.cs" />
+    <Compile Include="Helpers\ConfirmationHelper.cs" />
+    <Compile Include="Helpers\FormHelper.cs" />
+    <Compile Include="Helpers\MonthNamesHelper.cs" />
+    <Compile Include="Filters\QueryParameterAttribute.cs" />
+    <Compile Include="Filters\DefaultRoutingAttribute.cs" />
+    <Compile Include="Helpers\Flash.cs" />
+    <Compile Include="Helpers\PaymentHelper.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\UploadHelper.cs" />
+    <Compile Include="Jobs\ThreadsAcceptanceJob.cs" />
+    <Compile Include="Models\Account\ExpertCategoryAttributesModel.cs" />
+    <Compile Include="Models\Balance\BalanceListModel.cs" />
+    <Compile Include="Helpers\EntityExtensions.cs" />
+    <Compile Include="Binders\DecimalModelBinder.cs" />
+    <Compile Include="Models\Forms\GiveUpForm.cs" />
+    <Compile Include="Models\Forms\MailConfigurationForm.cs" />
+    <Compile Include="Models\Forms\PayoffForm.cs" />
+    <Compile Include="Models\Forms\RecommendExpertForm.cs" />
+    <Compile Include="Models\Forms\UserDefinedPriceForm.cs" />
+    <Compile Include="Models\Payments\PaymentModel.cs" />
+    <Compile Include="Models\Profile\MyQuestions.cs" />
+    <Compile Include="Models\Threads\AttachmentTiles.cs" />
+    <Compile Include="Models\Threads\PostViewModel.cs" />
+    <Compile Include="Models\Threads\Question.cs" />
+    <Compile Include="Models\Account\QuickSignInForm.cs" />
+    <Compile Include="Models\Shared\AttributeValueModel.cs" />
+    <Compile Include="Models\StaticPages\ExpertFAQModel.cs" />
+    <Compile Include="Models\StaticPages\HelpQuestionModel.cs" />
+    <Compile Include="Models\Threads\AdditionalServiceInformation.cs" />
+    <Compile Include="Models\Threads\CatalogThreadQuestion.cs" />
+    <Compile Include="Models\Threads\CategoryAttributesThreadFormModel.cs" />
+    <Compile Include="Models\Shared\ActionLinkWithConfirmationModel.cs" />
+    <Compile Include="Models\Shared\Pagination.cs" />
+    <Compile Include="Models\Threads\ExpertOverviewQuestion.cs" />
+    <Compile Include="Models\Threads\KeywordList.cs" />
+    <Compile Include="Models\Threads\SanitizationQuestionListModel.cs" />
+    <Compile Include="Helpers\NoSignUpUserHelper.cs" />
+    <Compile Include="Helpers\ThreadMemoryHelper.cs" />
+    <Compile Include="Models\Threads\SeoDetails.cs" />
+    <Compile Include="Models\Threads\ThreadDetailsSeo.cs" />
+    <Compile Include="Models\Threads\ThreadSanitizationDetailsModel.cs" />
+    <Compile Include="PaymentController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaticPagesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThreadController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\AutoRouter.cs" />
+    <Compile Include="Models\Payments\PaymentConfirmationModel.cs" />
+    <Compile Include="Models\Payments\Providers\KIPPaymentProvider.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Models\Payments\PaymentData.cs" />
+    <Compile Include="Models\Payments\PaymentForm.cs" />
+    <Compile Include="Models\Payments\PaymentFormModel.cs" />
+    <Compile Include="Models\Payments\Providers\PaymentProvider.cs" />
+    <Compile Include="Models\Payments\PaymentRedirectModel.cs" />
+    <Compile Include="Models\Payments\PaymentResult.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Helpers\DateHelper.cs" />
+    <Compile Include="Helpers\EnumHelpers.cs" />
+    <Compile Include="Helpers\HtmlImageHelper.cs" />
+    <Compile Include="Helpers\GridHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Jobs\ActiveUsersRefreshJob.cs" />
+    <Compile Include="Jobs\ThreadsOccupationReleaseJob.cs" />
+    <Compile Include="Jobs\Scheduler.cs" />
+    <Compile Include="Jobs\TriggerUtil.cs" />
+    <Compile Include="Models\Account\ExpertProfileFormModel.cs" />
+    <Compile Include="Models\Account\ExpertSignUpModel.cs" />
+    <Compile Include="Models\Feedback\OpinionListModel.cs" />
+    <Compile Include="Models\Forms\ExpertMicroprofileForm.cs" />
+    <Compile Include="Models\Forms\ExpertProfileCategoriesForm.cs" />
+    <Compile Include="Models\Forms\PublicNameForm.cs" />
+    <Compile Include="Models\Forms\FeedbackCommentForm.cs" />
+    <Compile Include="Models\Forms\FeedbackForm.cs" />
+    <Compile Include="Models\Forms\OpinionForm.cs" />
+    <Compile Include="Models\Forms\PostForm.cs" />
+    <Compile Include="Models\Forms\PriceProposalForm.cs" />
+    <Compile Include="Models\Forms\SignInForm.cs" />
+    <Compile Include="Models\Forms\EmailNotUniqueForm.cs" />
+    <Compile Include="Models\Forms\EmailForm.cs" />
+    <Compile Include="Models\Forms\ExpertProfileForm.cs" />
+    <Compile Include="Models\Forms\PasswordForm.cs" />
+    <Compile Include="Models\Forms\ThreadForm.cs" />
+    <Compile Include="Models\Shared\SortableGridModel.cs" />
+    <Compile Include="Models\StaticPages\HomeModel.cs" />
+    <Compile Include="Models\Threads\CreateThreadModel.cs" />
+    <Compile Include="Models\Threads\MultiExpertBoxModel.cs" />
+    <Compile Include="Models\Threads\PostFormModel.cs" />
+    <Compile Include="Models\Threads\QuestionListModel.cs" />
+    <Compile Include="Models\Forms\ReportIssueForm.cs" />
+    <Compile Include="Models\Threads\ThreadDetailsMenuModel.cs" />
+    <Compile Include="Models\Threads\ThreadDetailsModel.cs" />
+    <Compile Include="Models\Threads\ThreadFormModel.cs" />
+    <Compile Include="Helpers\AuthenticationHelper.cs" />
+    <Compile Include="Utils\AutoMapperConfiguration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ThreadController.cs" />
+    <Compile Include="Controllers\StaticPagesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Forms\ProfileForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\CategoryHelper.cs" />
+    <Compile Include="Helpers\ActiveUsersHelper.cs" />
+    <Compile Include="Utils\AutoMetadata.cs" />
+    <Compile Include="Utils\NoContextUrl.cs" />
+    <Compile Include="Utils\Payments\AdditionalServicePaymentStrategy.cs" />
+    <Compile Include="Utils\Payments\PaymentStrategy.cs" />
+    <Compile Include="Utils\Payments\ThreadPaymentStrategy.cs" />
+    <Compile Include="Utils\Payments\ThreadSurchargeStrategy.cs" />
+    <Compile Include="Utils\SiteMap\CatalogThreadDetailsDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SiteMap\CustomDynamicNodeProviderBase.cs" />
+    <Compile Include="Utils\SiteMap\ExpertOverviewDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SiteMap\SeoDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SiteMap\QuestionListSeoDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SiteMap\ExpertListSeoDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SiteMap\PhraseDetailsDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SiteMap\PublicPagesDynamicNodeProvider.cs" />
+    <Compile Include="Utils\SystemPostFactory.cs" />
+    <Compile Include="Validation\CheckBoxValidationAttribute.cs" />
+    <Compile Include="Validation\AutoFocus.cs" />
+    <Compile Include="Validation\EmailUniqueIfAnonymous.cs" />
+    <Compile Include="Validation\UserPublicNameProperCharactersAttribute.cs" />
+    <Compile Include="Validation\IsKeywordUniqueAttribute.cs" />
+    <Compile Include="Validation\UserPublicNameUniqueAttribute.cs" />
+    <Compile Include="Validation\EmailValidationAttribute.cs" />
+    <Compile Include="Validation\UserEmailAvailableForSignUpAttribute.cs" />
+    <Content Include="Content\application.css" />
+    <Content Include="Content\bootstrap.custom.css" />
+    <Content Include="Content\fancybox\blank.gif" />
+    <Content Include="Content\fancybox\fancybox-x.png" />
+    <Content Include="Content\fancybox\fancybox-y.png" />
+    <Content Include="Content\fancybox\fancybox.png" />
+    <Content Include="Content\fancybox\fancy_close.png" />
+    <Content Include="Content\fancybox\fancy_loading.png" />
+    <Content Include="Content\fancybox\fancy_nav_left.png" />
+    <Content Include="Content\fancybox\fancy_nav_right.png" />
+    <Content Include="Content\fancybox\fancy_shadow_e.png" />
+    <Content Include="Content\fancybox\fancy_shadow_n.png" />
+    <Content Include="Content\fancybox\fancy_shadow_ne.png" />
+    <Content Include="Content\fancybox\fancy_shadow_nw.png" />
+    <Content Include="Content\fancybox\fancy_shadow_s.png" />
+    <Content Include="Content\fancybox\fancy_shadow_se.png" />
+    <Content Include="Content\fancybox\fancy_shadow_sw.png" />
+    <Content Include="Content\fancybox\fancy_shadow_w.png" />
+    <Content Include="Content\fancybox\fancy_title_left.png" />
+    <Content Include="Content\fancybox\fancy_title_main.png" />
+    <Content Include="Content\fancybox\fancy_title_over.png" />
+    <Content Include="Content\fancybox\fancy_title_right.png" />
+    <Content Include="Content\fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="Content\fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="Content\fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="Content\fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="Content\fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-Bold-webfont.svg" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-webfont.svg" />
+    <Content Include="Content\fonts\DroidSans\stylesheet.css" />
+    <Content Include="Content\fonts\FontAwesome\font-awesome-ie7.min.css" />
+    <Content Include="Content\fonts\FontAwesome\font-awesome.css" />
+    <Content Include="Content\fonts\FontAwesome\font-awesome.min.css" />
+    <Content Include="Content\images\ajax-loader-small.gif" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\become-expert-frame-page.png" />
+    <Content Include="Content\images\become-expert-frame-tick.png" />
+    <Content Include="Content\images\become-expert-frame-user.png" />
+    <Content Include="Content\images\categories\10big.png" />
+    <Content Include="Content\images\categories\10small.png" />
+    <Content Include="Content\images\categories\10tiny.png" />
+    <Content Include="Content\images\categories\11big.png" />
+    <Content Include="Content\images\categories\11small.png" />
+    <Content Include="Content\images\categories\11tiny.png" />
+    <Content Include="Content\images\categories\12big.png" />
+    <Content Include="Content\images\categories\12small.png" />
+    <Content Include="Content\images\categories\12tiny.png" />
+    <Content Include="Content\images\categories\13big.png" />
+    <Content Include="Content\images\categories\13small.png" />
+    <Content Include="Content\images\categories\13tiny.png" />
+    <Content Include="Content\images\categories\14big.png" />
+    <Content Include="Content\images\categories\14small.png" />
+    <Content Include="Content\images\categories\14tiny.png" />
+    <Content Include="Content\images\categories\15big.png" />
+    <Content Include="Content\images\categories\15small.png" />
+    <Content Include="Content\images\categories\15tiny.png" />
+    <Content Include="Content\images\categories\16big.png" />
+    <Content Include="Content\images\categories\16small.png" />
+    <Content Include="Content\images\categories\16tiny.png" />
+    <Content Include="Content\images\categories\17big.png" />
+    <Content Include="Content\images\categories\17small.png" />
+    <Content Include="Content\images\categories\17tiny.png" />
+    <Content Include="Content\images\categories\18big.png" />
+    <Content Include="Content\images\categories\18small.png" />
+    <Content Include="Content\images\categories\18tiny.png" />
+    <Content Include="Content\images\categories\1big.png" />
+    <Content Include="Content\images\categories\1small.png" />
+    <Content Include="Content\images\categories\1tiny.png" />
+    <Content Include="Content\images\categories\2big.png" />
+    <Content Include="Content\images\categories\2small.png" />
+    <Content Include="Content\images\categories\2tiny.png" />
+    <Content Include="Content\images\categories\3big.png" />
+    <Content Include="Content\images\categories\3small.png" />
+    <Content Include="Content\images\categories\3tiny.png" />
+    <Content Include="Content\images\categories\4big.png" />
+    <Content Include="Content\images\categories\4small.png" />
+    <Content Include="Content\images\categories\4tiny.png" />
+    <Content Include="Content\images\categories\5big.png" />
+    <Content Include="Content\images\categories\5small.png" />
+    <Content Include="Content\images\categories\5tiny.png" />
+    <Content Include="Content\images\categories\6big.png" />
+    <Content Include="Content\images\categories\6small.png" />
+    <Content Include="Content\images\categories\6tiny.png" />
+    <Content Include="Content\images\categories\7big.png" />
+    <Content Include="Content\images\categories\7small.png" />
+    <Content Include="Content\images\categories\7tiny.png" />
+    <Content Include="Content\images\categories\8big.png" />
+    <Content Include="Content\images\categories\8small.png" />
+    <Content Include="Content\images\categories\8tiny.png" />
+    <Content Include="Content\images\categories\9big.png" />
+    <Content Include="Content\images\categories\9small.png" />
+    <Content Include="Content\images\categories\9tiny.png" />
+    <Content Include="Content\images\categories\more.png" />
+    <Content Include="Content\images\consultant.png" />
+    <Content Include="Content\images\experts.jpg" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\frame-arrow-down.png" />
+    <Content Include="Content\images\gorrion.png" />
+    <Content Include="Content\images\hint-tail.png" />
+    <Content Include="Content\images\icon-lock.png" />
+    <Content Include="Content\images\icon-user.png" />
+    <Content Include="Content\images\logo-partners.jpg" />
+    <Content Include="Content\images\meet-asknuts.jpg" />
+    <Content Include="Content\images\negative-mark.png" />
+    <Content Include="Content\images\neutral-mark.png" />
+    <Content Include="Content\images\positive-mark.png" />
+    <Content Include="Content\images\slider-arrow.png" />
+    <Content Include="Content\images\spacer.png" />
+    <Content Include="Content\images\thumbs\Negative-thumbs-big.png" />
+    <Content Include="Content\images\thumbs\Negative-thumbs.png" />
+    <Content Include="Content\images\thumbs\Neutral-thumbs-big.png" />
+    <Content Include="Content\images\thumbs\Neutral-thumbs.png" />
+    <Content Include="Content\images\thumbs\Positive-thumbs-big.png" />
+    <Content Include="Content\images\thumbs\Positive-thumbs.png" />
+    <Content Include="Content\images\warranty.png" />
+    <Content Include="Content\jquery-ui.custom.css" />
+    <Content Include="Content\jquery.selectbox.css" />
+    <Content Include="Content\Launch.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\Widget.css" />
+    <Content Include="deploy.txt" />
+    <Content Include="ProfileImages\consultant.jpg" />
+    <Content Include="ProfileImages\Default\defaultAvatar.jpg" />
+    <Content Include="ProfileImages\Default\defaultBigPicture.jpg" />
+    <Content Include="ProfileImages\Default\unknownAvatar.jpg" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\App\Administration.js" />
+    <Content Include="Scripts\App\Catalog.js" />
+    <Content Include="Scripts\App\Chat.js" />
+    <Content Include="Scripts\App\ContinousPaging.js" />
+    <Content Include="Scripts\App\Global.js" />
+    <Content Include="Scripts\App\Partner.js" />
+    <Content Include="Scripts\App\Selectbox.js" />
+    <Content Include="Scripts\App\TinyForm.js" />
+    <Content Include="Scripts\App\Editors.js" />
+    <Content Include="Scripts\App\jQueryExtensions.js" />
+    <Content Include="Scripts\App\Paging.js" />
+    <Content Include="Scripts\App\Payment.js" />
+    <Content Include="Scripts\App\Profile.js" />
+    <Content Include="Scripts\jquery-1.8.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.1.js" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.dropkick-1.0.0.js" />
+    <Content Include="Scripts\jquery.selectbox-0.2.min.js" />
+    <Content Include="Scripts\jquery.textareaAutoResize.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jsUploader\jquery.fileupload.js" />
+    <Content Include="Scripts\jsUploader\jquery.iframe-transport.js" />
+    <Content Include="Scripts\jsUploader\vendor\jquery.ui.widget.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\paging.js" />
+    <Content Include="Content\fonts\FontAwesome\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\FontAwesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\FontAwesome\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome\FontAwesome.otf" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="T4MVC.tt.hooks.t4" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\Mails.cshtml" />
+    <Content Include="Scripts\App\Account.js" />
+    <Content Include="Views\Account\_ExpertCategoryAttributes.cshtml" />
+    <Content Include="Views\Account\ExpertCategoryAttributes.cshtml" />
+    <Content Include="Views\Catalog\ExpertListSeo.cshtml" />
+    <Content Include="Views\Catalog\ProcessKeyword.cshtml" />
+    <Content Include="Views\Catalog\SetKeywordAttributes.cshtml" />
+    <Content Include="Views\Catalog\_KeywordCategoryAttributes.cshtml" />
+    <Content Include="Views\Catalog\NoNewKeyword.cshtml" />
+    <Content Include="Views\Catalog\QuestionListSeo.cshtml" />
+    <Content Include="Views\Catalog\KeywordListExperts.cshtml" />
+    <Content Include="Views\Catalog\KeywordListPhrases.cshtml" />
+    <Content Include="Views\Catalog\PhraseDetails.cshtml" />
+    <Content Include="Views\Catalog\KeywordListQuestions.cshtml" />
+    <Content Include="Views\Catalog\_AddKeywordWindow.cshtml" />
+    <Content Include="Views\Thread\_PriceProposalNotification.cshtml" />
+    <Content Include="Views\Shared\_Pager.cshtml" />
+    <Content Include="Views\Profile\ExpertWidget.cshtml" />
+    <Content Include="Views\Administration\EventsLog.cshtml" />
+    <Content Include="Views\StaticPages\About.cshtml" />
+    <Content Include="Views\StaticPages\ExpertFAQ.cshtml" />
+    <Content Include="Views\StaticPages\_HelpQuestionStandard.cshtml" />
+    <Content Include="Views\Profile\PartnerProgram.cshtml" />
+    <Content Include="Views\Chat\ChatFrame.cshtml" />
+    <Content Include="Views\Emails\ActivationEmail.cshtml" />
+    <Content Include="Views\Emails\PasswordForgottenEmail.cshtml" />
+    <Content Include="Views\Emails\ConfirmationEmail.cshtml" />
+    <Content Include="Views\Chat\Support.cshtml" />
+    <Content Include="Views\Chat\ChatsOverview.cshtml" />
+    <Content Include="Views\Thread\ProposeAdditionalService.cshtml" />
+    <Content Include="Views\Thread\AdditionalServiceInformation.cshtml" />
+    <Content Include="Views\Chat\Chat.cshtml" />
+    <Content Include="Views\Chat\ModeratorChatList.cshtml" />
+    <Content Include="Views\Emails\NewInterestingThreadEmail.cshtml" />
+    <Content Include="Views\Emails\ChatSummaryEmail.cshtml" />
+    <Content Include="Views\Emails\NewExpertEmail.cshtml" />
+    <Content Include="Views\Chat\UserChatList.cshtml" />
+    <Content Include="Views\Chat\_EmailForm.cshtml" />
+    <Content Include="Views\Administration\Events\SystemBreakdownReaction.cshtml" />
+    <Content Include="Mvc.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\fonts\DroidSans\DroidSans-Bold-webfont.eot" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-Bold-webfont.ttf" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-Bold-webfont.woff" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-webfont.eot" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-webfont.ttf" />
+    <Content Include="Content\fonts\DroidSans\DroidSans-webfont.woff" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Profile\PartnerStatistics.cshtml" />
+    <Content Include="Views\Profile\_Income.cshtml" />
+    <Content Include="Views\Administration\UserList.cshtml" />
+    <Content Include="Views\Emails\UserPayoffConfirmationEmail.cshtml" />
+    <Content Include="Views\Administration\Events\ExpertQualificationsChangedReaction.cshtml" />
+    <Content Include="Views\Administration\Events\NewAdditionalServiceReactionModel.cshtml" />
+    <Content Include="Views\Emails\PartnerStatisticsEmail.cshtml" />
+    <Content Include="Views\Thread\ModeratorQuestionList.cshtml" />
+    <Content Include="Views\Thread\ThreadDetailsForModerator.cshtml" />
+    <Content Include="Views\Thread\IncreaseExpertValueForm.cshtml" />
+    <Content Include="Views\Administration\Events\ThreadIssueReaction.cshtml" />
+    <Content Include="Views\Administration\Events\CashPaymentReaction.cshtml" />
+    <Content Include="Views\Administration\Events\NoAnswerReaction.cshtml" />
+    <Content Include="Views\Thread\UserDefinedPriceForm.cshtml" />
+    <Content Include="Views\Administration\Events\ExpertPriceProposalReaction.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Launch\Welcome.cshtml" />
+    <Content Include="Views\Launch\UserSubscribe.cshtml" />
+    <Content Include="Views\Launch\ExpertSubscribe.cshtml" />
+    <Content Include="Views\Launch\_Layout.cshtml" />
+    <Content Include="Views\Launch\_ViewStart.cshtml" />
+    <Content Include="Views\Profile\RecommendExpert.cshtml" />
+    <Content Include="Views\Emails\RecommendationEmail.cshtml" />
+    <Content Include="Views\Emails\RecommenderEmail.cshtml" />
+    <Content Include="Views\Emails\RecommenderNotRegisteredEmail.cshtml" />
+    <Content Include="Views\Administration\Events\UserFailureReaction.cshtml" />
+    <Content Include="Views\Emails\AdditionalServiceEmail.cshtml" />
+    <Content Include="Views\Emails\ExpertEmail.cshtml" />
+    <Content Include="Views\Emails\MonthlyAskEncouragement.cshtml" />
+    <Content Include="Views\Account\QuickSignIn.cshtml" />
+    <Content Include="Views\StaticPages\_MeetAskNutsHint.cshtml" />
+    <Content Include="Views\Thread\_AnswerInstructions.cshtml" />
+    <Content Include="Views\Profile\MyQuestions.cshtml" />
+    <Content Include="Views\Thread\_DisplaySelectedCategoryAttributes.cshtml" />
+    <Content Include="Views\Thread\_AttachmentTiles.cshtml" />
+    <Content Include="Views\Profile\MyAnswers.cshtml" />
+    <Content Include="Views\Payment\ProviderChannelModal.cshtml" />
+    <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
+    <Content Include="Views\Payment\PaymentModal.cshtml" />
+    <Content Include="Views\StaticPages\AdCampaignHome.cshtml" />
+    <Content Include="Views\Thread\_WarrantyFrame.cshtml" />
+    <Content Include="Views\StaticPages\MeetAsknuts.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Profile\_ProfileNavtabs.cshtml" />
+    <Content Include="Views\Thread\_CatalogThread.cshtml" />
+    <Content Include="Views\Thread\_SatisfactionTable.cshtml" />
+    <Content Include="Views\Thread\_Question.cshtml" />
+    <Content Include="Views\Thread\_QuestionsListItems.cshtml" />
+    <Content Include="Views\Thread\_ThreadAcceptedNorification.cshtml" />
+    <Content Include="Views\Thread\_KeywordTilesItems.cshtml" />
+    <Content Include="Views\Thread\_ProfileQuestionsItems.cshtml" />
+    <Content Include="Views\Administration\Events\BecomePartnerRequestReaction.cshtml" />
+    <Content Include="Views\Emails\PartnerAcceptedEmail.cshtml" />
+    <Content Include="Views\Emails\PartnerRejectedEmail.cshtml" />
+    <Content Include="Views\Profile\PartnerWidget.cshtml" />
+    <Content Include="Views\Profile\PartnerWidgetPreview.cshtml" />
+    <Content Include="Views\Thread\_UnknownExpertBox.cshtml" />
+    <Content Include="Views\Administration\CreateCategoryAttribute.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CategoryAttributeForm.cshtml" />
+    <Content Include="Views\Administration\CategoryList.cshtml" />
+    <Content Include="Views\Administration\_SpecificEvents.cshtml" />
+    <Content Include="Views\Administration\EditCategoryAttribute.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Administration\_CategoryAttributeOptionsEditor.cshtml" />
+    <Content Include="Views\Administration\_CategoryAttributeOptionsList.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\expert_verified_64_64.png" />
+    <Content Include="Content\images\feedback-icons-small.png" />
+    <Content Include="Content\images\feedback-icons.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\user_logo_64_64.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fileupload.js" />
+    <Content Include="Scripts\App\Thread.js" />
+    <Content Include="Scripts\jqPlot\changes.txt" />
+    <Content Include="Scripts\jqPlot\copyright.txt" />
+    <Content Include="Scripts\jqPlot\excanvas.js" />
+    <Content Include="Scripts\jqPlot\excanvas.min.js" />
+    <Content Include="Scripts\jqPlot\gpl-2.0.txt" />
+    <Content Include="Scripts\jqPlot\jqPlotCssStyling.txt" />
+    <Content Include="Scripts\jqPlot\jqPlotOptions.txt" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.css" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.js" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.min.css" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.min.js" />
+    <Content Include="Scripts\jqPlot\jquery.js" />
+    <Content Include="Scripts\jqPlot\jquery.min.js" />
+    <Content Include="Scripts\jqPlot\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jqPlot\optionsTutorial.txt" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.barRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ciParser.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.cursor.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.cursor.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dragable.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dragable.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.highlighter.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.json2.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.json2.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pointLabels.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.trendline.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.trendline.min.js" />
+    <Content Include="Scripts\jqPlot\README.txt" />
+    <Content Include="Scripts\jqPlot\usage.txt" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\jquery.hoverIntent.js" />
+    <Content Include="Scripts\jquery.hoverIntent.min.js" />
+    <Content Include="Scripts\jquery.mvccontrib.grid.js" />
+    <Content Include="Scripts\jquery.mvccontrib.grid.min.js" />
+    <Content Include="Scripts\superfish.js" />
+    <Content Include="Views\Payment\PaymentRedirect.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Payment\_KIPProviderForm.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Payment\_PaymentForm.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error500.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Experts.Core\Experts.Core.csproj">
+      <Project>{E020A1EC-B72D-4688-86CE-A87ADAC2B2B8}</Project>
+      <Name>Experts.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Experts.Resources\Experts.Resources.csproj">
+      <Project>{220673AF-FD64-421C-A3D5-8ACC393DE23E}</Project>
+      <Name>Experts.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Attachments\Web.config" />
+    <Content Include="Views\StaticPages\Home.cshtml" />
+    <Content Include="Views\Thread\_Form.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
+    <Content Include="Views\Account\Activate.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SimplePasswordForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PasswordForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ExpertProfileFormModel.cshtml" />
+    <Content Include="Views\Account\BecomeExpert.cshtml" />
+    <Content Include="Views\Account\PasswordForgotten.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ExpertSignUp.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProfileForm.cshtml" />
+    <Content Include="Views\Emails\ThreadEmail.cshtml" />
+    <Content Include="Views\StaticPages\PolicyWeb.cshtml" />
+    <Content Include="Views\Account\ResendActivationEmail.cshtml" />
+    <Content Include="Views\Thread\AvailableQuestionList.cshtml" />
+    <Content Include="Views\Thread\Options.cshtml" />
+    <Content Include="Views\StaticPages\PolicyPrivate.cshtml" />
+    <Content Include="Views\Thread\ThreadDetailsForExperts.cshtml" />
+    <Content Include="Views\Thread\_ExpertOverview.cshtml" />
+    <Content Include="Views\Thread\_UserOverview.cshtml" />
+    <Content Include="Views\Thread\ThreadDetailsForAuthor.cshtml" />
+    <Content Include="Views\Thread\_Thread.cshtml" />
+    <Content Include="Views\Thread\_Post.cshtml" />
+    <Content Include="Views\Thread\_CreatePostForm.cshtml" />
+    <Content Include="Views\Thread\_ExpertBox.cshtml" />
+    <Content Include="Views\Thread\_ThreadDetailsMenu.cshtml" />
+    <Content Include="Views\Thread\CreateFeedback.cshtml" />
+    <Content Include="Views\Thread\_ReleaseTimer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Categories.cshtml" />
+    <Content Include="Views\Payment\Payment.cshtml" />
+    <Content Include="Views\Payment\_KIPProviderChannelSelect.cshtml" />
+    <Content Include="Views\Thread\ReportIssueForm.cshtml" />
+    <Content Include="Views\Profile\FeedbackListPartial.cshtml" />
+    <Content Include="Views\Thread\PriceProposalForm.cshtml" />
+    <Content Include="Views\Thread\CatalogQuestionList.cshtml" />
+    <Content Include="Views\Thread\_ExpertProposals.cshtml" />
+    <Content Include="Views\Shared\FlashMessage.cshtml" />
+    <Content Include="Views\Thread\SanitizationQuestionList.cshtml" />
+    <Content Include="Views\Thread\_PostSanitize.cshtml" />
+    <Content Include="Views\Profile\ExpertStatistics.cshtml" />
+    <Content Include="Views\Shared\ActionLinkWithConfirmation.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Object.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Profile\Balance.cshtml" />
+    <Content Include="Views\Profile\PayoffForm.cshtml" />
+    <Content Include="Views\Development\PartnerScript.cshtml" />
+    <Content Include="Views\Thread\CategoryAttributes.cshtml" />
+    <Content Include="Views\Administration\_TopMenuModerator.cshtml" />
+    <Content Include="Views\Thread\ThreadDetailsForSanitization.cshtml" />
+    <Content Include="Views\Thread\AuthenticationTypeSelect.cshtml" />
+    <Content Include="Views\Thread\CatalogThreadDetails.cshtml" />
+    <Content Include="Views\Thread\_AttachmentPost.cshtml" />
+    <Content Include="Views\Thread\_CategoryAttributes.cshtml" />
+    <Content Include="Views\Thread\GiveUp.cshtml" />
+    <Content Include="Views\Thread\_FormTiny.cshtml" />
+    <Content Include="Views\Thread\_MultiExpertBox.cshtml" />
+    <Content Include="Views\Profile\OpinionSingle.cshtml" />
+    <Content Include="Views\Profile\FeedbackList.cshtml" />
+    <Content Include="Views\Profile\FeedbackComment.cshtml" />
+    <Content Include="Views\Profile\ExpertOverview.cshtml" />
+    <Content Include="Views\Profile\UserOpinion.cshtml" />
+    <Content Include="Views\Shared\Opinions.cshtml" />
+    <Content Include="Views\Payment\PaymentConfirmation.cshtml" />
+    <Content Include="Views\Thread\_ThreadCategoryAttributes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>40534</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:40534/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://asknuts.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

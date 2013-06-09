@@ -1,0 +1,33 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.CatalogThreadQuestion
+           
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<h2 class="with-hint">
+    @Model.Thread.CatalogThreadTitle
+</h2>
+<p class="hint">@Resources.Thread.Expert <span class="purple">@Model.Thread.Expert.PublicName</span> @Resources.Thread.AnsweredQuestion</p>
+
+<hr/>
+
+@Html.Action(MVC.Thread.ShowPost(Model.Thread.Posts.First(), true))
+
+<div class="row">
+    <div class="span16">
+
+        <div id="allposts">
+            @Html.Partial(MVC.Thread.Views._CatalogThread, Model.Thread)
+        </div>
+
+        @if (!AuthenticationHelper.IsAuthenticated || AuthenticationHelper.CurrentUser.Id != Model.ExpertOverviewViewModel.User.Id)
+        {
+            <div><h3>@Resources.Thread.ThreadAskDirectQuestionToExpert @Model.Thread.Expert.PublicName</h3></div>
+            @Html.Partial(MVC.Thread.Views._FormTiny, Model)
+        }
+    </div>
+    <aside class="span8">
+       @Html.Action(MVC.Thread.ShowExpertInfo(Model.Thread))
+    </aside>
+</div>

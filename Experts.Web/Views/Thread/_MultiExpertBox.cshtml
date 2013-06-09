@@ -1,0 +1,26 @@
+﻿@model Experts.Web.Models.Threads.MultiExpertBoxModel
+
+<div>
+    <div class="inner">
+        <h3>@Model.Title</h3>
+
+        @if (Model.ExpertIds.Count() > 1)
+        {
+            <span class="pager">
+                <a href="javascript:void(0)" id="previous-expert">&lt;</a>
+                <a href="javascript:void(0)" id="next-expert">&gt;</a>
+            </span>
+        }
+    </div>
+    
+    <hr/>
+
+    <div id="expert-overview" class="inner">
+        @Html.Partial(MVC.Thread.Views._ExpertOverview, Model.InitialExpert)
+    </div>
+    
+    <script type="text/javascript">
+        thread.initMultiExpertBox(@Json.Encode(Model.ExpertIds), @(Model.AreFeedbacksVisible ? "true" : "false"));
+    </script>
+</div>
+

@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Activate_Description" xml:space="preserve">
+    <value>Aktywacja konta użytkownika.</value>
+  </data>
+  <data name="Account_Activate_Title" xml:space="preserve">
+    <value>Aktywacja konta</value>
+  </data>
+  <data name="Account_BecomeExpert_Title" xml:space="preserve">
+    <value>Zostań ekspertem</value>
+  </data>
+  <data name="Account_BecomePartner_Title" xml:space="preserve">
+    <value>Zostań partnerem</value>
+  </data>
+  <data name="Account_ExpertCategoryAttributes_Title" xml:space="preserve">
+    <value>Sprecyzuj kompetencje w kategorii</value>
+  </data>
+  <data name="Account_ExpertSignUp_Description" xml:space="preserve">
+    <value>Zgłoszenie nowego eksperta. </value>
+  </data>
+  <data name="Account_ExpertSignUp_Title" xml:space="preserve">
+    <value>Zostań ekspertem</value>
+  </data>
+  <data name="Account_KeySignIn_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_KeySignIn_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_PasswordForgotten_Description" xml:space="preserve">
+    <value>Przypomnienie hasła w portalu.</value>
+  </data>
+  <data name="Account_PasswordForgotten_Title" xml:space="preserve">
+    <value>Przypomnienie hasła</value>
+  </data>
+  <data name="Account_ResendActivationEmail_Description" xml:space="preserve">
+    <value>Ponowne wysłanie linku aktywacyjnego.</value>
+  </data>
+  <data name="Account_ResendActivationEmail_Title" xml:space="preserve">
+    <value>Ponownie wysłanie linku aktywacyjnego</value>
+  </data>
+  <data name="Account_ResetPassword_Description" xml:space="preserve">
+    <value>Ustawianie nowego hasła w portalu.</value>
+  </data>
+  <data name="Account_ResetPassword_Title" xml:space="preserve">
+    <value>Wpisz nowe hasło</value>
+  </data>
+  <data name="Account_SignIn_Description" xml:space="preserve">
+    <value>Logowanie do portalu.</value>
+  </data>
+  <data name="Account_SignIn_Title" xml:space="preserve">
+    <value>Logowanie</value>
+  </data>
+  <data name="Account_SignOut_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_SignUp_Description" xml:space="preserve">
+    <value>Rejestracja konta użytkownika.</value>
+  </data>
+  <data name="Account_SignUp_Title" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="Administration_CreateCategoryAttribute_Title" xml:space="preserve">
+    <value>Nowy atrybut kategorii</value>
+  </data>
+  <data name="Administration_CategoryList_Title" xml:space="preserve">
+    <value>Lista kategorii</value>
+  </data>
+  <data name="Administration_EventsLog_Title" xml:space="preserve">
+    <value>Log systemowy</value>
+  </data>
+  <data name="Administration_UserList_Title" xml:space="preserve">
+    <value>Lista użytkowników</value>
+  </data>
+  <data name="Catalog_AddKeyword_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Catalog_ExpertListSeo_Description" xml:space="preserve">
+    <value>Najpopulaniejsi eksperci w portalu.</value>
+  </data>
+  <data name="Catalog_ExpertListSeo_Title" xml:space="preserve">
+    <value>Wyszukiwany ekspert</value>
+  </data>
+  <data name="Catalog_KeywordListExperts_Description" xml:space="preserve">
+    <value>Najpopulaniejsi eksperci w portalu.</value>
+  </data>
+  <data name="Catalog_KeywordListExperts_Title" xml:space="preserve">
+    <value>Popularni eksperci</value>
+  </data>
+  <data name="Catalog_KeywordListPhrases_Description" xml:space="preserve">
+    <value>Najczęściej wyszukiwane frazy.</value>
+  </data>
+  <data name="Catalog_KeywordListPhrases_Title" xml:space="preserve">
+    <value>Wyszukiwane zwroty</value>
+  </data>
+  <data name="Catalog_KeywordListQuestions_Description" xml:space="preserve">
+    <value>Najpopularniejsze temat pytań w portalu.</value>
+  </data>
+  <data name="Catalog_KeywordListQuestions_Title" xml:space="preserve">
+    <value>Popularne tematy pytań</value>
+  </data>
+  <data name="Catalog_PhraseDetails_Description" xml:space="preserve">
+    <value>Popularne wyszukiwane zwroty.</value>
+  </data>
+  <data name="Catalog_PhraseDetails_Title" xml:space="preserve">
+    <value>Wyszukiwany zwrot</value>
+  </data>
+  <data name="Catalog_ProcessKeyword_Title" xml:space="preserve">
+    <value>Moderacja słowa kluczowego</value>
+  </data>
+  <data name="Catalog_QuestionListSeo_Description" xml:space="preserve">
+    <value>Lista tematów bez odpowiedzi.</value>
+  </data>
+  <data name="Catalog_QuestionListSeo_Title" xml:space="preserve">
+    <value>Lista tematów bez odpowiedzi</value>
+  </data>
+  <data name="Catalog_SetKeywordAttributes_Title" xml:space="preserve">
+    <value>Moderacja słowa kluczowego</value>
+  </data>
+  <data name="Catalog_SiteMapXml_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Catalog_SiteMapXml_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Catalog_StoreKeyword_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Chat_ChatsOverview_Title" xml:space="preserve">
+    <value>Pytania użytkowników</value>
+  </data>
+  <data name="Chat_CreateMessage_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Chat_CreateMessage_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Chat_Support_Title" xml:space="preserve">
+    <value>Biuro Obsługi Klienta</value>
+  </data>
+  <data name="Error_Error500_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Error_Error500_Title" xml:space="preserve">
+    <value>Błąd aplikacji</value>
+  </data>
+  <data name="Launch_ExpertSubscribe_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Launch_ExpertSubscribe_Title" xml:space="preserve">
+    <value>asknuts.com - potwierdzenie</value>
+  </data>
+  <data name="Launch_UserSubscribe_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Launch_UserSubscribe_Title" xml:space="preserve">
+    <value>asknuts.com - potwierdzenie</value>
+  </data>
+  <data name="Launch_Welcome_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Launch_Welcome_Title" xml:space="preserve">
+    <value>asknuts.com - Witamy!</value>
+  </data>
+  <data name="Payment_PaymentConfirmation_Title" xml:space="preserve">
+    <value>Wynik wpłaty środków za odpowiedź.</value>
+  </data>
+  <data name="Payment_ProcessPayment_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_Balance_Title" xml:space="preserve">
+    <value>Bilans płatności</value>
+  </data>
+  <data name="Profile_CheckExpertRegistration_Description" xml:space="preserve">
+    <value>Rejestracja polecanego eksperta.</value>
+  </data>
+  <data name="Profile_CheckExpertRegistration_Title" xml:space="preserve">
+    <value>Zarejestruj się z polecenia</value>
+  </data>
+  <data name="Profile_ConfirmEmail_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditCategories_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditEmail_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditExpertMicroprofile_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditExpertPublicName_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditModeratorPublicName_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditPassword_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_EditPhoneNumber_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_Edit_Title" xml:space="preserve">
+    <value>Profil użytkownika</value>
+  </data>
+  <data name="Profile_ExpertOverview_Description" xml:space="preserve">
+    <value>Informację o zweryfikowanym przez nas ekspercie.</value>
+  </data>
+  <data name="Profile_ExpertOverview_Title" xml:space="preserve">
+    <value>Informacje o ekspercie</value>
+  </data>
+  <data name="Profile_ExpertStatistics_Description" xml:space="preserve">
+    <value>Statystyki ocen i aktywności eksperta.</value>
+  </data>
+  <data name="Profile_ExpertStatistics_Title" xml:space="preserve">
+    <value>Statystyki eksperta</value>
+  </data>
+  <data name="Profile_FeedbackList_Title" xml:space="preserve">
+    <value>Lista ocen eksperta</value>
+  </data>
+  <data name="Profile_MyAnswers_Title" xml:space="preserve">
+    <value>Moje odpowiedzi</value>
+  </data>
+  <data name="Profile_MyQuestions_Title" xml:space="preserve">
+    <value>Moje pytania</value>
+  </data>
+  <data name="Profile_OpinionSingle_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_OpinionSingle_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_PartnerProgram_Title" xml:space="preserve">
+    <value>Program partnerski</value>
+  </data>
+  <data name="Profile_PartnerStatistics_Title" xml:space="preserve">
+    <value>Statystyki partnera</value>
+  </data>
+  <data name="Profile_UploadImage_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Profile_UserOpinion_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StaticPages_AdCampaignHome_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StaticPages_AdCampaignHome_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StaticPages_Home_Description" xml:space="preserve">
+    <value>Profesjonalni eksperci i odpowiedzi na pytania. Gwarancja satysfakcji. Prawo, podatki, finanse, zdrowie,  nauka, miłość i uczucia.</value>
+  </data>
+  <data name="StaticPages_Home_Title" xml:space="preserve">
+    <value>Zadaj pytanie ekspertom!</value>
+  </data>
+  <data name="StaticPages_MeetAsknuts_Description" xml:space="preserve">
+    <value>Dowiedz się więcej o portalu Asknuts. Baza wiedzy o Asknuts.com</value>
+  </data>
+  <data name="StaticPages_MeetAsknuts_Title" xml:space="preserve">
+    <value>Poznaj &lt;span&gt;AskNuts!&lt;/span&gt;</value>
+  </data>
+  <data name="StaticPages_PageNotFound_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StaticPages_PageNotFound_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_AdditionalServiceInformation_Title" xml:space="preserve">
+    <value>Dodatkowe usługi</value>
+  </data>
+  <data name="Thread_AvailableQuestionList_Title" xml:space="preserve">
+    <value>Pytania zadane przez użytkowników</value>
+  </data>
+  <data name="Thread_CatalogQuestionList_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_CatalogQuestionList_Title" xml:space="preserve">
+    <value>Katalog odpowiedzi</value>
+  </data>
+  <data name="Thread_CatalogThreadDetails_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_CatalogThreadDetails_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_CategoryAttributes_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_CategoryAttributes_Title" xml:space="preserve">
+    <value>Sprecyzuj pytanie</value>
+  </data>
+  <data name="Thread_CreatePost_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_DeclineAdditionalService_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_DeleteAttachment_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_DeletePost_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_DeleteThread_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_GetAttachment_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_GetAttachment_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_GiveUp_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_ModeratorQuestionList_Title" xml:space="preserve">
+    <value>Moderacja pytań</value>
+  </data>
+  <data name="Thread_MultiExpertBox_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_MultiExpertBox_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_OccupyThread_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_Options_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_Options_Title" xml:space="preserve">
+    <value>Wybierz opcję cenową</value>
+  </data>
+  <data name="Thread_PriceProposalForm_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_ProposeAdditionalService_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_ReleaseReservedQuestion_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_ReportIssueForm_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_SanitizationQuestionList_Title" xml:space="preserve">
+    <value>Lista wątków do oczyszczenia</value>
+  </data>
+  <data name="Thread_Sanitization_Title" xml:space="preserve">
+    <value>Pytanie użytkownika</value>
+  </data>
+  <data name="Thread_Save_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_Save_Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_ShowExpertInfo_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Thread_ShowExpertInfo_Title" xml:space="preserve">
+    <value>Informacje o ekspercie</value>
+  </data>
+  <data name="Thread_ShowThreadDetailsMenu_Title" xml:space="preserve">
+    <value>Menu konwersacji</value>
+  </data>
+  <data name="Thread_ThreadDetails_Title" xml:space="preserve">
+    <value>Szczegóły pytania</value>
+  </data>
+  <data name="Administration_EditCategoryAttribute_Title" xml:space="preserve">
+    <value>Edycja atrybutu</value>
+  </data>
+  <data name="Administration_CreateChildCategoryAttribute_Title" xml:space="preserve">
+    <value>Nowy podatrybut</value>
+  </data>
+  <data name="Administration_DeleteCategoryAttribute_Title" xml:space="preserve">
+    <value>Usuń atrybut</value>
+  </data>
+</root>

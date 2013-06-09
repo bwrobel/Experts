@@ -1,0 +1,11 @@
+﻿@using System.Configuration
+@using Experts.Web.Helpers
+
+<link rel="stylesheet" href="@(ConfigurationManager.AppSettings["BaseUrl"])@Url.Content(Links.Content.Widget_css)">
+
+<div id="asknuts-question-container"></div>
+
+<script type="text/javascript" src="@(ConfigurationManager.AppSettings["BaseUrl"])@Url.Content(Links.Scripts.App.Partner_js)"></script>
+<script type="text/javascript">
+    experts_question({container: 'asknuts-question-container', brokerId: '@AuthenticationHelper.CurrentUser.Partner.Id'});
+</script>

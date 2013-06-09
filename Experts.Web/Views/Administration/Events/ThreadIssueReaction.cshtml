@@ -1,0 +1,62 @@
+﻿@using Experts.Core.Entities
+@model Experts.Web.Models.Events.ThreadIssueReactionModel
+
+<form action="/Administration/ThreadIssueReaction/">
+   
+    <p><strong>Użytkownik zgłosił problem związany z wątkiem: @Model.Event.RelatedThread.Name</strong></p>
+    @{
+        var duplicateCount = Model.Event.RelatedThread.Issues.Count(rt => rt.IssueType == ThreadIssueType.Duplicate || rt.IssueType == ThreadIssueType.Other);
+        var invalidCategoryCount = Model.Event.RelatedThread.Issues.Count(rt => rt.IssueType == ThreadIssueType.InvalidCategory);
+        var issue = Model.Event.RelatedThread.Issues.Single(i => i.Id == Model.Event.AdditionalId);
+    }
+
+    @switch (issue.IssueType)
+    {
+        case ThreadIssueType.Other:
+        case ThreadIssueType.Duplicate:
+            <p>
+                <strong>@duplicateCount</strong> osób oznaczyło ten wątek jako duplikat lub zgłosiło inny problem. Czy zamknąć ten wątek?
+            </p>
+            <p>
+                @Html.RadioButtonFor(m => m.RemoveDuplication, true) Tak, zamknij wątek <br />
+                @Html.RadioButtonFor(m => m.RemoveDuplication, false) Nie <br />
+            </p>
+            break;
+        case ThreadIssueType.InvalidCategory:
+            <p>
+                <strong>@invalidCategoryCount</strong> osób oznaczyło ten wątek jako złą kategorię.  Zmiana kategorii wątku: 
+            </p>
+            <p>
+                Orginalna kategoria: <strong>@Model.Event.RelatedThread.Category.Name</strong>
+            </p>
+            <p>
+                @Html.RadioButtonFor(m => m.ChosenCategoryId, Model.Event.RelatedThread.Category.Id, new { @checked = true })
+                @Model.Event.RelatedThread.Category.Name
+                <br />
+
+                @foreach (var category in Model.Categories)
+                {
+                    if(category.Id != Model.Event.RelatedThread.Category.Id)
+                    {
+                        @Html.RadioButtonFor(m => m.ChosenCategoryId, category.Id, false)
+                        @category.Name
+                        <br />
+                    }
+                }
+
+            </p>
+            break;
+    }
+
+   @if (Model.Event.RelatedThread.Issues.Any())
+   {
+       <p>
+         Komentarz do reakcji:
+       </p>
+       <p>
+        @Html.TextAreaFor(m => m.IssueDetails)
+       </p>
+   }
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

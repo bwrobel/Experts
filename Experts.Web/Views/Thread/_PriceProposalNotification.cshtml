@@ -1,0 +1,21 @@
+﻿@using Experts.Core.Entities
+@using Experts.Core.Utils
+@using Experts.Web.Helpers
+
+@model Thread
+
+<div class="alert alert-info alert-menu">
+    @{var priceProposal = Model.PriceProposals.Single(pp => pp.Expert == AuthenticationHelper.CurrentUser.Expert);}
+
+    @Resources.Thread.NewPriceProposal
+    <b>
+        @{
+            var newValue = ThreadValueHelper.CalculateValueBasedOnExpertLevel(priceProposal.SurchargeValue, AuthenticationHelper.CurrentUser.Expert);
+        }
+        @newValue @Resources.Global.CurrencyPLN
+    </b>
+    @if(priceProposal.VerificationStatus == PriceProposalVerificationStatus.Changed)
+    {
+        <p>@Resources.Thread.PriceProposalNotification</p>
+    }
+</div>

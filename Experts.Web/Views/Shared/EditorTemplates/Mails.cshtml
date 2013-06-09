@@ -1,0 +1,23 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Forms.MailConfigurationForm
+
+<p>
+    @Resources.EmailConfigurations.MenuEmailConfigurations
+</p>
+<p>
+    @using(Html.BeginForm())
+    {
+        var index = 0;
+        foreach (var selectedEmail in Model.SelectedEmails)
+        {
+            <div class="checkbox">
+                @Html.Hidden("SelectedEmails[" + index + "].Key", selectedEmail.Key)
+                @Html.CheckBox("SelectedEmails[" + index + "].Value", selectedEmail.Value) 
+                <span> @selectedEmail.Key.Describe(Resources.EmailConfigurations.ResourceManager)</span>
+            </div>
+            index++;
+        }
+    
+        @Html.HiddenFor(m => m.RecipientTypes);
+    }
+</p>

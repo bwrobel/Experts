@@ -1,0 +1,20 @@
+﻿@using System.Globalization
+@using Experts.Web.Helpers
+@model decimal?
+
+<div class="control-group">
+    @Html.LabelFor(model => model, new { @class = "control-label" })
+    @*<label class="control-label">@ViewData.ModelMetadata.DisplayName</label>*@
+
+    <div class="controls">
+        @{ViewData.TemplateInfo.HtmlFieldPrefix = string.Empty;}
+        @Html.TextBox(ViewData.ModelMetadata.PropertyName, Model, FormHelper.GetHtmlAttributes(ViewData.ModelMetadata))
+    </div>
+    <div class="controls">
+        @Html.ValidationMessage(ViewData.ModelMetadata.PropertyName)
+    </div>
+</div>
+
+<script>
+    editors.initDecimalEditor('@NumberFormatInfo.CurrentInfo.CurrencyDecimalSeparator');
+</script>

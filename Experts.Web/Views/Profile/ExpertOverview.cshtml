@@ -1,0 +1,123 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Models.Threads
+@model ExpertOverviewQuestion
+
+
+<h2>
+    <span>@Model.ExpertOverviewViewModel.PublicName</span>
+    @if (Model.ExpertOverviewViewModel.IsVerified)
+    {
+        <a class="expert-verification-details" data-original-title="@Resources.Account.VerifiedExpertCapital" data-content="@Model.ExpertOverviewViewModel.VerificationDetails"> - @Resources.Account.VerifiedExpert <i class="icon-ok-sign"></i></a>
+    }
+</h2>
+<hr/>
+
+<div class="row expert-overview">
+    <div class="span8">
+        @Html.ProfileBigAvatar(Model.ExpertOverviewViewModel.User.Expert)
+        
+        @if (Model.ExpertOverviewViewModel.NegativeCount + Model.ExpertOverviewViewModel.NeutralCount + Model.ExpertOverviewViewModel.PositiveCount > 0)
+        {
+            <div class="expert-statistics">
+                <div>@(Math.Round(Model.ExpertOverviewViewModel.PositivePercentage, 0, MidpointRounding.AwayFromZero) + "%") @Resources.Account.OfPositiveComments</div>
+                <small>@Model.ExpertOverviewViewModel.PositiveCount @Resources.Account.Positive, @Model.ExpertOverviewViewModel.NeutralCount @Resources.Account.Neutral, @Model.ExpertOverviewViewModel.NegativeCount @Resources.Account.Negative</small>
+            </div>
+        }
+    </div>
+    <div class="span15 offset1">
+        <div class="row">
+            <div class="span10">
+                <h3>@Model.ExpertOverviewViewModel.PublicName</h3>@Model.ExpertOverviewViewModel.Position
+            </div>
+            <div class="expert-online">
+                <p>@Resources.Account.StatusExpert</p>
+                @if (ActiveUsersHelper.IsActive(Model.ExpertOverviewViewModel.Id))
+                {
+                    <span style="color: #ad5b79"> <i class="icon-eye-open"></i> @Resources.Account.StatusOnline</span>
+                }
+                else
+                {
+                    <span> <i class="icon-eye-close"></i> @Resources.Account.StatusOffline</span>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="expert-description span9">
+                <strong>@Resources.Account.AboutMe:</strong>
+                <em>@Model.ExpertOverviewViewModel.Description</em>
+
+                @if (AuthenticationHelper.IsModerator)
+                {
+                    <br/><em>@Model.ExpertOverviewViewModel.PhoneNumber</em>
+                    <br/><em>@Model.ExpertOverviewViewModel.User.Email</em>
+                }
+            </div>
+
+            <div class="categories-info pull-right">
+                <strong>@Resources.Account.IAmExpertIn:</strong>
+
+                @foreach (var category in Model.AvailableCategories)
+                {
+                    if (AuthenticationHelper.IsModerator)
+                    {
+                        <div id="CategoryAttribute-@category.Id" data-original-title="@category.Name" data-content="@Html.Action(MVC.Account.ExpertCategoryAttributesPopup(category.Id, Model.ExpertOverviewViewModel.Id)).ToString()">@Html.CategoryIconTiny(category) <span>@category.Name</span></div>   
+                    }
+                    else
+                    {
+                        <div>@Html.CategoryIconTiny(category) <span>@category.Name</span></div>
+                    }
+                }
+            </div>
+            <div class="span15">
+                <h3>@Resources.Account.AskMeAQuestion:</h3>
+                
+                @*TODO: DO WYWALENIA TO PONIŻEJ I ZASTAPIENIA FORMEM MINI *@
+                @*<textarea  style="width: 100%; margin-top: 10px; height: 80px; border-color: #CF779A">TODO: Dodaj tutaj nowy mały formularz</textarea>
+                <button class="btn-inverse btn pull-right">Zadaj pytanie</button>*@
+                
+                @Html.Partial(MVC.Thread.Views._FormTiny, Model)
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.ExpertOverviewViewModel.Feedbacks.Any())
+{
+    <h3>@Resources.Account.FeedbacksToMyAnswers:</h3>
+    <ul class="expert-feedbacks">
+    @foreach (var feedback in Model.ExpertOverviewViewModel.Feedbacks)
+    {
+        <li>
+            <hr />
+            <div class="row">
+                <div class="category-icon-big span2">
+                    @Html.FeedbackMarkIconBig(feedback.Mark)
+                    <span>@EnumHelper.Describe(feedback.Mark, Resources.Thread.ResourceManager)</span>
+                </div>
+                <div class="span21">
+                    @feedback.Content
+                </div>
+            </div>
+        </li>
+    }
+    </ul>
+}
+
+@if (AuthenticationHelper.IsModerator)
+{
+    @Html.Partial(MVC.Administration.Views._SpecificEvents, Model.ExpertEvents)
+}
+
+@{
+    var categoryCount = new CategoryAttributeHelper().GetCategoryCount();
+}
+
+<script type="text/javascript">
+    for (var i = 1; i <= @categoryCount; i++) {
+        $("#CategoryAttribute-" + i).popover({ placement: 'left' });
+    }
+</script>
+
+<script type="text/javascript">
+    $(".expert-verification-details").popover();
+</script>

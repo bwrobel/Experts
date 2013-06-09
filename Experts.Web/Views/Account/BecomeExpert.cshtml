@@ -1,0 +1,17 @@
+﻿@model Experts.Web.Models.Account.ExpertProfileFormModel
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr/>
+
+<section>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            @Html.EditorForModel()
+            @Html.EditorForModel(MVC.Shared.Views.EditorTemplates.Categories)
+            
+            <input type="submit" value="@Resources.Account.BecomeExpert" class="btn btn-primary"/>
+        </fieldset>
+    }
+</section>

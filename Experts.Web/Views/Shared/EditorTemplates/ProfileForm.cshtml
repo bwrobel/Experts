@@ -1,0 +1,19 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Forms.ProfileForm
+           
+@Html.EditorFor(model => model.EmailForm, FormHelper.GetHtmlAttributes(ViewData.ModelMetadata))
+
+@Html.EditorFor(model => model.PasswordForm, MVC.Shared.Views.EditorTemplates.SimplePasswordForm, new { @autofocus = "autofocus" })
+
+<div>
+    <label class="checkbox">
+        @Html.CheckBoxFor(model => model.Policy)
+        <span>@Resources.Account.PolicyAcceptation
+        @Html.ActionLink(Resources.Account.PolicyWebAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Terms), new {@class="underline"})
+        @Resources.Account.PolicyAcceptationAnd
+        @Html.ActionLink(Resources.Account.PolicyPrivateAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Privacy), new { @class = "underline" }).
+        </span> 
+    </label>
+
+    @Html.ValidationMessageFor(model => model.Policy)
+</div>

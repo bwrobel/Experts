@@ -1,0 +1,50 @@
+﻿@model Experts.Web.Models.Threads.CategoryAttributesThreadFormModel
+
+<div>
+    <h2 class="with-hint">@Html.Raw(Resources.Thread.CategoryAttributesHeader)</h2>
+    <p class="hint">@Resources.Thread.CategoryAttributesDescription</p>
+        
+    @Html.Action(MVC.Thread.Question(Model.ThreadForm))
+    
+    <div>
+        <aside class="span8 offset1">
+            @if (Model.ThreadForm.DirectQuestionExpertId.HasValue)
+            {
+                Html.RenderAction(MVC.Thread.SingleExpertBox(Model.ThreadForm.DirectQuestionExpertId.Value, Resources.Thread.InterestedExpert, Model.ThreadForm.CategoryId));
+            }
+            else
+            {
+                Html.RenderPartial(MVC.Thread.Views._UnknownExpertBox, Model.ThreadForm);
+            }
+        </aside>
+    
+        <section id="attributes-form">
+            @using (Html.BeginForm(MVC.Thread.Options(), FormMethod.Post, new { id = "category-attributes", @class = "form-horizontal span13 offset1" }))
+            {
+                @Html.Partial(MVC.Thread.Views._CategoryAttributes, Model)
+               
+                @Html.HiddenFor(m => m.ThreadForm.CategoryId)
+                @Html.HiddenFor(m => m.ThreadForm.Content)
+                @Html.HiddenFor(m => m.ThreadForm.InterestedExpert)
+
+                @Html.HiddenFor(m=> Model.ThreadForm.DirectQuestionExpertId)
+                @Html.HiddenFor(m => m.ThreadForm.TemporaryAttachmentFolder)
+    
+                
+                <div class="pull-right">
+                    <a href="javascript:void()" id="skip" class="purple">@Resources.Thread.SkipCategoryAttributes</a>
+                    <input type="submit" class="btn btn-primary" value="@Resources.Thread.Continue" />
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#category-attributes #skip').click(function () {
+            $('#category-attributes')[0].reset();
+            $('#category-attributes')[0].submit();
+        });
+    });
+</script>

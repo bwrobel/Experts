@@ -1,0 +1,11 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Utils
+@model Experts.Core.Entities.ExpertStatisticsEmail
+
+@RazorHelper.EmailHeader(Model.RecipientUser)
+     
+@Model.Message
+<br/>
+
+@Resources.Email.ExpertProfileLink
+@NoContextUrl.ActionAbsolute(MVC.Profile.ExpertOverview(Model.RelatedExpert.Id))

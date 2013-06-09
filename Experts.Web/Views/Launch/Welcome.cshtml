@@ -1,0 +1,32 @@
+﻿<div class="spacer"></div>
+
+<section class="description">
+	@Html.Raw(Resources.Launch.MainDescription)
+</section>
+
+<div class="spacer"></div>
+
+<section class="subscriptions">
+	<div class="user">
+		<h3>@Resources.Launch.UserSubscriptionTitle</h3>
+        <div class="description">
+            @Html.Raw(Resources.Launch.UserSubscriptionDescription)
+        </div>
+        @using(Html.BeginForm(MVC.Launch.UserSubscribe()))
+        {
+            @Html.TextBox("email", null, new { type="email", placeholder = Resources.Launch.UserContactPlaceholder })
+            <input type="submit" value="@Resources.Launch.UserSubscribeButton"/>
+        }
+	</div>
+	<div class="expert">
+		<h3>@Resources.Launch.ExpertSubscriptionTitle</h3>
+        <div class="description">
+            @Html.Raw(Resources.Launch.ExpertSubscriptionDescription)
+        </div>
+        @using(Html.BeginForm(MVC.Launch.ExpertSubscribe()))
+        {
+            @Html.TextBox("contact", null, new { placeholder = Resources.Launch.ExpertContactPlaceholder })
+            <input type="submit" value="@Resources.Launch.ExpertSubscribeButton"/>
+        }
+	</div>
+</section>

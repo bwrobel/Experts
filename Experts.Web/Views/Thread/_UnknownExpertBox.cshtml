@@ -1,0 +1,26 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Forms.ThreadForm
+
+<aside class="well with-inners">
+    <div class="inner">
+        <h3>@Resources.Thread.ExpertSearchFrameTitle</h3>
+    </div>
+    <hr/>
+
+    <div class="inner" id="expert-overview">
+        <div class="pull-left embedded-image">
+            @Html.UnknownExpertPicture80x80()
+            <img src="@ImageHelper.UrlToCategoryIconSmall(Model.CategoryId.Value)" class="category-icon-small"/>
+        </div>
+        
+        <div class="expert-attributes unknown">
+            @Resources.Thread.ExpertSearchFrameDescription1
+        </div>
+        
+        
+        <p class="expert-description">
+            @Resources.Thread.ExpertSearchFrameDescription2
+        </p>
+    </div>
+    
+</aside> 

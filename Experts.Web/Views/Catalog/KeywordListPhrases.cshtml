@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Experts.Core.Entities.SEOKeyword>
+
+<script type="text/javascript">
+    continousPaging.initialize();
+</script>
+
+<h2>@ViewBag.PageTitle</h2>
+
+<hr />
+<div class="paged-list">
+    @Html.Partial(MVC.Thread.Views._KeywordTilesItems, Model)
+</div>

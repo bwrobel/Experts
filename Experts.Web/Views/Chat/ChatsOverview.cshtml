@@ -1,0 +1,30 @@
+﻿@using Experts.Web.Models.Chat
+@model ChatsOverviewModel
+
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<div>
+    <ul class="nav nav-tabs">
+        <li @(Model.Filter == ChatsOverviewFilter.Open? "class=active" : "" )> @Html.ActionLink(@Resources.Chat.QuestionsOpen, MVC.Chat.ChatsOverview())</li> 
+        <li @(Model.Filter == ChatsOverviewFilter.WaitingForResponse? "class=active" : "" )> @Html.ActionLink(@Resources.Chat.QuestionsWaitingForResponse, MVC.Chat.ChatsOverview(filter: ChatsOverviewFilter.WaitingForResponse))</li> 
+        <li @(Model.Filter == ChatsOverviewFilter.Closed? "class=active" : "" )> @Html.ActionLink(@Resources.Chat.QuestionsClosed, MVC.Chat.ChatsOverview(filter: ChatsOverviewFilter.Closed))</li> 
+    </ul>
+
+    <div>
+        <div class="span8 embedded-chat">
+            @Html.Action(MVC.Chat.Chat(false, true, Model.Filter == ChatsOverviewFilter.Closed))
+        </div>
+        
+        <div id="chat-list" class="span15">
+            @Html.Action(MVC.Chat.ModeratorChatList(Model.Filter, Model.Page))
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        chat.initChatList('@Model.Filter', @Model.Page, true, true, true);
+    });
+</script>

@@ -1,0 +1,123 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Core.Entities
+@model Experts.Web.Models.Threads.ThreadDetailsModel
+
+<link rel="stylesheet" href="@Url.Content(Links.Content.fancybox.jquery_fancybox_1_3_4_css)" type="text/css" media="screen" />
+<script type="text/javascript" src="@Url.Content(Links.Content.fancybox.jquery_fancybox_1_3_4_pack_js)"></script>
+<script type="text/javascript" src="@Url.Content(Links.Content.fancybox.jquery_easing_1_3_pack_js)"></script>
+
+<div class="overflow-hidden">
+    <div class="row">
+        <div class="span16">
+            @{
+                var visiblePosts = Model.Thread.Posts.AsEnumerable();
+                if (!Model.IsModerationMode)
+                {
+                    Func<Post, bool> filter = null;
+                    if (Model.Thread.Author == AuthenticationHelper.CurrentUser)
+                    {
+                        filter = p => !p.IsVisibleOnlyForExpert();
+                    }
+                    else if (AuthenticationHelper.IsExpert && Model.Thread.Expert == AuthenticationHelper.CurrentUser.Expert)
+                    {
+                        filter = p => !p.IsVisibleOnlyForAuthor();
+                    }
+                    else
+                    {
+                        filter = p => !p.IsVisibleOnlyForExpert() && !p.IsVisibleOnlyForAuthor();
+                    }
+                    visiblePosts = visiblePosts.Where(filter);
+                }
+            }
+
+            @if (visiblePosts.Count() > 1 && visiblePosts.Any(p => p.Author != Model.Thread.Author))
+            {
+                <div>
+                    @for (var i = 1; i < visiblePosts.Count(); i++)
+                    {
+                        var post = visiblePosts.ElementAt(i);
+                        @Html.Action(MVC.Thread.ShowPost(post,isSanitizationMode: Model.IsSanitizationMode))
+                    }
+                </div>
+            }
+            else if (visiblePosts.Count() > 1 && visiblePosts.All(p => p.Author == Model.Thread.Author))
+            {
+                <div>
+                    @for (var i = 1; i < visiblePosts.Count(); i++)
+                    {
+                        var post = visiblePosts.ElementAt(i);
+                        @Html.Action(MVC.Thread.ShowPost(post,isSanitizationMode:Model.IsSanitizationMode))
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("a.fancy").fancybox({
+            'type': 'image',
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'speedIn': 800,
+            'speedOut': 200,
+            'opacity': true,
+            'overlayShow': true,
+            'overlayOpacity': 0.8,
+            'overlayColor': 'black',
+            'titleShow': false
+        });
+    });
+    
+</script>
+
+<script type="text/javascript">
+    $('.fileupload').fileupload({
+        url: '/Thread/ThreadAttachmentUpload',
+        sequentialUploads: true,
+        formData: { threadId: '@Model.Thread.Id' },
+        fail: function () {
+            window.location.reload();
+        },
+        done: function (e, data) {
+            allowAttachmentScrolling = true;
+            $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+
+            if($.browser.msie) {
+                window.location.reload();
+            }
+        },
+        submit: function () {
+            $('.icon-paper-clip').removeClass().addClass('icon-spinner icon-spin');
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var chgselect = function (id, val) {
+            $('select#' + id).val(val);
+        };
+        $('#details-request-button').click(function () {
+            chgselect('post_type', '@PostType.DetailsRequest.ToString()');
+        });
+
+        $('#answer-button').click(function () {
+            chgselect('post_type', '@PostType.Answer.ToString()');
+        });
+
+        $('#details-button').click(function () {
+            chgselect('post_type', '@PostType.Details.ToString()');
+        });
+
+        $('#moderator-answer-button').click(function () {
+            chgselect('post_type', '@PostType.ModeratorAnswer.ToString()');
+        });
+
+        $('#expert-pm-button').click(function () {
+            chgselect('post_type', '@PostType.ExpertPM.ToString()');
+        });
+    });
+</script>

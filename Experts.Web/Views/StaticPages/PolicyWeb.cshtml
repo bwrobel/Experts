@@ -1,0 +1,237 @@
+﻿@helper header(string title)
+{
+    <div class="alert alert-info">
+        <a href="javascript:void(0);" onclick="showFAQAnswer(this);">@title</a>
+    </div>
+}
+              
+
+@header("1. Definicje")
+<div class="hidden help-question-content policy" >
+    <strong>1. Definicje</strong>
+    <p>
+        Terminy użyte w niniejszym Regulaminie oznaczają:
+    </p>
+    <p>
+        <b>Gorrion</b> –  firma „Gorrion” Bartosz Wróbel, z siedzibą w Gliwicach, 44-117 Gliwice, ul. Toszecka 102/116 o numerze NIP 969-145-41-44 oraz numerze REGON 241127231
+    </p>
+    <p>
+        <b>Portal</b> - serwis internetowy prowadzony przez Gorrion dostępny w domenie http://www.asknuts.com
+    </p>
+    <p>
+        <b>Użytkownik</b> – osoba fizyczna korzystająca z Portalu, posiadająca Konto Użytkownika, w szczególności będąca Ekspertem lub Partnerem
+    </p>
+    <p>
+        <b>Partner</b> -  Użytkownik mogący promować Portal oraz pośredniczyć w sprzedaży usług w Portalu zgodnie z pkt. 12 Regulaminu.
+    </p>
+    <p>
+        <b>Ekspert</b> – Partner korzystający z Portalu w celu udzielania odpowiedzi na pytania innych Użytkowników
+    </p>
+    <p>
+        <b>Zweryfikowany Ekspert</b> - Ekspert co do którego Gorrion dokonał procedury potwierdzającej autentyczność danych zawartych w jego Koncie Użytkownika zgodnie z pkt. 4 Regulaminu.
+    </p>
+    <p>
+        <b>Konto Użytkownika</b> - konto założone poprzez rejestrację Użytkownika w Portalu, identyfiowalne przy pomocy unikalnego adresu e-mail Użytkownika, w którym gromadzone są dane Użytkownika jak również informacje o jego działaniach w ramach Portalu
+    </p>
+    <p>
+        <b>Administrator</b> – osoba sprawująca nadzór nad prawidłowym działaniem Portalu
+    </p>
+    <p>
+        <b>Newsletter</b> – wiadomość tekstowa, dźwiękowa lub graficzna zawierająca informację o aktualnościach lub materiałach promocyjnych przesyłana na adres e-mail Użytkownika
+    </p>
+    <p>
+        <b>Regulamin</b> – niniejszy regulamin Portalu.
+    </p>
+    <p>
+        <b>Depozyt</b> - kwota wpłacana przez Użytkownika na poczet wynagrodzenia Eksperta mogąca podlegać zwrotowi w ramach procedury reklamacyjnej opisanej w pkt. 11 Regulaminu
+    </p>
+    <p>
+        <b>Akceptacja Odpowiedzi</b>  - uznanie przez Użytkownika odpowiedzi udzielonej przez Eksperta za satysfakcjonującą, wyrażone poprzez kliknięcie przez Użytkownika w przycisk “Zaakceptuj odpowiedź” na stronie z pytaniem.
+    </p>
+</div>
+
+@header("2. Zasady ogólne")
+<div class="hidden help-question-content policy">
+    <strong>2. Zasady ogólne</strong>
+    <ol>
+        <li>Każda osoba korzystająca z Portalu (w tym w szczególności Użytkownik) jest zobowiązana do przestrzegania postanowień niniejszego Regulaminu.</li>
+        <li>W przypadku naruszenia postanowień niniejszego Regulaminu przez Uzytkownika, jego Konto Użytkownika moze zostac usunięte bądź zablokowane.</li> 
+    </ol>
+</div>
+
+@header("3. Rejestracja Użytkowników i Ekspertów")
+<div class="hidden help-question-content policy">
+    <strong>3. Rejestracja Użytkowników i Ekspertów</strong>
+    <ol>
+        <li>Każda osoba fizyczna o pełnej zdolności do czynności prawnych jak i osoby prawne oraz należycie umocowani do tego jej przedstawiciele, a także jednostki organizacyjne nieposiadające osobowości prawnej, lecz mogące we własnym imieniu nabywać prawa i zaciągać zobowiązania, mogą dokonać rejestracji na warunkach określonych w Regulaminie.</li>
+        <li>W Przypadku usunięcia lub zablokowania Konta Użytkownika nie może on bez uprzedniej pisemnej zgody Gorrion ponownie się zarejestrować.</li>
+        <li>W celu dokonania rejestracji Użytkownik musi podać co najmniej następujące dane: hasło i adres e-mail lub zadać Pytanie podając swój adres e-mail.</li>
+        <li>Zadanie pytania przez niezalogowanego Użytkownika poparte przejściem do ekranu wpłaty depozytu jest jednoznaczne z rejestracją Konta Użytkownika w systemie w ramach uproszczonej procedury rejestracyjnej.</li>
+        <li>Z chwilą wprowadzenia do Portalu danych opisanych w pkt. 3.3. dochodzi do zawarcia umowy pomiędzy Użytkownikiem a Gorrion. Gorrion po dokonaniu rejestracji wysyła na adres e-mail Użytkownika informację potwierdzającą dokonanie rejestracji. Użytkownik jest zobowiązany do potwierdzenia dokonania rejestracji w terminie 5 (pięciu) dni od chwili otrzymania na adres e-mail informacji potwierdzającej dokonanie rejestracji.</li>
+        <li>W terminie 10 (dziesięciu) dni od dnia zawarcia umowy Użytkownik może od niej odstąpić, bez konieczności podawania przyczyn odstąpienia. Oświadczenie o odstąpieniu może zostać złożone przez Użytkownika w postaci pisemnej bądź elektronicznej.</li>
+        <li>W celu zachowania 10 (dziesięcio) dniowego terminu wystarczy wysłać oświadczenie przed upływem tego terminu.</li>
+        <li>W celu dokonania rejestracji jako Ekspert Użytkownik musi podać dodatkowo co najmniej następujące dane: Imię, Nazwisko, Numer telefonu oraz wybrać z listy dziedziny w których posiada on ekspercką wiedzę.</li>
+        <li>Rejestrując się w serwisie jako Ekspert, Użytkownik wyraża zgodę na upublicznienie niektórych danych będących częścią jego Konta Użytkownika, w szczególności jego publicznej nazwy Konta Użytkownika, listy dziedzin w których posiada ekspercką wiedzę, tytułu naukowego, obejmowanego stanowiska, zdjęcia Użytkownika, opisu profilu oraz wyniku weryfikacji jego kwalifikacji.</li>
+        <li>Użytkownik zobowiązuje się do podania w procesie rejestracji oraz podczas edycji danych na swoim Koncie Użytkownika jedynie prawdziwych informacji.</li>
+    </ol>
+</div>
+
+@header("4. Weryfikacja Eksperta")
+<div class="hidden help-question-content policy">
+    <strong>4. Weryfikacja Eksperta</strong>
+    <ol>
+        <li>Uprawnienia Użytkownika związane z wykonywaniem zadań w Portalu w roli Eksperta zostają ograniczone do momentu pozytywnej weryfikacji przez Gorrion</li>
+        <li>Użytkownik rejestrując się w Portalu jako Ekspert wyraża zgodę na przeprowadzenie przez Gorrion weryfikacji prawdziwości danych zawartych w jego Koncie Użytkownika poprzez bezpośredni kontakt telefoniczny lub za pośrednictwem poczty e-mail. Ekspert wyraża zgodę, aby Gorrion mógł również dokonać weryfikacji danych z Konta Użytkownika Eksperta przy pomocy ogólnie dostępnych źródeł danych.</li>
+        <li>Gorrion może dokonać negatywnej weryfikacji Eksperta bez podawania przyczyn i uzasadnienia swojej decyzji.</li>
+        <li>Gorrion dołoży należytej staranności w celu jak najdokładniejszej weryfikacji Ekspertów.</li>
+    </ol>
+</div>
+
+@header("5. Powiadomienia i Newsletter")
+<div class="hidden help-question-content policy">
+    <strong>5. Powiadomienia i Newsletter</strong>
+    <ol>
+        <li>W momencie rejestracji Użytkownik wyraża zgodę na otrzymywanie w formie poczty elektronicznej powiadomień o zmianach stanu systemu związanych z jego Kontem Użytkownika oraz Newslettera</li>
+        <li>Użytkownik w dowolnym momencie może wyłączyć lub ograniczyć powiadomienia o zmianach stanu systemu związanych z jego Kontem Użytkownika poprzez narzędzia służące do zarządzania Kontem Użytkownika dostępne w Portalu</li>
+    </ol>
+</div>
+
+@header("6. Zadawanie pytań Ekspertom")
+<div class="hidden help-question-content policy">
+    <strong>6. Zadawanie pytań Ekspertom</strong>
+    <ol>
+        <li>Użytkownicy mogą zadawać w Portalu pytania związane z różnymi dziedzinami, w celu uzyskania na nie odpowiedzi od Ekspertów</li>
+        <li>W celu zadania pytania Użytkownik wypełnia formularz udostępniany w Portalu. Użytkownik zobowiązuje się do zgodnego z prawdą i  jak najdokładniejszego opisania stanu faktycznego związanego z pytaniem oraz formułowania pytania w sposób jasny i zrozumiały.</li>
+        <li>Użytkownik ma prawo dołączyć do pytania pliki będące dokumentami związanymi z treścią pytania. Dołączając pliki do pytania użytkownik oświadcza, że nie zawierają one treści które są chronione prawem autorskim i nie naruszają praw osób trzecich.</li>
+        <li>Użytkownik zadając pytanie ustala jego wartość. Wartość pytania stanowi Depozyt którego zdeponowanie jest warunkiem niezbędnym do zadania pytania i przekazania jego treści Zweryfikowanym Ekspertom. Uiszczenie depozytu za pytanie dokonywane jest na warunkach opisanych w pkt. 9 Regulaminu.</li>
+        <li>Na pytanie zadane przez użytkownika może odpowiedzieć dowolny Zweryfikowany Ekspert będący specjalistą w kategorii do której przypisane zostało pytanie. Użytkownik może także zaadresować pytanie bezpośrednio do wybranego przez siebie Ekspera korzystając z formularza na stronie z informacjami o tym Ekspercie.</li>
+        <li>Zadając pytanie Użytkownik wyraża zgodę na udostępnienie jego treści oraz załączonych do niego plików Użytkownikom będących Zweryfikowanymi Ekspertami lub Ekspertem do którego zaadresowane zostało pytanie.</li>
+        <li>Użytkownik zobowiązuje się niezwłocznie przekazać Ekspertowi na jego życzenie informacje dodatkowe związane z zadanym pytaniem, będące niezbędnymi do udzielenia przez Eksperta odpowiedzi na pytanie Użytkownika.</li>
+        <li>W przypadku uzyskania satysfakcjonującej odpowiedzi na zadane pytanie Użytkownik zobowiązany jest do dokonania Akceptacji Odpowiedzi w terminie nie dłuższym niż 7 (siedem) dni od momentu uzyskania satysfakcjonującej odpowiedzi.</li>
+        <li>Zadając pytanie lub odpowiadając na pytanie Użytkownik wyraża zgodę na opublikowanie w publicznie dostępnym archiwum pytań jego treści, wszystkich napisanych przez siebie wypowiedzi oraz załączników zedytowanych przez Gorrion w sposób zapewniający anonimowość Użytkownika. </li>
+        <li>Użytkownik zrzeka się na rzecz Gorrion wszelkich autorskich praw majątkowych do treści zadanego przez siebie pytania. Gorrion może pobierać opłaty za dostęp do pytania Użytkownika zmodyfikowanego zgodnie z pkt. 6.9.</li>
+        <li>Użytkownicy nie mają prawa informowaniu innych Użytkowników o wartości pytań w Portalu oraz podawania informacji umożliwiających udzielenie odpowiedzi na pytanie poza Portalem.</li>
+    </ol>
+</div>
+
+@header("7. Rola Zweryfikowanego Eksperta w Portalu")
+<div class="hidden help-question-content policy">
+    <strong>7. Rola Zweryfikowanego Eksperta w Portalu</strong>
+    <ol>
+        <li>Tylko Zweryfikowani Eksperci mogą przeglądać listę pytań zadanych przez Użytkowników oraz odpowiadać na wybrane przez siebie pytania.</li>
+        <li>Aby udzielić odpowiedzi na pytanie nie zaadresowane bezpośrednio do Eksperta, zobowiązany jest on do rezerwacji pytania. Rezerwacja ma charakter czasowy i pozwala na udzielenie odpowiedzi przez Eksperta w określonym po jej dokonaniu terminie.</li>
+        <li>W przypadku gdy okres rezerwacji dobiega końca Ekspert może przedłużyć rezerwację pytania w celu dokończenia pracy nad udzielaną odpowiedzią.</li>
+        <li>Ekspert zobowiązuje się do udzielania odpowiedzi na pytania Użytkowników z zachowaniem należytej staranności, w wymiarze zgodnym z żądaną przez Użytkownika szczegółowością odpowiedzi, kierując się przede wszystkim dobrem Użytkownika zadającego pytanie.</li>
+        <li>Ekspert, który nie zarezerwował  jeszcze pytania ma prawo do zaproponowania wyższej wartości pytania. Użytkownik może zaakceptować deponując różnicę kwoty w stosunku do poprzedniej wartości pytania. Po zdeponowaniu jego wartości pytanie takie zostaje zaadresowane bezpośrednio do Eksperta którego stawka została zaakceptowana.</li>
+        <li>Ekspert ma prawo w dowolnym momencie wycofać się z odpowiedzi za pytanie. Rezerwacja pytania zostaje w takiej sytuacji anulowana, a pytania które były zaadresowane bezpośrednio do Eksperta zostaje przekazane pozostałym Ekspertom.</li>
+        <li>Za udzielenie odpowiedzi co do której Użytkownik dokonał Akceptacji Odpowiedzi, Ekspert otrzymuje wynagrodzenie na zasadach opisanych w pkt. 9 Regulaminu.</li>
+        <li>W przypadku braku aktywności Eksperta w pytaniu lub podejmowania przez Eksperta działań niezgodnych z Regulaminem administrator Portalu może anulować rezerwację pytania przez Eksperta lub wycofać Eksperta z odpowiedzi na pytanie.</li>
+        <li>Ekspert nie ma prawa proponować lub świadczyć usług na rzecz Użytkowników poza Portalem w sposób inny niż określony w pkt. 8 Regulaminu.</li>
+    </ol>
+</div>
+
+@header("8. Usługi dodatkowe")
+<div class="hidden help-question-content policy">
+    <strong>8. Usługi dodatkowe</strong>
+    <ol>
+        <li>Ekspert może zaproponować wykonanie dla Użytkownika usługi dodatkowej związanej z pytaniem.</li>
+        <li>Użytkownik może skorzystać z usługi dodatkowej akceptując propozycję Eksperta oraz dokonując płatności za usługę dodatkową. Płatność za usługę dodatkową dokonywana jest na warunkach opisanych w pkt. 9 Regulaminu.</li>
+    </ol>
+</div>
+
+@header("9. Płatności, prowizje i wypłata środków")
+<div class="hidden help-question-content policy">
+    <strong>9. Płatności, prowizje i wypłata środków</strong>
+    <ol>
+        <li>Użytkownik wszelkich opłat, w szczególności opłat za pytania i usługi dodatkowe dokonuje za pośrednictwem zewnętrznego systemu płatności Transferuj.pl którego operatorem jest Krajowy Integrator Płatności S.A. z siedzibą w Poznaniu.</li> 
+        <li>Użytkownik dokonując płatności zgadza się każdorazowo z postanowieniami regulaminu systemu Transferuj.pl dostępnego pod adresem https://transferuj.pl</li> 
+        <li>W przypadku gdy dokonywana jest wpłata Depozytu, a Użytkownik posiada dostępne środki w bilansie na swoim Koncie Użytkownika środki w pierwszej kolejności zostaną pobrane z tego bilansu, a jeżeli wartość wymaganej opłaty przekroczy ilość dostępnych środków Użytkownik dokona jedynie dopłaty.</li> 
+        <li>W momencie Akceptacji Odpowiedzi pzez Użytkownika który je zadał wynagrodzenie zostaje dopisane do bilansu na Koncie Użytkownika Eksperta który udzielił zaakceptowanej odpowiedzi.</li> 
+        <li>Wartość wynagrodzenia Eksperta jest zależna od wartości pytania oraz stażu, kompentencji i jakości odpowiedzi udzielanych wcześniej przez Eksperta i jest ustalana każdorazowo przez Gorrion. Ekspert wyrażając chęć odpowiedzi na pytanie zostaje poinformowany o wartości wynagrodzenia jaką otrzyma.</li> 
+        <li>Różnica pomiędzy wartością pytania a wysokością wynagrodzenia traktowana jest jako prowizja na rzecz Gorrion.</li> 
+        <li>Użytkownik może zarządać wypłaty środków z bilansu na jego Koncie Użytkownika na wskazany przez siebie krajowy rachunek bankowy. W tym celu zobowiązany jest do poinformowania Gorrion o żądanej kwocie wypłaty, numerze rachunku bankowego, danych osobowych posiadacza rachunku niezbędnych do wykonania przelewu bankowego.</li> 
+        <li>Minimalna kwota wypłaty środków to 20 złotych.</li> 
+        <li>Gorrion zobowiązuje się do wypłaty środków w terminie nie przekraczającym 10 dni roboczych.</li> 
+        <li>Gorrion zastrzega sobie prawo do nie wypłacenia środków zgromadzonych w bilansie na Koncie Użytkownika w przypadku, w którym ich pozyskanie wynikało z działań naruszających niniejszy Regulamin.</li> 
+    </ol>
+</div>
+
+@header("10. Ograniczenie odpowiedzialności")
+<div class="hidden help-question-content policy">
+    <strong>10. Ograniczenie odpowiedzialności</strong>
+    <ol>
+        <li>Gorrion nie ponosi odpowiedzialności za treść odpowiedzi udzielanych przez Ekspertów, czas niezbędny do uzyskania odpowiedzi oraz jakości wykonania usług dodatkowych zaproponowanych Użytkownikowi przez Ekspertów.</li> 
+        <li>Odpowiedzialność o której mowa w pkt. 10.1 Regulaminu spoczywa na Ekspercie udzielającym odpowiedzi lub proponującym usługę dodatkową.</li>
+        <li>Portal może przekierowywać lub zawierać odnośniki do innych witryn nie należących do Gorrion. Gorrion nie ponosi odpowiedzialności za odnośniki do stron zewnętrznych lub działania podjęte przez użytkownika na stronach zewnętrznych do których przekierowuje Portal.</li>
+    </ol>
+</div>
+
+@header("11. Reklamacje")
+<div class="hidden help-question-content policy">
+    <strong>11. Reklamacje</strong>
+    <ol>
+        <li>W przypadku niezadowolenia z otrzymanej odpowiedzi Użytkownik może uzyskać zwrot całości wpłaconej za pytanie kwoty pod warunkiem złożenia pisemnej reklamacji w formie tradycyjnej lub elektronicznej nie później niż 30 dni od daty zadania pytania.</li>
+        <li>Reklamacja może zostać rozpatrzona pozytywnie jedynie w przypadku gdy spełnione zostaną wszystkie poniższe  warunki:
+        <ul>
+            <li>Użytkownik nie dokonał Akceptacji Odpowiedzi,</li>
+            <li>Użytkownik poinformował Eksperta przy pomocy mechanizmów dostępnych w Portalu o braku satysfakcji z udzielonej odpowiedzi oraz dał mu mozliwość udzielenia jej ponownie,</li>
+            <li>Pytanie zadane zostało w zgodzie z postanowieniami Regulaminu.</li>
+        </ul>
+        <li>Ekspert oświadcza, że w przypadku pozytywnego rozpatrzenia przez Gorrion reklamacji dotyczącej pytania na które udzielał on odpowiedzi, zrzeka się on w całości wynagrodzenia za udzielenie odpowiedzi na to pytanie.</li>
+        <li>W przypadku pozytywnego rozpatrzenia reklamacji Gorrion nie pobierze prowizji, a wartość pytania zostanie dodana do bilansu na Koncie Użytkownika, skąd może on ją wypłacić zgodnie z pkt. 9 Regulaminu lub wykorzystać w Portalu.</li>
+        <li>W przypadku braku wszczęcia procedury reklamacyjnej oraz braku Akceptacji Odpowiedzi  przez Użytkownika w terminie 30 dni od daty zadania pytania wartość depozytu zostaje przejęta przez Gorrion.</li>
+    </ol>
+</div>
+
+
+@header("12. Program partnerski")
+<div class="hidden help-question-content policy">
+    <strong>12. Program partnerski</strong>
+    <ol>
+        <li>Rolą Partnerów jest promocja Portalu oraz pośrednictwo w sprzedaży usług oferowanych w Portalu.</li>
+        <li>Użytkownik może zostać Partnerem zgłaszając chęć udziału w programie partnerskim przy pomocy mechanizmów zawartych w Portalu lub bezpośrednio kontaktując się z Gorrion.</li>
+        <li>Partner uzyskuje prowizję za pośrednictwo od każdego pytania, co do którego Użytkownik dokonał Akceptacji Odpowiedzi w przypadku, gdy Uzytkownik w momencie deponowania kwoty za pytanie, byl oznaczony jako polecony przez Partnera.</li>
+        <li>Użytkownik oznaczony jako polecony przez Partnera, to Użytkownik posiadający w swojej przeglądarce ciasteczo (cookie) z identyfikatorem Partnera, w szczególności ustawione przez dostępny w Portalu skrypt partnerski.</li>
+        <li>Bazowa prowizja Partnera za posrednictwo wynosi 20% prowizji Gorrion uzyskanej w momencie Akceptacji Odpowiedzi. Wartość ta może być zmieniona w odrębnej umowie zawartej między Partnerem, a Gorrion.</li>
+    </ol>
+</div>
+
+@header("13. Ochrona danych osobowych")
+<div class="hidden help-question-content policy">
+    <strong>13. Ochrona danych osobowych</strong>
+    <ol>
+        <li>Gorrion działając na podstawie ustawy z dnia 29 sierpnia 1997 r. o ochronie danych osobowych, posiada bazę danych zgłoszoną u Głównego Inspektora Ochrony Danych Osobowych.</li>
+        <li>Gorrion jest administratorem danych osobowych.</li>
+        <li>Gorrion dołoży wszelkich starań, aby zapewnić należytą ochronę danych osobowych Użytkowników.</li>
+        <li>Rejestracja konta Użytkownika w portalu oznacza akceptację warunków niniejszego Regulaminu oraz zgodę na gromadzenie, przetwarzanie oraz wykorzystywanie podanych informacji przez Portal w celach informacyjnych, edukacyjnych, statystycznych i marketingowych, reklamowych zgodnie z Ustawą z dnia 29 sierpnia 1997 r. o ochronie danych osobowych.</li>
+        <li>Każdy zarejestrowany Użytkownik ma prawo wglądu do swoich danych, a także prawo do aktualizacji swoich danych oraz do żądania uzupełnienia, uaktualnienia, sprostowania danych osobowych, czasowego lub stałego wstrzymania ich przetwarzania lub ich usunięcia.</li>
+        <li>Użytkownikowi przysługuje prawo do aktualizacji swoich danych osobowych oraz zgłoszenia sprzeciwu wobec przetwarzania danych osobowych, w tym zwłaszcza do zaprzestania wysyłania korespondencji o charakterze reklamowym.</li>
+        <li>Sprzeciw, o którym mowa w pkt. 13.6., może być wniesiony w każdym czasie, poprzez wysłanie listu na adres siedziby Gorrion.</li>
+        <li>Dane osobowe Użytkowników nie są udostępniane osobom trzecim, za wyjątkiem przypadków określonych przepisami prawa i Regulaminem.</li>
+    </ol>
+</div>
+
+@header("14. Zmiany regulaminu oraz postanowienia końcowe")
+<div class="hidden help-question-content policy">
+    <strong>14. Zmiany regulaminu oraz postanowienia końcowe</strong>
+    <ol>
+        <li>Portal jest własnością Gorrion. Bazy danych zawarte na Portalu są wyłączną własnością intelektualną Gorrion, o ile Regulamin nie stanowi inaczej.</li>
+        <li>Gorrion dokłada należytej staranności w celu należytego działania Portalu.</li>
+        <li>Użytkownik nie może bez uprzedniej zgody Gorrion przenieść jakichkolwiek praw wynikających z zawartej pomiędzy Gorrion a Użytkownikiem umowy na osobę trzecią.</li>
+        <li>O zmianach w Regulaminie czy wprowadzeniu nowego regulaminu Gorrion zawiadomi Użytkowników w formie e-mail lub poprzez zamieszczenie informacji na stronie internetowej http://www.asknuts.com Zmiany stają się skuteczne z chwilą wysłania informacji Użytkownikowi lub zamieszczenia informacji o zmianie na stronie internetowej http://www.asknuts.com., chyba że zastrzeżono w zmianach inaczej.</li>
+        <li>Sądem właściwym do rozstrzygania sporów pomiędzy Użytkownikami, a Gorrion jest sąd gospodarczy właściwy siedzibie Gorrion. Okolicznościami wpływającymi na zmianę treści Regulaminu są w szczególności:
+            <ul>    
+                <li>rozbudowa lub zmiana funkcjonalności Portalu,</li>
+                <li>zmiany przepisów powszechnie obowiązującego prawa,</li>
+                <li>wydanie orzeczenia (postanowienia, wyroku, decyzji) obligującego Gorrion do określonego zachowania bądź zaniechania,</li>
+                <li>siła wyższa, stan wyjątkowy, działania wojenne,</li>
+                <li>wniesienia przedsiębiorstwa Gorrion w formie aportu (wkładu niepieniężnego) do spółki prawa handlowego.</li>
+            </ul>
+        </li>
+        <li>Niniejszy Regulamin wchodzi w życie z dniem 1 lutego 2013.</li>
+    </ol>
+</div>
+
+
+
+ 

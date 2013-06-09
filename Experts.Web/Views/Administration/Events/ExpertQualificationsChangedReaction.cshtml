@@ -1,0 +1,41 @@
+﻿@using Experts.Core.Entities
+@model Experts.Web.Models.Events.ExpertQualificationsChangedReactionModel
+
+<form action="/Administration/ExpertQualificationsChangedReaction/">
+   
+    @if(Model.CurrentVerificationStatus == ExpertVerificationStatus.New)
+    {
+        <p>Nowy ekspert o loginie @Model.Event.RelatedUser.Email wymaga weryfikacji jego kwalifikacji.</p>
+    }
+    else
+    {
+        <p>Ekspert o loginie @Model.Event.RelatedUser.Email zmienił swoje kwalifikacje</p>
+    }
+
+    <p>
+        Szczegóły zmiany eksperta @Html.ActionLink(Model.Event.RelatedUser.Expert.PublicName, MVC.Profile.ExpertOverview(Model.Event.RelatedUser.Expert.Id)):
+    </p>
+
+    <p>
+        @Html.Raw(Model.Event.Data)
+    </p>
+
+    <p>
+        Akceptacja obecnych kwalifikacji eksperta:
+    </p>
+    
+    <p>
+        @Html.RadioButtonFor(m => m.IsAccepted, true) Zaakceptuj <br />
+        @Html.RadioButtonFor(m => m.IsAccepted, false) Odrzuć
+    </p>
+    
+    <p>
+        Szczegóły weryfikacji eksperta:
+    </p>
+    
+    <p>
+        @Html.TextAreaFor(m => m.VerificationDetails)
+    </p>
+
+    @Html.HiddenFor(m => m.EventId)
+</form>

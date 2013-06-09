@@ -1,0 +1,45 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model IEnumerable<Experts.Core.Entities.Thread>
+
+@if (AuthenticationHelper.CurrentUser.Expert.VerificationStatus == ExpertVerificationStatus.Verified)
+{
+
+    <script type="text/javascript">
+    thread.initThreadCategoryDropdown();
+    continousPaging.initialize();
+    continousPaging.requestData.sortColumn = '@GridHelper.ThreadOrder.Match';
+    </script>
+
+    <div class="question-list-order">
+        <strong>@Resources.Thread.SortBy</strong>
+        <select id="question-list-order">
+            <option value="@GridHelper.ThreadOrder.Match">@Resources.Thread.SortByMatch</option>
+            <option value="@GridHelper.ThreadOrder.CreationDate">@Resources.Thread.SortByCreationDate</option>
+            <option value="@GridHelper.ThreadOrder.ExpertValue">@Resources.Thread.SortByValue</option>
+        </select>
+    </div>
+
+    <h2>@ViewBag.PageTitle</h2>
+
+    <hr />
+    <ul class="question-list paged-list">
+        @Html.Partial(MVC.Thread.Views._QuestionsListItems, Model)
+    </ul>
+
+
+    <script type="text/javascript">
+    $("#question-list-order").change(function() {
+        continousPaging.requestData.sortColumn = $("#question-list-order").val();
+        continousPaging.reloadPage();
+    });
+</script>
+
+}
+else
+{
+    <h2>@Resources.Account.VerificationNeeded</h2>
+    <hr />
+  
+    <p>@Resources.Account.VerficiationInstructions</p>
+}

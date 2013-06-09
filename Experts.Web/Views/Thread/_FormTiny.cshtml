@@ -1,0 +1,97 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Threads.ThreadFormModel
+
+@if(Model.AvailableCategories.Count() == 1)
+{
+    Model.ThreadForm.CategoryId = Model.AvailableCategories.Single().Id;
+}
+
+<div id="question-form-tiny" class="well">
+    @using (Html.BeginForm(MVC.Thread.CategoryAttributes()))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(c => c.ThreadForm.CategoryId, new { id = "category-id" })
+        @Html.HiddenFor(c => c.ThreadForm.SeoKeywordId)
+        @Html.HiddenFor(c => c.ThreadForm.DirectQuestionExpertId)
+        @Html.HiddenFor(c => c.ThreadForm.TemporaryAttachmentFolder)
+
+        <div class="errors">
+            <div class="error-message no-text">@Resources.Thread.TinyFormContentRequiredError</div>
+            <div class="error-message no-category">@Resources.Thread.TinyFormCategoryRequiredError <a href="javascript:tinyForm.toggleCategories()">@Resources.Thread.TinyFormChooseCategory</a></div>
+            <div class="error-message wrong-attachment">@Resources.Attachments.AttachmentSizeError</div>
+        </div>
+        
+        @Html.TextAreaFor(model => model.ThreadForm.Content, new { placeholder = Resources.Thread.EnterYourQuestion, onclick = "javascript:tinyForm.hideListsAndErrors(); " })
+
+        <div class="pull-left toolbar">
+            <div class="category-info">
+                @if (Model.AvailableCategories.Count() > 1)
+                {
+                    <i class="icon-asterisk"></i> 
+                
+                    if (Model.SelectedCategory == null)
+                    {
+                        <a class="no-category-selected" href="javascript:tinyForm.toggleCategories()">@Resources.Thread.TinyFormClickToChooseCategory</a>
+                        <span class="category-selected hide">@Resources.Thread.TinyFormCategory <a href="javascript:tinyForm.toggleCategories()">
+                                                                            <strong></strong></a></span>
+                    }
+                    else
+                    {
+                        <span class="category-selected">Kategoria: <strong>@Model.SelectedCategory.Name</strong>.
+                            <a href="javascript:tinyForm.toggleCategories()">@Resources.Thread.TinyFormChangeCategory</a></span>
+                    }
+                
+                
+                    <i class="icon-angle-down"></i>
+                }
+                else
+                {
+                    <i class="icon-asterisk"></i> <span>@Resources.Thread.TinyFormCategory <strong>@Model.AvailableCategories.Single().Name</strong></span>
+                }
+            </div>
+                
+            <div class="category-select hide">
+                @foreach (var category in Model.AvailableCategories)
+                {
+                    <a href="javascript:tinyForm.selectCategory('@category.Name', @category.Id)">
+                        <div>@Html.CategoryIconTiny(category) <span>@category.Name</span></div>
+                    </a>
+                }
+            </div>
+        </div>
+        <div class="pull-right toolbar">
+            <span id="attachment-tiny-list-summary">@Resources.Thread.TinyFormAttachments <a id="attachment-tiny-list-count" href="javascript:tinyForm.toggleAttachments();"></a> | </span> <div class="tiny-attachment-upload"><i class="icon-paper-clip"></i> @Resources.Thread.TinyFormAttachFile<input id="fileupload" type="file" name="files[]" multiple></div>
+            <div id="attachment-tiny-list" class="attachment-list hide"></div>
+        </div>
+    }
+</div>
+<div class="pull-right">
+    <a href="javascript:tinyForm.validateAndSubmit()" class="btn btn-small btn-primary tiny-form-submit"><i class="icon-ok"></i> @Resources.Thread.GetAnswer</a>
+</div>
+
+<script type="text/javascript">
+    tinyForm.initialize();
+</script>
+
+<script type="text/javascript">
+    $('#fileupload').fileupload({
+        url: '/Thread/PrecedingUpload',
+        sequentialUploads: true,
+        formData: { temporaryAttachmentFolder: '@Model.ThreadForm.TemporaryAttachmentFolder' },
+        fail: function () {
+            $("#question-form-tiny .wrong-attachment").show();
+            $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+        },
+        done: function () {
+            thread.GetTemporaryAttachmentsCount('@Model.ThreadForm.TemporaryAttachmentFolder');
+            tinyForm.toggleAttachmentTinyListSummary(true);
+            tinyForm.showAttachments('@Model.ThreadForm.TemporaryAttachmentFolder', true);
+            setTimeout(function () {
+                $('.icon-spinner').removeClass().addClass('icon-paper-clip');
+            }, 300);
+        },
+        submit: function () {
+            $('.icon-paper-clip').removeClass().addClass('icon-spinner icon-spin');
+        }
+    });
+</script>

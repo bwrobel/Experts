@@ -1,0 +1,21 @@
+﻿<aside class="meet-asknuts">
+    <div class="top-dark-line"></div>
+    
+    <div>
+        @Html.ActionLink(Resources.Help.MeetAskNuts, MVC.StaticPages.MeetAsknuts(), new { @class = "btn btn-small btn-primary" })
+    </div>
+</aside>
+                
+@{var hintVisible = Request.Cookies["meet-asknuts-hint-closed"] == null;}
+                
+<aside class="meet-asknuts-hint alert @(hintVisible ? string.Empty : "hidden")">
+    @Resources.Global.MeetAsknutsHint
+    @Html.ActionLink(Resources.Global.MeetAsknutsHintMoreButton, MVC.StaticPages.MeetAsknuts())
+                    
+    <a class="close">&times;</a>
+
+    <img class="hint-tail" src="@Links.Content.images.hint_tail_png" alt=""/>
+</aside>
+<script>
+    $(global.initMeetAsknutsHint);
+</script>

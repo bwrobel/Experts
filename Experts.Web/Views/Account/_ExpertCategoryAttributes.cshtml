@@ -1,0 +1,44 @@
+﻿@model Experts.Web.Models.Account.ExpertCategoryAttributesModel
+
+@foreach (var attribute in Model.CategoryAttributes)
+{
+    var hasChildren = attribute.ChildAttributes.Any();
+    var propertyPrefix = string.Format("AttributeValues[{0}].", attribute.Id);
+    var changeScript = hasChildren ? string.Format("javascript:account.refreshSubAttributes(this, {0})", attribute.Id) : string.Empty;
+    var changeAttributes = new {onchange = changeScript};
+
+    var attributeValue = Model.CategoryAttributeValues == null ? null : Model.CategoryAttributeValues.SingleOrDefault(av => av.AttributeId == attribute.Id);
+
+
+    @Html.Hidden("AttributeValues.Index", attribute.Id)
+    @Html.Hidden(propertyPrefix + "AttributeId", attribute.Id)
+
+    <div class="control-group">
+        <label class="control-label">@attribute.Name</label>
+
+        <div class="controls">
+            @{
+                var listIndex = 0;
+                foreach (var option in attribute.Options)
+                {
+                    var name = propertyPrefix + "Values[" + listIndex + "]";
+                    
+                    <div class="unbreakable">
+                        @Html.CheckBox(name, attributeValue != null && bool.Parse(attributeValue.Values[listIndex]), changeAttributes)
+                        <label>@option.Value</label>
+                    </div>
+
+                    listIndex++;
+                }
+            }
+    
+            @if (hasChildren)
+            {
+                <div class="sub-attributes" data-attribute-id="@attribute.Id">
+                    @Html.Action(MVC.Account.ChildCategoryAttributes(Model.CategoryAttributeValues, attribute.Id))
+                </div>
+            }
+        </div>
+    </div>
+
+}

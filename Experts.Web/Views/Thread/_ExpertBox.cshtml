@@ -1,0 +1,34 @@
+﻿@model Experts.Core.ViewModels.ExpertOverviewViewModel
+
+@if (Model.BoxTitle == null)
+{
+    if(Model.IsEmbedded)
+    {
+        <aside class="with-inners expert-box">
+            <div class="inner embedded-expert-overview">
+                @Html.Partial(MVC.Thread.Views._ExpertOverview, Model)
+            </div>
+        </aside>  
+    }
+    else
+    {
+        <aside class="with-inners expert-box">
+            <div class="inner" id="expert-overview">
+                @Html.Partial(MVC.Thread.Views._ExpertOverview, Model)
+            </div>
+        </aside>   
+    }
+}
+else
+{
+    <aside class="well with-inners">
+        <div class="inner">
+            <h3>@Model.BoxTitle</h3>
+        </div>
+        <hr/>
+
+        <div class="inner" id="expert-overview">
+            @Html.Partial(MVC.Thread.Views._ExpertOverview, Model)
+        </div>
+    </aside>   
+}

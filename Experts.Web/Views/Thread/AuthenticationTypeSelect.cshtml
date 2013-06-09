@@ -1,0 +1,36 @@
+﻿@model Experts.Web.Models.Forms.ReportIssueForm
+
+<div class="modal fade" id="issueModal">
+    @using (Html.BeginForm(MVC.Thread.ReportIssue()))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>@Resources.Thread.AuthenticationTypeSelect</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                Najwygodniejszym sposobem korzystania z serwisu jest założenie konta, które umożliwia wygodne śledzenie historii zadawanych pytań i łatwiejsze wykonywanie wielu operacji. Możesz jednak zadać pytanie bez rejestracji.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <div id="authentication-type-buttons" class="btn-group center">
+                <a href="#" data-authentication-type="SignIn" class="btn btn-info span4"><i class="icon-white icon-user"></i><span>Zaloguj się</span></a>
+                <a href="#" data-authentication-type="SignUp" class="btn btn-info span4"><i class="icon-white icon-plus"></i><span>Załóż konto</span></a>
+                <a href="#" data-authentication-type="NoSignUp" class="btn btn-info span4"><i class="icon-white icon-arrow-right"></i><span>Zapytaj bez rejestracji</span></a>
+            </div>
+        </div> 
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#issueModal').modal({
+            show: false
+        });
+
+        $('#authentication-type-buttons a').click(function () {
+            $('#options-form input[name="AuthenticationType"]').val($(this).data().authenticationType);
+            $('#options-form form').submit();
+        });
+    });
+</script>

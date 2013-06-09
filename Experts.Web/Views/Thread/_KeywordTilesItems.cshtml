@@ -1,0 +1,32 @@
+﻿@using Experts.Core.Entities
+@using Experts.Web.Helpers
+@model IEnumerable<Experts.Core.Entities.SEOKeyword>
+
+@foreach(var keyword in Model)
+{
+    if (keyword.Type == SEOKeywordType.Question)
+    {
+        <a href="@Url.Action(MVC.Catalog.QuestionListSeo(keyword.Id, keyword.Phrase.ToUrlPart()))">
+            <div class='keyword-tile-item well'>@Html.CategoryIconTiny(keyword.Category)<span>@keyword.Phrase</span></div>
+        </a>
+    }
+    else if(keyword.Type == SEOKeywordType.Phrase)
+    {
+         <a href="@Url.Action(MVC.Catalog.PhraseDetails(keyword.Id, keyword.Phrase.ToUrlPart()))">
+            <div class='keyword-tile-item well'>@Html.CategoryIconTiny(keyword.Category)<span>@keyword.Phrase</span></div>
+        </a>    
+    }
+    else if(keyword.Type == SEOKeywordType.Expert)
+    {
+         <a href="@Url.Action(MVC.Catalog.ExpertListSeo(keyword.Id, keyword.Phrase.ToUrlPart()))">
+            <div class='keyword-tile-item well'>@Html.CategoryIconTiny(keyword.Category)<span>@keyword.Phrase</span></div>
+        </a>    
+    }
+}
+
+@if (Model.Count() == PagerHelper.PageSize)
+{
+    <div class="loader loader-center">
+        <div><i class="icon-spin icon-refresh"></i> @Resources.Thread.ThreadQuestionListLoading</div>
+    </div>
+}

@@ -1,0 +1,76 @@
+﻿@using Experts.Web.Models.Threads
+@using Experts.Core.Entities
+@using Experts.Core.Utils
+@model ThreadDetailsModel
+           
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<h2>
+    @if (Model.Thread.Expert != null)
+    {
+        @Model.Thread.Expert.PublicName
+        if (Model.Thread.State == ThreadState.Closed)
+        {
+            <b class="purple">@Resources.Thread.AnsweredQuestion</b>
+        }
+        else
+        {
+            <b class="purple">@Resources.Thread.IsAnswering</b>
+        }
+    }
+    else
+    {@Resources.Thread.ThreadNoAnswersYet}
+</h2>
+
+<hr/>
+
+@Html.Action(MVC.Thread.ShowPost(Model.Thread.Posts.First()))
+
+<div class="row">
+    <div class="span16">    
+        <div class="row">
+            <div class="span4">
+                @(Resources.Thread.ThreadValue + ": ")<b> @Model.Thread.Value @Resources.Global.CurrencyPLN</b>
+            </div>
+            
+            @if (Model.Thread.Expert != null)
+            {
+                <div class="span5">
+                    @(Resources.Thread.ExpertValue + ": ")<b>@Model.Thread.CalculatePotentialExpertValue(Model.Thread.Expert) @Resources.Global.CurrencyPLN</b>
+                </div>
+            }
+        </div>
+        <hr class="top-hr"/>
+
+        <div id="allposts">
+            @Html.Partial(MVC.Thread.Views._Thread, Model)
+        </div>
+        
+        @Html.Partial(MVC.Thread.Views._ExpertProposals, Model.Thread)
+
+        @Html.Partial(MVC.Thread.Views._CreatePostForm, Model.PostFormModel)
+
+    </div>
+    <aside class="span8 pull-right">
+        <div id="menu">
+            @Html.Action(MVC.Thread.ShowThreadDetailsMenu(Model.Thread, true))
+        </div>
+
+        @Html.Partial(MVC.Thread.Views._UserOverview, Model.Thread.Author)
+        
+        @if (Model.Thread.Expert != null)
+        {
+            @Html.Action(MVC.Thread.ShowExpertInfo(Model.Thread));
+        }
+        
+        @Html.Partial(MVC.Thread.Views._ThreadAcceptedNorification, Model.Thread)
+    </aside>
+</div>
+
+@Html.Partial(MVC.Administration.Views._SpecificEvents, Model.ThreadEvents)
+
+<script type="text/javascript">
+    thread.initAllPosts(@Model.Thread.Id, @Model.Thread.LastModificationDate.Ticks, @Model.Thread.IntState, true);
+</script>

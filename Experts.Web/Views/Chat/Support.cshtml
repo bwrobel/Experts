@@ -1,0 +1,31 @@
+﻿@model Experts.Web.Models.Chat.SupportModel
+
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial(MVC.Profile.Views._ProfileNavtabs, Resources.ChatConstants.Support)
+        
+<div class="span15">
+    <h3>@Resources.Chat.UserChats</h3>
+    <p class="enters">@Resources.Chat.Instructions</p>
+    <div id="chat-list">
+        @Html.Action(MVC.Chat.UserChatList(Model.Page))
+    </div>
+</div>
+
+<div class="span8">
+    <h3>@Resources.Chat.ChatBox</h3>
+    <div class="span8 embedded-chat">
+        @Html.Action(MVC.Chat.Chat(false, false, false))
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        chat.initChatList(null, @Model.Page, true, true, false, @(Model.NoCurrentChat ? "true" : "false"));
+    });
+</script>
+

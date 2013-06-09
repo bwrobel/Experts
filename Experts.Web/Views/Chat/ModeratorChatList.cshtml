@@ -1,0 +1,7 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Shared.SortableGridModel<Experts.Core.Entities.Chat>
+           
+<div class="table table-striped">
+    @Html.ChatsOverviewGrid(Model, true)
+</div>
+@Html.Partial(MVC.Shared.Views._Pager, Model.Pagination)

@@ -1,0 +1,22 @@
+﻿@using Experts.Web.Helpers
+@model IEnumerable<Experts.Core.Entities.Thread>
+
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial(MVC.Profile.Views._ProfileNavtabs, Resources.ThreadConstants.YourAnswers)
+
+<script type="text/javascript">
+    continousPaging.initialize();
+</script>
+
+@if (Model.Count() > 0)
+{
+    <h3 class="question-list-header">@Resources.Thread.YourAnswers</h3>
+    <ul class="question-list paged-list">
+        @Html.Partial(MVC.Thread.Views._ProfileQuestionsItems, Model)
+    </ul>
+}
+else
+{
+    <h3 class="question-list-header">@Resources.Thread.NoNewCurrentAnswers</h3>
+}

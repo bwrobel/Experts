@@ -1,0 +1,52 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Web.Models.Forms.KeywordProcessFormModel
+
+<div class="row">
+    <div class="span15">
+        <h3>@ViewBag.PageTitle</h3>
+        <fieldset class="well">
+            @using (Html.BeginForm(MVC.Catalog.SetKeywordAttributes()))
+            {
+                <p>
+                    <strong>@string.Format(Resources.Catalog.KeywordsLeftNumber, Model.NumberOfKeywordsToModerate)</strong>
+                </p>
+        
+                @Html.EditorFor(m => m.KeywordProcessForm.SeoKeywordPhrase)
+        
+                <br />
+                @Html.HiddenFor(m => m.KeywordProcessForm.SeoKeywordId)
+
+                <div>
+                    @Html.LabelFor(m => m.KeywordProcessForm.CategoryId)
+                </div>
+                <div>
+                    @Html.DropDownListFor(m => m.KeywordProcessForm.CategoryId, Model.AvailableCategories)
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.KeywordProcessForm.SeoKeywordType)
+                </div>
+                <div>
+                    @Html.DropdownListForEnum(m => m.KeywordProcessForm.SeoKeywordType, Resources.Catalog.ResourceManager)
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(m => m.KeywordProcessForm.SeoKeywordType)
+                </div>
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="@Resources.Catalog.Next" />
+                </div>
+            }
+            <br />
+            <div>
+                @Html.ActionLinkWithConfirmation("Zablokuj słowo kluczowe", MVC.Catalog.BanKeyword(Model.SeoKeyword.Id), "Czy na pewno chcesz zablokować słowo kluczowe?")
+            </div>
+            <div>
+                @Html.ActionLinkWithConfirmation("Do późniejszego doprecyzowania", MVC.Catalog.SetKeywordAsUndefined(Model.SeoKeyword.Id), "Czy na pewno chcesz pozostawić słowo kluczowe do późniejszego doprecyzowania?")
+            </div>
+            <div>
+                @Html.Partial(MVC.Catalog.Views._AddKeywordWindow)
+            </div>
+        </fieldset>
+    </div>
+</div>

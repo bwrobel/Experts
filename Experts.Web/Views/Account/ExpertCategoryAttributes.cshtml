@@ -1,0 +1,33 @@
+﻿@model Experts.Web.Models.Account.ExpertCategoryAttributesModel
+
+<div>
+    <h2>@Resources.Account.ExpertCategoryAttributesForCategory <span>@Model.Category.Name</span></h2>
+    
+    <hr/>
+
+    <section id="attributes-form" class="span14">
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                @Html.Partial(MVC.Account.Views._ExpertCategoryAttributes, Model)
+                @Html.Hidden("categoryId", Model.Category.Id)
+                
+                <div>
+                    <label class="control-label">@Resources.Account.ExpertReasonTitle</label>
+                    <div>@Html.TextAreaFor(m => m.ExpertReason, new { placeholder = Resources.Account.ExpertReasonPlaceholder })</div>
+                </div>
+    
+                <input type="submit" class="btn btn-primary" value="@Resources.Account.SaveDetails" />
+                    
+                <hr/>
+
+                <div>
+                    @Resources.Account.NewCategoryAttributeLabel
+                    <a href="mailto:@Resources.Account.NewCategoryAttributeMail?subject=@Resources.Account.NewCategoryAttributeMailSubject">@Resources.Account.NewCategoryAttributeLink</a>
+                </div>
+            </fieldset>
+        }
+    </section>
+
+</div>
+   

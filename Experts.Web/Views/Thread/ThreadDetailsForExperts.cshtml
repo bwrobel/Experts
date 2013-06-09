@@ -1,0 +1,81 @@
+﻿@using Experts.Web.Models.Threads
+@using Experts.Core.Entities
+@using Experts.Core.Utils
+@using Experts.Web.Helpers
+
+@model ThreadDetailsModel
+@{
+    Layout = MVC.Shared.Views._Layout;
+}
+
+<h2>
+    @if (Model.Thread.Expert == AuthenticationHelper.CurrentUser.Expert)
+    {
+        if(Model.Thread.State == ThreadState.Closed)
+        {
+            @Model.Thread.Expert.PublicName
+            <b class="purple">@Resources.Thread.AnsweredQuestion</b>
+        }
+        else
+        {
+            @Resources.Thread.YouAreAnswering
+        }
+    }
+    else
+    {@Resources.Thread.ThreadNoAnswersYet}
+</h2>
+
+<hr/>
+
+@Html.Action(MVC.Thread.ShowPost(Model.Thread.Posts.First()))
+
+<div class="row">
+    <div class="span16">
+        <div id="allposts">
+            @Html.Partial(MVC.Thread.Views._Thread, Model)
+        </div>
+
+        @Html.Action(MVC.Thread.AdditionalServiceInformation(Model.Thread.Id))
+
+        @if ((Model.Thread.State == ThreadState.Occupied || Model.Thread.State == ThreadState.Accepted || Model.Thread.State == ThreadState.Reserved) && Model.Thread.Expert == AuthenticationHelper.CurrentUser.Expert)
+        {
+            @Html.Partial(MVC.Thread.Views._CreatePostForm, Model.PostFormModel)
+        }
+    </div>
+    <aside class="span8 pull-right">
+        <div id="menu">
+            @Html.Action(MVC.Thread.ShowThreadDetailsMenu(Model.Thread))
+        </div>
+
+        @if (Model.Thread.ExpertReleaseDate != null)
+        {
+            <div class="button-frame" id="TimerInfo">
+                <div class="thread-lock-time">
+                    <div id="releaseTimer">
+                        @Html.Partial(MVC.Thread.Views._ReleaseTimer, Model.Thread.ExpertReleaseDate.Value)
+                    </div>
+                    
+                    <a class="btn btn-small btn-inverse" id="ExtendThreadLockTimeButton" onclick="thread.ExtendOccupyLockTime(@Model.Thread.Id)"><i class="icon-time"></i>@Resources.Thread.ExtendThreadLockTime</a>
+                </div>
+            </div>
+        }
+
+        @Html.Partial(MVC.Thread.Views._AnswerInstructions, Model.Thread)
+
+        @Html.Partial(MVC.Thread.Views._UserOverview, Model.Thread.Author)
+        
+        @Html.Partial(MVC.Thread.Views._ThreadAcceptedNorification, Model.Thread)
+            
+        <div id="priceproposal">
+            @if (Model.Thread.PriceProposals.Any(pp => pp.Expert == AuthenticationHelper.CurrentUser.Expert))
+            {
+                @Html.Action(MVC.Thread.ShowPriceProposalNotification(Model.Thread))
+            }
+        </div>
+    </aside>
+</div>
+
+<script type="text/javascript">
+    thread.initAllPosts(@Model.Thread.Id, @Model.Thread.LastModificationDate.Ticks, @Model.Thread.IntState, false);
+    $(document).ready(thread.PasteTextFromPostForm());
+</script>

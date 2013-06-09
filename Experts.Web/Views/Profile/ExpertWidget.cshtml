@@ -1,0 +1,54 @@
+﻿@using Experts.Web.Helpers
+@model Experts.Core.ViewModels.ExpertOverviewViewModel
+
+<!doctype html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+      <link rel="stylesheet" href="@Url.Content(Links.Content.Widget_css)">
+    </head>
+    <body>
+        <div class="asknuts-widget">
+            <div class="asknuts-logo">
+                <a href="@Url.Action(MVC.StaticPages.Home())" target="_blank">
+                    @Html.Image(@Links.Content.images.logo_partners_jpg, 180, 41, "Logo Asknuts")
+                </a>
+            </div>
+            <div class="content">
+                <div>
+                    @Html.ProfileAvatar(Model.User)
+                    <div class="header">
+                        <div class="name">@Html.ActionLink(Model.PublicName, MVC.Profile.ExpertOverview(Model.Id), new { target = "_blank" })<br/>@Model.Position</div>
+                        <hr/>
+                        <div>@Resources.Account.ExpertPositiveFeedback: <span>@(Math.Round(Model.PositivePercentage, 0, MidpointRounding.AwayFromZero) + "%")</span></div>
+                        <hr/>
+                        <div>@Resources.Account.ExpertAcceptedAnswers: @Model.PositiveCount</div>
+                    </div>
+                </div>
+                <div class="description clear">
+                    @Model.Description
+                </div>
+                <div class="feedbacks clear">
+                    <div class="label">@Resources.Thread.QuestionersOpinions</div>
+                    <div>
+                        <div class="label-positive">@Resources.Thread.FeedbacksPositive</div>
+                        <div class="count positive">@Model.PositiveCount</div>
+                    </div>
+                    <div>
+                        <div class="label-neutral">@Resources.Thread.FeedbacksNeutral</div>
+                        <div class="count neutral">@Model.NeutralCount</div>
+                    </div>
+                    <div>
+                        <div class="label-negative">@Resources.Thread.FeedbacksNegative</div>
+                        <div class="count negative">@Model.NegativeCount</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ask">
+                <a href="@Url.Action(MVC.Profile.ExpertOverview(Model.Id))#ThreadForm_Content" target="_blank">@Resources.Thread.AskExpert</a>
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,23 @@
+﻿@model Experts.Web.Models.Payments.Providers.PaymentProvider
+
+<div class="modal" id="providerChannelModal">
+    <div class="modal-header">
+        <a class="close">×</a>
+        <h3>@Resources.Payment.PaymentFormSelectPaymentChannelTitle</h3>
+    </div>
+    <div class="modal-body">
+        @Html.Partial(Model.ChannelSelectPartialView, Model)
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#providerChannelModal').modal({
+            show: false
+        });
+
+        $('#providerChannelModal .close').click(function () {
+            $('#providerChannelModal').modal('hide');
+        });
+    });
+</script>

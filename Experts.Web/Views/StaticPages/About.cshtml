@@ -1,0 +1,165 @@
+﻿@helper header(string title)
+{
+    <div class="alert alert-info">
+        <a href="javascript:void(0);" onclick="showFAQAnswer(this);">@title</a>
+    </div>
+}
+              
+
+
+
+@header("Czy muszę się rejestrować? Co daje mi rejestracja?")
+<div class="hidden help-question-content">
+    <strong>Czy muszę się rejestrować? Co daje mi rejestracja?</strong>
+    <p>Nie, podczas zadawania pytania musisz jedynie podać adres email, na który dostaniesz powiadomienia o odpowiedzi. Rejestracja jest całkowicie dobrowolna.<br />
+    </p>
+    <p>
+        Rejestracja umożliwi Ci jednak:
+    </p>
+    <ul>
+        <li>Łatwiejszy dostę do pełnej historii zadanych przez Ciebie pytań.</li>
+        <li>Autouzupełnianie formularzy – pozwala Ci szybciej zadawać nowe pytania.</li>
+        <li>Podgląd swojego bilansu.</li>
+        <li>Konifugrację powiadomień mailowych.</li>
+    </ul>
+        
+    <p>
+        Rejestracja jest możliwa także później - gdy pytanie zostanie już zadane. Aby jej dokonać wystarczy zarejestrować konto na adres e-mail użyty podczas zadawania pytania. 
+        Zadane wcześniej pytanie zostanie z nim powiązane.
+    </p>
+</div>
+
+@header("Zadałem pytanie i zamknąłem przeglądarkę. Jak do niego wrócić?")
+<div class="hidden help-question-content">
+    <strong>Zadałem pytanie i zamknąłem przeglądarkę. Jak do niego wrócić?</strong>
+    <p>
+        Jeśli jesteś zarejstrowanym użytkownikiem, wszystkie zadane przez Ciebie pytania znajdziesz w zakładce @Html.ActionLink("Moje pytania", MVC.Profile.MyQuestions(), new { @class = "underline" }).
+    </p>
+    <p>
+        Jeśli się nie zarejestrowałeś, znajdź w swojej skrzynce mailowej (mail którego podawałeś przy płatności) email, w którym jest bezpośredni link do Twojego pytania.
+    </p>
+    <p>
+        Email powinieneś dostać w ciągu paru minut od złożenia depozytu. Jeśli masz problemy ze znalezieniem, sprawdzć swój SPAM. Jeśli godzinę po płatności wciąż nie dostałeś maila, skontaktuj się z nami na <a href='mailto:kontakt@asknuts.com'>kontakt@asknuts.com</a>
+    </p>
+</div>
+
+  
+@header("Zapomniałem hasła – co teraz?")
+<div class="hidden help-question-content">
+    <strong>Zapomniałem hasła – co teraz?</strong>
+    <p>Będziesz je musiał zmienić. Jak to zrobić:</p>
+    <ul>
+        <li>Po nieudanym logowaniu pojawi się przycisk „Zapomniałem hasła”.</li>
+        <li>Podaj email wprowadzony podczas rejestracji.</li>
+        <li>Na twoją skrzynkę przyjdzie email z linkiem. Kliknij go.</li>
+        <li>Zostaniesz przeniesiony do formularza zmiany hasła – wprowadź i potwierdź nowe hasło.</li>
+        <li>Zaloguj się za pomocą nowego hasła na swoje konto.</li>
+    </ul>
+</div>
+
+    
+@header("Nie dotarł do mnie email rejestracyjny – co robić?")
+<div class="hidden help-question-content">
+    <strong>Nie dotarł do mnie email rejestracyjny – co robić?</strong>
+    <p>Email rejestracyjny może dojść z lekkim opóźnieniem. Sprawdź czy wiadomość nie trafiła do SPAMU.</p>
+    <p>Jeśli w ciągu godziny nie dostałeś maila, skontaktuj się z nami na <a href='mailto:kontakt@asknuts.com'>kontakt@asknuts.com</a></p>
+    <p>Przyczyną może być zaginięcie wiadomości, Twój filtr antyspamowy, bądź nieprawidłowa nazwa emaila podana przy rejestracji. Nasi konsultanci zweryfikują przyczynę problemu i pomogą w zakończeniu procesu rejestracji.</p>
+</div>
+
+@header("Jak wyłączyć newsletter?")
+<div class="hidden help-question-content">
+    <strong>Jak wyłączyć newsletter?</strong>
+    <p>Otrzymywane powiadomienia możesz edytować w @Html.ActionLink("edycji profilu", @MVC.Profile.Edit(), new { @class = "underline" }) w sekcji otrzymywane wiadomości pocztowe.</p>
+</div>
+    
+@header("Jak dobrze precyzować pytania?")
+<div class="hidden help-question-content">
+    <strong>Jak tworzyć jasne pytania?</strong><br />
+    <ul>
+        <li>Nie obawiaj się pytać otwarcie o sedno problemu – pytania są całkowicie anonimowe.</li>
+        <li>Uzupełniaj informacje dodatkowe – pozwolą one nam dobrać najodpowiedniejszego eksperta do Twojego pytania.</li>
+        <li>Podawaj jak najwięcej szczegółów – im więcej szczegółów podasz, tym lepiej Ekspert zrozumie problem i nie będzie Cie zaprzątał dodatkowymi pytaniami.</li>
+        <li>Odpowiadaj na prośby ekspertów – gdy ekspert poprosi Cie o dodatkowe informacje, nie zwlekaj. Im szybciej je podasz, tym szybciej uzyskasz zadowalającą odpowiedź.</li>
+        <li>Załączaj zdjęcia, dokumenty, screenshoty – wszystko co jest pomocne w rozwiązaniu pytania.</li> 
+        <li>Pamiętaj – ekspert jest także człowiekiem. Traktuj go jak człowieka.</li>
+        <li>Gdy długo nie dostajesz odpowiedzi nie przejmuj się, czasem ekspert musi wykonać dodatkowe poszukiwania w celu znalezienia lub zweryfikowania odpowiedzi.</li>
+        <li>Czasem może zdarzyć się, że ekspert wycofa się z odpowiedzi – oznacza to, że pytanie po prostu wykracza poza jego kompetencje. W takim przypadku poczekaj na innego eksperta gotowego podjać się odpowiedzi na Twoje pytanie.</li>
+        <li>Nie wstydź się dopytywać – jeśli odpowiedź nie jest dla Ciebie jasna – poproś o wytłumaczenie pewnych jej aspektów.</li>
+        <li>Nie zapomnij o akceptacji odpowiedzi – tylko wtedy nagrodzisz eksperta za trudy wykonanej pracy.</li>
+        <li>Pozytywna opinia jest dla wielu ekspertów najważniejszym dowodem uznania. Wypełniaj ją przy każdej dobrej odpowiedzi. Masz wtedy pewność, że na Twoje przyszłe pytania eksperci będą odpowiadać szybciej i z wiekszym zaangażowaniem, gdyż będą wiedzieli że mają przed sobą uczciwą osobę.</li>
+    </ul>
+</div>
+
+@header("Czy mogę wybrać eksperta do odpowiedzi na pytania?")
+<div class="hidden help-question-content">
+    <strong>Czy mogę wybrać eksperta do odpowiedzi na pytania?</strong>
+    <p>Tak, możesz wybrać eksperta do odpowiedzi na Twoje pytanie. Wystarczy, że wejdziesz na jego wizytówkę i skorzystasz z formularza „Zadaj mi pytanie”.</p>
+    <p>W wyniku wyboru eksperta, ma on 24 godziny na reakcję na Twoje pytanie.</p>
+    <p>Zachęcamy zatem, żeby zadawać pytania konkretnemu ekspertowi jeżeli jest aktualnie „online” , bądź bardzo niedawno odpowiedział na jakieś pytanie. To daje duże prawdopodobieństwo na to , że ekspert nie jest na dłuższym wyjeździe czy urlopie.</p>
+    <p>Jeśli ekseprt nie odpowie na czas, pytanie zostanie przedstawione pozostałym naszym ekspertom z tej kategorii. Szybka odpowiedź na Twoje pytanie jest dla nas priorytetem. Więc nie będziesz musiał czekać do końca urlopu swojego eksperta.</p>
+</div>
+
+    
+@header("Dlaczego eksperci nie zawsze przedstawiają się z imienia i nazwiska?")
+
+<div class="hidden help-question-content">
+    <strong>Dlaczego eksperci nie zawsze przedstawiają się z imienia i nazwiska?</strong>
+    <p>Asknuts dba o ochronę danych osobowych. Nie ujawniamy żadnych danych osobowych czy teleadresowych użytkowników swojego serwisu.</p>
+    <p>Ich kompetencje potwierdza odpowiednia liczba zadowolonych klientów. Prezentowane są także : tytuł i dorobek naukowy, aktualne stanowisko. Wszystkie dane przedstawione w serwisie są zatem całkowicie wystarczające do oceny kwalifikacji poszczególnych ekspertów.</p>
+    <p>Z drugiej strony, każde pytanie zadawane przez naszych użytkowników jest całkowicie anonimowe. Twoje dane personalne są bezpiecznie przechowywane na naszych serwerach. Nie mają do nich wglądu eksperci ani żadna firma trzecia.</p>
+</div>
+
+@*<div class="alert alert-info">
+    <a href="javascript:void(0);" onclick="showFAQAnswer(this);">Od czego zależy cena pytania?</a></div>
+<div class="hidden help-question-content">
+    <hr />
+    <strong>Od czego zależy cena pytania?</strong><br />
+    <br /><p>Cena za pytanie zależy od paru ważnych czynników:</p>
+<li>Kategorii pytania – cena jaką biorą zwykle nasi eksperci za odpowiedź jest mocno zależna od kategorii pytania.  Ceny regulowane są przez ekspertów, którzy za swoją pracę związaną z poszukiwaniem odpowiedzi i poświęcony czas, chcą otrzymywać satysfakcjonujące wynagrodzenie. 
+Priorytet – zaznaczenie podczas pytania wysokiego priorytetu skutkuje tym, że eksperci starają się szybciej dostarczyć wymaganą odpowiedź, zaniedbując inne, mniej pilne sprawy. Naturalnie wiąże się to dla nich z wyższym wynagrodzeniem. Jeśli obniżysz priorytet – zapłacisz mniej , eksperci odpowiedzą na Twoje pytanie w wolnym czasie, wobec tego odpowiedź uzyskasz nieco później.</li>
+<li>Szczegółowość – określając szczegółowość odpowiedzi , informujesz eksperta na jakim poziomie powinien udzielić swojej porady. Przy dużej szczegółowości eksperci często muszą sięgnąć do źródeł i przedstawić drobne szczegóły dotyczące pytania. Lepsze wynagrodzenie zachęca ich zatem do poświęcenia większej ilości czasu. Mniejsza szczegółowość mówi ekspertom, że będą mogli spędzić nad pytaniem mniej czasu, wobec czego często są skłonni obniżyć stawkę.</li>  
+<li>Sam możesz określić cenę pytania – cena wyświetlana przy zadawaniu pytania jest ceną sugerowaną. Jeśli uważasz, że Twoje pytanie jest znacznie prostsze , bądź o wiele trudniejsze, możesz zmienić stawkę. Musisz się jednak liczyć z tym, że zbyt niska stawka może odstraszyć ekspertów, którzy w pierwszej kolejności będą zajmować się droższymi pytaniami.  Ryzykujesz także brak udzielenia odpowiedzi, lub propozycją podniesienia ceny ze strony eksperta.</li>
+<p>Aby zmienić cenę kliknij w „Zaproponuj cenę” i wpisz cenę jaką jesteś w stanie zapłacić maksymalnie za odpowiedź.</p><hr />
+</div> -- NOTE:dopoki nie ma priorytetu wyswietlanego, to bym zostawił schowane *@
+
+
+
+@header("Jak zaakceptować odpowiedź?")
+<div class="hidden help-question-content">
+    <strong>Jak zaakceptować odpowiedź?</strong><br />
+    <p>W czasie odpowiedzi na pytanie ekspert może zadać Ci najpierw szereg pytań uszczegóławiających, dopiero po otrzymaniu stosownych informacji, przystępuje do pracy. Opcja „akceptacji” pojawia się dopiero w momencie, gdy ekspert udzieli Ci odpowiedzi. Opcja ta jest widoczna na prawym pasku w widoku pytania.</p>
+</div>
+
+
+@header("Co oznacza gwarancja 100% satysfakcji?")
+<div class="hidden help-question-content">
+    <strong>Co oznacza gwarancja 100% satysfakcji?</strong>
+    <p>Asknuts cały czas czuwa nad wysoką jakością swoich ekspertów oraz nad tym, żeby zawsze na Twoje pytanie mógł zareagować specjalista. Staramy się, żeby w każdej kategorii były zawsze osoby dostępne online, które szybko udzielą Ci odpowiedzi. Niezależnie od tego czy ktoś będzie w stanie odpowiedzieć na Twoje pytanie, dajemy Ci 100% gwarancję satysfakcji – dostaniesz od nas satysfakcjonującą odpowiedź albo oddamy Ci pieniądze.</p>
+</div>
+
+
+@header("Nikt nie odpowiada na moje pytanie? Co robić?")
+<div class="hidden help-question-content">
+    <strong>Nikt nie odpowiada na moje pytanie? Co robić?</strong><br />
+    <br /><p>Czasem zdarza się, że przez dłuższy (cały dzień) czas nikt nie udzieli klientowi odpowiedzi na jego pytanie. Może to być związane z tym, że:</p>
+    <ul><li>Aktualnie nie ma żadnego eksperta online z dziedziny pytania.</li></ul>
+    <p>W takim przypadku musisz uzbroić się w cierpliwość. Statystycznie odpowiedź udzielana jest w ciągu paru godzin, ale np. w okresie wakacyjnym czas ten się wydłuża, bo mniej ekspertów ma dostęp do internetu.</p>
+    <ul><li>Jest na tyle dużo pytań, że eksperci nie są w stanie szybko odpowiedzieć.</li></ul>
+    <p>W takim przypadku wszystko zależy od tego, czy klienci zadający pozostałe pytania szybko zaakceptują odpowiedzi, czy nie. Przez wzgląd na wysoką jakość obsługi klienta, eksperci nie mogą odpowiadać na kilka pytań na raz. Wobec tego zdarza się, że wszyscy eksperci zajęci są odpowiedzią i musisz cierpliwie poczekać, aż skończą.</p>
+    <ul><li>Pytanie jest niecodzienne , trudne i eksperci potrzebują więcej czasu na stwierdzenie, że są się w stanie podjąć odpowiedzi.</li></ul>
+    <p>Eksperci pomimo swej rozległej wiedzy, nie są encyklopedią. Czasem po prostu muszą się upewnić, że znają odpowiedź na pytanie klienta. Tylko wtedy się nim zajmą, gdyż takie są zasady systemu : „Jeśli nie masz pewności że znasz odpowiedź – upewnij się lub daj odpowiedzieć innym”.</p>
+    <ul><li>Wartość pytania jest zbyt niska w stosunku do wymaganych nakładów pracy.</li></ul>
+    <p>Ceny pytań są statystyczne – oznacza to, że niektóre pytania mogą być przez swoją złożoność nieco droższe. W takim przypadku pytanie nie znajduje chętnego, który za tę cenę jest w stanie się go podjąć. Po 12 godzinach od zadania pytania, eksperci mogą proponować  cenę, za którą odpowiedzą na pytanie. Oczywiście wyższe koszty zostaną wyjaśnione. Klient będzie mógł zatem wybrać eksperta i dopłacić żądaną kwotę, lub jeszcze poczekać na kogoś kto zgodzi się odpowiedzieć za wartość depozytu.</p>
+</div>
+
+@*    @header("Po jakim czasie uzyskam odpowiedź?")
+<div class="hidden help-question-content">
+    <strong>Po jakim czasie uzyskam odpowiedź?</strong><br />
+    <p>Czasem odpowiedź pojawia się w parę minut, zwykle w parę godzin. Najbardziej złożone pytania doczekują się odpowiedzi w ciągu paru dni.</p>
+</div> -- NOTE: dopoki nie ma priority i ruchu tego bym nie pokazywał*@
+
+@header("W jaki sposób dowiem się że ekspert odpowiedział na moje pytanie?")
+<div class="hidden help-question-content">
+    <strong>W jaki sposób dowiem się że ekspert odpowiedział na moje pytanie?</strong>
+    <p>W momencie gdy ekspert zajmie się Twoim pytaniem i udzieli na nie odpowiedzi, bądź poprosi o wiecej szczegółów, zostaniesz o tym niezwłocznie poinformowany mailowo (na maila podanego przy płatności, bądź na maila podanego przy rejestracji). Ponadto jeśli masz w przeglądarce odtwarty wątek z pytaniem, odpowiedź pojawi się na nim automatycznie.</p> 
+</div>

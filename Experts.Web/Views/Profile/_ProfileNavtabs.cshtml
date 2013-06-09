@@ -1,0 +1,64 @@
+﻿@using Experts.Web.Helpers
+@model string
+
+@{
+    var activeClass = "active";
+    var active1 = "";
+    var active2 = "";
+    var active3 = "";
+    var active4 = "";
+    var active5 = "";
+    var active6 = "";
+    
+    switch(Model)
+    {
+        case Resources.ThreadConstants.YourQuestions:
+        {
+            active1 = activeClass;
+            break;
+        }
+        case Resources.ThreadConstants.YourAnswers:
+        {
+            active2 = activeClass;
+            break;
+        }
+        case Resources.ThreadConstants.YourPayments:
+        {
+            active3 = activeClass;
+            break;
+        }
+        case Resources.AccountConstants.EditProfile:
+        {
+            active4 = activeClass;
+            break;
+        }
+        case Resources.PartnerConstants.PartnerProgram:
+        {
+            active5 = activeClass;
+            break;
+        }
+        case Resources.ChatConstants.Support:
+        {
+            active6 = activeClass;
+            break;
+        }
+    }
+}
+
+@if (!AuthenticationHelper.IsNoSignUpUser)
+{
+    <ul class="nav nav-tabs">
+        <li class="@active1">@Html.ActionLink(Resources.Thread.YourQuestions, MVC.Profile.MyQuestions())</li>
+        @if (AuthenticationHelper.IsExpert)
+        {
+            <li class="@active2">@Html.ActionLink(Resources.Thread.YourAnswers, MVC.Profile.MyAnswers())</li>
+        }
+        <li class="@active3">@Html.ActionLink(Resources.Thread.YourPayments, MVC.Profile.Balance())</li>
+        <li class="@active4">@Html.ActionLink(Resources.Account.EditProfile, MVC.Profile.Edit())</li>
+
+        <li class="@active5">@Html.ActionLink(Resources.Partner.PartnerProgram, MVC.Profile.PartnerProgram())</li>
+        <li class="@active6">@Html.ActionLink(Resources.Chat.Support, MVC.Chat.Support())</li>
+    </ul>
+}
+
+<hr class="top-hr"/>

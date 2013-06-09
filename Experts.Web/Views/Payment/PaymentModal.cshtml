@@ -1,0 +1,99 @@
+﻿@using Experts.Web.Helpers
+@using Experts.Web.Models.Payments
+@model PaymentModel
+
+<div class="modal" id="paymentModal" data-funds="@PaymentHelper.GetFunds()">
+    @using (Html.BeginForm(MVC.Payment.PaymentModal(), FormMethod.Post, new { id = "paymentForm", @class = "form-horizontal" }))
+    {
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>@Resources.Payment.PaymentModalTitle</h3>
+        </div>
+        <div class="modal-body">
+            <div>
+                <div class="price-proposal-label">
+                    <div class="big">@Resources.Payment.Value</div>
+                </div>
+
+                <span class="price-proposal">
+                    <strong id="thread_value">@Html.DisplayFor(model => model.Value)</strong>
+                    <strong>@Resources.Global.CurrencyPLN</strong>
+                </span>
+            </div>
+
+            <div id="paymentFormInner">
+                @Html.Action(MVC.Payment.PaymentForm(new PaymentModel { StrategyId = Model.StrategyId, Value = Model.Value, RelatedId = Model.RelatedId }))
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="submitPaymentModal"><span class="not-enough-funds">@Resources.Payment.Pay</span><span class="enough-funds">@Resources.Payment.PaymentContinue</span></a>
+            <div class="ajax-loader-small hidden"></div>
+        </div> 
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.enough-funds').hide();
+
+        $('#paymentModal').modal({
+            show: false
+        });
+
+        $('a[href="#paymentModal"]').click(function () {
+            var relatedId = $(this).data('relatedid');
+            var surchargeId = $(this).data('surchargeid');
+            var value = $(this).data('value');
+
+            if (relatedId) {
+                $('#PaymentForm_RelatedId').val(relatedId);
+            }
+
+            if (surchargeId) {
+                $('#PaymentForm_SurchargeId').val(surchargeId);
+            }
+
+            if (value) {
+                $('#thread_value').text(value);
+
+                var funds = $('#paymentModal').data('funds');
+                $('#payment-form').data('funds', funds);
+
+                thread.checkFunds(value);
+                var enoughFunds = parseFloat(value) <= parseFloat(funds);
+                $('.not-enough-funds').toggle(!enoughFunds);
+                $('.enough-funds').toggle(enoughFunds);
+            }
+        });
+
+        $('#submitPaymentModal').click(function () {
+            var submit = $(this);
+            var cancel = $('#paymentModal a[data-dismiss="modal"]');
+            var loader = $('#paymentModal .ajax-loader-small');
+
+            submit.hide();
+            cancel.hide();
+            loader.show();
+
+            $('#paymentForm fieldset:disabled input').attr('disabled', 'disabled');
+
+            $.post('/Payment/PaymentModal', $('#paymentForm').serialize(), function (result) {
+                if (!result) {
+                } else {
+                    $('#paymentFormInner').html(result);
+                    $('#paymentModal').modal({ show: true });
+
+                    // not redirect
+                    if (result.indexOf('form') == -1) {
+                        loader.hide();
+                        submit.show();
+                        cancel.show();
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+

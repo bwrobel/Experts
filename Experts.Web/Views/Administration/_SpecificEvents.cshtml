@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Experts.Core.Entities.Events.Event>
+
+<div class="modal fade" id="reactionFormWindow">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>
+            Reakcja na wydarzenie</h3>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+        <a class="btn" data-dismiss="modal">@Resources.Forms.Cancel</a> <a class="btn btn-primary" id="submitPayoff">Potwierdź</a>
+    </div>
+</div>
+
+<hr class="top-hr"/>
+
+<div class="table table-striped">
+        
+    @{
+        var eventButtonLabel = Model.Any() ? "(" + Model.Where(e => !e.IsHandled).Count().ToString() + ") " + Resources.Administration.Events : Resources.Administration.ThereIsNoEvents;
+    }
+
+    <button type="button" class="btn btn-small btn-inverse" data-toggle="collapse" data-target="#specificEventsTable">@eventButtonLabel</button>
+    @if (Model.Any())
+    {
+        const string reactLinkFormat = "<a href='javascript:void(0)' onclick='showReactionForm({0})'>reakcja</a>";
+        <div class="collapse" id="specificEventsTable">
+            <table class="grid">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>@Resources.Administration.EventName</th>
+                        <th>@Resources.Administration.EventOccurenceDate</th>
+                        <th>@Resources.Administration.EventMessage</th>
+                    </tr>
+                </thead>
+
+                <tbody> 
+                    @foreach(var threadEvent in Model)
+                    {
+                        <tr>
+                            <td>@Html.Raw(string.Format("<i class='icon-{0}'></i>", threadEvent.IconPostfix))</td>
+                            <td>@Html.Raw(!threadEvent.IsHandled ? string.Format(reactLinkFormat, threadEvent.Id) : string.Empty)</td>
+                            <td>@threadEvent.Name</td>
+                            <td>@threadEvent.OccurenceDate</td>
+                            <td>@threadEvent.Message</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#reactionFormWindow").modal({ show: false });
+    });
+
+    var showReactionForm = function (eventId) {
+
+        $('#reactionFormWindow').modal('show');
+
+        var windowBody = $("#reactionFormWindow .modal-body");
+
+        windowBody.showLoader();
+        windowBody.load("/Administration/EventReactionForm/" + eventId, function () {
+            editors.initRadio();
+            $("#submitPayoff").click(function () {
+                var form = $("#reactionFormWindow form");
+                var data = form.serialize();
+                var url = form.attr("action");
+
+                windowBody.showLoader();
+
+                $.post(url, data, function (result) {
+                    if (result.length > 0)
+                        $("#reactionFormWindow .modal-body").html(result);
+                    else {
+                        $('#reactionFormWindow').modal('hide');
+                        window.location.reload();
+                    }
+                });
+            });
+        });
+    };
+</script>

@@ -1,0 +1,138 @@
+﻿@model Experts.Web.Models.Forms.ProfileForm
+@using Experts.Web.Helpers
+
+<h2>@ViewBag.PageTitle</h2>
+
+@Html.Partial(MVC.Profile.Views._ProfileNavtabs, Resources.AccountConstants.EditProfile)
+
+<div class="row" id="profileEdit">
+    <div class="span12">
+
+        <section>
+            @using (Html.BeginForm(MVC.Profile.EditEmail()))
+            {
+                <fieldset class="well">
+                    @Html.EditorFor(model => model.EmailForm)
+                    <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                </fieldset>
+            }
+        </section>
+        
+        @if (AuthenticationHelper.CurrentUser.IsExpert)
+        {
+            <section>
+                <fieldset class="well">
+                    <div>
+                        @Resources.Account.ProfileImage
+
+                        <a id="avatarUploadInfo" data-original-title="@Resources.Account.ProfileImage" data-content="@Resources.Account.AvatarUploadInfo"><i class="icon-info-sign"></i></a>
+                    
+                    </div>
+
+                    <div class="well-small">
+                        @Html.ProfileBigAvatar(AuthenticationHelper.CurrentUser.Expert)
+                    </div>
+
+                    @using (Html.BeginForm(MVC.Profile.UploadImage(), FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {         
+                        <div class="btn" id="avatarbox">
+                            @Resources.Account.ChooseAvatar
+                            <input type="file" class="btn btn-small btn-primary" id="avatarupload" accept="image/*" name="files[]" onchange="this.form.submit()">
+                        </div>
+                    }
+
+                </fieldset>
+            </section>
+        }
+
+        <section>
+            @using (Html.BeginForm(MVC.Profile.EditPassword()))
+            {
+                <fieldset class="well">
+                    @Html.EditorFor(model => model.PasswordForm)
+                    <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                </fieldset>
+            }
+        </section>
+
+        <section>
+                @using (Html.BeginForm(MVC.Profile.EditMailConfiguration()))
+                {
+                    <fieldset class="well">
+                        @Html.EditorFor(model => model.MailConfigurationForm, MVC.Shared.Views.EditorTemplates.Mails)
+                        <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                    </fieldset>
+                }
+        </section>
+
+    </div>
+
+    @*<a class="btn" data-toggle="modal" href="#UserOpinionModal">Co sądzisz o serwisie?</a> 
+    @Html.Action(MVC.Profile.UserOpinion())*@
+
+    @if (AuthenticationHelper.IsExpert)
+    {
+        <div class="span12">
+            
+            <section>
+                @using (Html.BeginForm(MVC.Profile.EditExpertPublicName()))
+                {
+                    <fieldset class="well">
+                        @Html.EditorFor(model => model.ExpertProfileFormModel.ExpertProfileForm.PublicNameForm)
+                        <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                    </fieldset>
+                }
+            </section>
+
+            <section>
+                @using (Html.BeginForm(MVC.Profile.EditPhoneNumber()))
+                {
+                    <fieldset class="well">
+                        @Html.EditorFor(model => model.ExpertProfileFormModel.ExpertProfileForm.PhoneNumberForm)
+                        <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                    </fieldset>
+                }
+            </section>
+
+            <section>
+                @using (Html.BeginForm(MVC.Profile.EditCategories()))
+                {
+                    <fieldset class="well">
+                        @Html.EditorFor(model => model.ExpertProfileFormModel, MVC.Shared.Views.EditorTemplates.Categories)
+                        <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                    </fieldset>
+                }
+            </section>
+        
+            <section>
+                    @using (Html.BeginForm(MVC.Profile.EditExpertMicroprofile()))
+                    {
+                        <fieldset class="well">                            
+                            @Html.EditorFor(model => model.ExpertProfileFormModel.ExpertProfileForm.ExpertMicroprofileForm.Position)
+                            @Html.EditorFor(model => model.ExpertProfileFormModel.ExpertProfileForm.ExpertMicroprofileForm.Description)
+                            <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                        </fieldset>
+                    }
+            </section>
+        </div>   
+    }
+    
+    @if (AuthenticationHelper.IsModerator)
+    {
+        <div class="span12">
+            <section>
+                @using (Html.BeginForm(MVC.Profile.EditModeratorPublicName()))
+                {
+                    <fieldset class="well">
+                        @Html.EditorFor(model => model.ModeratorPublicNameForm)
+                        <input type="submit" class="btn btn-small btn-primary" value="@Resources.Forms.SaveChanges"/>
+                    </fieldset>
+                }
+            </section>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $("#avatarUploadInfo").popover();
+</script>
