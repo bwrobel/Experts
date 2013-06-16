@@ -5,10 +5,19 @@ namespace Experts.Core.Logging
     public interface ILog
     {
         ILog SetSource(Type source);
-        ILogEntry Debug(string message, params object[] args);
-        ILogEntry Info(string message, params object[] args);
-        ILogEntry Warn(string message, params object[] args);
-        ILogEntry Error(string message, params object[] args);
-        ILogEntry Fatal(string message, params object[] args);
+        ILog SetSource(string source);
+        
+        void Debug(string message, params object[] args);
+
+        void Info(string message, params object[] args);
+
+        void Warn(string message, params object[] args);
+        void Warn(Exception exception, string message, params object[] args);
+
+        void Error(string message, params object[] args);
+        void Error(Exception exception, string message, params object[] args);
+
+        void Fatal(string message, params object[] args);
+        void Fatal(Exception exception, string message, params object[] args);
     }
 }

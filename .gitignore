@@ -54,3 +54,4 @@ Experts.Web/Attachments/*
 !Web.config
 
 Experts.Web/ProfileImages/*.jpg
+Experts.Web/Logs/

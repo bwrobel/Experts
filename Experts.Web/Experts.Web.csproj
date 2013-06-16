@@ -180,6 +180,7 @@
     <Compile Include="Controllers\DevelopmentController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LaunchController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="DevelopmentController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -202,6 +203,7 @@
     <Compile Include="Helpers\PagerHelper.cs" />
     <Compile Include="Helpers\Log.cs" />
     <Compile Include="Helpers\RazorHelper.cs" />
+    <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Jobs\AwaitingExpertResponseEmailJob.cs" />
     <Compile Include="Jobs\AcceptAnswerReminderEmailJob.cs" />
     <Compile Include="Jobs\ErrorHandlingJobBuilder.cs" />
@@ -216,6 +218,10 @@
     <Compile Include="LaunchController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="LogController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\WebLog.cs" />
     <Compile Include="Models\Administration\ModeratorMenu.cs" />
     <Compile Include="Models\Administration\UserPayoffModel.cs" />
     <Compile Include="Models\Catalog\KeywordProcessForm.cs" />
@@ -564,6 +570,7 @@
     <Content Include="Scripts\App\Catalog.js" />
     <Content Include="Scripts\App\Chat.js" />
     <Content Include="Scripts\App\ContinousPaging.js" />
+    <Content Include="Scripts\App\Logger.js" />
     <Content Include="Scripts\App\Global.js" />
     <Content Include="Scripts\App\Partner.js" />
     <Content Include="Scripts\App\Selectbox.js" />

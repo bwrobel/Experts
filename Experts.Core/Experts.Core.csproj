@@ -98,7 +98,6 @@
     <Compile Include="Exceptions\ThreadExceptions.cs" />
     <Compile Include="Exceptions\UserExceptions.cs" />
     <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\ILogEntry.cs" />
     <Compile Include="Logging\ILogFactory.cs" />
     <Compile Include="Logging\Log4NetLog\Log4NetEntry.cs" />
     <Compile Include="Logging\Log4NetLog\Log4NetLog.cs" />

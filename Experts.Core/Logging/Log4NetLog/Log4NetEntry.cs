@@ -3,7 +3,7 @@ using log4net;
 
 namespace Experts.Core.Logging.Log4NetLog
 {
-    public class Log4NetEntry : ILogEntry
+    public class Log4NetEntry
     {
         private readonly string _applicationName;
         private readonly LoggerCall _loggerCall;
@@ -44,7 +44,7 @@ namespace Experts.Core.Logging.Log4NetLog
             NDC.Pop();
         }
 
-        public ILogEntry WithException(Exception ex)
+        public Log4NetEntry WithException(Exception ex)
         {
             _exception = ex;
             return this;

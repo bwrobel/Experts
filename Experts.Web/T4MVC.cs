@@ -32,6 +32,7 @@ public static class MVC
     public static Experts.Web.Controllers.DevelopmentController Development = new Experts.Web.Controllers.T4MVC_DevelopmentController();
     public static Experts.Web.Controllers.ErrorController Error = new Experts.Web.Controllers.T4MVC_ErrorController();
     public static Experts.Web.Controllers.LaunchController Launch = new Experts.Web.Controllers.T4MVC_LaunchController();
+    public static Experts.Web.Controllers.LogController Log = new Experts.Web.Controllers.T4MVC_LogController();
     public static Experts.Web.Controllers.PaymentController Payment = new Experts.Web.Controllers.T4MVC_PaymentController();
     public static Experts.Web.Controllers.ProfileController Profile = new Experts.Web.Controllers.T4MVC_ProfileController();
     public static Experts.Web.Controllers.StaticPagesController StaticPages = new Experts.Web.Controllers.T4MVC_StaticPagesController();
@@ -99,6 +100,8 @@ namespace Links
             public static readonly string Global_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Global.min.js") ? Url("Global.min.js") : Url("Global.js");
                           
             public static readonly string jQueryExtensions_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jQueryExtensions.min.js") ? Url("jQueryExtensions.min.js") : Url("jQueryExtensions.js");
+                          
+            public static readonly string Logger_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Logger.min.js") ? Url("Logger.min.js") : Url("Logger.js");
                           
             public static readonly string Paging_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Paging.min.js") ? Url("Paging.min.js") : Url("Paging.js");
                           

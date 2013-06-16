@@ -51,7 +51,7 @@ namespace Experts.Web
         {
             Log4NetLogFactory.Initialize();
 
-            _log.Debug("Application_Start Executed").Proceed();
+            _log.Debug("Application_Start Executed");
 
             AreaRegistration.RegisterAllAreas();
 
@@ -76,7 +76,7 @@ namespace Experts.Web
         
         protected void Application_EndRequest()
         {
-            _log.Debug("Application_EndRequest Executed").Proceed(); ;
+            _log.Debug("Application_EndRequest Executed");
 
             var factory = HttpContext.Current.Items["RepositoryFactory"] as RepositoryFactory;
             
