@@ -22,14 +22,14 @@ namespace Experts.Web.Jobs
 
         private void SaveActiveUsersStatistics()
         {
-            Log.Event<ActiveUsersStatisticsEvent>(ActiveUsersHelper.ActiveUsersCount.ToString());
-            Log.Event<ActiveExpertStatisticsEvent>(ActiveUsersHelper.ActiveExpertsCount.ToString());
+            EventLog.Event<ActiveUsersStatisticsEvent>(ActiveUsersHelper.ActiveUsersCount.ToString());
+            EventLog.Event<ActiveExpertStatisticsEvent>(ActiveUsersHelper.ActiveExpertsCount.ToString());
         }
 
         private void SaveSEOKeywordsStatistics()
         {
             var newSEOKeywordsCount = RepositoryHelper.Repository.SEOKeyword.Count(k => k.ByStatus(SEOKeywordStatus.New));
-            Log.Event<NewSeoKeywordsStatisticsEvent>(newSEOKeywordsCount.ToString());
+            EventLog.Event<NewSeoKeywordsStatisticsEvent>(newSEOKeywordsCount.ToString());
         }
 
         private void SaveLastDayThreadsStatistics()
@@ -37,7 +37,7 @@ namespace Experts.Web.Jobs
             var to = DateTime.Now.Subtract(DateTime.Now.TimeOfDay);
             var from = to.AddDays(-1);
             var lastDayThreadsCount = RepositoryHelper.Repository.Thread.Count(t => t.CreationDate >= from && t.CreationDate < to);
-            Log.Event<LastDayThreadsStatisticsEvent>(lastDayThreadsCount.ToString());
+            EventLog.Event<LastDayThreadsStatisticsEvent>(lastDayThreadsCount.ToString());
         }
     }
 }

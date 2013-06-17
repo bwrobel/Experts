@@ -11,7 +11,7 @@
         <div class="tiny-attachment" id="@i">
             <i class="icon-file"></i> 
             <span>@file.CutString(20)</span> 
-            <a onclick="thread.RemoveAttachmentTile(@i,'@Model.TemporaryAttachmentFolder', '@file')">×</a>
+            <a onclick="thread.RemoveAttachmentTile(@i,'@Model.TemporaryAttachmentFolder', '@file');logger.info('form-action','attachment removed');">×</a>
         </div>
     
         { i++; }
@@ -25,7 +25,7 @@ else
         {
             last = "last-attachment";
         }
-        <div id="@i" class="attachment @last"><a onclick="thread.RemoveAttachmentTile(@i,'@Model.TemporaryAttachmentFolder', '@file')">×</a> @file.CutString(70)</div>
+        <div id="@i" class="attachment @last"><a onclick="thread.RemoveAttachmentTile(@i,'@Model.TemporaryAttachmentFolder', '@file');logger.info('form-action','attachment removed');">×</a> @file.CutString(70)</div>
     
         {i++;}
     }

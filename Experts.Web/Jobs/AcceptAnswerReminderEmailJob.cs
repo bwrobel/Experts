@@ -17,7 +17,7 @@ namespace Experts.Web.Jobs
             var elapsedThreads = repository.Thread.Find(query: q => q.ByElapsedHours(48).ByOutgoingStates());
             foreach (var thread in elapsedThreads)
             {
-                Log.Event<AcceptAnswerReminderEvent>(thread);
+                EventLog.Event<AcceptAnswerReminderEvent>(thread);
                 Email.Send<AcceptAnswerReminderEmail>(thread);
             }
         }

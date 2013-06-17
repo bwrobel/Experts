@@ -37,7 +37,7 @@ namespace Experts.Web.Jobs
                     priceProposalsText += Resources.Thread.NoNewPriceProposals + "<br />";
 
                 Email.Send<NoExpertResponseEmail>(thread, priceProposalsText);
-                Log.Event<NoAnswerEvent>(thread);
+                EventLog.Event<NoAnswerEvent>(thread);
                 thread.IsExpertResponseNotified = true;
                 repository.Thread.Update(thread);
             }

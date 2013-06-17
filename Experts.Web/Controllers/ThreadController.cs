@@ -165,7 +165,7 @@ namespace Experts.Web.Controllers
             
             if (form.DirectQuestionExpertId != null) { DirectQuestion(form.DirectQuestionExpertId.Value, thread.Id); }
 
-            if (form.CustomValue != null) {Log.Event<UserDefinedPriceEvent>(thread);}
+            if (form.CustomValue != null) { EventLog.Event<UserDefinedPriceEvent>(thread); }
 
             form.PaymentForm.RelatedId = thread.Id;
 
@@ -174,7 +174,7 @@ namespace Experts.Web.Controllers
 
             var provisionData = "\r\n" + "Prowizja eksperta: " + thread.ExpertProvision.ToString() + 
                 "\r\n" + "Prowizja brokera: " + thread.BrokerProvision.ToString();
-            Log.Event<NewThreadEvent>(thread, provisionData);
+            EventLog.Event<NewThreadEvent>(thread, provisionData);
 
             var model = form.PaymentForm.PreparePayment(Url);
 
@@ -714,13 +714,13 @@ namespace Experts.Web.Controllers
             if (post.Type == PostType.DetailsRequest)
             {
                 Email.Send<ThreadMoreDetailsEmail>(thread);
-                Log.Event<DetailsRequestEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
+                EventLog.Event<DetailsRequestEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
             }
 
             if (isThreadExpert && (post.Type == PostType.Answer))
             {
                 Email.Send<ThreadAnsweredEmail>(thread);
-                Log.Event<QuestionAnsweredEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
+                EventLog.Event<QuestionAnsweredEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
             }
 
             if (!isThreadExpert && (post.Type == PostType.Attachment))
@@ -732,7 +732,7 @@ namespace Experts.Web.Controllers
             if (AuthenticationHelper.CurrentUser == thread.Author && (post.Type != PostType.Attachment))
             {
                 Email.Send<ThreadNewPostToExpertEmail>(thread);
-                Log.Event<AuthorAddedPostEvent>(thread);
+                EventLog.Event<AuthorAddedPostEvent>(thread);
             }
 
             if (post.Type == PostType.ModeratorAnswer)
@@ -931,7 +931,7 @@ namespace Experts.Web.Controllers
 
                 Email.Send<DirectQuestionEmail>(thread);
 
-                Log.Event<NewThreadForExpertEvent>(thread, expert.PublicName);
+                EventLog.Event<NewThreadForExpertEvent>(thread, expert.PublicName);
             }
 
             return RedirectToAction(MVC.Thread.ThreadDetails(threadId));
@@ -1249,7 +1249,7 @@ namespace Experts.Web.Controllers
                 Repository.Thread.AddPost(thread, SystemPostFactory.BuildAnalyzingPost(Repository.Consultant.All().First(), thread.Expert));
             }
 
-            Log.Event<ThreadOccupiedEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
+            EventLog.Event<ThreadOccupiedEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
 
             Flash.Success(Resources.Thread.ThreadOccupied);
             return RedirectToAction(MVC.Thread.ThreadDetails(threadId));
@@ -1321,7 +1321,7 @@ namespace Experts.Web.Controllers
                         Repository.Thread.DeletePost(thread.Posts.Single(p => p.Type == PostType.Analyzing));
 
                     Email.Send<GiveUpEmail>(thread, expert);
-                    Log.Event<GiveUpEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
+                    EventLog.Event<GiveUpEvent>(thread, AuthenticationHelper.CurrentUser.Expert.PublicName);
                 }
                 else
                 {
@@ -1329,7 +1329,7 @@ namespace Experts.Web.Controllers
                     Repository.Thread.DeletePost(analyzingPost);
                 }
 
-                Log.Event<ThreadReleasedEvent>(thread, expert.PublicName);
+                EventLog.Event<ThreadReleasedEvent>(thread, expert.PublicName);
             }
 
             Flash.Info(Resources.Thread.ThreadGivenUp);
@@ -1430,7 +1430,7 @@ namespace Experts.Web.Controllers
             Repository.User.Update(thread.Expert.User);
 
             Email.Send<ThreadAnswerAcceptedEmail>(thread);
-            Log.Event<AuthorAcceptedAnswerEvent>(thread, thread.Expert.PublicName);
+            EventLog.Event<AuthorAcceptedAnswerEvent>(thread, thread.Expert.PublicName);
 
             Flash.Success(Resources.Thread.AnswerAccepted);
 
@@ -1442,7 +1442,7 @@ namespace Experts.Web.Controllers
                 Repository.User.UpdateUserStats(thread.Author);
 
                 Flash.Success(Resources.Thread.FeedbackAdded);
-                Log.Event<AuthorCreatedFeedbackEvent>(thread, thread.Expert.PublicName);
+                EventLog.Event<AuthorCreatedFeedbackEvent>(thread, thread.Expert.PublicName);
             }
 
             return null;
@@ -1476,7 +1476,7 @@ namespace Experts.Web.Controllers
             var issue = Mapper.Map<ThreadIssue>(form);
             Repository.Thread.AddIssue(issue.Thread, issue);
 
-            Log.Event<ThreadIssueReportEvent>(issue.Thread, issue.IssueType.Describe(Resources.Thread.ResourceManager),
+            EventLog.Event<ThreadIssueReportEvent>(issue.Thread, issue.IssueType.Describe(Resources.Thread.ResourceManager),
                                               issue.Id);
 
             Flash.Success(Resources.Thread.IssueReported);
@@ -1528,7 +1528,7 @@ namespace Experts.Web.Controllers
 
             Repository.Thread.AddPriceProposal(priceProposal.Thread, priceProposal);
 
-            Log.Event<ExpertPriceProposalEvent>(priceProposal.Thread, AuthenticationHelper.CurrentUser.Expert.PublicName, priceProposal.Id);
+            EventLog.Event<ExpertPriceProposalEvent>(priceProposal.Thread, AuthenticationHelper.CurrentUser.Expert.PublicName, priceProposal.Id);
 
             Flash.Success(Resources.Thread.PriceProposalSent);
 
@@ -1592,7 +1592,7 @@ namespace Experts.Web.Controllers
             Repository.Thread.Update(thread);
 
             Flash.Success(Resources.Thread.AdditionalServiceSuccess);
-            Log.Event<NewAdditionalServiceEvent>(thread, thread.Expert.PublicName, additionalService.Id);
+            EventLog.Event<NewAdditionalServiceEvent>(thread, thread.Expert.PublicName, additionalService.Id);
             Email.Send<AdditionalServiceEmail>(additionalService);
 
             return null;

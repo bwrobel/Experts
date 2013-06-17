@@ -12,7 +12,7 @@ using Experts.Web.Models.Events;
 
 namespace Experts.Web.Helpers
 {
-    public static class Log
+    public static class EventLog
     {
         public static TEventType CreateEvent<TEventType>()
             where TEventType : Event, new()

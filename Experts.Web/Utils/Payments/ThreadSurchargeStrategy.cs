@@ -29,7 +29,7 @@ namespace Experts.Web.Utils.Payments
         public override void AfterPayment()
         {
             if (Payment.Status == PaymentStatus.Failed)
-                Log.Event<PaymentFailedEvent>(Payment);
+                EventLog.Event<PaymentFailedEvent>(Payment);
 
             #region Aktualizacja wątku
 

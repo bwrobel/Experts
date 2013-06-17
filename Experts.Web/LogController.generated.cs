@@ -25,6 +25,9 @@ namespace Experts.Web.Controllers
     public partial class LogController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public LogController() { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected LogController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -41,6 +44,36 @@ namespace Experts.Web.Controllers
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult Debug()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Debug);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult Info()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Info);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult Warn()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Warn);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult Error()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult Fatal()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Fatal);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public LogController Actions { get { return MVC.Log; } }
@@ -57,14 +90,64 @@ namespace Experts.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string Debug = "Debug";
+            public readonly string Info = "Info";
+            public readonly string Warn = "Warn";
+            public readonly string Error = "Error";
+            public readonly string Fatal = "Fatal";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string Debug = "Debug";
+            public const string Info = "Info";
+            public const string Warn = "Warn";
+            public const string Error = "Error";
+            public const string Fatal = "Fatal";
         }
 
 
+        static readonly ActionParamsClass_Debug s_params_Debug = new ActionParamsClass_Debug();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Debug DebugParams { get { return s_params_Debug; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Debug
+        {
+            public readonly string webLogEntity = "webLogEntity";
+        }
+        static readonly ActionParamsClass_Info s_params_Info = new ActionParamsClass_Info();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Info InfoParams { get { return s_params_Info; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Info
+        {
+            public readonly string webLogEntity = "webLogEntity";
+        }
+        static readonly ActionParamsClass_Warn s_params_Warn = new ActionParamsClass_Warn();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Warn WarnParams { get { return s_params_Warn; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Warn
+        {
+            public readonly string webLogEntity = "webLogEntity";
+        }
+        static readonly ActionParamsClass_Error s_params_Error = new ActionParamsClass_Error();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Error ErrorParams { get { return s_params_Error; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Error
+        {
+            public readonly string webLogEntity = "webLogEntity";
+        }
+        static readonly ActionParamsClass_Fatal s_params_Fatal = new ActionParamsClass_Fatal();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Fatal FatalParams { get { return s_params_Fatal; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Fatal
+        {
+            public readonly string webLogEntity = "webLogEntity";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -83,6 +166,41 @@ namespace Experts.Web.Controllers
     public class T4MVC_LogController : Experts.Web.Controllers.LogController
     {
         public T4MVC_LogController() : base(Dummy.Instance) { }
+
+        public override System.Web.Mvc.ActionResult Debug(Experts.Web.Logging.WebLogEntity webLogEntity)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Debug);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "webLogEntity", webLogEntity);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Info(Experts.Web.Logging.WebLogEntity webLogEntity)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Info);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "webLogEntity", webLogEntity);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Warn(Experts.Web.Logging.WebLogEntity webLogEntity)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Warn);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "webLogEntity", webLogEntity);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Error(Experts.Web.Logging.WebLogEntity webLogEntity)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "webLogEntity", webLogEntity);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Fatal(Experts.Web.Logging.WebLogEntity webLogEntity)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Fatal);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "webLogEntity", webLogEntity);
+            return callInfo;
+        }
 
     }
 }

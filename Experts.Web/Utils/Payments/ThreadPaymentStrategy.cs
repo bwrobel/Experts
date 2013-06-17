@@ -68,7 +68,7 @@ namespace Experts.Web.Utils.Payments
             #endregion
 
             Email.Send<ThreadPaymentConfirmationEmail>(RelatedEntity);
-            Log.Event<ThreadPayedEvent>(RelatedEntity);
+            EventLog.Event<ThreadPayedEvent>(RelatedEntity);
 
             var expertsToNotify = Repository.Expert.FindClosestMatches(RelatedEntity.Category.Id, RelatedEntity.CategoryAttributes, 30);
             int expertsToNotifyCount = 0;
@@ -85,7 +85,7 @@ namespace Experts.Web.Utils.Payments
                 }
             }
 
-            Log.Event<ExpertThreadNotifiedEvent>(RelatedEntity, expertsToNotifyCount.ToString());
+            EventLog.Event<ExpertThreadNotifiedEvent>(RelatedEntity, expertsToNotifyCount.ToString());
         }
     }
 }

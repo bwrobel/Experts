@@ -53,7 +53,7 @@ namespace Experts.Web.Controllers
 
             Repository.User.Update(user);
 
-            Log.Event<UserChangedEmailEvent>(user, user.NewEmail);
+            EventLog.Event<UserChangedEmailEvent>(user, user.NewEmail);
             Email.Send<ConfirmationEmail>(user);
 
             Flash.Info(Resources.Account.EmailChanged);
@@ -72,7 +72,7 @@ namespace Experts.Web.Controllers
                     var user = Repository.User.VerifyCredentials(AuthenticationHelper.CurrentUser.Email, model.OldPassword);
                     Repository.User.ChangePassword(user, model.Password);
 
-                    Log.Event<UserChangedPasswordEvent>(user);
+                    EventLog.Event<UserChangedPasswordEvent>(user);
 
                     Flash.Success(Resources.Account.PasswordChanged);
                     return RedirectToAction(MVC.Profile.Edit());
@@ -124,7 +124,7 @@ namespace Experts.Web.Controllers
             expert.VerificationStatus = ExpertVerificationStatus.ToReverify;
             expert.PublicName = model.PublicName;
 
-            Log.ExpertQualificationChangedEvent(expert.User, Resources.Account.PublicNameChanged);
+            EventLog.ExpertQualificationChangedEvent(expert.User, Resources.Account.PublicNameChanged);
 
             Repository.Expert.Update(expert);
 
@@ -169,7 +169,7 @@ namespace Experts.Web.Controllers
 
             Repository.Expert.Update(expert);
 
-            Log.ExpertQualificationChangedEvent(expert.User, Resources.Account.PhoneNumberChanged);
+            EventLog.ExpertQualificationChangedEvent(expert.User, Resources.Account.PhoneNumberChanged);
 
             Flash.Success(Resources.Account.PhoneNumberChangedToVerify);
             return RedirectToAction(MVC.Profile.Edit());
@@ -197,7 +197,7 @@ namespace Experts.Web.Controllers
             //if any new category, expert becomes not verified
             if (selectedCategories.Any(newCategory => !user.Expert.Categories.Contains(newCategory)))
             {
-                Log.ExpertQualificationChangedEvent(user, Resources.Account.CategoriesUpdated);
+                EventLog.ExpertQualificationChangedEvent(user, Resources.Account.CategoriesUpdated);
                 user.Expert.VerificationStatus = ExpertVerificationStatus.ToReverify;
                 if (user.Expert.IsVerified)
                     flashMessage = Resources.Account.CategoriesUpdatedForVerified;
@@ -231,7 +231,7 @@ namespace Experts.Web.Controllers
 
             Repository.User.Update(user);
 
-            Log.ExpertQualificationChangedEvent(user, Resources.Account.MicroprofileUpdated);
+            EventLog.ExpertQualificationChangedEvent(user, Resources.Account.MicroprofileUpdated);
 
             Flash.Success(Resources.Account.MicroprofileUpdatedForVerified);
             return RedirectToAction(MVC.Profile.Edit());
@@ -283,7 +283,7 @@ namespace Experts.Web.Controllers
                     expert.HasPicture = true;
                     Repository.Expert.Update(expert);
 
-                    Log.ExpertQualificationChangedEvent(expert.User, Resources.Account.ProfileImageChanged);
+                    EventLog.ExpertQualificationChangedEvent(expert.User, Resources.Account.ProfileImageChanged);
                 }
                 else
                 {
@@ -329,7 +329,7 @@ namespace Experts.Web.Controllers
             }
 
             Repository.Thread.AddFeedbackComment(feedback, form.Comment);
-            Log.Event<ExpertCommentedFeedbackEvent>(feedback.Thread, feedback.Thread.Expert.PublicName);
+            EventLog.Event<ExpertCommentedFeedbackEvent>(feedback.Thread, feedback.Thread.Expert.PublicName);
             Email.Send<FeedbackCommentEmail>(feedback.Thread);
 
             return RedirectToAction(MVC.Profile.FeedbackList(AuthenticationHelper.CurrentUser.Expert.Id));
@@ -491,7 +491,7 @@ namespace Experts.Web.Controllers
 
             Email.Send<UserPayoffConfirmationEmail>(user);
 
-            Log.Event<CashPaymentEvent>(user,additionalId:transfer.Id);
+            EventLog.Event<CashPaymentEvent>(user, additionalId: transfer.Id);
 
             Flash.Success(string.Format(Resources.Payment.FlashPayoffOrderSuccess, form.PayoffValue,form.BankAccount));
 
@@ -509,7 +509,7 @@ namespace Experts.Web.Controllers
         [DefaultRouting]
         public virtual ActionResult ExpertWidgetGenerated()
         {
-            Log.Event<ExpertWidgetGeneratedEvent>(AuthenticationHelper.CurrentUser);
+            EventLog.Event<ExpertWidgetGeneratedEvent>(AuthenticationHelper.CurrentUser);
             return null;
         }
 

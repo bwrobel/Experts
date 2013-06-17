@@ -14,12 +14,12 @@ namespace Experts.Web.Helpers
 
         public static int LogApplicationException(Exception exception)
         {
-            var eventId = Log.Event<SystemFailureEvent>(exception);
+            var eventId = EventLog.Event<SystemFailureEvent>(exception);
 
             AddToLastErrors(exception);
 
             if(IsANewRepeteableError(exception, int.Parse(ConfigurationManager.AppSettings["Events.BreakdownOccurencePerMinute"])))
-                Log.Event<SystemBreakdownEvent>(exception);
+                EventLog.Event<SystemBreakdownEvent>(exception);
 
             return eventId;
         }

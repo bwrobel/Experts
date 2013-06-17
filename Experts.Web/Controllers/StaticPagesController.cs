@@ -1,7 +1,5 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Experts.Web.Filters;
-using Experts.Web.Helpers;
 using Experts.Web.Models.StaticPages;
 
 namespace Experts.Web.Controllers

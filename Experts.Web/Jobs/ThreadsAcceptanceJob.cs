@@ -20,7 +20,7 @@ namespace Experts.Web.Jobs
                 if (thread.State == ThreadState.Accepted)
                 {
                     thread.State = ThreadState.Closed;
-                    Log.Event<ThreadClosedEvent>(thread);
+                    EventLog.Event<ThreadClosedEvent>(thread);
                 }
                 repository.Thread.Update(thread);
             }

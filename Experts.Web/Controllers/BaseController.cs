@@ -7,7 +7,7 @@ using Experts.Core.Entities;
 using Experts.Core.Repositories;
 using Experts.Core.Utils;
 using Experts.Web.Helpers;
-using Experts.Web.Filters;
+using Experts.Web.Logging;
 
 namespace Experts.Web.Controllers
 {
@@ -15,7 +15,16 @@ namespace Experts.Web.Controllers
     [SessionState(SessionStateBehavior.Required)]
     public partial class BaseController : Controller
     {
+        protected WebLog Log;
+        protected IHttpContextHelper HttpContextHelper;
         protected SEOKeyword RequestSeoKeyword;
+
+
+        public BaseController()
+        {
+            HttpContextHelper = new HttpContextHelper();
+            Log = new WebLog();
+        }
 
         public RepositoryFactory Repository
         {
@@ -24,6 +33,8 @@ namespace Experts.Web.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            Log.Debug(GetType(), "OnActionExecuting");
+
             if (!Request.Url.AbsoluteUri.StartsWith(ConfigurationManager.AppSettings["BaseUrl"]))
             {
                 filterContext.Result = new RedirectResult(ConfigurationManager.AppSettings["BaseUrl"] + Request.Url.PathAndQuery, true);
@@ -49,6 +60,8 @@ namespace Experts.Web.Controllers
                     {
                         currentKeyword.HitCount++;
                         Repository.SEOKeyword.Update(currentKeyword);
+
+                        Log.Info(GetType(), "Keyword '{0}' hit no {1} from url '{2}'", currentKeyword.Phrase, currentKeyword.HitCount, HttpContextHelper.RequestUrl);
                     }
                     else
                     {
@@ -56,6 +69,8 @@ namespace Experts.Web.Controllers
                         Repository.SEOKeyword.Add(keyword);
 
                         RequestSeoKeyword = keyword;
+
+                        Log.Info(GetType(), "New Keyword {0}", keyword.Phrase);
                     }
                 }
             }
@@ -63,6 +78,8 @@ namespace Experts.Web.Controllers
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
+            Log.Debug(GetType(), "OnActionExecuted");
+
             BrokerHelper.SetNoBrokerCookie(filterContext);
             Response.Headers["Access-Control-Allow-Credentials"] = "true";
         }

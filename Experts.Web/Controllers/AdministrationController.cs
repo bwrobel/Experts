@@ -53,7 +53,7 @@ namespace Experts.Web.Controllers
         public virtual ActionResult EventReactionForm(int eventId)
         {
             var systemEvent = Repository.Event.Get(eventId);
-            var genericType = Log.GetReactionType(systemEvent.GetType());
+            var genericType = EventLog.GetReactionType(systemEvent.GetType());
 
             var reactionModel = Activator.CreateInstance(genericType);
 

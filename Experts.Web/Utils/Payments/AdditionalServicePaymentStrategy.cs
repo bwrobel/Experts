@@ -67,7 +67,7 @@ namespace Experts.Web.Utils.Payments
 
             Repository.Thread.AddPost(thread, SystemPostFactory.BuildAdditionalServicePost(Repository.Consultant.All().First(), additionalService.Title));
 
-            Log.Event<AdditionalServicePayedEvent>(thread, additionalService.Title);
+            EventLog.Event<AdditionalServicePayedEvent>(thread, additionalService.Title);
             Email.Send<AdditionalServiceAnswerEmail>(additionalService);
         }
     }

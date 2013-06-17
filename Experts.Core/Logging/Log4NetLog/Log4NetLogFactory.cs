@@ -15,26 +15,14 @@ namespace Experts.Core.Logging.Log4NetLog
             _initialized = true;
         }
 
-        public static ILog CreateNew(Type source)
-        {
-            return new Log4NetLog(Environment.CurrentDirectory)
-                .SetSource(source);
-        }
-
-        public static ILog CreateNew(string source)
-        {
-            return new Log4NetLog(Environment.CurrentDirectory)
-                .SetSource(source);
-        }
-
         public static ILog CreateNew()
         {
             return new Log4NetLog(Environment.CurrentDirectory);
         }
 
-        public ILog New(Type source)
+        public ILog New()
         {
-            return CreateNew(source);
+            return CreateNew();
         }
     }
 }

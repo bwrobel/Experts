@@ -23,7 +23,7 @@ namespace Experts.Web.Jobs
 
             foreach (var thread in awaitingThreads)
             {
-                Log.Event<AwaitingExpertResponseEvent>(thread);
+                EventLog.Event<AwaitingExpertResponseEvent>(thread);
                 Email.Send<AwaitingExpertResponseEmail>(thread);
                 repository.Thread.AddPost(thread, SystemPostFactory.BuildAwaitingExpertResponsePost(repository.Consultant.All().First()));
                 thread.IsNotified = true;

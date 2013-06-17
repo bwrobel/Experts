@@ -233,7 +233,7 @@ namespace Experts.Web.Controllers
 
                 Repository.Chat.Add(chat);
 
-                Log.Event<NewChatEvent>(chat.Owner);
+                EventLog.Event<NewChatEvent>(chat.Owner);
 
                 Session[SessionKey.ChatId] = chat.Id;
             }

@@ -201,9 +201,9 @@
     <Compile Include="Helpers\HelpHelper.cs" />
     <Compile Include="Helpers\Email.cs" />
     <Compile Include="Helpers\PagerHelper.cs" />
-    <Compile Include="Helpers\Log.cs" />
+    <Compile Include="Helpers\EventLog.cs" />
     <Compile Include="Helpers\RazorHelper.cs" />
-    <Compile Include="Helpers\SessionHelper.cs" />
+    <Compile Include="Helpers\HttpContextHelper.cs" />
     <Compile Include="Jobs\AwaitingExpertResponseEmailJob.cs" />
     <Compile Include="Jobs\AcceptAnswerReminderEmailJob.cs" />
     <Compile Include="Jobs\ErrorHandlingJobBuilder.cs" />
@@ -222,6 +222,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Logging\WebLog.cs" />
+    <Compile Include="Logging\WebLogEntity.cs" />
     <Compile Include="Models\Administration\ModeratorMenu.cs" />
     <Compile Include="Models\Administration\UserPayoffModel.cs" />
     <Compile Include="Models\Catalog\KeywordProcessForm.cs" />

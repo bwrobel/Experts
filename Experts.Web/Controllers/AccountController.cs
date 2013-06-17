@@ -79,7 +79,7 @@ namespace Experts.Web.Controllers
                 Flash.Success(Resources.Account.AccountCreated);
 
                 Email.Send<ActivationEmail>(user);
-                Log.Event<UserRegisteredEvent>(user);
+                EventLog.Event<UserRegisteredEvent>(user);
 
 
                 if (isNoSignUpUser)
@@ -299,7 +299,7 @@ namespace Experts.Web.Controllers
             currentExpert.CategoryAttributes.Add(categoryAttributeValues);
             Repository.Expert.Update(currentExpert);
 
-            Log.ExpertQualificationChangedEvent(currentExpert.User, string.Format(Resources.Account.ExpertCategoryAttributesChanged, category.Name));
+            EventLog.ExpertQualificationChangedEvent(currentExpert.User, string.Format(Resources.Account.ExpertCategoryAttributesChanged, category.Name));
 
             return RedirectToAction(currentExpert.CategoryAttributes.Count < currentExpert.Categories.Count ? MVC.Account.ExpertCategoryAttributes() : MVC.Profile.Edit());
         }
@@ -451,7 +451,7 @@ namespace Experts.Web.Controllers
                         Email.Send<RecommenderEmail>(recommendation.Recommender);
                     }
                 }
-                Log.Event<ExpertRegisteredEvent>(user);
+                EventLog.Event<ExpertRegisteredEvent>(user);
 
                 Flash.Success(Resources.Account.AccountCreated);
 
@@ -496,7 +496,7 @@ namespace Experts.Web.Controllers
             }
 
             Flash.Success(Resources.Account.ExpertConfirmation);
-            Log.Event<ExpertRegisteredEvent>(AuthenticationHelper.CurrentUser);
+            EventLog.Event<ExpertRegisteredEvent>(AuthenticationHelper.CurrentUser);
 
             return RedirectToAction(MVC.Account.ExpertCategoryAttributes());
         }
@@ -510,7 +510,7 @@ namespace Experts.Web.Controllers
                 return RedirectToAction(MVC.StaticPages.Home());
             }
 
-            Log.Event<BecomePartnerRequestEvent>(AuthenticationHelper.CurrentUser);
+            EventLog.Event<BecomePartnerRequestEvent>(AuthenticationHelper.CurrentUser);
 
             Flash.Info(Resources.Account.PartnerConfirmation);
             return RedirectToAction(MVC.Profile.MyQuestions());
@@ -521,7 +521,7 @@ namespace Experts.Web.Controllers
             try
             {
                 var user = Repository.User.Activate(activationKey);
-                Log.Event<UserAccountActivatedEvent>(user);
+                EventLog.Event<UserAccountActivatedEvent>(user);
                 Flash.Success(Resources.Account.ActivationSuccessful);
             }
             catch (UserNotFoundException)

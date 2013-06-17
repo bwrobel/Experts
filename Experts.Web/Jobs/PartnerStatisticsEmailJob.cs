@@ -19,7 +19,7 @@ namespace Experts.Web.Jobs
                 foreach (var partner in partners)
                 {
                     Email.Send<PartnerStatisticsEmail>(partner);
-                    Log.Event<PartnerStatisticsEmailSentEvent>(partner.User);
+                    EventLog.Event<PartnerStatisticsEmailSentEvent>(partner.User);
                 }
             }
         }

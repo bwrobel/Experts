@@ -15,7 +15,7 @@ namespace Experts.Web
 {
     public class MvcApplication : HttpApplication
     {
-        private ILog _log = Log4NetLogFactory.CreateNew(typeof(MvcApplication));
+        private ILog _log = Log4NetLogFactory.CreateNew();
 
         private static bool IsPreLaunchModeEnabled
         {
@@ -51,7 +51,7 @@ namespace Experts.Web
         {
             Log4NetLogFactory.Initialize();
 
-            _log.Debug("Application_Start Executed");
+            _log.Debug(GetType(), "Application_Start Executed");
 
             AreaRegistration.RegisterAllAreas();
 
@@ -76,7 +76,7 @@ namespace Experts.Web
         
         protected void Application_EndRequest()
         {
-            _log.Debug("Application_EndRequest Executed");
+            _log.Debug(GetType(), "Application_EndRequest Executed");
 
             var factory = HttpContext.Current.Items["RepositoryFactory"] as RepositoryFactory;
             

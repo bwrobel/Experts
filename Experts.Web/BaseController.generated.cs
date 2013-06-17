@@ -25,9 +25,6 @@ namespace Experts.Web.Controllers
     public partial class BaseController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public BaseController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected BaseController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

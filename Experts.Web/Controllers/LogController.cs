@@ -1,71 +1,59 @@
 ﻿using System.Web.Mvc;
-using Experts.Core.Logging;
-using Experts.Core.Logging.Log4NetLog;
 using Experts.Web.Filters;
-using Experts.Web.Helpers;
 using Experts.Web.Logging;
 
 namespace Experts.Web.Controllers
 {
     public partial class LogController : BaseController
     {
-        private readonly SessionHelper _sessionHelper;
-        private readonly ILog _log;
-
-        public LogController()
-        {
-            _sessionHelper = new SessionHelper();
-            _log = Log4NetLogFactory.CreateNew();
-        }
-
         [HttpPost]
         [DefaultRouting]
-        public virtual ActionResult Debug(WebLog webLog)
+        public virtual ActionResult Debug(WebLogEntity webLogEntity)
         {
-            webLog.SessionId = _sessionHelper.CurrentSession;
-            LogWithSource(webLog).Debug(webLog.ToString());
+            webLogEntity.SessionId = HttpContextHelper.SessionId;
+            Log.Debug(GetSource(webLogEntity), webLogEntity.ToString());
             return new EmptyResult();
         }
 
         [HttpPost]
         [DefaultRouting]
-        public virtual ActionResult Info(WebLog webLog)
+        public virtual ActionResult Info(WebLogEntity webLogEntity)
         {
-            webLog.SessionId = _sessionHelper.CurrentSession;
-            LogWithSource(webLog).Info(webLog.ToString());
+            webLogEntity.SessionId = HttpContextHelper.SessionId;
+            Log.Info(GetSource(webLogEntity), webLogEntity.ToString());
             return new EmptyResult();
         }
 
         [HttpPost]
         [DefaultRouting]
-        public virtual ActionResult Warn(WebLog webLog)
+        public virtual ActionResult Warn(WebLogEntity webLogEntity)
         {
-            webLog.SessionId = _sessionHelper.CurrentSession;
-            LogWithSource(webLog).Warn(webLog.ToString());
+            webLogEntity.SessionId = HttpContextHelper.SessionId;
+            Log.Warn(GetSource(webLogEntity), webLogEntity.ToString());
             return new EmptyResult();
         }
 
         [HttpPost]
         [DefaultRouting]
-        public virtual ActionResult Error(WebLog webLog)
+        public virtual ActionResult Error(WebLogEntity webLogEntity)
         {
-            webLog.SessionId = _sessionHelper.CurrentSession;
-            LogWithSource(webLog).Error(webLog.ToString());
+            webLogEntity.SessionId = HttpContextHelper.SessionId;
+            Log.Error(GetSource(webLogEntity), webLogEntity.ToString());
             return new EmptyResult();
         }
 
         [HttpPost]
         [DefaultRouting]
-        public virtual ActionResult Fatal(WebLog webLog)
+        public virtual ActionResult Fatal(WebLogEntity webLogEntity)
         {
-            webLog.SessionId = _sessionHelper.CurrentSession;
-            LogWithSource(webLog).Fatal(webLog.ToString());
+            webLogEntity.SessionId = HttpContextHelper.SessionId;
+            Log.Fatal(GetSource(webLogEntity), webLogEntity.ToString());
             return new EmptyResult();
         }
 
-        private ILog LogWithSource(WebLog webLog)
+        private string GetSource(WebLogEntity webLogEntity)
         {
-            return _log.SetSource(GetType() + ":" + webLog.Source);
+            return GetType().FullName + ":" + webLogEntity.Source;
         }
     }
 }
