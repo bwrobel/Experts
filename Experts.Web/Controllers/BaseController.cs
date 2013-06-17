@@ -23,7 +23,7 @@ namespace Experts.Web.Controllers
         public BaseController()
         {
             HttpContextHelper = new HttpContextHelper();
-            Log = new WebLog();
+            
         }
 
         public RepositoryFactory Repository
@@ -33,7 +33,9 @@ namespace Experts.Web.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            Log.Debug(GetType(), "OnActionExecuting");
+            Log = WebLogFactory.CreateNew();
+
+            //Log.Debug(GetType(), "OnActionExecuting");
 
             if (!Request.Url.AbsoluteUri.StartsWith(ConfigurationManager.AppSettings["BaseUrl"]))
             {
@@ -78,7 +80,7 @@ namespace Experts.Web.Controllers
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            Log.Debug(GetType(), "OnActionExecuted");
+            //Log.Debug(GetType(), "OnActionExecuted");
 
             BrokerHelper.SetNoBrokerCookie(filterContext);
             Response.Headers["Access-Control-Allow-Credentials"] = "true";

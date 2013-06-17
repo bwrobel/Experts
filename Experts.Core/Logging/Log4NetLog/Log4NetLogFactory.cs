@@ -11,7 +11,7 @@ namespace Experts.Core.Logging.Log4NetLog
             if (_initialized) return;
             
             log4net.Config.XmlConfigurator.Configure();
-
+            
             _initialized = true;
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -51,7 +52,7 @@ namespace Experts.Web
         {
             Log4NetLogFactory.Initialize();
 
-            _log.Debug(GetType(), "Application_Start Executed");
+            //_log.Debug(GetType(), "Application_Start Executed");
 
             AreaRegistration.RegisterAllAreas();
 
@@ -76,7 +77,7 @@ namespace Experts.Web
         
         protected void Application_EndRequest()
         {
-            _log.Debug(GetType(), "Application_EndRequest Executed");
+            //_log.Debug(GetType(), "Application_EndRequest Executed");
 
             var factory = HttpContext.Current.Items["RepositoryFactory"] as RepositoryFactory;
             
@@ -109,6 +110,13 @@ namespace Experts.Web
             
             IController errorsController = new ErrorController();
             errorsController.Execute(rc);
+        }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            //_log.Info(GetType(),"New session");
+            //to assure persistant session (browser window lifetime)
+            HttpContext.Current.Session.Add("__MyAppSession", string.Empty);
         }
     }
 }

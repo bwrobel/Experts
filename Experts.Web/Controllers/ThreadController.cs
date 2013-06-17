@@ -35,12 +35,15 @@ namespace Experts.Web.Controllers
 
             if (!ModelState.IsValid)
             {
+                Log.Info(GetType(), "form-action:Form invalid");
                 if (!ModelState.IsValidField("ThreadForm.CategoryId"))
                     Flash.Error("Wybierz kategorię pytania");
 
                 return View(MVC.StaticPages.Views.Home,
                             new HomeModel(Repository.Category.All()) {ThreadForm = form});
             }
+
+            Log.Info(GetType(), "form-action:Asked question '{0}'", form.Content);
 
             var categoryAttributes = Repository.Category.Get(form.CategoryId.Value).Attributes;
             var model = new CategoryAttributesThreadFormModel { ThreadForm = form, CategoryAttributes = categoryAttributes };

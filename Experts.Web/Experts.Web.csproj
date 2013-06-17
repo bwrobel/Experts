@@ -223,6 +223,7 @@
     </Compile>
     <Compile Include="Logging\WebLog.cs" />
     <Compile Include="Logging\WebLogEntity.cs" />
+    <Compile Include="Logging\WebLogFactory.cs" />
     <Compile Include="Models\Administration\ModeratorMenu.cs" />
     <Compile Include="Models\Administration\UserPayoffModel.cs" />
     <Compile Include="Models\Catalog\KeywordProcessForm.cs" />

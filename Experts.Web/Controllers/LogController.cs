@@ -10,8 +10,7 @@ namespace Experts.Web.Controllers
         [DefaultRouting]
         public virtual ActionResult Debug(WebLogEntity webLogEntity)
         {
-            webLogEntity.SessionId = HttpContextHelper.SessionId;
-            Log.Debug(GetSource(webLogEntity), webLogEntity.ToString());
+            Log.ForRequestUrl(webLogEntity.Url).Debug(GetSource(webLogEntity), webLogEntity.Message);
             return new EmptyResult();
         }
 
@@ -19,8 +18,7 @@ namespace Experts.Web.Controllers
         [DefaultRouting]
         public virtual ActionResult Info(WebLogEntity webLogEntity)
         {
-            webLogEntity.SessionId = HttpContextHelper.SessionId;
-            Log.Info(GetSource(webLogEntity), webLogEntity.ToString());
+            Log.ForRequestUrl(webLogEntity.Url).Info(GetSource(webLogEntity), webLogEntity.Message);
             return new EmptyResult();
         }
 
@@ -28,8 +26,7 @@ namespace Experts.Web.Controllers
         [DefaultRouting]
         public virtual ActionResult Warn(WebLogEntity webLogEntity)
         {
-            webLogEntity.SessionId = HttpContextHelper.SessionId;
-            Log.Warn(GetSource(webLogEntity), webLogEntity.ToString());
+            Log.ForRequestUrl(webLogEntity.Url).Warn(GetSource(webLogEntity), webLogEntity.Message);
             return new EmptyResult();
         }
 
@@ -37,8 +34,7 @@ namespace Experts.Web.Controllers
         [DefaultRouting]
         public virtual ActionResult Error(WebLogEntity webLogEntity)
         {
-            webLogEntity.SessionId = HttpContextHelper.SessionId;
-            Log.Error(GetSource(webLogEntity), webLogEntity.ToString());
+            Log.ForRequestUrl(webLogEntity.Url).Error(GetSource(webLogEntity), webLogEntity.Message);
             return new EmptyResult();
         }
 
@@ -46,8 +42,7 @@ namespace Experts.Web.Controllers
         [DefaultRouting]
         public virtual ActionResult Fatal(WebLogEntity webLogEntity)
         {
-            webLogEntity.SessionId = HttpContextHelper.SessionId;
-            Log.Fatal(GetSource(webLogEntity), webLogEntity.ToString());
+            Log.ForRequestUrl(webLogEntity.Url).Fatal(GetSource(webLogEntity), webLogEntity.Message);
             return new EmptyResult();
         }
 
