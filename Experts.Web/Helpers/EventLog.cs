@@ -6,6 +6,8 @@ using System.Reflection;
 using System.Text;
 using Experts.Core.Entities;
 using Experts.Core.Entities.Events;
+using Experts.Core.Logging;
+using Experts.Core.Logging.Log4NetLog;
 using Experts.Core.Utils;
 using System.Web;
 using Experts.Web.Models.Events;
@@ -14,9 +16,12 @@ namespace Experts.Web.Helpers
 {
     public static class EventLog
     {
+        private static ILog _log = Log4NetLogFactory.CreateNew();
+
         public static TEventType CreateEvent<TEventType>()
             where TEventType : Event, new()
         {
+            
             return new TEventType { IsHandled = GetReactionType(typeof(TEventType)) == null };
         }
 
@@ -39,6 +44,7 @@ namespace Experts.Web.Helpers
             logEvent.Data = additionalData;
             logEvent.AdditionalId = additionalId ?? 0;
 
+            _log.Info(typeof(EventLog),logEvent.ToString());
             RepositoryHelper.Repository.Event.Add(logEvent);
         }
 
@@ -50,6 +56,7 @@ namespace Experts.Web.Helpers
             logEvent.Data = additionalData;
             logEvent.AdditionalId = additionalId ?? 0;
 
+            _log.Info(typeof(EventLog), logEvent.ToString());
             RepositoryHelper.Repository.Event.Add(logEvent);
         }
 
@@ -58,7 +65,8 @@ namespace Experts.Web.Helpers
         {
             var logEvent = CreateEvent<TEventType>();
             logEvent.RelatedPayment = relatedPayment;
-            
+
+            _log.Info(typeof(EventLog), logEvent.ToString());
             RepositoryHelper.Repository.Event.Add(logEvent);
         }
 
@@ -74,6 +82,7 @@ namespace Experts.Web.Helpers
                 var logEvent = CreateEvent<TEventType>();
                 logEvent.Data = data;
 
+                _log.Error(typeof(EventLog), logEvent.ToString());
                 RepositoryHelper.Repository.Event.Add(logEvent);
                 return logEvent.Id;
             }
@@ -100,6 +109,8 @@ namespace Experts.Web.Helpers
             else
             {
                 lastEvent.Data += "<br/>" + message;
+
+                _log.Info(typeof(EventLog), lastEvent.ToString());
                 RepositoryHelper.Repository.Event.Update(lastEvent);
             }
         }

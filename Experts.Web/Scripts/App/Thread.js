@@ -17,13 +17,13 @@ var thread = {
 
             if ($("#question_form textarea").val().trim().length == 0) {
                 errors = true;
-                logger.info('form-action', 'no-text form validation error');
+                logger.info('formularz pytania', 'blad - brak tekstu');
                 $("#question_form .no-text").show();
             }
 
             if ($("#question_form #ThreadForm_CategoryId").val() == "") {
                 errors = true;
-                logger.info('form-action', 'no-category form validation error');
+                logger.info('formularz pytania', 'blad - brak kategorii');
                 $("#question_form .no-category").show();
             }
 

@@ -862,7 +862,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zadaj pytanie ekspertom!.
+        ///   Looks up a localized string similar to Zapytaj eksperta - askunts.com - porady prawne, medyczne, finansowe.
         /// </summary>
         public static string StaticPages_Home_Title {
             get {
@@ -871,7 +871,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dowiedz się więcej o portalu Asknuts. Baza wiedzy o Asknuts.com.
+        ///   Looks up a localized string similar to Jeśli masz pytanie do eksperta lub potrzebujesz profesjonalnej porady, ta strona cię zainteresuje. Znajdziesz tu nie tylko porady medyczne czy prawne, ale także porady finansowe, które rozwieją wszystkie twoje wątpliwości. Nie zwlekaj, zapytaj eksperta, a otrzymasz porady lekarzy, prawników i ekonomistów..
         /// </summary>
         public static string StaticPages_MeetAsknuts_Description {
             get {

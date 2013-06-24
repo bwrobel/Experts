@@ -14,8 +14,8 @@
             <p class="post-text enters" ondblclick="javascript:thread.postEditShowEditor(this)">@Model.ThreadForm.Content</p>
             <div class="post-editor row-fluid" style="display: none;">
                 <textarea class="enters post-text-editor first-editor-post">@Model.ThreadForm.Content</textarea>
-                <a class="btn btn-primary btn-small" onclick=" javascript:thread.postEditSave(this, thread.updateQuestion);">@Resources.Thread.PostEditSave</a>
-                <a class="btn btn-small" onclick="javascript:thread.postEditCancel(this);">@Resources.Thread.PostEditCancel</a>
+                <a class="btn btn-primary btn-small" onclick=" javascript:thread.postEditSave(this, thread.updateQuestion);logger.info('pytanie','zapisz pytanie po edycji');">@Resources.Thread.PostEditSave</a>
+                <a class="btn btn-small" onclick="javascript:thread.postEditCancel(this);logger.info('pytanie','anuluj edycje pytania');">@Resources.Thread.PostEditCancel</a>
             </div>
 
             <div id="attachment-tiny-list" class="attachment-tiles">
@@ -23,13 +23,13 @@
             </div>
 
             <div class="pull-right post-buttons">
-                <a class="btn btn-inverse btn-small edit-button" onclick="javascript:thread.postEditShowEditor(this)">
+                <a class="btn btn-inverse btn-small edit-button" onclick="javascript:thread.postEditShowEditor(this);logger.info('pytanie','edytuj pytanie');">
                     <i class="icon-pencil"></i> @Resources.Thread.EditContent
                 </a>
 
                 <a class="thread-attachment-button btn btn-small btn-primary">
                     <i class="icon-paper-clip"></i> @Resources.Thread.ThreadAttachFile
-                    <input id="fileupload" type="file" name="files[]" multiple>
+                    <input id="fileupload" onclick="logger.info('pytanie','dodaj zalacznik')" type="file" name="files[]" multiple>
                 </a>
             </div>
         </div>

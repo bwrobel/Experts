@@ -32,8 +32,8 @@
     
                 
                 <div class="pull-right">
-                    <a href="javascript:void()" id="skip" class="purple">@Resources.Thread.SkipCategoryAttributes</a>
-                    <input type="submit" class="btn btn-primary" value="@Resources.Thread.Continue" />
+                    <a href="javascript:void()" id="skip" class="purple" onclick="logger.info('opcje dodatkowe', 'pomin ten krok');">@Resources.Thread.SkipCategoryAttributes</a>
+                    <input type="submit" class="btn btn-primary" onclick="logger.info('opcje dodatkowe', 'kontynuuj');" value="@Resources.Thread.Continue" />
                 </div>
             }
         </section>

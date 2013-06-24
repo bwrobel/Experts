@@ -141,6 +141,8 @@ namespace Experts.Web.Controllers
 
             if (!ModelState.IsValid)
             {
+                
+                Log.Info(GetType(),"Thread Save Validation Failed with errors: {0}",string.Join(";",ModelState.SelectMany(keyValuePair => keyValuePair.Value.Errors).Select(x => x.ErrorMessage)));
                 return View(MVC.Thread.Views.Options, form);
             }
 

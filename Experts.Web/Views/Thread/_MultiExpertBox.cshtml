@@ -7,8 +7,8 @@
         @if (Model.ExpertIds.Count() > 1)
         {
             <span class="pager">
-                <a href="javascript:void(0)" id="previous-expert">&lt;</a>
-                <a href="javascript:void(0)" id="next-expert">&gt;</a>
+                <a href="javascript:void(0)" id="previous-expert"  onclick="logger.info('okienko z ekspertami','poprzedni')">&lt;</a>
+                <a href="javascript:void(0)" id="next-expert" onclick="logger.info('okienko z ekspertami','nastepny')">&gt;</a>
             </span>
         }
     </div>

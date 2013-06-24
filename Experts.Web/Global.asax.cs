@@ -52,8 +52,6 @@ namespace Experts.Web
         {
             Log4NetLogFactory.Initialize();
 
-            //_log.Debug(GetType(), "Application_Start Executed");
-
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
@@ -77,8 +75,6 @@ namespace Experts.Web
         
         protected void Application_EndRequest()
         {
-            //_log.Debug(GetType(), "Application_EndRequest Executed");
-
             var factory = HttpContext.Current.Items["RepositoryFactory"] as RepositoryFactory;
             
 
@@ -114,7 +110,6 @@ namespace Experts.Web
 
         void Session_Start(object sender, EventArgs e)
         {
-            //_log.Info(GetType(),"New session");
             //to assure persistant session (browser window lifetime)
             HttpContext.Current.Session.Add("__MyAppSession", string.Empty);
         }

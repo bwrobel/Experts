@@ -68,6 +68,9 @@
                 select[0].selectedIndex = ui.value - 1;
                 select.change();
             },
+            change: function(event, ui) {
+                logger.info('slider', 'zmiana wartosci na ' + ui.value);
+            },
             animate: true
         });
     }

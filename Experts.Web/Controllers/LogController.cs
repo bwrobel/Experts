@@ -48,7 +48,7 @@ namespace Experts.Web.Controllers
 
         private string GetSource(WebLogEntity webLogEntity)
         {
-            return GetType().FullName + ":" + webLogEntity.Source;
+            return "[Web]" + webLogEntity.Source;
         }
     }
 }

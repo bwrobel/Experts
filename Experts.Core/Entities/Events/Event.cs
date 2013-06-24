@@ -21,6 +21,11 @@ namespace Experts.Core.Entities.Events
 
         public virtual string Data { get; set; }
         public virtual int AdditionalId { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Event:{0};Data:{1};AdditionalId: {2}", GetType(), Data, AdditionalId);
+        }
     }
 
     public static class Icon

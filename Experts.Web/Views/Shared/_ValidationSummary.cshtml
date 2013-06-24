@@ -1,0 +1,16 @@
+﻿@model ModelStateDictionary
+
+@if(!Model.IsValid)
+{
+    
+    <div class="alert alert-error">
+        <div class="icon-warning-sign"></div><strong class="purple"> Popraw błędy formularza:</strong>
+        <ul class="nav nav-list">
+            @foreach (var modelError in 
+                Model.SelectMany(keyValuePair => keyValuePair.Value.Errors))
+            {
+                <li><span class="bl">@modelError.ErrorMessage</span></li>
+            }
+        </ul>
+    </div>
+}

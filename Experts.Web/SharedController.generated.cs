@@ -39,6 +39,7 @@ namespace T4MVC
                 public readonly string _Layout = "_Layout";
                 public readonly string _Pager = "_Pager";
                 public readonly string _TopMenu = "_TopMenu";
+                public readonly string _ValidationSummary = "_ValidationSummary";
                 public readonly string ActionLinkWithConfirmation = "ActionLinkWithConfirmation";
                 public readonly string Error404 = "Error404";
                 public readonly string Error500 = "Error500";
@@ -49,6 +50,7 @@ namespace T4MVC
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _Pager = "~/Views/Shared/_Pager.cshtml";
             public readonly string _TopMenu = "~/Views/Shared/_TopMenu.cshtml";
+            public readonly string _ValidationSummary = "~/Views/Shared/_ValidationSummary.cshtml";
             public readonly string ActionLinkWithConfirmation = "~/Views/Shared/ActionLinkWithConfirmation.cshtml";
             public readonly string Error404 = "~/Views/Shared/Error404.cshtml";
             public readonly string Error500 = "~/Views/Shared/Error500.cshtml";

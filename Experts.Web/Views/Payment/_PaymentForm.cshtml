@@ -8,7 +8,7 @@
             <p>
                 <i class="icon-user space-left"></i>&nbsp;
                 @Resources.Account.AlreadyHaveUserAccount
-                @Html.ActionLink(Resources.Account.SignInLowerCase, MVC.Account.SignIn(null, Request.Url.PathAndQuery), new { @class = "underline" })
+                @Html.ActionLink(Resources.Account.SignInLowerCase, MVC.Account.SignIn(null, Request.Url.PathAndQuery), new { @class = "underline" , @onclick="logger.info('formularz płatności','chce zalogowac się na swoje konto');"})
             </p>
             <hr/>
         }    
@@ -20,7 +20,7 @@
                     <label class="control-label">@Resources.Payment.PaymentFormChannel</label>
                     <div class="controls">
                         <img id="channel-preview" class="hidden" alt="Channel" width="80px" />
-                        <a id="select-channel" data-toggle="modal" href="#providerChannelModal"><span>@Resources.Payment.PaymentFormSelectPaymentChannel</span> <i class="icon-hand-up"></i></a>
+                        <a id="select-channel" data-toggle="modal" href="#providerChannelModal" onclick="logger.info('formularz płatności','otwarto okienko systemow platnosci');"><span>@Resources.Payment.PaymentFormSelectPaymentChannel</span> <i class="icon-hand-up"></i></a>
                         @Html.Partial(MVC.Payment.Views.ProviderChannelModal, Model.Provider)
                     </div>
                 </div>
@@ -47,7 +47,7 @@
 
         @if (!AuthenticationHelper.IsAuthenticated)
         {
-            @Html.CheckBoxFor(m => m.PaymentForm.SignUp)
+            @Html.CheckBoxFor(m => m.PaymentForm.SignUp, new { @onclick="logger.info('konto uzytkownika','chce sie zarejestrowac');"})
             <label for="PaymentForm_SignUp" class="bold">
                 @Resources.Payment.PaymentFormSignUp
             </label>
@@ -58,12 +58,12 @@
         @*, new { required = "required" }*@
         @if (!AuthenticationHelper.IsAuthenticated)
         {
-            @Html.CheckBoxFor(model => model.PaymentForm.Policy, new { required = "required" })
+            @Html.CheckBoxFor(model => model.PaymentForm.Policy, new { required = "required",@onclick="logger.info('regulamin strony','akceptacja');" })
             <label for="PaymentForm_Policy">
                 @Resources.Account.PolicyAcceptation
-                @Html.ActionLink(Resources.Account.PolicyWebAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Terms), new { @class = "underline", @target="_blank" })
+                @Html.ActionLink(Resources.Account.PolicyWebAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Terms), new { @class = "underline", @target="_blank", @onclick="logger.info('regulamin strony','klikniecie');" })
                 @Resources.Account.PolicyAcceptationAnd
-                @Html.ActionLink(Resources.Account.PolicyPrivateAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Privacy), new { @class = "underline", @target = "_blank" }).
+                @Html.ActionLink(Resources.Account.PolicyPrivateAcceptationClickHere, MVC.StaticPages.MeetAsknuts(Resources.StaticPages.Privacy), new { @class = "underline", @target = "_blank", @onclick = "logger.info('polityka prywatnosci','klikniecie');" }).
             </label>
                 
             @Html.ValidationMessageFor(model => model.PaymentForm.Policy)

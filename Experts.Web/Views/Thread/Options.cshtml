@@ -20,9 +20,9 @@
         </div>
 
         <section id="options-form">
-            @using (Html.BeginForm(MVC.Thread.Save(), FormMethod.Post, new { @class = "form-horizontal span13 offset1" }))
+            @using (Html.BeginForm(MVC.Thread.Save(), FormMethod.Post, new { @class = "form-horizontal span13 offset1", @novalidate = "novalidate" }))
             {
-                @Html.ValidationSummary()
+                
                      
                 @Html.HiddenFor(model => model.Content)
                 @Html.HiddenFor(model => model.CategoryId)
@@ -47,7 +47,7 @@
                     
                     <div>
                         <a class="user-defined-price" data-toggle="modal" href="#userDefinedPriceModal" id="userDefinedPriceProposal"
-                           onclick="javascript:thread.assignUserDefinedPriceProposal();">@Resources.Thread.UserDefinedPrice</a>
+                           onclick="javascript:thread.assignUserDefinedPriceProposal();logger.info('formularz płatności','zaproponuj wlasna cene');">@Resources.Thread.UserDefinedPrice</a>
                     </div>
                 </div>
                 
@@ -56,8 +56,7 @@
                 <fieldset class="slider">
                     @*@Html.EditorForEnum(model => model.Priority, Resources.Thread.ResourceManager)*@
                     @Html.EditorForEnum(model => model.Verbosity, Resources.Thread.ResourceManager)
-                    <div class="slider-captions range3">
-                        <div class="first">@Resources.Thread.ThreadVerbosityLow</div><div class="second purple">@Resources.Thread.ThreadVerbosityMedium</div><div class="last">@Resources.Thread.ThreadVerbosityHigh</div>
+                    <div class="slider-captions range3"><div class="first">@Resources.Thread.ThreadVerbosityLow</div><div class="second purple">@Resources.Thread.ThreadVerbosityMedium</div><div class="last">@Resources.Thread.ThreadVerbosityHigh</div>
                     </div>
 
                     <hr/>
@@ -66,9 +65,12 @@
                 <fieldset>
                     @Html.Action(MVC.Payment.PaymentForm(new PaymentModel { StrategyId = ThreadPaymentStrategy.StrategyId, Value = Model.Value }, Model.PaymentForm))
                 </fieldset>
-                      
+                
+                @Html.Partial(MVC.Shared.Views._ValidationSummary, ViewData.ModelState)
+                
+                
                 <div class="pull-right">
-                    <input type="submit" class="btn btn-primary" value="@Resources.Thread.GetAnswer" />
+                    <input type="submit" class="btn btn-primary" value="@Resources.Thread.GetAnswer" onclick="logger.info('formularz płatnosci','poznaj odpowiedź')" />
                 </div>
                 
                 if (Model.AttributeValues != null)

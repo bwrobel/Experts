@@ -16,7 +16,7 @@
         
     <div class="expert-attributes">
         <div class="name">
-            <h5>@Html.ActionLink(Model.PublicName, MVC.Profile.ExpertOverview(Model.Id))
+            <h5>@Html.ActionLink(Model.PublicName, MVC.Profile.ExpertOverview(Model.Id), new { @onclick = "logger.info('okienko eksperta','kliknieto w eksperta " + Model.PublicName + "');" })
                 @if (Model.IsVerified && Model.ShowVerificationDetails)
                 {
                     <a class="expert-verification-details" data-original-title="@Resources.Account.VerifiedExpertCapital" data-content="@Model.VerificationDetails"><i class="icon-ok-sign"></i></a>

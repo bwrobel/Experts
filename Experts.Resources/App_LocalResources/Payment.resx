@@ -140,7 +140,7 @@
     <comment>0 - payoff value, 1 - bank account number</comment>
   </data>
   <data name="KipProviderTermsAndConditions" xml:space="preserve">
-    <value>Kliknięcie przycisku "Uzyskaj odpowiedź" jest jednoznaczne z akceptacją &lt;a href="https://secure.transferuj.pl/regulamin.pdf" class="underline"&gt;regulaminu systemu płatności&lt;/a&gt;.</value>
+    <value>Kliknięcie przycisku "Uzyskaj odpowiedź" jest jednoznaczne z akceptacją &lt;a href="https://secure.transferuj.pl/regulamin.pdf" class="underline" onclick="logger.info('system płatności (kip)','kliknieto regulamin')"&gt;regulaminu systemu płatności&lt;/a&gt;.</value>
   </data>
   <data name="Pay" xml:space="preserve">
     <value>Zapłać</value>

@@ -30,20 +30,20 @@
                 @{ var isFirst = true; }
                 @foreach(var category in Model.MainCategories)
                 {
-                    <a class="btn btn-inverse @(isFirst ? "main-category" : string.Empty)" data-categoryId="@category.Id" onclick="logger.info('form-action','category @category.Name (@category.Id)')">
+                    <a class="btn btn-inverse @(isFirst ? "main-category" : string.Empty)" data-categoryId="@category.Id" onclick="logger.info('formularz pytania','wybrano kategorie @category.Name (@category.Id)')">
                         @Html.CategoryIconBig(category)
                         <span>@category.Name</span>
                     </a>
 
                     isFirst = false;
                 }
-                <a id="more-categories" class="btn btn-inverse" onclick="logger.info('form-action','more categories')"><img src="@Links.Content.images.categories.more_png" alt="@Resources.Thread.QuestionCategories" /><span>@Resources.Thread.MoreCategories</span></a>
+                <a id="more-categories" class="btn btn-inverse" onclick="logger.info('formularz pytania','wybrano wiecej kategorii')"><img src="@Links.Content.images.categories.more_png" alt="@Resources.Thread.QuestionCategories" /><span>@Resources.Thread.MoreCategories</span></a>
             </div>
             
             <div class="categories more popup">
                 @foreach(var category in Model.MoreCategories)
                 {
-                    <a class="btn btn-inverse" data-categoryId="@category.Id" onclick="logger.info('form-action','category @category.Name (@category.Id)')">
+                    <a class="btn btn-inverse" data-categoryId="@category.Id" onclick="logger.info('formularz pytania','wybrano kategorie dodatkowa @category.Name (@category.Id)')">
                         @Html.CategoryIconBig(category)
                         <span>@category.Name</span>
                     </a>
@@ -61,7 +61,7 @@
 
                 <div id="attachment-tiny-list" class="main-form-attachments"></div>
 
-                <div class="main-form-attachment-clip" onclick="logger.info('form-action','attach file')">
+                <div class="main-form-attachment-clip" onclick="logger.info('formularz pytania','dodaj zalacznik')">
                     <i class="icon-paper-clip"></i> @Resources.Thread.TinyFormAttachFile
                     <input id="fileupload" type="file" name="files[]" multiple>
                 </div>
@@ -97,11 +97,11 @@
         done: function () {
             thread.GetAttachmentsTiles('@Model.ThreadForm.TemporaryAttachmentFolder', false);
             $('.icon-spinner').removeClass().addClass('icon-paper-clip');
-            logger.info('form-action', 'file uploaded');
+            logger.info('formularz pytania', 'zalacznik zaladowany');
         },
         submit: function () {
             $('.icon-paper-clip').removeClass().addClass('icon-spinner icon-spin');
-            logger.info('form-action', 'file submitted');
+            logger.info('formularz pytania', 'zalacznik dodany');
         }
     });
 </script>

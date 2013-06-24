@@ -67,8 +67,9 @@ namespace Experts.Web.Utils
                         if (!expectedMetadata.Contains(descriptionResourceName) && !isNotPublic)
                             expectedMetadata.Add(descriptionResourceName);
 
-                        if (metadataDescription!= null && metadataDescription.Length > 155)
-                            throw new Exception("Description should not be longer than 155 words: " + descriptionResourceName);
+                        //TODO: Zmienilem z 155 na 400 bo Silence! dalo dlugi opis
+                        if (metadataDescription!= null && metadataDescription.Length > 400)
+                            throw new Exception("Description should not be longer than 400 words: " + descriptionResourceName);
                     }
                 }
             }

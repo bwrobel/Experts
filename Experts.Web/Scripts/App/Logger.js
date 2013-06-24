@@ -25,7 +25,7 @@
             url: '/Log/' + level,
             data: {
                 url: document.URL,
-                source: source,
+                source: window.location.pathname + ';  ' + source,
                 message: message
             }
         });

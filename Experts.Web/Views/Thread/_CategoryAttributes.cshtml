@@ -39,7 +39,7 @@
                         var checkboxId = controlAttributes.id + "_" + option.Id;
                         
                         <div class="unbreakable">
-                            @Html.CheckBox(propertyPrefix + "Values[" + listIndex + "]", attributeValue != null && bool.Parse(attributeValue.Values[listIndex]), new { onchange = changeScript, checkboxId })
+                            @Html.CheckBox(propertyPrefix + "Values[" + listIndex + "]", attributeValue != null && bool.Parse(attributeValue.Values[listIndex]), new { onchange = "logger.info('opcje dodatkowe', 'wybrano "+ propertyPrefix + listIndex + "');" + changeScript, checkboxId })
                             @Html.Label(checkboxId, option.Value)
                         </div>
             

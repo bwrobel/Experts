@@ -2,7 +2,7 @@
     <div class="top-dark-line"></div>
     
     <div>
-        @Html.ActionLink(Resources.Help.MeetAskNuts, MVC.StaticPages.MeetAsknuts(), new { @class = "btn btn-small btn-primary" })
+        @Html.ActionLink(Resources.Help.MeetAskNuts, MVC.StaticPages.MeetAsknuts(), new { @class = "btn btn-small btn-primary", @onclick = "logger.info('alert poznaj asknuts', 'kliknieto poznaj asknuts');" })
     </div>
 </aside>
                 

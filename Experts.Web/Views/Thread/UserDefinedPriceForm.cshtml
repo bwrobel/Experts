@@ -14,8 +14,8 @@
         </div>
         
         <div class="modal-footer">
-            <a class="btn" id="cancelUserDefinedPrice" data-dismiss="modal">@Resources.Forms.Cancel</a>
-            <a class="btn btn-primary" id="submitUserDefinedPrice" data-dismiss="modal">@Resources.Global.Send</a>
+            <a class="btn" id="cancelUserDefinedPrice" onclick="logger.info('formularz zmiany ceny','anulowano zmiane');" data-dismiss="modal">@Resources.Forms.Cancel</a>
+            <a class="btn btn-primary" id="submitUserDefinedPrice" onclick="logger.info('formularz zmiany ceny','zapisano zmiane');" data-dismiss="modal">@Resources.Global.Send</a>
         </div>
     }
 </div>

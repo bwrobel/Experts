@@ -739,6 +739,7 @@
     <Content Include="Views\Administration\_CategoryAttributeOptionsEditor.cshtml" />
     <Content Include="Views\Administration\_CategoryAttributeOptionsList.cshtml" />
     <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\Shared\_ValidationSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\expert_verified_64_64.png" />

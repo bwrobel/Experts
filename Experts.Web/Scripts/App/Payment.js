@@ -27,5 +27,6 @@
         $('#channel-preview').show();
         $('a#select-channel span').html(name);
         $('.channel-select label').addClass('space-top');
+        logger.info('sposob platnosci', 'wybrano sposob platnosci - ' + channel + ', ' + name);
     }
 }
